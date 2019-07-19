@@ -1,0 +1,93 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - CYLTabBarController (1.27.0):
+    - CYLTabBarController/Core (= 1.27.0)
+  - CYLTabBarController/Core (1.27.0)
+  - DZNEmptyDataSet (1.8.1)
+  - GKMessageTool (1.0.4):
+    - MBProgressHUD
+  - GKNavigationBarViewController (2.3.1)
+  - IQKeyboardManager (6.3.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.2.0)
+  - ReactiveCocoa (2.3.1):
+    - ReactiveCocoa/UI (= 2.3.1)
+  - ReactiveCocoa/Core (2.3.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3.1)
+  - ReactiveCocoa/UI (2.3.1):
+    - ReactiveCocoa/Core
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - TXLiteAVSDK_Player (6.3.7088)
+  - WMPageController (2.5.2)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (= 3.2.1)
+  - CYLTabBarController (= 1.27.0)
+  - DZNEmptyDataSet (= 1.8.1)
+  - GKMessageTool
+  - GKNavigationBarViewController
+  - IQKeyboardManager (= 6.3.0)
+  - Masonry (= 1.1.0)
+  - MBProgressHUD (= 1.1.0)
+  - MJRefresh (= 3.2.0)
+  - ReactiveCocoa (= 2.3.1)
+  - SDWebImage (= 5.0.6)
+  - TXLiteAVSDK_Player
+  - WMPageController
+  - YYModel (= 1.0.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - CYLTabBarController
+    - DZNEmptyDataSet
+    - GKMessageTool
+    - GKNavigationBarViewController
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - ReactiveCocoa
+    - SDWebImage
+    - TXLiteAVSDK_Player
+    - WMPageController
+    - YYModel
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CYLTabBarController: dc33778cc354bfc324b3954709c43cf0368590d5
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  GKMessageTool: c5730c895e061d5f8ad69ffc4c19e688ceb4d5f9
+  GKNavigationBarViewController: 5612a8db3c0b1c3af947453eb70823148334ba35
+  IQKeyboardManager: 2ca9d64893247556f53523dcd8d78641f0ba7c23
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  ReactiveCocoa: 3fe9b233ca6db810e86681b5749488564c1179a1
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  TXLiteAVSDK_Player: 79dff307726719163a35266ade3cb9ea815f360a
+  WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 60b44d4623d5474b50bfb0600a151c0e4b60c426
+
+COCOAPODS: 1.7.2
