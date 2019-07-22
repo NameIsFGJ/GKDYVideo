@@ -30,11 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gk_navigationBar.hidden    = YES;
+   // self.gk_navigationBar.hidden    = YES;
     
     [self.view addSubview:self.mainScrolView];
     
-    self.childVCs = @[self.searchVC, self.playerVC];
+    self.childVCs = @[ self.playerVC,self.searchVC];
     
     CGFloat scrollW = kWindowWidth;
     CGFloat scrollH = kWindowHeight;
@@ -55,13 +55,13 @@
     [super viewWillAppear:animated];
     
     if (self.mainScrolView.contentOffset.x == kWindowWidth) {
-        self.gk_statusBarHidden = YES;
+       // self.gk_statusBarHidden = YES;
     }else {
-        self.gk_statusBarHidden = NO;
+       // self.gk_statusBarHidden = NO;
     }
     
     // 设置左滑push代理
-    self.gk_pushDelegate = self;
+ //   self.gk_pushDelegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,7 +74,7 @@
     [super viewWillDisappear:animated];
     
     // 取消push代理
-    self.gk_pushDelegate = nil;
+   // self.gk_pushDelegate = nil;
     
     [self.playerVC.videoView pause];
 }
@@ -82,7 +82,6 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.gk_statusBarHidden = NO;
-    
     // 右滑开始时暂停
     if (scrollView.contentOffset.x == kWindowWidth) {
         [self.playerVC.videoView pause];
@@ -92,7 +91,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     // 滑动结束，如果是播放页则恢复播放
     if (scrollView.contentOffset.x == kWindowWidth) {
-        self.gk_statusBarHidden = YES;
+      //  self.gk_statusBarHidden = YES;
         
         [self.playerVC.videoView resume];
     }

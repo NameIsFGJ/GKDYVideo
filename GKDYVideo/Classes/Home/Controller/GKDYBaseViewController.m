@@ -9,16 +9,29 @@
 #import "GKDYBaseViewController.h"
 
 @interface GKDYBaseViewController ()
-
 @end
 
 @implementation GKDYBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+//     self.control = [[HomeSegmentedControl alloc]initWithItems:@[@"推荐",@"关注"] AndWithFrame:CGRectMake((kWindowWidth - 100)/2, 0, 100, 30)];
+   // self.gk_navTitleView = self.control;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+   // self.gk_navLineHidden = NO;
+    self.gk_statusBarHidden = NO;
+}
+
+- (HomeSegmentedControl *)control
+{
+    if (!_control) {
+        _control = [[HomeSegmentedControl alloc]initWithItems:@[@"推荐",@"关注"] AndWithFrame:CGRectMake((kWindowWidth - 100)/2, 0, 100, 30)];
+        NSLog(@"_control  =%p",_control);
+    }
+    return _control;
+}
 @end

@@ -16,11 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor blackColor];
-    self.gk_navigationBar.hidden = YES;
-    self.gk_statusBarHidden = YES;
-    
+    //self.gk_statusBarHidden = YES;
     [self.view addSubview:self.videoView];
     [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -29,6 +26,11 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)dealloc {

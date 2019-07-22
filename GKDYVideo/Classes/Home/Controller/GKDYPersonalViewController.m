@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gk_navigationBar.hidden = YES;
+    //self.gk_navigationBar.hidden = YES;
 }
 
 //- (void)viewDidLoad {

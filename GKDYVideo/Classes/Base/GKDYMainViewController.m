@@ -14,7 +14,8 @@
 #import "MineViewController.h"
 #import "GKDYNavigationController.h"
 #import "UIImage+GKcategory.h"
-//#import "GKDYHomeViewController.h"
+#import "GKDYHomeViewController.h"
+#import "GKDYPageViewController.h"
 @interface GKDYMainViewController ()
 
 @end
@@ -27,7 +28,7 @@
     self.gk_statusBarHidden = NO;
     [self changeBackgroundColor];
     
-    [self addChildVC:[GKDYPlayerViewController new] withTitle:@"首页"];
+    [self addChildVC:[GKDYPageViewController new] withTitle:@"首页"];
     [self addChildVC:[MarketViewController new] withTitle:@"商城"];
     
     [self addChildVC:[AddGoodsViewController new] withImage:@"addGood" withSelectImage:@"addGood_select"];

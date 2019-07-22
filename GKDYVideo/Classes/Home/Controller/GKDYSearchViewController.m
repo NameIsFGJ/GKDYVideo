@@ -15,13 +15,13 @@
 @implementation GKDYSearchViewController
 
 - (void)loadView {
-    self.view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"WechatIMG240"]];
+    self.view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gk_navigationBar.hidden = YES;
+    //self.gk_navBackgroundColor = [UIColor clearColor];
 }
 
 @end
