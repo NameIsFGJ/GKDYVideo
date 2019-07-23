@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GKDYHomeViewController.h"
-#import "GKDYMainViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -30,9 +29,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
 
-    GKDYMainViewController *main = [GKDYMainViewController new];
+    self.main = [GKDYMainViewController new];
     
-    self.window.rootViewController = main;
+    self.window.rootViewController = self.main;
     [self.window makeKeyAndVisible];
     
     return YES;

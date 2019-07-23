@@ -48,6 +48,13 @@
 		915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62922E00DBF00894F64 /* GKDYMainViewController.m */; };
 		915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62C22E00E8E00894F64 /* GKDYNavigationController.m */; };
 		915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */; };
+		91C9C1D222E69D7E00D0A87E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D122E69D7E00D0A87E /* User.m */; };
+		91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */; };
+		91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */; };
+		91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1E022E6D5C900D0A87E /* LoginNetworking.m */; };
+		91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1E822E6DFEF00D0A87E /* LoginViewController.m */; };
+		91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */; };
+		91C9C1F322E70DE600D0A87E /* LoginBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1F222E70DE600D0A87E /* LoginBaseModel.m */; };
 		91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83BF22DF5C7800B124E0 /* MarketViewController.m */; };
 		91ED83C322DF5C8D00B124E0 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83C222DF5C8D00B124E0 /* AddGoodsViewController.m */; };
 		91ED83C622DF5C9C00B124E0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83C522DF5C9C00B124E0 /* MessageViewController.m */; };
@@ -162,6 +169,20 @@
 		915BC62C22E00E8E00894F64 /* GKDYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYNavigationController.m; sourceTree = "<group>"; };
 		915BC62E22E00FE200894F64 /* UIImage+GKcategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GKcategory.h"; sourceTree = "<group>"; };
 		915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GKcategory.m"; sourceTree = "<group>"; };
+		91C9C1D022E69D7E00D0A87E /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		91C9C1D122E69D7E00D0A87E /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		91C9C1D622E6BC5200D0A87E /* MyIndexNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIndexNetworking.h; sourceTree = "<group>"; };
+		91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIndexNetworking.m; sourceTree = "<group>"; };
+		91C9C1DF22E6D5C900D0A87E /* LoginNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginNetworking.h; sourceTree = "<group>"; };
+		91C9C1E022E6D5C900D0A87E /* LoginNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginNetworking.m; sourceTree = "<group>"; };
+		91C9C1E722E6DFEF00D0A87E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		91C9C1E822E6DFEF00D0A87E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		91C9C1EB22E708CA00D0A87E /* SendRegisterCodeNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendRegisterCodeNetworking.h; sourceTree = "<group>"; };
+		91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendRegisterCodeNetworking.m; sourceTree = "<group>"; };
+		91C9C1F122E70DE600D0A87E /* LoginBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginBaseModel.h; sourceTree = "<group>"; };
+		91C9C1F222E70DE600D0A87E /* LoginBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginBaseModel.m; sourceTree = "<group>"; };
 		91ED83BE22DF5C7800B124E0 /* MarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
 		91ED83BF22DF5C7800B124E0 /* MarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
 		91ED83C122DF5C8D00B124E0 /* AddGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsViewController.h; sourceTree = "<group>"; };
@@ -282,6 +303,7 @@
 				912F4D9F22E18C94004CF0DF /* TheThirdPart */,
 				912F4D9322E18C93004CF0DF /* Networking */,
 				912F4DA022E18C94004CF0DF /* Resource */,
+				91C9C1E222E6DFBF00D0A87E /* Login */,
 				79CC62C621573AC100101773 /* Home */,
 				912F4DA222E18C94004CF0DF /* Market */,
 				912F4D8E22E18C93004CF0DF /* AddGoods */,
@@ -482,6 +504,7 @@
 		912F4D9322E18C93004CF0DF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				91C9C1EA22E707F900D0A87E /* Login */,
 				912F4D9422E18C93004CF0DF /* Home */,
 				912F4D9522E18C93004CF0DF /* Message */,
 				912F4D9622E18C93004CF0DF /* AddGoods */,
@@ -523,6 +546,8 @@
 		912F4D9722E18C93004CF0DF /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				91C9C1D622E6BC5200D0A87E /* MyIndexNetworking.h */,
+				91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -686,8 +711,66 @@
 		912F4DAB22E18C94004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */,
+				91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		91C9C1E222E6DFBF00D0A87E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				91C9C1D022E69D7E00D0A87E /* User.h */,
+				91C9C1D122E69D7E00D0A87E /* User.m */,
+				91C9C1E622E6DFBF00D0A87E /* ViewController */,
+				91C9C1E322E6DFBF00D0A87E /* ViewModel */,
+				91C9C1E422E6DFBF00D0A87E /* Model */,
+				91C9C1E522E6DFBF00D0A87E /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		91C9C1E322E6DFBF00D0A87E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		91C9C1E422E6DFBF00D0A87E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91C9C1F122E70DE600D0A87E /* LoginBaseModel.h */,
+				91C9C1F222E70DE600D0A87E /* LoginBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91C9C1E522E6DFBF00D0A87E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91C9C1E622E6DFBF00D0A87E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91C9C1E722E6DFEF00D0A87E /* LoginViewController.h */,
+				91C9C1E822E6DFEF00D0A87E /* LoginViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91C9C1EA22E707F900D0A87E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				91C9C1DF22E6D5C900D0A87E /* LoginNetworking.h */,
+				91C9C1E022E6D5C900D0A87E /* LoginNetworking.m */,
+				91C9C1EB22E708CA00D0A87E /* SendRegisterCodeNetworking.h */,
+				91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -869,10 +952,15 @@
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
+				91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */,
+				91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */,
+				91C9C1D222E69D7E00D0A87E /* User.m in Sources */,
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
+				91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */,
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
 				79CC62D421573C2300101773 /* GKDYSearchViewController.m in Sources */,
 				9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */,
+				91C9C1F322E70DE600D0A87E /* LoginBaseModel.m in Sources */,
 				914034D522E5DECE006F1699 /* BaseModel.m in Sources */,
 				9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */,
 				79CC62EB2157402800101773 /* GKDYVideoControlView.m in Sources */,
@@ -894,9 +982,11 @@
 				79CC62942157377400101773 /* AppDelegate.m in Sources */,
 				9116615A22E18FAA00A5F9C2 /* NSString+MD5.m in Sources */,
 				79CC62CB21573B4700101773 /* GKSliderView.m in Sources */,
+				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
+				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
@@ -1074,7 +1164,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.GKDYVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manfan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = aystfm_dev_test;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1095,7 +1185,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.GKDYVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manfan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = aystfm_dev_test;
 				TARGETED_DEVICE_FAMILY = "1,2";

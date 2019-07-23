@@ -7,9 +7,6 @@
 //
 
 #import "BaseModel.h"
-@implementation DataModel
-
-@end
 
 @implementation BaseModel
 

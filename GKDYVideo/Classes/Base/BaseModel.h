@@ -10,15 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DataModel : NSObject
-
-
-@end
 
 @interface BaseModel : NSObject
 @property (assign, nonatomic)NSInteger error_code;
 @property (strong, nonatomic)NSString * error_msg;
-@property (strong, nonatomic)DataModel *data;
+
 /*
  "error_code": 0,
  "error_msg": "success",
