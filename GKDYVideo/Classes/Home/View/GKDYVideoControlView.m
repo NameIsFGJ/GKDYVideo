@@ -150,22 +150,23 @@
 - (void)setModel:(IndexModel *)model {
     _model = model;
 
-    [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"https://mf.zjchuanwen.com",model.pic_url]]];
+    // 背景图
+    [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.pic_url]]];
+    // 头像
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.head_pic]]];
+    // 昵称
+    self.nameLabel.text = model.nickname;
+    // 标题
+    self.contentLabel.text = model.desc;
+    //点赞
+    [self.praiseBtn setTitle:[NSString stringWithFormat:@"%ld",model.z_count] forState:UIControlStateNormal];
+    //评论
+    [self.commentBtn setTitle:[NSString stringWithFormat:@"%ld",model.c_count] forState:UIControlStateNormal];
+    //分享
+    [self.shareBtn setTitle:[NSString stringWithFormat:@"%ld",model.share_count] forState:UIControlStateNormal];
     
-    self.nameLabel.text = @"抖音小王子";
-    self.contentLabel.text = @"收到过很多网友的留言和私信，说想看领克03的拆解，好！这次满足你们。开拆倒计时，11月28日下午14:00-16:00 领克03拆解直播，敬请期待！@领克汽车 ​";
-    [self.praiseBtn setTitle:@"34" forState:UIControlStateNormal];
-    [self.commentBtn setTitle:@"22" forState:UIControlStateNormal];
-    [self.shareBtn setTitle:@"4" forState:UIControlStateNormal];
-//    self.sliderView.value = 0;
-//    self.nameLabel.text = model.author.name_show;
-//   // [self.iconView sd_setImageWithURL:[NSURL URLWithString:model.author.portrait]];
-//
-//    self.contentLabel.text = model.title;
-//
-   // [self.praiseBtn setTitle:model.agree_num forState:UIControlStateNormal];
-    //[self.commentBtn setTitle:model.comment_num forState:UIControlStateNormal];
-    //[self.shareBtn setTitle:model.share_num forState:UIControlStateNormal];
+    NSString *praiseImag = model.is_like ? @"ss_icon_star_selected":@"ss_icon_star_normal";
+    [self.praiseBtn setImage:[UIImage imageNamed:praiseImag] forState:UIControlStateNormal];
 }
 
 #pragma mark - Public Methods
@@ -309,6 +310,7 @@
         _sliderView.sliderHeight = ADAPTATIONRATIO * 2.0f;
         _sliderView.maximumTrackTintColor = [UIColor grayColor];
         _sliderView.minimumTrackTintColor = [UIColor whiteColor];
+        _sliderView.hidden = YES;
     }
     return _sliderView;
 }

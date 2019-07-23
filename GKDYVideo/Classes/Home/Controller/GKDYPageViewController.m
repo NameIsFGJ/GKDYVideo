@@ -30,9 +30,11 @@
     [self addChildViewController:self.searchVC];
     self.selectIndex = 0;
     HomeSegmentedControl *control1111 = [[HomeSegmentedControl alloc]initWithItems:@[@"推荐 ",@"关注"]];
+    control1111.frame = CGRectMake(0, 0, 100, 30);
      [control1111 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = control1111;
-    NSLog(@"self.control  =%p",control1111);
+    self.selectIndex = 0;
+    control1111.selectedSegmentIndex = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

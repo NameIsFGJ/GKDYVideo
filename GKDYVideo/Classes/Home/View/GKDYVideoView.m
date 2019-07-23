@@ -8,7 +8,7 @@
 
 #import "GKDYVideoView.h"
 #import "GKDYVideoPlayer.h"
-
+#import "LikeVideoNewtworking.h"
 @interface GKDYVideoView()<UIScrollViewDelegate, GKDYVideoPlayerDelegate, GKDYVideoControlViewDelegate>
 
 @property (nonatomic, strong) UIScrollView              *scrollView;
@@ -339,6 +339,9 @@
 
 - (void)controlViewDidClickPriase:(GKDYVideoControlView *)controlView {
     [GKMessageTool showText:@"点赞"];
+  
+   // [LikeVideoNewtworking postLikeVideo:@"" userID:<#(NSInteger)#> videoID:<#(NSInteger)#> completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
+   // }]
 }
 
 - (void)controlViewDidClickComment:(GKDYVideoControlView *)controlView {

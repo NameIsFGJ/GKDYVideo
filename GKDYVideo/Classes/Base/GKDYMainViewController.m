@@ -12,10 +12,10 @@
 #import "AddGoodsViewController.h"
 #import "MessageViewController.h"
 #import "MineViewController.h"
-#import "GKDYNavigationController.h"
 #import "UIImage+GKcategory.h"
 #import "GKDYHomeViewController.h"
 #import "GKDYPageViewController.h"
+#import "BaseNavigationController.h"
 @interface GKDYMainViewController ()
 
 @end
@@ -59,8 +59,7 @@
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
     
-    GKDYNavigationController *nav = [GKDYNavigationController rootVC:childVC translationScale:NO];
-    nav.gk_openScrollLeftPush = YES;
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
     [self addChildViewController:nav];
 }
 
@@ -75,8 +74,7 @@
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
     
-    GKDYNavigationController *nav = [GKDYNavigationController rootVC:childVC translationScale:NO];
-    nav.gk_openScrollLeftPush = YES;
+       BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
     [self addChildViewController:nav];
 }
 
@@ -95,7 +93,7 @@
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
     
-    GKDYNavigationController *nav = [GKDYNavigationController rootVC:childVC translationScale:NO];
+     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
     nav.gk_openScrollLeftPush = YES;
     [self addChildViewController:nav];
 }

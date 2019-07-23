@@ -7,8 +7,8 @@
 //
 
 #import "BaseNavigationController.h"
-
-@interface BaseNavigationController ()
+#import "UIImage+Category.h"
+@interface BaseNavigationController ()<UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -16,17 +16,91 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    __weak BaseNavigationController * weakSelf = self;
+    [self.navigationBar setBarTintColor:kMainRedColor];
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.delegate = weakSelf;
+        self.delegate = weakSelf;
+    }
+    // 透明背景
+    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
+    
+    // 透明横线
+    [self.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [UIView setAnimationsEnabled:YES];
+    if ( animated && [self respondsToSelector:@selector(interactivePopGestureRecognizer)] )
+    {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
+    [super pushViewController:viewController animated:animated];
 }
-*/
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated
+{
+    [UIView setAnimationsEnabled:YES];
+    return [super popViewControllerAnimated:animated];
+}
+
+- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
+{
+    [UIView setAnimationsEnabled:YES];
+    if ( animated && [self respondsToSelector:@selector(interactivePopGestureRecognizer)] )
+    {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    NSArray * array = [super popToRootViewControllerAnimated:animated];
+    return array;
+}
+
+- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [UIView setAnimationsEnabled:YES];
+    if ( animated && [self respondsToSelector:@selector(interactivePopGestureRecognizer)] )
+    {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    return [super popToViewController:viewController animated:animated];
+}
+
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated
+{
+    [UIView setAnimationsEnabled:YES];
+    if( animated && [self respondsToSelector:@selector(interactivePopGestureRecognizer)] )
+    {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
+    return [super setViewControllers:viewControllers animated:animated];
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ( gestureRecognizer == self.interactivePopGestureRecognizer )
+    {
+        if ( self.viewControllers.count < 2 || self.visibleViewController == [self.viewControllers objectAtIndex:0] )
+        {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if ( [self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.enabled = YES;
+    }
+}
+
 
 @end

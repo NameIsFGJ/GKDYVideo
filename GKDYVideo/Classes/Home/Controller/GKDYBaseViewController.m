@@ -26,12 +26,4 @@
     self.gk_statusBarHidden = NO;
 }
 
-- (HomeSegmentedControl *)control
-{
-    if (!_control) {
-        _control = [[HomeSegmentedControl alloc]initWithItems:@[@"推荐",@"关注"] AndWithFrame:CGRectMake((kWindowWidth - 100)/2, 0, 100, 30)];
-        NSLog(@"_control  =%p",_control);
-    }
-    return _control;
-}
 @end

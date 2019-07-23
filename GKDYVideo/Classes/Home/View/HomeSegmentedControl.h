@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeSegmentedControl : UISegmentedControl
-- (instancetype)initWithItems:(NSArray *)items AndWithFrame: (CGRect)frame;
 
 @end
 

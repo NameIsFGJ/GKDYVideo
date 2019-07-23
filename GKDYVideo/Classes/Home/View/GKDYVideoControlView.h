@@ -34,7 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 // 视频封面图:显示封面并播放视频
 @property (nonatomic, strong) UIImageView       *coverImgView;
 
-//@property (nonatomic, strong) GKDYVideoModel    *model;
 @property (nonatomic, strong) IndexModel    *model;
 - (void)setProgress:(float)progress;
 

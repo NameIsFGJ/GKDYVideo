@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseNavigationController : UINavigationController
-
+@property (nonatomic, copy) void (^commandBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END

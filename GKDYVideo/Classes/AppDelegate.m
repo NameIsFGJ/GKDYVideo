@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseTabBarController.h"
 #import "GKDYHomeViewController.h"
 #import "GKDYMainViewController.h"
 @interface AppDelegate ()
@@ -30,11 +29,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    //UINavigationController *nav = [UINavigationController rootVC:[GKDYHomeViewController new] translationScale:NO];
-   // nav.gk_openScrollLeftPush = YES; // 开启左滑push功能
-    
-   // BaseTabBarController *tabbarVC = [[BaseTabBarController alloc]init];
+
     GKDYMainViewController *main = [GKDYMainViewController new];
     
     self.window.rootViewController = main;

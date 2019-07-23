@@ -10,34 +10,34 @@
 #import "UIImage+Category.h"
 @implementation HomeSegmentedControl
 
-- (instancetype)initWithItems:(NSArray *)items AndWithFrame: (CGRect)frame;
+- (instancetype)initWithItems:(NSArray *)items
 {
     self = [super initWithItems:items];
     
-   // self.tintColor = [UIColor whiteColor];
+    self.tintColor = [UIColor whiteColor];
     self.selectedSegmentIndex = 0;
     self.momentary = NO;
-    self.frame = frame;
-    
+
+
   // 文字
-    UIFont *font = [UIFont systemFontOfSize:13];
+    UIFont *font = [UIFont systemFontOfSize:16];
     UIColor*textColor = [UIColor lightGrayColor];
     NSDictionary *normalDic = @{NSFontAttributeName:font,NSForegroundColorAttributeName:textColor};
     [self setTitleTextAttributes:normalDic forState:UIControlStateNormal];
-    
-    UIFont *font1 = [UIFont systemFontOfSize:14];
+
+    UIFont *font1 = [UIFont systemFontOfSize:16];
     UIColor*textColor1 = [UIColor whiteColor];
     NSDictionary *selectDic = @{NSFontAttributeName:font1,NSForegroundColorAttributeName:textColor1};
     [self setTitleTextAttributes:selectDic forState:UIControlStateSelected];
-    
+
     //去除边框
     [self setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
+
     [self setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    
+
     // 竖线
     [self setDividerImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(1, 10)] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
+
     return self;
 }
 @end
