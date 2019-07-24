@@ -72,6 +72,9 @@
         [self addSubview:self.loadingView];
         [self addSubview:self.playBtn];
         
+        // 留言板
+        [self addSubview:self.commentView];
+        
         [self.coverImgView mas_makeConstraints:^(MASConstraintMaker *make) {
            make.edges.equalTo(self);
         }];
@@ -143,6 +146,15 @@
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(controlViewDidClick:)];
         [self addGestureRecognizer:tap];
+        
+        
+        // 留言板
+        [self.commentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_bottom);
+            make.left.right.mas_equalTo(0);
+            make.height.mas_equalTo(430);
+        }];
+        
     }
     return self;
 }
@@ -164,7 +176,6 @@
     [self.commentBtn setTitle:[NSString stringWithFormat:@"%ld",model.c_count] forState:UIControlStateNormal];
     //分享
     [self.shareBtn setTitle:[NSString stringWithFormat:@"%ld",model.share_count] forState:UIControlStateNormal];
-    
     NSString *praiseImag = model.is_like ? @"ss_icon_star_selected":@"ss_icon_star_normal";
     [self.praiseBtn setImage:[UIImage imageNamed:praiseImag] forState:UIControlStateNormal];
 }
@@ -249,8 +260,6 @@
 - (GKDYVideoItemButton *)praiseBtn {
     if (!_praiseBtn) {
         _praiseBtn = [GKDYVideoItemButton new];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ss_icon_star_normal"] forState:UIControlStateNormal];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ss_icon_star_selected"] forState:UIControlStateSelected];
         _praiseBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
         [_praiseBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_praiseBtn addTarget:self action:@selector(praiseBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -360,6 +369,15 @@
         [_followingButton addTarget:self action:@selector(iconDidClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _followingButton;
+}
+
+- (GetVideoCommentView *)commentView
+{
+    if (!_commentView)
+    {
+        _commentView = [[GetVideoCommentView alloc]init];
+    }
+    return _commentView;
 }
 
 @end

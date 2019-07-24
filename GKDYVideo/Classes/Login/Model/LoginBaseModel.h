@@ -16,12 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString *nick_name;
 @property (strong, nonatomic)NSString *head_pic;
 @property (strong, nonatomic)NSString *user_money;
-@property (assign, nonatomic)NSInteger user_id;
+@property (strong, nonatomic)NSString * user_id;
 @end
 
 @interface LoginBaseModel : BaseModel
-//@property (strong, nonatomic) NSArray<WithdrawItem *> *withdrawItems;
-//@property (strong, nonatomic) NSArray<Data *> *data;
 @property (strong,nonatomic)Data *data;
 @end
 

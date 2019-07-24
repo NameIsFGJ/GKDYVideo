@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     //self.gk_navBackgroundColor = [UIColor clearColor];
+    
 }
 
 @end

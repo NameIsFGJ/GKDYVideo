@@ -102,6 +102,20 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
+
+//     kUser.user_token = @"";
+//     kUser.user_id = @"";
+//     kUser.mobile = @"";
+//     kUser.nick_name = @"";
+//     kUser.head_pic = @"";
+//     kUser.user_money = @"";
+//[[NSUserDefaults standardUserDefaults] stringForKey:kuser_token];
+    NSString *string1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_token"];
+    NSLog(@"string1  =%@",string1);
+       NSString *string2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_id"];
+NSLog(@"string2  =%@",string2);
+       NSString *string3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.mobile"];
+    NSLog(@"string3  =%@",string3);
     BaseNavigationController * nav = (BaseNavigationController *)viewController;
     if ([[nav.viewControllers lastObject] isKindOfClass:[MineViewController class]])
     {
@@ -115,4 +129,5 @@
     }
     return YES;
 }
+
 @end

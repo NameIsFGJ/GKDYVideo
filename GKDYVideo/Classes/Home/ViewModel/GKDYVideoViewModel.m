@@ -45,28 +45,16 @@
     NSString *url = @"https://mf.zjchuanwen.com/api/video/index?page=1";
     NSDictionary *param = @{@"page":@1};
     [GKNetworking get:url params:param success:^(id  _Nonnull responseObject) {
-//        if ([responseObject[@"error_code"] integerValue] == 0) {
-//            NSDictionary *data = responseObject[@"data"];
-//
-//            self.has_more = [data[@"has_more"] boolValue];
-//
-//            NSMutableArray *array = [NSMutableArray new];
-//            for (NSDictionary *dic in data[@"data"]) {
-//                GKDYVideoModel *model = [GKDYVideoModel yy_modelWithDictionary:dic];
-//                [array addObject:model];
-//            }
-        
         //----------------------------------
         NSMutableArray *itemsArray = [NSMutableArray array];
         
         NSArray *array = [responseObject objectForKey:@"data"];
-        for (NSDictionary *dic in array) {
+        for (NSDictionary *dic in array)
+        {
             IndexModel *model = [IndexModel yy_modelWithDictionary:dic];
             [itemsArray addObject:model];
         }
-       // NSLog(@"responseObject  =%@",responseObject);
             !success ? : success(itemsArray);
-        NSLog(@"itemsArray.count  =%ld",itemsArray.count);
     } failure:^(NSError * _Nonnull error) {
         !failure ? : failure(error);
     }];

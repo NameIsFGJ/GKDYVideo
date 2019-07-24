@@ -38,6 +38,8 @@
 		9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116615E22E19BE500A5F9C2 /* BaseNetworking.m */; };
 		9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */; };
 		9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */; };
+		9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45922E8872D00875B17 /* GetVideoCommentView.m */; };
+		9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */; };
 		914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034D122E5DDF5006F1699 /* LikeVideoNewtworking.m */; };
 		914034D522E5DECE006F1699 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034D422E5DECE006F1699 /* BaseModel.m */; };
 		914034D822E5DF46006F1699 /* LikeVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034D722E5DF46006F1699 /* LikeVideoModel.m */; };
@@ -48,6 +50,9 @@
 		915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62922E00DBF00894F64 /* GKDYMainViewController.m */; };
 		915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62C22E00E8E00894F64 /* GKDYNavigationController.m */; };
 		915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */; };
+		91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC622E8316000642E47 /* UIView+Acategory.m */; };
+		91611DCA22E849DF00642E47 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC922E849DF00642E47 /* SetViewController.m */; };
+		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91C9C1D222E69D7E00D0A87E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D122E69D7E00D0A87E /* User.m */; };
 		91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */; };
 		91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */; };
@@ -149,6 +154,10 @@
 		912F4DAD22E18DF3004CF0DF /* AppInfoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoConstant.h; sourceTree = "<group>"; };
 		912F4DAE22E18DF3004CF0DF /* ColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorConstants.h; sourceTree = "<group>"; };
 		912F4DAF22E18DF3004CF0DF /* VerdorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerdorHeader.h; sourceTree = "<group>"; };
+		9136B45822E8872D00875B17 /* GetVideoCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentView.h; sourceTree = "<group>"; };
+		9136B45922E8872D00875B17 /* GetVideoCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentView.m; sourceTree = "<group>"; };
+		9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentCell.h; sourceTree = "<group>"; };
+		9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentCell.m; sourceTree = "<group>"; };
 		914034D022E5DDF5006F1699 /* LikeVideoNewtworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LikeVideoNewtworking.h; sourceTree = "<group>"; };
 		914034D122E5DDF5006F1699 /* LikeVideoNewtworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LikeVideoNewtworking.m; sourceTree = "<group>"; };
 		914034D322E5DECE006F1699 /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
@@ -169,6 +178,12 @@
 		915BC62C22E00E8E00894F64 /* GKDYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYNavigationController.m; sourceTree = "<group>"; };
 		915BC62E22E00FE200894F64 /* UIImage+GKcategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GKcategory.h"; sourceTree = "<group>"; };
 		915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GKcategory.m"; sourceTree = "<group>"; };
+		91611DC522E8316000642E47 /* UIView+Acategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Acategory.h"; sourceTree = "<group>"; };
+		91611DC622E8316000642E47 /* UIView+Acategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Acategory.m"; sourceTree = "<group>"; };
+		91611DC822E849DF00642E47 /* SetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		91611DC922E849DF00642E47 /* SetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		91BBB70822E7F2460060ADDD /* UIViewController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
+		91BBB70922E7F2460060ADDD /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
 		91C9C1D022E69D7E00D0A87E /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		91C9C1D122E69D7E00D0A87E /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
@@ -297,6 +312,8 @@
 			children = (
 				79CC62922157377400101773 /* AppDelegate.h */,
 				79CC62932157377400101773 /* AppDelegate.m */,
+				9116614922E18FAA00A5F9C2 /* AppDelegate+Vendor.h */,
+				9116615322E18FAA00A5F9C2 /* AppDelegate+Vendor.m */,
 				9116614622E18FAA00A5F9C2 /* Categroy */,
 				912F4DA122E18C94004CF0DF /* Define */,
 				9116615C22E19BBD00A5F9C2 /* Base */,
@@ -374,6 +391,10 @@
 				79CC62EA2157402800101773 /* GKDYVideoControlView.m */,
 				9116616322E1B4A300A5F9C2 /* HomeSegmentedControl.h */,
 				9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */,
+				9136B45822E8872D00875B17 /* GetVideoCommentView.h */,
+				9136B45922E8872D00875B17 /* GetVideoCommentView.m */,
+				9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */,
+				9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,7 +448,6 @@
 				915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */,
 				9116614722E18FAA00A5F9C2 /* NSBundle+category.h */,
 				9116614822E18FAA00A5F9C2 /* UIImage+Category.m */,
-				9116614922E18FAA00A5F9C2 /* AppDelegate+Vendor.h */,
 				9116614A22E18FAA00A5F9C2 /* UIColor+Category.h */,
 				9116614B22E18FAA00A5F9C2 /* NSString+MD5.h */,
 				9116614C22E18FAA00A5F9C2 /* NSObject+HUD.h */,
@@ -437,8 +457,11 @@
 				9116615022E18FAA00A5F9C2 /* NSObject+HUD.m */,
 				9116615122E18FAA00A5F9C2 /* UIColor+Category.m */,
 				9116615222E18FAA00A5F9C2 /* NSString+MD5.m */,
-				9116615322E18FAA00A5F9C2 /* AppDelegate+Vendor.m */,
 				9116615422E18FAA00A5F9C2 /* UIDevice+category.h */,
+				91BBB70822E7F2460060ADDD /* UIViewController+Category.h */,
+				91BBB70922E7F2460060ADDD /* UIViewController+Category.m */,
+				91611DC522E8316000642E47 /* UIView+Acategory.h */,
+				91611DC622E8316000642E47 /* UIView+Acategory.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -697,6 +720,8 @@
 			children = (
 				91ED83C722DF5CB000B124E0 /* MineViewController.h */,
 				91ED83C822DF5CB000B124E0 /* MineViewController.m */,
+				91611DC822E849DF00642E47 /* SetViewController.h */,
+				91611DC922E849DF00642E47 /* SetViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -958,6 +983,7 @@
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
 				91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */,
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
+				91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */,
 				79CC62D421573C2300101773 /* GKDYSearchViewController.m in Sources */,
 				9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */,
 				91C9C1F322E70DE600D0A87E /* LoginBaseModel.m in Sources */,
@@ -969,6 +995,7 @@
 				915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */,
 				79CC62E82157401E00101773 /* GKDYVideoView.m in Sources */,
 				79CC62E521573FC500101773 /* GKDYScrollView.m in Sources */,
+				91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */,
 				79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */,
 				91ED83C322DF5C8D00B124E0 /* AddGoodsViewController.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
@@ -983,15 +1010,18 @@
 				9116615A22E18FAA00A5F9C2 /* NSString+MD5.m in Sources */,
 				79CC62CB21573B4700101773 /* GKSliderView.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
+				91611DCA22E849DF00642E47 /* SetViewController.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
+				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9116615522E18FAA00A5F9C2 /* UIImage+Category.m in Sources */,
 				9116615922E18FAA00A5F9C2 /* UIColor+Category.m in Sources */,
+				9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

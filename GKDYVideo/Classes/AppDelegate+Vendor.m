@@ -17,6 +17,14 @@
     
     // 配置 IQKeyboardManager
     [self initializeIQKeyboard];
+    
+    // 判断是否登录
+   // [self userLoad];
+}
+
+- (void)userLoad
+{
+    
 }
 
 - (void)initializeAFNetworkActivityIndicatorManager

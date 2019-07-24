@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (User *)currentUser;
 + (BOOL)isLogin;
 @property (strong, nonatomic)NSString * user_token;
-@property (assign, nonatomic)NSInteger user_id;
+@property (strong, nonatomic)NSString * user_id;
 @property (strong, nonatomic)NSString * mobile;
 @property (strong, nonatomic)NSString * nick_name;
 @property (strong, nonatomic)NSString * head_pic;

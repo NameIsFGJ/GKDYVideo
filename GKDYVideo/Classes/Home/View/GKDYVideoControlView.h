@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GKDYVideoModel.h"
 #import "IndexModel.h"
+#import "GetVideoCommentView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @class GKDYVideoControlView;
@@ -33,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 视频封面图:显示封面并播放视频
 @property (nonatomic, strong) UIImageView       *coverImgView;
+
+// 留言板
+@property (nonatomic, strong) GetVideoCommentView *commentView;
 
 @property (nonatomic, strong) IndexModel    *model;
 - (void)setProgress:(float)progress;

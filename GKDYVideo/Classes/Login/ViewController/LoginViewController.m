@@ -41,12 +41,19 @@
         make.size.mas_equalTo(CGSizeMake(60, 60));
     }];
     
+    [closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"closeLoginVC"]];
     [self.view addSubview:imageView];
+    imageView.userInteractionEnabled = YES;
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(15, 15));
         make.center.equalTo(closeButton);
     }];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeButtonAction)];
+    [imageView addGestureRecognizer:tap];
+    
     
     UILabel *titleLabel = [[UILabel alloc]init];
     [self.view addSubview:titleLabel];
@@ -73,7 +80,6 @@
         make.size.mas_equalTo(CGSizeMake(300, 50));
         make.center.equalTo(self.view).centerOffset(CGPointMake(0, -30));
     }];
-    //view2.backgroundColor = [UIColor colorWithHex:@"#F1F1F4" alpha:.1];
     view2.layer.cornerRadius = 5;
     view2.layer.masksToBounds = YES;
     
@@ -153,6 +159,12 @@
 
 #pragma mark Actions
 
+// 关闭登录
+- (void)closeButtonAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+// 接收验证码
 - (void)codeButtonAction
 {
     [SendRegisterCodeNetworking postSendRegisterCode:self.numberTextField.text completion:^(BaseModel * _Nonnull model, NSError * _Nonnull error) {
@@ -173,10 +185,11 @@
     }];
 }
 
+// 确定按钮
 - (void)submitButtonAction
 {
     [LoginNetworking postLogin:self.numberTextField.text codeNumber:self.importCode.text completionHandle:^(LoginBaseModel * _Nonnull model, NSError * _Nonnull error) {
-
+        
         if (model.error_code == 0)
         {
             Data *data = model.data;
@@ -190,12 +203,15 @@
             [[(AppDelegate *)[UIApplication sharedApplication].delegate main] setSelectedIndex:kTabBar_Index_mine];
             [self dismissViewControllerAnimated:YES completion:nil];
             
+            NSLog(@"kUser.user_token  =%@",kUser.user_token);
+            NSLog(@"kUser.user_money =%@",kUser.user_money);
+            NSLog(@"kUser.user_id  =%@",kUser.user_id);
+            NSLog(@"kUser.head_pic  =%@",kUser.head_pic);
+            NSLog(@"kUser.mobile =%@",kUser.mobile);
+//
         }else{
             [self showErrorMsg:@"服务器出错"];
         }
-       
-        
-        
     }];
 }
 

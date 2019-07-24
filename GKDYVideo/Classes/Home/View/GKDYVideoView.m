@@ -9,6 +9,11 @@
 #import "GKDYVideoView.h"
 #import "GKDYVideoPlayer.h"
 #import "LikeVideoNewtworking.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "BaseNavigationController.h"
+#import "LikeVideoNewtworking.h"
+
 @interface GKDYVideoView()<UIScrollViewDelegate, GKDYVideoPlayerDelegate, GKDYVideoControlViewDelegate>
 
 @property (nonatomic, strong) UIScrollView              *scrollView;
@@ -21,7 +26,7 @@
 // 控制播放的索引，不完全等于当前播放内容的索引
 @property (nonatomic, assign) NSInteger                 index;
 
-// 当前播放内容是h索引
+// 当前播放内容是索引
 @property (nonatomic, assign) NSInteger                 currentPlayIndex;
 
 @property (nonatomic, weak) UIViewController            *vc;
@@ -179,6 +184,7 @@
 //        @strongify(self);
 //        [self.player playVideoWithView:fromView.coverImgView url:fromView.model.video_url];
 //    });
+    
 }
 
 // 获取当前播放内容的索引
@@ -333,26 +339,74 @@
     }
 }
 
-- (void)controlViewDidClickIcon:(GKDYVideoControlView *)controlView {
-    [GKMessageTool showText:@"点击头像"];
+- (void)controlViewDidClickIcon:(GKDYVideoControlView *)controlView
+{
+    
+   // [self islogin];
+    //[GKMessageTool showText:@"点击头像"];
+    // if ([self.delegate respondsToSelector:@selector(videoView:didClickIcon:)]) {
+  //  [self.delegate videoView:self didClickIcon:controlView.model];
+   
+    if ([self.delegate respondsToSelector:@selector(controlViewDidClickIcon:)]) {
+        [self.delegate videoView:self didClickIcon:controlView.model];
+    }
 }
 
-- (void)controlViewDidClickPriase:(GKDYVideoControlView *)controlView {
-    [GKMessageTool showText:@"点赞"];
+
+- (void)controlViewDidClickPriase:(GKDYVideoControlView *)controlView
+{
+    if ([self.delegate respondsToSelector:@selector(controlViewDidClickPriase:)])
+    {
+        [self.delegate videoView:self didClickPraise:controlView.model];
+        
+    }
+//    [self islogin];
+//    [GKMessageTool showText:@"点赞"];
+//    IndexModel *indexModel = controlView.model;
+//   // NSNumber *userID = [NSNumber numberWithInteger:[kUser.user_id integerValue]];
+//    NSLog(@"kUser.u3434ser_id =%@",kUser.user_id);
+//   // NSNumber *videoID = [NSNumber numberWithInteger:indexModel.identify];
+//    [LikeVideoNewtworking postLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:indexModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
+//        NSLog(@"model.34msg  =%@",model.msg);
+//    }];
+//
+//    if (kUser.user_id.length >=1)
+//    {
+//
+//    }
   
-   // [LikeVideoNewtworking postLikeVideo:@"" userID:<#(NSInteger)#> videoID:<#(NSInteger)#> completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
-   // }]
 }
 
-- (void)controlViewDidClickComment:(GKDYVideoControlView *)controlView {
+- (void)controlViewDidClickComment:(GKDYVideoControlView *)controlView
+{
+    [self islogin];
     [GKMessageTool showText:@"评论"];
+    
+    [controlView.commentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+        make.height.mas_equalTo(430);
+    }];
 }
 
 - (void)controlViewDidClickShare:(GKDYVideoControlView *)controlView {
+    [self islogin];
     [GKMessageTool showText:@"分享"];
 }
 
-#pragma mark - 懒加载
+
+- (void)islogin
+{
+    if (![User isLogin])
+    {
+        LoginViewController *loginVC = [[LoginViewController alloc]init];
+        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:loginVC];
+        [self.viewController presentViewController:nav animated:YES completion:nil];
+    }
+}
+
+
+#pragma mark - lazy load
 - (GKDYVideoViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [GKDYVideoViewModel new];
@@ -418,5 +472,7 @@
     }
     return _player;
 }
+
+
 
 @end

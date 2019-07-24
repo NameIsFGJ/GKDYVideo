@@ -14,8 +14,5 @@
 @end
 
 @implementation LoginBaseModel
-//+ (NSDictionary *)modelContainerPropertyGenericClass {
-//    return @{@"data" : [Data class],
-//             };
-//}
+
 @end

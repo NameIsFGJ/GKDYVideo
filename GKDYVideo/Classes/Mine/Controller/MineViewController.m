@@ -9,7 +9,7 @@
 #import "MineViewController.h"
 #import "MineTableViewCell.h"
 #import "MyIndexNetworking.h"
-
+#import "SetViewController.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *imageArray;
@@ -25,6 +25,7 @@
     [self.view addSubview:self.tableView];
     
    // MyIndexNetworking postMyIndex: userID:<#(nonnull NSNumber *)#> completionHandle:<#^(MyIndexModel * _Nonnull model, NSError * _Nonnull error)complectionhandle#>
+   
     
 }
 
@@ -39,7 +40,6 @@
     MineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.leftImageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
-    //cell.leftLabel.text = @"我的宝贝";
     cell.leftLabel.text = self.titleArray[indexPath.row];
     if (indexPath.row == 3) {
         cell.rightLabel.hidden = NO;
@@ -48,6 +48,15 @@
         cell.rightLabel.hidden = YES;
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 3)
+    {
+        SetViewController *vc = [[SetViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark  loaz load

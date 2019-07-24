@@ -9,10 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "GKDYVideoViewModel.h"
 #import "GKDYVideoControlView.h"
-
+#import "IndexModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
+@class GKDYVideoView;
+@protocol GKDYVideoViewDelegate <NSObject>
+
+- (void)videoView:(GKDYVideoView *)videoView didClickIcon:(IndexModel *)videoModel;
+- (void)videoView:(GKDYVideoView *)videoView didClickPraise:(IndexModel *)videoModel;
+- (void)videoView:(GKDYVideoView *)videoView didClickComment:(IndexModel *)videoModel;
+- (void)videoView:(GKDYVideoView *)videoView didClickShare:(IndexModel *)videoModel;
+
+@end
+
 @interface GKDYVideoView : UIView
+
+@property (nonatomic, weak) id<GKDYVideoViewDelegate> delegate;
 
 @property (nonatomic, strong) GKDYVideoViewModel    *viewModel;
 

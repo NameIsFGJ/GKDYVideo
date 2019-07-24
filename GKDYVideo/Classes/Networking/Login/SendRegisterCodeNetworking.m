@@ -23,4 +23,5 @@
         complectionhandle([BaseModel yy_modelWithDictionary:responseObj],error);
     }];
 }
+
 @end

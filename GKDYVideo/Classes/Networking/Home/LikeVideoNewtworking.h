@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LikeVideoNewtworking : BaseNetworking
 + (void)postLikeVideo:(NSString *)token
-               userID:(NSNumber *)uid
-              videoID:(NSNumber *)vid
+               userID:(NSInteger )uid
+              videoID:(NSInteger )vid
      completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
+
 @end
 
 NS_ASSUME_NONNULL_END

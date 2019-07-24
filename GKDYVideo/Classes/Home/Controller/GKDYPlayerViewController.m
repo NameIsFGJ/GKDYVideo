@@ -8,7 +8,7 @@
 
 #import "GKDYPlayerViewController.h"
 
-@interface GKDYPlayerViewController ()
+@interface GKDYPlayerViewController ()<GKDYVideoViewDelegate>
 @property (strong, nonatomic)UIView *mainView;
 @end
 
@@ -33,6 +33,23 @@
     [super viewWillAppear:animated];
 }
 
+
+#pragma mark Delegate
+- (void)videoView:(GKDYVideoView *)videoView didClickIcon:(IndexModel *)videoModel;
+{
+    NSLog(@" 点击了头像");
+}
+- (void)videoView:(GKDYVideoView *)videoView didClickPraise:(IndexModel *)videoModel{
+    NSLog(@"点击了赞");
+}
+- (void)videoView:(GKDYVideoView *)videoView didClickComment:(IndexModel *)videoModel
+{
+    
+}
+- (void)videoView:(GKDYVideoView *)videoView didClickShare:(IndexModel *)videoModel
+{
+    
+}
 - (void)dealloc {
     [self.videoView destoryPlayer];
 }
@@ -41,6 +58,7 @@
 - (GKDYVideoView *)videoView {
     if (!_videoView) {
         _videoView = [[GKDYVideoView alloc] initWithVC:self isPushed:NO];
+        _videoView.delegate = self;
     }
     return _videoView;
 }

@@ -28,8 +28,7 @@
 // 分类
 #import "NSObject+HUD.h"
 #import "UIColor+Category.h"
-
 #import "User.h"
-
-
+#import "UIViewController+Category.h"
+#import "UIView+Acategory.h"
 #endif /* VerdorHeader_h */

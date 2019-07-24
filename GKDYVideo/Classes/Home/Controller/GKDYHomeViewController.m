@@ -72,10 +72,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
-    // 取消push代理
-   // self.gk_pushDelegate = nil;
-    
+
     [self.playerVC.videoView pause];
 }
 
