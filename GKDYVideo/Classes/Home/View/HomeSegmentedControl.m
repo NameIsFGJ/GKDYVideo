@@ -18,7 +18,6 @@
     self.selectedSegmentIndex = 0;
     self.momentary = NO;
 
-
   // 文字
     UIFont *font = [UIFont systemFontOfSize:16];
     UIColor*textColor = [UIColor lightGrayColor];

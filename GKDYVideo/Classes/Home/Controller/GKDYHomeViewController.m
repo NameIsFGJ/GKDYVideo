@@ -29,9 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   // self.gk_navigationBar.hidden    = YES;
-    
+
     [self.view addSubview:self.mainScrolView];
     
     self.childVCs = @[ self.playerVC,self.searchVC];
@@ -55,13 +53,10 @@
     [super viewWillAppear:animated];
     
     if (self.mainScrolView.contentOffset.x == kWindowWidth) {
-       // self.gk_statusBarHidden = YES;
+       
     }else {
-       // self.gk_statusBarHidden = NO;
+      
     }
-    
-    // 设置左滑push代理
- //   self.gk_pushDelegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -88,7 +83,6 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     // 滑动结束，如果是播放页则恢复播放
     if (scrollView.contentOffset.x == kWindowWidth) {
-      //  self.gk_statusBarHidden = YES;
         
         [self.playerVC.videoView resume];
     }

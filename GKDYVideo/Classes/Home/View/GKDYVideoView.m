@@ -9,10 +9,6 @@
 #import "GKDYVideoView.h"
 #import "GKDYVideoPlayer.h"
 #import "LikeVideoNewtworking.h"
-#import "AppDelegate.h"
-#import "LoginViewController.h"
-#import "BaseNavigationController.h"
-#import "LikeVideoNewtworking.h"
 
 @interface GKDYVideoView()<UIScrollViewDelegate, GKDYVideoPlayerDelegate, GKDYVideoControlViewDelegate>
 
@@ -87,7 +83,6 @@
 - (void)setModels:(NSArray *)models index:(NSInteger)index {
     [self.videos removeAllObjects];
     [self.videos addObjectsFromArray:models];
-    //{0, 1238}, {375, 619}}
     self.index = index;
     self.currentPlayIndex = index;
     
@@ -332,7 +327,8 @@
 
 #pragma mark - GKDYVideoControlViewDelegate
 - (void)controlViewDidClickSelf:(GKDYVideoControlView *)controlView {
-    if (self.player.isPlaying) {
+    if (self.player.isPlaying)
+    {
         [self.player pause];
     }else {
         [self.player resume];
@@ -341,70 +337,36 @@
 
 - (void)controlViewDidClickIcon:(GKDYVideoControlView *)controlView
 {
-    
-   // [self islogin];
-    //[GKMessageTool showText:@"点击头像"];
-    // if ([self.delegate respondsToSelector:@selector(videoView:didClickIcon:)]) {
-  //  [self.delegate videoView:self didClickIcon:controlView.model];
-   
-    if ([self.delegate respondsToSelector:@selector(controlViewDidClickIcon:)]) {
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickIcon:)]) {
         [self.delegate videoView:self didClickIcon:controlView.model];
     }
 }
 
-
 - (void)controlViewDidClickPriase:(GKDYVideoControlView *)controlView
 {
-    if ([self.delegate respondsToSelector:@selector(controlViewDidClickPriase:)])
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickPraise:)])
     {
         [self.delegate videoView:self didClickPraise:controlView.model];
-        
     }
-//    [self islogin];
-//    [GKMessageTool showText:@"点赞"];
-//    IndexModel *indexModel = controlView.model;
-//   // NSNumber *userID = [NSNumber numberWithInteger:[kUser.user_id integerValue]];
-//    NSLog(@"kUser.u3434ser_id =%@",kUser.user_id);
-//   // NSNumber *videoID = [NSNumber numberWithInteger:indexModel.identify];
-//    [LikeVideoNewtworking postLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:indexModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
-//        NSLog(@"model.34msg  =%@",model.msg);
-//    }];
-//
-//    if (kUser.user_id.length >=1)
-//    {
-//
-//    }
-  
 }
 
 - (void)controlViewDidClickComment:(GKDYVideoControlView *)controlView
 {
-    [self islogin];
-    [GKMessageTool showText:@"评论"];
-    
-    [controlView.commentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
-        make.height.mas_equalTo(430);
-    }];
-}
-
-- (void)controlViewDidClickShare:(GKDYVideoControlView *)controlView {
-    [self islogin];
-    [GKMessageTool showText:@"分享"];
-}
-
-
-- (void)islogin
-{
-    if (![User isLogin])
-    {
-        LoginViewController *loginVC = [[LoginViewController alloc]init];
-        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:loginVC];
-        [self.viewController presentViewController:nav animated:YES completion:nil];
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickComment:)]) {
+        [self.delegate videoView:self didClickComment:controlView.model];
     }
 }
 
+- (void)controlViewDidClickShare:(GKDYVideoControlView *)controlView {
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickShare:)]) {
+        [self.delegate videoView:self didClickShare:controlView.model];
+    }
+}
+- (void)controlViewDidClickFollow:(GKDYVideoControlView *)controlView{
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickFollow:)]) {
+        [self.delegate videoView:self didClickFollow:controlView.model];
+    }
+}
 
 #pragma mark - lazy load
 - (GKDYVideoViewModel *)viewModel {

@@ -10,12 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Data : NSObject
-@property (strong, nonatomic)NSString *msg;
-@property (assign, nonatomic)NSInteger status;
-@property (strong, nonatomic)NSString *result;
-@end
-
 @interface LikeVideoModel : BaseModel
 @property (strong, nonatomic)NSString *msg;
 @property (assign, nonatomic)NSInteger status;

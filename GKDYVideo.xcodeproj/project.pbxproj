@@ -28,6 +28,18 @@
 		79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62ED2157405400101773 /* GKDYVideoViewModel.m */; };
 		79CC62F52158E44300101773 /* GKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62F42158E44300101773 /* GKNetworking.m */; };
 		79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */; };
+		9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E14922EA8B5B00FFFCF0 /* ShareView.m */; };
+		9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E14D22EAAD1400FFFCF0 /* FollowingViewController.m */; };
+		9113E15622EAD87700FFFCF0 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E15522EAD87700FFFCF0 /* SearchView.m */; };
+		9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E15822EAE57F00FFFCF0 /* BaseViewController.m */; };
+		9113E15C22EAE64E00FFFCF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E15B22EAE64E00FFFCF0 /* SearchViewController.m */; };
+		9113E16222EAF20000FFFCF0 /* SearchTogetherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16122EAF20000FFFCF0 /* SearchTogetherViewController.m */; };
+		9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16422EAF21E00FFFCF0 /* SearchUserViewController.m */; };
+		9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16722EAF23600FFFCF0 /* SearchMusicViewController.m */; };
+		9113E16B22EAF26100FFFCF0 /* SearchTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16A22EAF26100FFFCF0 /* SearchTopicViewController.m */; };
+		9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16D22EAFB2000FFFCF0 /* WMMagicScrollView.m */; };
+		9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16F22EAFB2000FFFCF0 /* WMStickyPageController.m */; };
+		9113E17522EAFB6F00FFFCF0 /* SearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E17422EAFB6F00FFFCF0 /* SearchMainViewController.m */; };
 		9116615522E18FAA00A5F9C2 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116614822E18FAA00A5F9C2 /* UIImage+Category.m */; };
 		9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116614D22E18FAA00A5F9C2 /* UIDevice+category.m */; };
 		9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116614E22E18FAA00A5F9C2 /* NSBundle+category.m */; };
@@ -38,6 +50,8 @@
 		9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116615E22E19BE500A5F9C2 /* BaseNetworking.m */; };
 		9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */; };
 		9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */; };
+		9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */; };
+		9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */; };
 		9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45922E8872D00875B17 /* GetVideoCommentView.m */; };
 		9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */; };
 		914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034D122E5DDF5006F1699 /* LikeVideoNewtworking.m */; };
@@ -130,6 +144,30 @@
 		79CC62F92158F2BB00101773 /* GKDYPersonalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYPersonalModel.h; sourceTree = "<group>"; };
 		79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYPersonalModel.m; sourceTree = "<group>"; };
 		81CC8427C037D4E8A4B61B49 /* Pods_GKDYVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKDYVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9113E14822EA8B5B00FFFCF0 /* ShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		9113E14922EA8B5B00FFFCF0 /* ShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		9113E14C22EAAD1400FFFCF0 /* FollowingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
+		9113E14D22EAAD1400FFFCF0 /* FollowingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowingViewController.m; sourceTree = "<group>"; };
+		9113E15422EAD87700FFFCF0 /* SearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		9113E15522EAD87700FFFCF0 /* SearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		9113E15722EAE57F00FFFCF0 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9113E15822EAE57F00FFFCF0 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9113E15A22EAE64E00FFFCF0 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		9113E15B22EAE64E00FFFCF0 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		9113E16022EAF20000FFFCF0 /* SearchTogetherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTogetherViewController.h; sourceTree = "<group>"; };
+		9113E16122EAF20000FFFCF0 /* SearchTogetherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTogetherViewController.m; sourceTree = "<group>"; };
+		9113E16322EAF21E00FFFCF0 /* SearchUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserViewController.h; sourceTree = "<group>"; };
+		9113E16422EAF21E00FFFCF0 /* SearchUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserViewController.m; sourceTree = "<group>"; };
+		9113E16622EAF23500FFFCF0 /* SearchMusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMusicViewController.h; sourceTree = "<group>"; };
+		9113E16722EAF23600FFFCF0 /* SearchMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMusicViewController.m; sourceTree = "<group>"; };
+		9113E16922EAF26100FFFCF0 /* SearchTopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTopicViewController.h; sourceTree = "<group>"; };
+		9113E16A22EAF26100FFFCF0 /* SearchTopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTopicViewController.m; sourceTree = "<group>"; };
+		9113E16D22EAFB2000FFFCF0 /* WMMagicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMagicScrollView.m; sourceTree = "<group>"; };
+		9113E16E22EAFB2000FFFCF0 /* WMMagicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMagicScrollView.h; sourceTree = "<group>"; };
+		9113E16F22EAFB2000FFFCF0 /* WMStickyPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMStickyPageController.m; sourceTree = "<group>"; };
+		9113E17022EAFB2000FFFCF0 /* WMStickyPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMStickyPageController.h; sourceTree = "<group>"; };
+		9113E17322EAFB6F00FFFCF0 /* SearchMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMainViewController.h; sourceTree = "<group>"; };
+		9113E17422EAFB6F00FFFCF0 /* SearchMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMainViewController.m; sourceTree = "<group>"; };
 		9116614722E18FAA00A5F9C2 /* NSBundle+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+category.h"; sourceTree = "<group>"; };
 		9116614822E18FAA00A5F9C2 /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		9116614922E18FAA00A5F9C2 /* AppDelegate+Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Vendor.h"; sourceTree = "<group>"; };
@@ -150,6 +188,10 @@
 		9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSegmentedControl.m; sourceTree = "<group>"; };
 		9116616922E1B9CA00A5F9C2 /* GKDYPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYPageViewController.h; sourceTree = "<group>"; };
 		9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYPageViewController.m; sourceTree = "<group>"; };
+		9128513922E9996100AF0DE6 /* GetVideoCommentNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentNetworking.h; sourceTree = "<group>"; };
+		9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentNetworking.m; sourceTree = "<group>"; };
+		9128513C22E999BA00AF0DE6 /* GetVideoCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentModel.h; sourceTree = "<group>"; };
+		9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentModel.m; sourceTree = "<group>"; };
 		912F4DAC22E18DF3004CF0DF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		912F4DAD22E18DF3004CF0DF /* AppInfoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoConstant.h; sourceTree = "<group>"; };
 		912F4DAE22E18DF3004CF0DF /* ColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorConstants.h; sourceTree = "<group>"; };
@@ -280,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				79CC62C521573AB400101773 /* Classes */,
-				79CC629B2157377600101773 /* Assets.xcassets */,
 				79CC629D2157377600101773 /* LaunchScreen.storyboard */,
 				79CC62A02157377600101773 /* Info.plist */,
 				79CC62A12157377600101773 /* main.m */,
@@ -342,14 +383,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		79CC62C721573B2700101773 /* Tools */ = {
+		79CC62C721573B2700101773 /* DouYin */ = {
 			isa = PBXGroup;
 			children = (
 				79CC62F22158E42D00101773 /* GKNetworking */,
 				79CC62DC21573C9B00101773 /* GKDYVideoPlayer */,
 				79CC62C821573B4700101773 /* GKSliderView */,
 			);
-			path = Tools;
+			path = DouYin;
 			sourceTree = "<group>";
 		};
 		79CC62C821573B4700101773 /* GKSliderView */ = {
@@ -364,14 +405,13 @@
 		79CC62D821573C6200101773 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				79CC62CC21573BD700101773 /* GKDYBaseViewController.h */,
-				79CC62CD21573BD700101773 /* GKDYBaseViewController.m */,
+				9113E14B22EAAAFB00FFFCF0 /* SearchViewController */,
 				9116616922E1B9CA00A5F9C2 /* GKDYPageViewController.h */,
 				9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */,
+				9113E14C22EAAD1400FFFCF0 /* FollowingViewController.h */,
+				9113E14D22EAAD1400FFFCF0 /* FollowingViewController.m */,
 				79CC62CF21573BFD00101773 /* GKDYHomeViewController.h */,
 				79CC62D021573BFD00101773 /* GKDYHomeViewController.m */,
-				79CC62D221573C2300101773 /* GKDYSearchViewController.h */,
-				79CC62D321573C2300101773 /* GKDYSearchViewController.m */,
 				79CC62D521573C2C00101773 /* GKDYPlayerViewController.h */,
 				79CC62D621573C2C00101773 /* GKDYPlayerViewController.m */,
 				606A77DC215DFCB100DC2F63 /* GKDYPersonalViewController.h */,
@@ -383,6 +423,7 @@
 		79CC62D921573C6900101773 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9113E15322EAD86100FFFCF0 /* SearchView */,
 				79CC62E321573FC500101773 /* GKDYScrollView.h */,
 				79CC62E421573FC500101773 /* GKDYScrollView.m */,
 				79CC62E62157401E00101773 /* GKDYVideoView.h */,
@@ -395,6 +436,8 @@
 				9136B45922E8872D00875B17 /* GetVideoCommentView.m */,
 				9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */,
 				9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */,
+				9113E14822EA8B5B00FFFCF0 /* ShareView.h */,
+				9113E14922EA8B5B00FFFCF0 /* ShareView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +453,8 @@
 				9149DD8422DEF4770027417D /* IndexModel.m */,
 				914034D622E5DF46006F1699 /* LikeVideoModel.h */,
 				914034D722E5DF46006F1699 /* LikeVideoModel.m */,
+				9128513C22E999BA00AF0DE6 /* GetVideoCommentModel.h */,
+				9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +486,47 @@
 			path = GKNetworking;
 			sourceTree = "<group>";
 		};
+		9113E14B22EAAAFB00FFFCF0 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				79CC62D221573C2300101773 /* GKDYSearchViewController.h */,
+				79CC62D321573C2300101773 /* GKDYSearchViewController.m */,
+				9113E15A22EAE64E00FFFCF0 /* SearchViewController.h */,
+				9113E15B22EAE64E00FFFCF0 /* SearchViewController.m */,
+				9113E17322EAFB6F00FFFCF0 /* SearchMainViewController.h */,
+				9113E17422EAFB6F00FFFCF0 /* SearchMainViewController.m */,
+				9113E16022EAF20000FFFCF0 /* SearchTogetherViewController.h */,
+				9113E16122EAF20000FFFCF0 /* SearchTogetherViewController.m */,
+				9113E16322EAF21E00FFFCF0 /* SearchUserViewController.h */,
+				9113E16422EAF21E00FFFCF0 /* SearchUserViewController.m */,
+				9113E16622EAF23500FFFCF0 /* SearchMusicViewController.h */,
+				9113E16722EAF23600FFFCF0 /* SearchMusicViewController.m */,
+				9113E16922EAF26100FFFCF0 /* SearchTopicViewController.h */,
+				9113E16A22EAF26100FFFCF0 /* SearchTopicViewController.m */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		9113E15322EAD86100FFFCF0 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				9113E15422EAD87700FFFCF0 /* SearchView.h */,
+				9113E15522EAD87700FFFCF0 /* SearchView.m */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		9113E16C22EAFB0B00FFFCF0 /* WMPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9113E16E22EAFB2000FFFCF0 /* WMMagicScrollView.h */,
+				9113E16D22EAFB2000FFFCF0 /* WMMagicScrollView.m */,
+				9113E17022EAFB2000FFFCF0 /* WMStickyPageController.h */,
+				9113E16F22EAFB2000FFFCF0 /* WMStickyPageController.m */,
+			);
+			path = WMPageViewController;
+			sourceTree = "<group>";
+		};
 		9116614622E18FAA00A5F9C2 /* Categroy */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +555,8 @@
 		9116615C22E19BBD00A5F9C2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				79CC62CC21573BD700101773 /* GKDYBaseViewController.h */,
+				79CC62CD21573BD700101773 /* GKDYBaseViewController.m */,
 				91FD85D622E5B81000EBF3B2 /* BaseNavigationController.h */,
 				91FD85D722E5B81000EBF3B2 /* BaseNavigationController.m */,
 				915BC62822E00DBF00894F64 /* GKDYMainViewController.h */,
@@ -479,6 +567,8 @@
 				9116615E22E19BE500A5F9C2 /* BaseNetworking.m */,
 				914034D322E5DECE006F1699 /* BaseModel.h */,
 				914034D422E5DECE006F1699 /* BaseModel.m */,
+				9113E15722EAE57F00FFFCF0 /* BaseViewController.h */,
+				9113E15822EAE57F00FFFCF0 /* BaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -548,6 +638,8 @@
 				914034DD22E5EFE2006F1699 /* FlollowingNetworking.m */,
 				914034DF22E5F385006F1699 /* UnflollowingNetworking.h */,
 				914034E022E5F385006F1699 /* UnflollowingNetworking.m */,
+				9128513922E9996100AF0DE6 /* GetVideoCommentNetworking.h */,
+				9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -633,7 +725,8 @@
 		912F4D9F22E18C94004CF0DF /* TheThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				79CC62C721573B2700101773 /* Tools */,
+				9113E16C22EAFB0B00FFFCF0 /* WMPageViewController */,
+				79CC62C721573B2700101773 /* DouYin */,
 			);
 			path = TheThirdPart;
 			sourceTree = "<group>";
@@ -641,6 +734,7 @@
 		912F4DA022E18C94004CF0DF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				79CC629B2157377600101773 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -969,15 +1063,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9113E16222EAF20000FFFCF0 /* SearchTogetherViewController.m in Sources */,
+				9113E16B22EAF26100FFFCF0 /* SearchTopicViewController.m in Sources */,
 				79CC62CE21573BD700101773 /* GKDYBaseViewController.m in Sources */,
+				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
 				91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
+				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
+				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
 				91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */,
+				9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */,
 				91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */,
 				91C9C1D222E69D7E00D0A87E /* User.m in Sources */,
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
@@ -987,7 +1087,9 @@
 				79CC62D421573C2300101773 /* GKDYSearchViewController.m in Sources */,
 				9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */,
 				91C9C1F322E70DE600D0A87E /* LoginBaseModel.m in Sources */,
+				9113E15622EAD87700FFFCF0 /* SearchView.m in Sources */,
 				914034D522E5DECE006F1699 /* BaseModel.m in Sources */,
+				9113E15C22EAE64E00FFFCF0 /* SearchViewController.m in Sources */,
 				9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */,
 				79CC62EB2157402800101773 /* GKDYVideoControlView.m in Sources */,
 				91ED83C622DF5C9C00B124E0 /* MessageViewController.m in Sources */,
@@ -1000,6 +1102,7 @@
 				91ED83C322DF5C8D00B124E0 /* AddGoodsViewController.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
+				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				914034D822E5DF46006F1699 /* LikeVideoModel.m in Sources */,
 				79CC62F52158E44300101773 /* GKNetworking.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
@@ -1011,14 +1114,19 @@
 				79CC62CB21573B4700101773 /* GKSliderView.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
 				91611DCA22E849DF00642E47 /* SetViewController.m in Sources */,
+				9113E17522EAFB6F00FFFCF0 /* SearchMainViewController.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
+				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
+				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
+				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,
+				9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */,
 				9116615522E18FAA00A5F9C2 /* UIImage+Category.m in Sources */,
 				9116615922E18FAA00A5F9C2 /* UIColor+Category.m in Sources */,
 				9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */,
@@ -1185,8 +1293,9 @@
 			baseConfigurationReference = ACB89D940248F84479D31DDA /* Pods-GKDYVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X52753HQNM;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GKDYVideo/Classes/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = GKDYVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1196,7 +1305,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manfan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = aystfm_dev_test;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1206,8 +1315,9 @@
 			baseConfigurationReference = 126D76C9517C38C3B7C81D53 /* Pods-GKDYVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X52753HQNM;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GKDYVideo/Classes/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = GKDYVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1217,7 +1327,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manfan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = aystfm_dev_test;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

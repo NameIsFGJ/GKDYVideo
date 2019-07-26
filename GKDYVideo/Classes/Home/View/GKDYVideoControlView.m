@@ -9,10 +9,6 @@
 #import "GKDYVideoControlView.h"
 #import "GKSliderView.h"
 
-@interface GKDYVideoItemButton : UIButton
-
-@end
-
 @implementation GKDYVideoItemButton
 
 - (void)layoutSubviews {
@@ -40,9 +36,6 @@
 @interface GKDYVideoControlView()
 
 @property (nonatomic, strong) UIImageView           *iconView;
-@property (nonatomic, strong) GKDYVideoItemButton   *praiseBtn;
-@property (nonatomic, strong) GKDYVideoItemButton   *commentBtn;
-@property (nonatomic, strong) GKDYVideoItemButton   *shareBtn;
 
 @property (nonatomic, strong) UILabel               *nameLabel;
 @property (nonatomic, strong) UILabel               *contentLabel;
@@ -176,8 +169,13 @@
     [self.commentBtn setTitle:[NSString stringWithFormat:@"%ld",model.c_count] forState:UIControlStateNormal];
     //分享
     [self.shareBtn setTitle:[NSString stringWithFormat:@"%ld",model.share_count] forState:UIControlStateNormal];
+    
     NSString *praiseImag = model.is_like ? @"ss_icon_star_selected":@"ss_icon_star_normal";
     [self.praiseBtn setImage:[UIImage imageNamed:praiseImag] forState:UIControlStateNormal];
+    
+    //关注按钮
+   // self.followingButton.hidden = model.is_like? YES: NO;
+    
 }
 
 #pragma mark - Public Methods
@@ -229,6 +227,12 @@
 - (void)shareBtnClick:(id)sender {
     if ([self.delegate respondsToSelector:@selector(controlViewDidClickShare:)]) {
         [self.delegate controlViewDidClickShare:self];
+    }
+}
+
+- (void)followBtnClick:(id)sender{
+    if ([self.delegate respondsToSelector:@selector(controlViewDidClickFollow:)]) {
+        [self.delegate controlViewDidClickFollow:self];
     }
 }
 
@@ -366,7 +370,7 @@
         _followingButton.titleLabel.font = [UIFont systemFontOfSize:20 *ADAPTATIONRATIO];
         _followingButton.layer.cornerRadius = 3;
         _followingButton.layer.masksToBounds = YES;
-        [_followingButton addTarget:self action:@selector(iconDidClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_followingButton addTarget:self action:@selector(followBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _followingButton;
 }

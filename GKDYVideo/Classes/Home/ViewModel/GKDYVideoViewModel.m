@@ -31,20 +31,20 @@
 }
 
 - (void)videoListRequestWithSuccess:(void (^)(NSArray * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    params[@"new_recommend_type"] = @"3";
-    params[@"pn"] = @(self.pn);
-    params[@"dl"] = @"505F80E58F3817291B7768CE59A90AF8";
-    params[@"sign"] = @"3DD6882F963C25F5FA1ECA558F8CEF48";
-    params[@"_timestamp"] = @"1537782764313";
-    params[@"timestamp"] = @"1537782764313";
-    params[@"net_type"] = @"1";
-    //https://mf.zjchuanwen.com/api/video/index?page=1
+    
     // 推荐列表
-   //NSString *url = @"http://c.tieba.baidu.com/c/f/nani/recommend/list";
-    NSString *url = @"https://mf.zjchuanwen.com/api/video/index?page=1";
-    NSDictionary *param = @{@"page":@1};
-    [GKNetworking get:url params:param success:^(id  _Nonnull responseObject) {
+    NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/index"];
+    
+    NSDictionary *params;
+    if ([User isLogin]){
+        params = @{@"page":@1,@"user_id":kUser.user_id};
+    }else{
+        params =@{@"page":@1};
+    }
+    
+    NSLog(@"params  =%@",params);
+    
+    [GKNetworking get:url params:params success:^(id  _Nonnull responseObject) {
         //----------------------------------
         NSMutableArray *itemsArray = [NSMutableArray array];
         

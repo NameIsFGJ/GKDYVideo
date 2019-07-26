@@ -9,11 +9,12 @@
 #import "GKDYPageViewController.h"
 #import "HomeSegmentedControl.h"
 #import "GKDYPlayerViewController.h"
-#import "GKDYSearchViewController.h"
+#import "FollowingViewController.h"
+#import "SearchViewController.h"
 @interface GKDYPageViewController ()
 @property (strong, nonatomic)NSArray *itemsArray;
 @property (strong, nonatomic)GKDYPlayerViewController *playVC;
-@property (strong, nonatomic)GKDYSearchViewController *searchVC;
+@property (strong, nonatomic)FollowingViewController *followVC;
 @property (strong, nonatomic)GKDYBaseViewController *selectVC;
 //property (strong, nonatomic)HomeSegmentedControl *control;
 @property (assign, nonatomic)NSInteger selectIndex;
@@ -23,18 +24,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   // self.gk_statusBarHidden = YES;
-    
+
     [self addChildViewController:self.playVC];
-    [self addChildViewController:self.searchVC];
+    [self addChildViewController:self.followVC];
+    
     self.selectIndex = 0;
+    //  推荐与 关注
     HomeSegmentedControl *control1111 = [[HomeSegmentedControl alloc]initWithItems:@[@"推荐 ",@"关注"]];
     control1111.frame = CGRectMake(0, 0, 100, 30);
      [control1111 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = control1111;
     self.selectIndex = 0;
     control1111.selectedSegmentIndex = 0;
+    
+    //搜索
+    UIButton *btn = [[UIButton alloc]init];
+    btn.frame =CGRectMake(0, 0, 20, 20);//frame 不显示
+    [btn setImage:[UIImage imageNamed:@"search"] forState:(UIControlStateNormal)];//不起作用
+    [btn addTarget:self action:@selector(pushSearchViewController) forControlEvents:(UIControlEventTouchUpInside)];//不起作用
+    UIView *btnView = [[UIView alloc]initWithFrame:btn.frame];
+    [btnView addSubview:btn];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:btnView];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -48,6 +59,7 @@
 {
     [super viewWillAppear:animated];
   //  self.gk_navLineHidden = NO;
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -56,6 +68,14 @@
     // 取消push代理
    // self.gk_pushDelegate = nil;
     [self.playVC.videoView pause];
+}
+
+#pragma mark Action
+
+- (void)pushSearchViewController
+{
+    SearchViewController *searchVC = [[SearchViewController alloc]init];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 - (void)buttonAction:(HomeSegmentedControl *)control
@@ -89,16 +109,12 @@
     }
     return _playVC;
 }
-
-- (GKDYSearchViewController *)searchVC
+- (FollowingViewController *)followVC
 {
-    if (!_searchVC)
-    {
-        _searchVC = [GKDYSearchViewController new];
-       
+    if (!_followVC) {
+        _followVC = [FollowingViewController new];
     }
-    return _searchVC;
+    return _followVC;
 }
-
 
 @end

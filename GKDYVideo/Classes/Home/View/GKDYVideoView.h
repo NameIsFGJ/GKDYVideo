@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)videoView:(GKDYVideoView *)videoView didClickPraise:(IndexModel *)videoModel;
 - (void)videoView:(GKDYVideoView *)videoView didClickComment:(IndexModel *)videoModel;
 - (void)videoView:(GKDYVideoView *)videoView didClickShare:(IndexModel *)videoModel;
+- (void)videoView:(GKDYVideoView *)videoView didClickFollow:(IndexModel *)videoModel;
 
 @end
 

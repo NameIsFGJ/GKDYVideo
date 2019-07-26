@@ -10,11 +10,11 @@
 
 @implementation UnlikeVideoNetworking
 + (void)postUnLikeVideo:(NSString *)token
-                 userID:(NSNumber *)uid
-                videoID:(NSNumber *)vid
+                 userID:(NSInteger )uid
+                videoID:(NSInteger )vid
        completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;{
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/unlikeVideo"];
-    NSDictionary *dic = @{@"user_token":token,@"user_id":uid,@"v_id":vid};
+    NSDictionary *dic = @{@"user_token":token,@"user_id":@(uid),@"v_id":@(vid)};
     [self POST:urlStr parameters:dic progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
