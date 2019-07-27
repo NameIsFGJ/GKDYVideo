@@ -31,9 +31,10 @@
         
         self.searchTextField = [[UITextField alloc]init];
         [self addSubview:self.searchTextField];
-        self.searchTextField.frame = CGRectMake(CGRectGetMaxX(lineView.frame)+5, 12, 150, 12);
+        self.searchTextField.frame = CGRectMake(CGRectGetMaxX(lineView.frame)+10, 12, 150, 12);
         self.searchTextField.placeholder = @"搜索您要找的内容";
-        
+        [self.searchTextField setValue:[UIFont boldSystemFontOfSize:14.f] forKeyPath:@"_placeholderLabel.font"];
+        self.searchTextField.font = kFontSize(14);
         UIButton *cleanSearchButton = [UIButton buttonWithType:UIButtonTypeCustom];
         cleanSearchButton.frame = CGRectMake(240, 12, 15, 15);
         [self addSubview:cleanSearchButton];

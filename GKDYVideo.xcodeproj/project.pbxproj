@@ -66,6 +66,7 @@
 		915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */; };
 		91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC622E8316000642E47 /* UIView+Acategory.m */; };
 		91611DCA22E849DF00642E47 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC922E849DF00642E47 /* SetViewController.m */; };
+		91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */; };
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91C9C1D222E69D7E00D0A87E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D122E69D7E00D0A87E /* User.m */; };
 		91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */; };
@@ -224,6 +225,8 @@
 		91611DC622E8316000642E47 /* UIView+Acategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Acategory.m"; sourceTree = "<group>"; };
 		91611DC822E849DF00642E47 /* SetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		91611DC922E849DF00642E47 /* SetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		91B2F52F22EC84CB0030B6C2 /* SearchHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryTableViewCell.h; sourceTree = "<group>"; };
+		91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryTableViewCell.m; sourceTree = "<group>"; };
 		91BBB70822E7F2460060ADDD /* UIViewController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
 		91BBB70922E7F2460060ADDD /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
 		91C9C1D022E69D7E00D0A87E /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -512,6 +515,8 @@
 			children = (
 				9113E15422EAD87700FFFCF0 /* SearchView.h */,
 				9113E15522EAD87700FFFCF0 /* SearchView.m */,
+				91B2F52F22EC84CB0030B6C2 /* SearchHistoryTableViewCell.h */,
+				91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -1105,6 +1110,7 @@
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				914034D822E5DF46006F1699 /* LikeVideoModel.m in Sources */,
 				79CC62F52158E44300101773 /* GKNetworking.m in Sources */,
+				91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
 				9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */,
 				915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */,

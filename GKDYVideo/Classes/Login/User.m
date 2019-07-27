@@ -13,7 +13,7 @@ NSString * const kMobile = @"com.manfan.mobile";
 NSString * const knick_name = @"com.manfan.nick_name";
 NSString * const khead_pic = @"com.manfan.head_pic";
 NSString * const kuser_money = @"com.manfan.user_money";
-
+NSString * const khistory =@"khistory";
 @implementation Info
 
 @end
@@ -32,12 +32,13 @@ static User *sharedInstance = nil;
 
 + (BOOL)isLogin;
 {
-    kUser.user_token = [[NSUserDefaults standardUserDefaults] stringForKey:kuser_token];
-    kUser.user_id = [[NSUserDefaults standardUserDefaults] stringForKey:kuser_id];
-    kUser.user_money = [[NSUserDefaults standardUserDefaults] stringForKey:kuser_money];
-    kUser.mobile = [[NSUserDefaults standardUserDefaults] stringForKey:kMobile];
-    kUser.nick_name = [[NSUserDefaults standardUserDefaults] stringForKey:knick_name];
-    kUser.head_pic = [[NSUserDefaults standardUserDefaults] stringForKey:khead_pic];
+    kUser.user_token =   [[NSUserDefaults standardUserDefaults] stringForKey:kuser_token];
+    kUser.user_id =      [[NSUserDefaults standardUserDefaults] stringForKey:kuser_id];
+    kUser.user_money =   [[NSUserDefaults standardUserDefaults] stringForKey:kuser_money];
+    kUser.mobile =       [[NSUserDefaults standardUserDefaults] stringForKey:kMobile];
+    kUser.nick_name =    [[NSUserDefaults standardUserDefaults] stringForKey:knick_name];
+    kUser.head_pic =     [[NSUserDefaults standardUserDefaults] stringForKey:khead_pic];
+    kUser.history =      [[NSUserDefaults standardUserDefaults] arrayForKey:khistory];
     
     return kUser.user_token != nil && kUser.user_token.length > 0;
 }
@@ -51,6 +52,7 @@ static User *sharedInstance = nil;
     }else{
          [[NSUserDefaults standardUserDefaults] setObject:_user_token forKey:kuser_token];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setMobile:(NSString *)mobile
@@ -62,6 +64,7 @@ static User *sharedInstance = nil;
     }else{
         [[NSUserDefaults standardUserDefaults] setObject:_mobile forKey:kMobile];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setUser_id:(NSString *)user_id
@@ -73,6 +76,7 @@ static User *sharedInstance = nil;
     }else{
         [[NSUserDefaults standardUserDefaults] setObject:_user_id forKey:kuser_id];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setHead_pic:(NSString *)head_pic
@@ -84,6 +88,7 @@ static User *sharedInstance = nil;
     }else{
         [[NSUserDefaults standardUserDefaults] setObject:_head_pic forKey:khead_pic];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setNick_name:(NSString *)nick_name
@@ -95,6 +100,7 @@ static User *sharedInstance = nil;
     }else{
         [[NSUserDefaults standardUserDefaults] setObject:_nick_name forKey:knick_name];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setUser_money:(NSString *)user_money
@@ -106,6 +112,30 @@ static User *sharedInstance = nil;
     }else{
          [[NSUserDefaults standardUserDefaults] setObject:_user_money forKey:kuser_money];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+- (void)setHistory:(NSArray *)history
+{
+    _history = history;
+    if (nil == history) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:khistory];
+    }else{
+        [[NSUserDefaults standardUserDefaults] setObject:history forKey:khistory];
+    }
+   
+}
+
+//- (void)setHistoryArray:(NSMutableArray *)historyArray
+//{
+//    _historyArray = historyArray;
+//    if (nil == historyArray)
+//    {
+//        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:khistory];
+//    }else{
+//        [[NSUserDefaults standardUserDefaults] setObject:historyArray forKey:khistory];
+//    }
+//    [NSUserDefaults standardUserDefaults];
+//}
 
 @end

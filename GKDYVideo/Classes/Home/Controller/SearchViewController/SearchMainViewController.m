@@ -8,6 +8,7 @@
 
 #import "SearchMainViewController.h"
 #import "SearchView.h"
+
 @interface SearchMainViewController ()
 
 @end
@@ -16,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 - (void)creatNav
 {

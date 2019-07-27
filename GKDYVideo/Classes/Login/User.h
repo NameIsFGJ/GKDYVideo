@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString * nick_name;
 @property (strong, nonatomic)NSString * head_pic;
 @property (strong, nonatomic)NSString * user_money;
+@property (strong, nonatomic)NSArray *  history;
 //@property (strong, nonatomic)NSString * city;
 //@property (strong, nonatomic)NSString * mf_num;
 //@property (assign, nonatomic)NSInteger is_edit;
