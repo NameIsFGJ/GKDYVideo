@@ -39,7 +39,6 @@
 		9113E16B22EAF26100FFFCF0 /* SearchTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16A22EAF26100FFFCF0 /* SearchTopicViewController.m */; };
 		9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16D22EAFB2000FFFCF0 /* WMMagicScrollView.m */; };
 		9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E16F22EAFB2000FFFCF0 /* WMStickyPageController.m */; };
-		9113E17522EAFB6F00FFFCF0 /* SearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E17422EAFB6F00FFFCF0 /* SearchMainViewController.m */; };
 		9116615522E18FAA00A5F9C2 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116614822E18FAA00A5F9C2 /* UIImage+Category.m */; };
 		9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116614D22E18FAA00A5F9C2 /* UIDevice+category.m */; };
 		9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116614E22E18FAA00A5F9C2 /* NSBundle+category.m */; };
@@ -75,6 +74,13 @@
 		91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1E822E6DFEF00D0A87E /* LoginViewController.m */; };
 		91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */; };
 		91C9C1F322E70DE600D0A87E /* LoginBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1F222E70DE600D0A87E /* LoginBaseModel.m */; };
+		91CC13D722ED620E00FF0C12 /* SearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC13D622ED620E00FF0C12 /* SearchMainViewController.m */; };
+		91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82222EE92E70065FB0B /* VideoCollectionViewCell.m */; };
+		91D2E82622EEB3F80065FB0B /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82522EEB3F80065FB0B /* UserTableViewCell.m */; };
+		91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82822EECA2E0065FB0B /* MusicTableViewCell.m */; };
+		91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */; };
+		91D2E82F22EEE85E0065FB0B /* SearchUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82E22EEE85E0065FB0B /* SearchUsers.m */; };
+		91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E83222EEE9C80065FB0B /* SearchUserModel.m */; };
 		91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83BF22DF5C7800B124E0 /* MarketViewController.m */; };
 		91ED83C322DF5C8D00B124E0 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83C222DF5C8D00B124E0 /* AddGoodsViewController.m */; };
 		91ED83C622DF5C9C00B124E0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83C522DF5C9C00B124E0 /* MessageViewController.m */; };
@@ -167,8 +173,6 @@
 		9113E16E22EAFB2000FFFCF0 /* WMMagicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMagicScrollView.h; sourceTree = "<group>"; };
 		9113E16F22EAFB2000FFFCF0 /* WMStickyPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMStickyPageController.m; sourceTree = "<group>"; };
 		9113E17022EAFB2000FFFCF0 /* WMStickyPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMStickyPageController.h; sourceTree = "<group>"; };
-		9113E17322EAFB6F00FFFCF0 /* SearchMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMainViewController.h; sourceTree = "<group>"; };
-		9113E17422EAFB6F00FFFCF0 /* SearchMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMainViewController.m; sourceTree = "<group>"; };
 		9116614722E18FAA00A5F9C2 /* NSBundle+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+category.h"; sourceTree = "<group>"; };
 		9116614822E18FAA00A5F9C2 /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		9116614922E18FAA00A5F9C2 /* AppDelegate+Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Vendor.h"; sourceTree = "<group>"; };
@@ -243,6 +247,20 @@
 		91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendRegisterCodeNetworking.m; sourceTree = "<group>"; };
 		91C9C1F122E70DE600D0A87E /* LoginBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginBaseModel.h; sourceTree = "<group>"; };
 		91C9C1F222E70DE600D0A87E /* LoginBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginBaseModel.m; sourceTree = "<group>"; };
+		91CC13D522ED620E00FF0C12 /* SearchMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMainViewController.h; sourceTree = "<group>"; };
+		91CC13D622ED620E00FF0C12 /* SearchMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMainViewController.m; sourceTree = "<group>"; };
+		91D2E82122EE92E70065FB0B /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
+		91D2E82222EE92E70065FB0B /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
+		91D2E82422EEB3F70065FB0B /* UserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		91D2E82522EEB3F80065FB0B /* UserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		91D2E82722EECA2E0065FB0B /* MusicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicTableViewCell.h; sourceTree = "<group>"; };
+		91D2E82822EECA2E0065FB0B /* MusicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicTableViewCell.m; sourceTree = "<group>"; };
+		91D2E82A22EED5290065FB0B /* TopicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicTableViewCell.h; sourceTree = "<group>"; };
+		91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
+		91D2E82D22EEE85E0065FB0B /* SearchUsers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUsers.h; sourceTree = "<group>"; };
+		91D2E82E22EEE85E0065FB0B /* SearchUsers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUsers.m; sourceTree = "<group>"; };
+		91D2E83122EEE9C80065FB0B /* SearchUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserModel.h; sourceTree = "<group>"; };
+		91D2E83222EEE9C80065FB0B /* SearchUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserModel.m; sourceTree = "<group>"; };
 		91ED83BE22DF5C7800B124E0 /* MarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
 		91ED83BF22DF5C7800B124E0 /* MarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
 		91ED83C122DF5C8D00B124E0 /* AddGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsViewController.h; sourceTree = "<group>"; };
@@ -448,6 +466,7 @@
 		79CC62DA21573C6E00101773 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91D2E83022EEE9100065FB0B /* SearchModel */,
 				79CC62E021573F3C00101773 /* GKDYVideoModel.h */,
 				79CC62E121573F3C00101773 /* GKDYVideoModel.m */,
 				79CC62F92158F2BB00101773 /* GKDYPersonalModel.h */,
@@ -496,8 +515,8 @@
 				79CC62D321573C2300101773 /* GKDYSearchViewController.m */,
 				9113E15A22EAE64E00FFFCF0 /* SearchViewController.h */,
 				9113E15B22EAE64E00FFFCF0 /* SearchViewController.m */,
-				9113E17322EAFB6F00FFFCF0 /* SearchMainViewController.h */,
-				9113E17422EAFB6F00FFFCF0 /* SearchMainViewController.m */,
+				91CC13D522ED620E00FF0C12 /* SearchMainViewController.h */,
+				91CC13D622ED620E00FF0C12 /* SearchMainViewController.m */,
 				9113E16022EAF20000FFFCF0 /* SearchTogetherViewController.h */,
 				9113E16122EAF20000FFFCF0 /* SearchTogetherViewController.m */,
 				9113E16322EAF21E00FFFCF0 /* SearchUserViewController.h */,
@@ -517,6 +536,14 @@
 				9113E15522EAD87700FFFCF0 /* SearchView.m */,
 				91B2F52F22EC84CB0030B6C2 /* SearchHistoryTableViewCell.h */,
 				91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */,
+				91D2E82122EE92E70065FB0B /* VideoCollectionViewCell.h */,
+				91D2E82222EE92E70065FB0B /* VideoCollectionViewCell.m */,
+				91D2E82422EEB3F70065FB0B /* UserTableViewCell.h */,
+				91D2E82522EEB3F80065FB0B /* UserTableViewCell.m */,
+				91D2E82722EECA2E0065FB0B /* MusicTableViewCell.h */,
+				91D2E82822EECA2E0065FB0B /* MusicTableViewCell.m */,
+				91D2E82A22EED5290065FB0B /* TopicTableViewCell.h */,
+				91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -635,6 +662,7 @@
 		912F4D9422E18C93004CF0DF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				91D2E83422EEEB090065FB0B /* SearchNetworking */,
 				914034D022E5DDF5006F1699 /* LikeVideoNewtworking.h */,
 				914034D122E5DDF5006F1699 /* LikeVideoNewtworking.m */,
 				914034D922E5EF6D006F1699 /* UnlikeVideoNetworking.h */,
@@ -897,6 +925,24 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		91D2E83022EEE9100065FB0B /* SearchModel */ = {
+			isa = PBXGroup;
+			children = (
+				91D2E83122EEE9C80065FB0B /* SearchUserModel.h */,
+				91D2E83222EEE9C80065FB0B /* SearchUserModel.m */,
+			);
+			path = SearchModel;
+			sourceTree = "<group>";
+		};
+		91D2E83422EEEB090065FB0B /* SearchNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				91D2E82D22EEE85E0065FB0B /* SearchUsers.h */,
+				91D2E82E22EEE85E0065FB0B /* SearchUsers.m */,
+			);
+			path = SearchNetworking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1071,16 +1117,20 @@
 				9113E16222EAF20000FFFCF0 /* SearchTogetherViewController.m in Sources */,
 				9113E16B22EAF26100FFFCF0 /* SearchTopicViewController.m in Sources */,
 				79CC62CE21573BD700101773 /* GKDYBaseViewController.m in Sources */,
+				91CC13D722ED620E00FF0C12 /* SearchMainViewController.m in Sources */,
 				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
+				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
 				91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
 				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
+				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
+				91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */,
 				91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */,
 				9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */,
 				91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */,
@@ -1107,7 +1157,9 @@
 				91ED83C322DF5C8D00B124E0 /* AddGoodsViewController.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
+				91D2E82F22EEE85E0065FB0B /* SearchUsers.m in Sources */,
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
+				91D2E82622EEB3F80065FB0B /* UserTableViewCell.m in Sources */,
 				914034D822E5DF46006F1699 /* LikeVideoModel.m in Sources */,
 				79CC62F52158E44300101773 /* GKNetworking.m in Sources */,
 				91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */,
@@ -1120,7 +1172,6 @@
 				79CC62CB21573B4700101773 /* GKSliderView.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
 				91611DCA22E849DF00642E47 /* SetViewController.m in Sources */,
-				9113E17522EAFB6F00FFFCF0 /* SearchMainViewController.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
@@ -1130,6 +1181,7 @@
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,
+				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,
 				9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */,

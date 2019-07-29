@@ -14,6 +14,7 @@
 @property (strong, nonatomic)NSArray *itemsArray;
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)UIView *navView;
+@property (strong, nonatomic)SearchView *searchView;
 @end
 
 @implementation SearchViewController
@@ -40,19 +41,16 @@
     [backButton setImage:[UIImage imageNamed:@"common_white_back"] forState:UIControlStateNormal];
     backButton.frame = CGRectMake(0, 25, 40, 40);
     [backButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
-   
-    SearchView *searchView = [[SearchView alloc]init];
-    searchView.frame = CGRectMake(40, 25, 260, 34);
-    searchView.searchTextField.delegate = self;
-    searchView.searchTextField.keyboardType = UIKeyboardTypeWebSearch;
-    [self.navView addSubview:searchView];
+
+    [self.navView addSubview:self.searchView];
+    self.searchView.frame = CGRectMake(40, 25, 260, 34);
+
 }
 
 - (void)creatUI
 {
     [self.view addSubview:self.tableView];
     self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count * 40);
-    NSLog(@"self.itemsArray.count  =%ld",self.itemsArray.count);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
@@ -63,11 +61,15 @@
     NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
     [muArray addObject:dic];
     self.itemsArray = muArray;
+    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
     [self.tableView reloadData];
     [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"khistory"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
     SearchMainViewController *mainVC = [[SearchMainViewController alloc]init];
+    mainVC.searchContentString = self.searchView.searchTextField.text;
     [self.navigationController pushViewController:mainVC animated:YES];
+    
     return YES;
 }
 
@@ -97,6 +99,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)clearSearchHistoryButtonAction
+{
+    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"khistory"];
+    self.itemsArray = nil;
+    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
+    [self.tableView reloadData];
+}
+
 #pragma mark UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -121,6 +131,16 @@
     return 40;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dic = self.itemsArray[indexPath.row];
+    NSArray *valueArray = [dic allValues];
+    self.searchView.searchTextField.text = [valueArray firstObject] ;;
+    SearchMainViewController *mainVC = [[SearchMainViewController alloc]init];
+    [self.navigationController pushViewController:mainVC animated:YES];
+}
+
+#pragma mark 懒加载
 - (NSArray *)itemsArray
 {
     if (!_itemsArray)
@@ -139,8 +159,24 @@
         _tableView.dataSource = self;
          _tableView.backgroundColor  = [UIColor colorWithHex:@"#222934"];
         [_tableView registerClass:[SearchHistoryTableViewCell class] forCellReuseIdentifier:@"SearchHistoryTableViewCellID"];
+        UIButton *clearSearchHistoryButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        clearSearchHistoryButton.frame = CGRectMake(0, 0, kWindowWidth, 40);
+        [clearSearchHistoryButton setTitle:@"清除所有搜索记录" forState:UIControlStateNormal];
+        [clearSearchHistoryButton addTarget:self action:@selector(clearSearchHistoryButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        _tableView.tableFooterView = clearSearchHistoryButton;
     }
     return _tableView;
+}
+
+- (SearchView *)searchView
+{
+    if (!_searchView)
+    {
+        _searchView = [[SearchView alloc]init];
+        _searchView.searchTextField.delegate = self;
+        _searchView.searchTextField.keyboardType = UIKeyboardTypeWebSearch;
+    }
+    return _searchView;
 }
 
 @end
