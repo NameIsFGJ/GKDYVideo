@@ -19,7 +19,7 @@
       progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"responseObj  =%@",responseObj);
+       // NSLog(@"responseObj  =%@",responseObj);
         complectionhandle([BaseModel yy_modelWithDictionary:responseObj],error);
     }];
 }

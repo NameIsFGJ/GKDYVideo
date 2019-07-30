@@ -18,21 +18,70 @@
 #import "ShareView.h"
 
 @interface GKDYPlayerViewController ()<GKDYVideoViewDelegate>
-@property (strong, nonatomic)UIView *mainView;
-@property (strong, nonatomic)GetVideoCommentView *commentView;
+@property (strong, nonatomic) UIView *mainView;
+@property (strong, nonatomic) GetVideoCommentView *commentView;
+@property (assign, nonatomic) BOOL isPush;
+@property (strong, nonatomic) NSArray *videos;
+@property (assign,nonatomic) NSInteger playIndex;
 
 @end
 
 @implementation GKDYPlayerViewController
 
+// 单个视频
+- (instancetype)initWithVideoModel:(IndexModel *)model;
+{
+    self = [super init];
+    if (self)
+    {
+        self.isPush = YES;
+        
+    }
+    return self;
+}
+
+// 播放一组视频,并指定播放位置
+- (instancetype)initWithVideos:(NSArray *)videos index:(NSInteger)index;
+{
+    self = [super init];
+    if (self)
+    {
+        self.videos = videos;
+        self.isPush = YES;
+        self.playIndex = index;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    //self.gk_statusBarHidden = YES;
     [self.view addSubview:self.videoView];
     [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    if (self.isPush)
+    {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.videoView.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
+            
+            NSLog(@"self.videos.count  =%ld",self.videos.count);
+            [self.videoView setModels:self.videos index:0];
+        } failure:^(NSError * _Nonnull error) {
+            
+        }];
+        
+    }else
+    {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self.videoView.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
+            
+            [self.videoView setModels:list index:0];
+        } failure:^(NSError * _Nonnull error) {
+            NSLog(@"error  %@", error);
+        }];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -42,22 +91,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
 }
-
 
 #pragma mark Delegate
 - (void)videoView:(GKDYVideoView *)videoView didClickIcon:(IndexModel *)videoModel;
 {
-    [self islogin];
     NSLog(@" 点击头像");
 }
 - (void)videoView:(GKDYVideoView *)videoView didClickPraise:(IndexModel *)videoModel{
-    [self islogin];
-    NSLog(@"点击了赞");
-    [self islogin];
     
-   // IndexModel *indexModel = controlView.model;
-    
+    [self islogin];
+    [self islogin];
+
     if (videoModel.is_like)
     {
         [UnlikeVideoNetworking postUnLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:videoModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
@@ -97,7 +143,6 @@
 - (void)videoView:(GKDYVideoView *)videoView didClickShare:(IndexModel *)videoModel
 {
     [self islogin];
-    [self showNormalMsg:@"分享"];
     ShareView *shareView = [[ShareView alloc]init];
     shareView.frame = CGRectMake(0, kWindowHeight, kWindowWidth, kWindowHeight);
      [[UIApplication sharedApplication].keyWindow addSubview:shareView];
@@ -107,7 +152,6 @@
 - (void)videoView:(GKDYVideoView *)videoView didClickFollow:(IndexModel *)videoModel
 {
     [self islogin];
-   // [self showNormalMsg:@"关注"];
     [LikeVideoNewtworking postLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:videoModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
         NSLog(@"model.status  =%ld",model.status);
         //关注成功：1，不能关注自己：-4，之前关注过：-5，关注已达上限数量：-6
@@ -147,7 +191,7 @@
 #pragma mark - 懒加载
 - (GKDYVideoView *)videoView {
     if (!_videoView) {
-        _videoView = [[GKDYVideoView alloc] initWithVC:self isPushed:NO];
+        _videoView = [[GKDYVideoView alloc] initWithVC:self isPushed:self.isPush];
         _videoView.delegate = self;
     }
     return _videoView;

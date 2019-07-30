@@ -20,29 +20,36 @@
 
 // 用户 networking
 #import "SearchUsersNetworking.h"
-
 #import "SearchUserModel.h"
+
+// 综合 (视频)
+#import "SearchVideosNetworking.h"
+#import "SearchVideoModel.h"
 @interface SearchMainViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic)NSArray *titleArray;
 @property (strong, nonatomic)UIView *navView;
 @property (strong, nonatomic)SearchView *searchView;
 @property (assign, nonatomic)NSInteger currentIndex;
+@property (strong, nonatomic)NSMutableArray *searchUserArray;
 @end
 
 @implementation SearchMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
+   // [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.view.backgroundColor = [UIColor colorWithHex:@"#222934"];
     [self creatNav];
     
-   
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 - (instancetype)init
@@ -165,18 +172,27 @@
 - (void)pageController:(WMPageController *)pageController didEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info;
 {
     self.currentIndex = viewController.view.tag - 200;
-}
-
-- (void)setCurrentIndex:(NSInteger)currentIndex
-{
-    _currentIndex = currentIndex;
-    if (_currentIndex == 1)
+    
+    if (self.currentIndex == 0)
     {
-        NSLog(@"kUser.user_id  =%@",kUser.user_id);
-        [SearchUsersNetworking postSearchUsers:1 keyworld:@"昵称" user_id:[kUser.user_id integerValue] completionHandle:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
-            NSLog(@"modelArray.count  =%ld",modelArray.count);
-            SearchUserModel *model = [modelArray firstObject];
-            NSLog(@"mode  =%@",model);
+        [SearchVideosNetworking postSearchVideoWithPage:1
+                                                keyword:@"昵称"
+                                                 userId:[kUser.user_id integerValue] completion:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
+                                                     SearchTogetherViewController *view = (SearchTogetherViewController *)viewController;
+                                                     view.itemsArray = modelArray;
+                                                     SearchVideoModel *model = [modelArray firstObject];
+                                                     NSLog(@"model.pic_url  =%@",model.pic_url);
+                                                     [view.collectionView reloadData];
+                                                     NSLog(@"mode3lArray.count  =%ld",modelArray.count);
+        }];
+    }else if (self.currentIndex == 1){
+        [SearchUsersNetworking postSearchUsers:1
+                                      keyworld:@"昵称"
+                                       user_id:[kUser.user_id integerValue] completionHandle:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
+            
+            SearchUserViewController *view = (SearchUserViewController *)viewController;
+            view.itemArray = modelArray;
+            [view.tableView reloadData];
         }];
     }
 }
@@ -200,4 +216,15 @@
     }
     return _searchView;
 }
+
+- (NSMutableArray *)searchUserArray
+{
+    if (!_searchUserArray)
+    {
+        _searchUserArray = [NSMutableArray array];
+    }
+    return _searchUserArray;
+}
+
 @end
+

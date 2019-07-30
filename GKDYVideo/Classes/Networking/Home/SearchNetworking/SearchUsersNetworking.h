@@ -7,11 +7,14 @@
 //
 
 #import "BaseNetworking.h"
-#import "SearchUserModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchUsersNetworking : BaseNetworking
-+ (void)postSearchUsers:(NSInteger)page keyworld: (NSString *)keyworld user_id:(NSInteger)inde completionHandle:(void(^)(NSMutableArray *modelArray,NSError *error))complectionHandle;
++ (void)postSearchUsers:(NSInteger)page
+               keyworld: (NSString *)keyworld
+                user_id:(NSInteger)inde
+       completionHandle:(void(^)(NSMutableArray *modelArray,NSError *error))complectionHandle;
 
 @end
 

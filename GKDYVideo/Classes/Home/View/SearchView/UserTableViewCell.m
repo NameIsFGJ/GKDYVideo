@@ -7,7 +7,7 @@
 //
 
 #import "UserTableViewCell.h"
-
+#import "SearchUserModel.h"
 @implementation UserTableViewCell
 
 - (void)awakeFromNib {
@@ -61,6 +61,38 @@
     return self;
 }
 
+- (void)setModel:(SearchUserData *)model
+{
+    _model = model;
+    
+    // 头像
+    NSString *headUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,model.head_pic];
+    NSLog(@"headUrl  =%@",headUrl);
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:headUrl]];
+    
+    // 名称
+    self.userNameLabel.text = model.nickname;
+    
+    // 性别
+    
+    self.userSexImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",model.sex ? @"nan": @"nv"]];
+    
+    // 关注
+     // 已关注
+    if (model.is_guan == 1)
+    {
+        [self.followingButton setTitle:@"已关注" forState:UIControlStateNormal];
+        [self.followingButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.followingButton.enabled = YES;
+    }else if (model.is_guan == 0){
+        [self.followingButton setTitle:@"关注" forState:UIControlStateNormal];
+        [self.followingButton setBackgroundColor:[UIColor redColor]];
+        self.followingButton.enabled = NO;
+    }
+}
+
+
+#pragma mark 懒加载
 - (UIImageView *)iconImageView
 {
     if (!_iconImageView)

@@ -42,12 +42,9 @@
         params =@{@"page":@1};
     }
     
-    NSLog(@"params  =%@",params);
-    
     [GKNetworking get:url params:params success:^(id  _Nonnull responseObject) {
         //----------------------------------
         NSMutableArray *itemsArray = [NSMutableArray array];
-        
         NSArray *array = [responseObject objectForKey:@"data"];
         for (NSDictionary *dic in array)
         {

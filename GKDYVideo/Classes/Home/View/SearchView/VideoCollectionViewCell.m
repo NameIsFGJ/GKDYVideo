@@ -7,7 +7,7 @@
 //
 
 #import "VideoCollectionViewCell.h"
-
+#import "SearchVideoModel.h"
 @implementation VideoCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -21,4 +21,13 @@
     }
     return self;
 }
+
+- (void)setModel:(SearchVideoModel *)model
+{
+    _model = model;
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,model.pic_url];
+    NSLog(@"imageUrl =%@",imageUrl);
+    [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+}
+
 @end

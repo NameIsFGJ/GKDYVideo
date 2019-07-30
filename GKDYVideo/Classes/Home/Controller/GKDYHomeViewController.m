@@ -69,6 +69,7 @@
     [super viewWillDisappear:animated];
 
     [self.playerVC.videoView pause];
+    
 }
 
 #pragma mark - UIScrollViewDelegate

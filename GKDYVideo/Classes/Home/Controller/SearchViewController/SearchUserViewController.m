@@ -10,8 +10,7 @@
 #import "UserTableViewCell.h"
 
 @interface SearchUserViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic)UITableView *tableView;
-@property (strong, nonatomic)NSMutableArray *itemArray;
+
 @end
 
 @implementation SearchUserViewController
@@ -28,17 +27,16 @@
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 5;
+    return self.itemArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *cellID = @"UserTableViewCellID";
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    
+    cell.model = self.itemArray[indexPath.row];
     return cell;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

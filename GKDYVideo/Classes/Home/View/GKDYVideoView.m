@@ -50,7 +50,6 @@
         
         [self addSubview:self.scrollView];
         [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(self);
             make.left.equalTo(self.mas_left).offset(0);
             make.top.equalTo(self.mas_top).offset(0);
             make.right.equalTo(self.mas_right).offset(0);
@@ -58,11 +57,11 @@
         }];
         
         if (!isPushed) {
-            [self.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
-                [self setModels:list index:0];
-            } failure:^(NSError * _Nonnull error) {
-                NSLog(@"%@", error);
-            }];
+//            [self.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
+//                [self setModels:list index:0];
+//            } failure:^(NSError * _Nonnull error) {
+//                NSLog(@"%@", error);
+//            }];
         }
     }
     return self;
@@ -95,6 +94,7 @@
         self.scrollView.contentSize = CGSizeMake(0, kWindowHeight-49);
         
         self.topView.model = self.videos.firstObject;
+        [self playVideoFrom:self.topView];
     }else if (models.count == 2) {
         [self.btmView removeFromSuperview];
         
@@ -105,6 +105,10 @@
         
         if (index == 1) {
             self.scrollView.contentOffset = CGPointMake(0, self.viewHeight);
+            [self playVideoFrom:self.topView];
+        }else
+        {
+            [self playVideoFrom:self.topView];
         }
     }else {
         if (index == 0) {   // 如果是第一个，则显示上视图，且预加载中下视图

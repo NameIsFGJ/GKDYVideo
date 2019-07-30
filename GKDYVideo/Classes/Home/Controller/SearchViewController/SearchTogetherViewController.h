@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchTogetherViewController : BaseViewController
-
+@property (strong, nonatomic)UICollectionView *collectionView;
+@property (strong, nonatomic)NSMutableArray *itemsArray;
 @end
 
 NS_ASSUME_NONNULL_END

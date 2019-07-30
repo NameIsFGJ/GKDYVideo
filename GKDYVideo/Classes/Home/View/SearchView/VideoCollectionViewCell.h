@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SearchVideoModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic)UIImageView *videoImageView;
+@property (strong, nonatomic)SearchVideoModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

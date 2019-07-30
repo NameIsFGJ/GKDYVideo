@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchUserViewController : BaseViewController
-
+@property (strong, nonatomic)NSMutableArray *itemArray;
+@property (strong, nonatomic)UITableView *tableView;
 @end
 
 NS_ASSUME_NONNULL_END

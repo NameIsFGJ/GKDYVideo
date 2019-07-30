@@ -22,7 +22,7 @@
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error)
     {
-        NSLog(@"responseObj  =%@",responseObj);
+       // NSLog(@"responseObj  =%@",responseObj);
         if (!error)
         {
             complectionhandle([LoginBaseModel yy_modelWithDictionary:responseObj],nil);

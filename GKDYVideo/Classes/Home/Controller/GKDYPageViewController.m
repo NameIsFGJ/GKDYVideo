@@ -58,7 +58,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-  //  self.gk_navLineHidden = NO;
     [self.navigationController setNavigationBarHidden:NO];
 }
 
@@ -67,7 +66,8 @@
     
     // 取消push代理
    // self.gk_pushDelegate = nil;
-    [self.playVC.videoView pause];
+     [self.playVC.videoView pause];
+    
 }
 
 #pragma mark Action
