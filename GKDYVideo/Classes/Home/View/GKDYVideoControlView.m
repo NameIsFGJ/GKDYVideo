@@ -9,10 +9,6 @@
 #import "GKDYVideoControlView.h"
 #import "GKSliderView.h"
 
-@interface GKDYVideoItemButton : UIButton
-
-@end
-
 @implementation GKDYVideoItemButton
 
 - (void)layoutSubviews {
@@ -40,9 +36,6 @@
 @interface GKDYVideoControlView()
 
 @property (nonatomic, strong) UIImageView           *iconView;
-@property (nonatomic, strong) GKDYVideoItemButton   *praiseBtn;
-@property (nonatomic, strong) GKDYVideoItemButton   *commentBtn;
-@property (nonatomic, strong) GKDYVideoItemButton   *shareBtn;
 
 @property (nonatomic, strong) UILabel               *nameLabel;
 @property (nonatomic, strong) UILabel               *contentLabel;
@@ -71,6 +64,9 @@
         
         [self addSubview:self.loadingView];
         [self addSubview:self.playBtn];
+        
+        // 留言板
+        [self addSubview:self.commentView];
         
         [self.coverImgView mas_makeConstraints:^(MASConstraintMaker *make) {
            make.edges.equalTo(self);
@@ -143,6 +139,15 @@
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(controlViewDidClick:)];
         [self addGestureRecognizer:tap];
+        
+        
+        // 留言板
+        [self.commentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_bottom);
+            make.left.right.mas_equalTo(0);
+            make.height.mas_equalTo(430);
+        }];
+        
     }
     return self;
 }
@@ -150,22 +155,27 @@
 - (void)setModel:(IndexModel *)model {
     _model = model;
 
-    [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"https://mf.zjchuanwen.com",model.pic_url]]];
+    // 背景图
+    [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.pic_url]]];
+    // 头像
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.head_pic]]];
+    // 昵称
+    self.nameLabel.text = model.nickname;
+    // 标题
+    self.contentLabel.text = model.desc;
+    //点赞
+    [self.praiseBtn setTitle:[NSString stringWithFormat:@"%ld",model.z_count] forState:UIControlStateNormal];
+    //评论
+    [self.commentBtn setTitle:[NSString stringWithFormat:@"%ld",model.c_count] forState:UIControlStateNormal];
+    //分享
+    [self.shareBtn setTitle:[NSString stringWithFormat:@"%ld",model.share_count] forState:UIControlStateNormal];
     
-    self.nameLabel.text = @"抖音小王子";
-    self.contentLabel.text = @"收到过很多网友的留言和私信，说想看领克03的拆解，好！这次满足你们。开拆倒计时，11月28日下午14:00-16:00 领克03拆解直播，敬请期待！@领克汽车 ​";
-    [self.praiseBtn setTitle:@"34" forState:UIControlStateNormal];
-    [self.commentBtn setTitle:@"22" forState:UIControlStateNormal];
-    [self.shareBtn setTitle:@"4" forState:UIControlStateNormal];
-//    self.sliderView.value = 0;
-//    self.nameLabel.text = model.author.name_show;
-//   // [self.iconView sd_setImageWithURL:[NSURL URLWithString:model.author.portrait]];
-//
-//    self.contentLabel.text = model.title;
-//
-   // [self.praiseBtn setTitle:model.agree_num forState:UIControlStateNormal];
-    //[self.commentBtn setTitle:model.comment_num forState:UIControlStateNormal];
-    //[self.shareBtn setTitle:model.share_num forState:UIControlStateNormal];
+    NSString *praiseImag = model.is_like ? @"ss_icon_star_selected":@"ss_icon_star_normal";
+    [self.praiseBtn setImage:[UIImage imageNamed:praiseImag] forState:UIControlStateNormal];
+    
+    //关注按钮
+   // self.followingButton.hidden = model.is_like? YES: NO;
+    
 }
 
 #pragma mark - Public Methods
@@ -220,6 +230,12 @@
     }
 }
 
+- (void)followBtnClick:(id)sender{
+    if ([self.delegate respondsToSelector:@selector(controlViewDidClickFollow:)]) {
+        [self.delegate controlViewDidClickFollow:self];
+    }
+}
+
 #pragma mark - 懒加载
 - (UIImageView *)coverImgView {
     if (!_coverImgView) {
@@ -248,8 +264,6 @@
 - (GKDYVideoItemButton *)praiseBtn {
     if (!_praiseBtn) {
         _praiseBtn = [GKDYVideoItemButton new];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ss_icon_star_normal"] forState:UIControlStateNormal];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ss_icon_star_selected"] forState:UIControlStateSelected];
         _praiseBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
         [_praiseBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_praiseBtn addTarget:self action:@selector(praiseBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -309,6 +323,7 @@
         _sliderView.sliderHeight = ADAPTATIONRATIO * 2.0f;
         _sliderView.maximumTrackTintColor = [UIColor grayColor];
         _sliderView.minimumTrackTintColor = [UIColor whiteColor];
+        _sliderView.hidden = YES;
     }
     return _sliderView;
 }
@@ -355,9 +370,18 @@
         _followingButton.titleLabel.font = [UIFont systemFontOfSize:20 *ADAPTATIONRATIO];
         _followingButton.layer.cornerRadius = 3;
         _followingButton.layer.masksToBounds = YES;
-        [_followingButton addTarget:self action:@selector(iconDidClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_followingButton addTarget:self action:@selector(followBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _followingButton;
+}
+
+- (GetVideoCommentView *)commentView
+{
+    if (!_commentView)
+    {
+        _commentView = [[GetVideoCommentView alloc]init];
+    }
+    return _commentView;
 }
 
 @end

@@ -8,11 +8,13 @@
 
 #ifndef AppInfoConstant_h
 #define AppInfoConstant_h
+#import "User.h"
+#define kTabBar_Index_player           0
+#define kTabBar_Index_market           1
+#define kTabBar_Index_addGoods         2
+#define kTabBar_Index_message          3
+#define kTabBar_Index_mine             4
 
-#define kTabBar_Index_Home          0
-#define kTabBar_Index_Investment    1
-#define kTabBar_Index_Stock         2
-#define kTabBar_Index_MySpace       3
 #define kSERVICE   @"https://mf.zjchuanwen.com"
 // 宽 高
 #define kWindowWidth CGRectGetWidth([UIScreen mainScreen].bounds)
@@ -25,6 +27,8 @@
 #define kImageName(name)    [UIImage imageNamed:name]
 #define kFontSize(size)     [UIFont systemFontOfSize:size]
 
+// user
+#define kUser               [User currentUser]
 //UDID MD5_UDID
 #define UDID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
 #define MD5_UDID [UDID md5]

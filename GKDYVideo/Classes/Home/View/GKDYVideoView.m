@@ -8,6 +8,7 @@
 
 #import "GKDYVideoView.h"
 #import "GKDYVideoPlayer.h"
+#import "LikeVideoNewtworking.h"
 
 @interface GKDYVideoView()<UIScrollViewDelegate, GKDYVideoPlayerDelegate, GKDYVideoControlViewDelegate>
 
@@ -21,7 +22,7 @@
 // 控制播放的索引，不完全等于当前播放内容的索引
 @property (nonatomic, assign) NSInteger                 index;
 
-// 当前播放内容是h索引
+// 当前播放内容是索引
 @property (nonatomic, assign) NSInteger                 currentPlayIndex;
 
 @property (nonatomic, weak) UIViewController            *vc;
@@ -82,7 +83,6 @@
 - (void)setModels:(NSArray *)models index:(NSInteger)index {
     [self.videos removeAllObjects];
     [self.videos addObjectsFromArray:models];
-    //{0, 1238}, {375, 619}}
     self.index = index;
     self.currentPlayIndex = index;
     
@@ -179,6 +179,7 @@
 //        @strongify(self);
 //        [self.player playVideoWithView:fromView.coverImgView url:fromView.model.video_url];
 //    });
+    
 }
 
 // 获取当前播放内容的索引
@@ -326,30 +327,48 @@
 
 #pragma mark - GKDYVideoControlViewDelegate
 - (void)controlViewDidClickSelf:(GKDYVideoControlView *)controlView {
-    if (self.player.isPlaying) {
+    if (self.player.isPlaying)
+    {
         [self.player pause];
     }else {
         [self.player resume];
     }
 }
 
-- (void)controlViewDidClickIcon:(GKDYVideoControlView *)controlView {
-    [GKMessageTool showText:@"点击头像"];
+- (void)controlViewDidClickIcon:(GKDYVideoControlView *)controlView
+{
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickIcon:)]) {
+        [self.delegate videoView:self didClickIcon:controlView.model];
+    }
 }
 
-- (void)controlViewDidClickPriase:(GKDYVideoControlView *)controlView {
-    [GKMessageTool showText:@"点赞"];
+- (void)controlViewDidClickPriase:(GKDYVideoControlView *)controlView
+{
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickPraise:)])
+    {
+        [self.delegate videoView:self didClickPraise:controlView.model];
+    }
 }
 
-- (void)controlViewDidClickComment:(GKDYVideoControlView *)controlView {
-    [GKMessageTool showText:@"评论"];
+- (void)controlViewDidClickComment:(GKDYVideoControlView *)controlView
+{
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickComment:)]) {
+        [self.delegate videoView:self didClickComment:controlView.model];
+    }
 }
 
 - (void)controlViewDidClickShare:(GKDYVideoControlView *)controlView {
-    [GKMessageTool showText:@"分享"];
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickShare:)]) {
+        [self.delegate videoView:self didClickShare:controlView.model];
+    }
+}
+- (void)controlViewDidClickFollow:(GKDYVideoControlView *)controlView{
+    if ([self.delegate respondsToSelector:@selector(videoView:didClickFollow:)]) {
+        [self.delegate videoView:self didClickFollow:controlView.model];
+    }
 }
 
-#pragma mark - 懒加载
+#pragma mark - lazy load
 - (GKDYVideoViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [GKDYVideoViewModel new];
@@ -415,5 +434,7 @@
     }
     return _player;
 }
+
+
 
 @end

@@ -31,42 +31,30 @@
 }
 
 - (void)videoListRequestWithSuccess:(void (^)(NSArray * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure {
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    params[@"new_recommend_type"] = @"3";
-    params[@"pn"] = @(self.pn);
-    params[@"dl"] = @"505F80E58F3817291B7768CE59A90AF8";
-    params[@"sign"] = @"3DD6882F963C25F5FA1ECA558F8CEF48";
-    params[@"_timestamp"] = @"1537782764313";
-    params[@"timestamp"] = @"1537782764313";
-    params[@"net_type"] = @"1";
-    //https://mf.zjchuanwen.com/api/video/index?page=1
+    
     // 推荐列表
-   //NSString *url = @"http://c.tieba.baidu.com/c/f/nani/recommend/list";
-    NSString *url = @"https://mf.zjchuanwen.com/api/video/index?page=1";
-    NSDictionary *param = @{@"page":@1};
-    [GKNetworking get:url params:param success:^(id  _Nonnull responseObject) {
-//        if ([responseObject[@"error_code"] integerValue] == 0) {
-//            NSDictionary *data = responseObject[@"data"];
-//
-//            self.has_more = [data[@"has_more"] boolValue];
-//
-//            NSMutableArray *array = [NSMutableArray new];
-//            for (NSDictionary *dic in data[@"data"]) {
-//                GKDYVideoModel *model = [GKDYVideoModel yy_modelWithDictionary:dic];
-//                [array addObject:model];
-//            }
-        
+    NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/index"];
+    
+    NSDictionary *params;
+    if ([User isLogin]){
+        params = @{@"page":@1,@"user_id":kUser.user_id};
+    }else{
+        params =@{@"page":@1};
+    }
+    
+    NSLog(@"params  =%@",params);
+    
+    [GKNetworking get:url params:params success:^(id  _Nonnull responseObject) {
         //----------------------------------
         NSMutableArray *itemsArray = [NSMutableArray array];
         
         NSArray *array = [responseObject objectForKey:@"data"];
-        for (NSDictionary *dic in array) {
+        for (NSDictionary *dic in array)
+        {
             IndexModel *model = [IndexModel yy_modelWithDictionary:dic];
             [itemsArray addObject:model];
         }
-       // NSLog(@"responseObject  =%@",responseObject);
             !success ? : success(itemsArray);
-        NSLog(@"itemsArray.count  =%ld",itemsArray.count);
     } failure:^(NSError * _Nonnull error) {
         !failure ? : failure(error);
     }];
