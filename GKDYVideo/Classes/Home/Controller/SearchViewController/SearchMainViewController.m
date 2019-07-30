@@ -17,6 +17,11 @@
 #import "SearchTopicViewController.h"
 
 #import "SearchView.h"
+
+// 用户 networking
+#import "SearchUsersNetworking.h"
+
+#import "SearchUserModel.h"
 @interface SearchMainViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic)NSArray *titleArray;
 @property (strong, nonatomic)UIView *navView;
@@ -165,7 +170,15 @@
 - (void)setCurrentIndex:(NSInteger)currentIndex
 {
     _currentIndex = currentIndex;
-    
+    if (_currentIndex == 1)
+    {
+        NSLog(@"kUser.user_id  =%@",kUser.user_id);
+        [SearchUsersNetworking postSearchUsers:1 keyworld:@"昵称" user_id:[kUser.user_id integerValue] completionHandle:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
+            NSLog(@"modelArray.count  =%ld",modelArray.count);
+            SearchUserModel *model = [modelArray firstObject];
+            NSLog(@"mode  =%@",model);
+        }];
+    }
 }
 
 #pragma mark 懒加载

@@ -21,7 +21,7 @@
     [self POST:urlStr parameters:dic progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"respo34nseObj  =%@",responseObj);
+        
         if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
             NSDictionary *dic = responseObj[@"data"];
             complectionhandle([LikeVideoModel yy_modelWithDictionary:dic],nil);
@@ -29,5 +29,6 @@
             complectionhandle(nil,error);
         }
     }];
+    
 }
 @end

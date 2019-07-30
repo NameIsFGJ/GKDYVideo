@@ -16,7 +16,7 @@
     [self POST:urlStr parameters:parame progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"respon45seObj  =%@",responseObj);
+        
         if ([[responseObj objectForKey:@"error_msg"]isEqualToString:@"success"])
         {
             NSDictionary *dic = [responseObj objectForKey:@"data"];

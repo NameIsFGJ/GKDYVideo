@@ -202,12 +202,6 @@
             
             [[(AppDelegate *)[UIApplication sharedApplication].delegate main] setSelectedIndex:kTabBar_Index_mine];
             [self dismissViewControllerAnimated:YES completion:nil];
-            
-            NSLog(@"kUser.user_token  =%@",kUser.user_token);
-            NSLog(@"kUser.user_money =%@",kUser.user_money);
-            NSLog(@"kUser.user_id  =%@",kUser.user_id);
-            NSLog(@"kUser.head_pic  =%@",kUser.head_pic);
-            NSLog(@"kUser.mobile =%@",kUser.mobile);
 //
         }else{
             [self showErrorMsg:@"服务器出错"];

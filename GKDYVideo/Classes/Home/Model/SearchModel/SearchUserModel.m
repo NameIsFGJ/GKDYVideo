@@ -11,3 +11,6 @@
 @implementation SearchUserModel
 
 @end
+@implementation  SearchUserData
+
+@end
