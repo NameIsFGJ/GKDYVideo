@@ -18,14 +18,14 @@
     [self POST:urlStr parameters:params progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"respons34eObj  =%@",responseObj);
+       
         if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
             NSArray *array = responseObj[@"data"];
             NSMutableArray *tempArray = [NSMutableArray array];
             for (NSDictionary *dic in array)
             {
-                SearchVideoModel *mode = [SearchVideoModel yy_modelWithDictionary:dic];
-                [tempArray addObject:mode];
+                SearchVideoModel *model = [SearchVideoModel yy_modelWithDictionary:dic];
+                [tempArray addObject:model];
             }
             completionHandle(tempArray,nil);
             

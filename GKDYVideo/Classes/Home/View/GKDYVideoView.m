@@ -105,7 +105,7 @@
         
         if (index == 1) {
             self.scrollView.contentOffset = CGPointMake(0, self.viewHeight);
-            [self playVideoFrom:self.topView];
+            [self playVideoFrom:self.ctrView];
         }else
         {
             [self playVideoFrom:self.topView];

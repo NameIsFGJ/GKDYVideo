@@ -24,8 +24,6 @@
         }else{
             complectionhandle(nil,error);
         }
-        
-        
     }];
 }
 @end

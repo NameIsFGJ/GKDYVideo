@@ -32,8 +32,6 @@
     [self.view addSubview:self.collectionView];
 }
 
-
-
 #pragma mark UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {

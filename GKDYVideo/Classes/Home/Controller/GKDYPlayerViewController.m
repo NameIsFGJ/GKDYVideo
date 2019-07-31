@@ -67,7 +67,8 @@
         [self.videoView.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
             
             NSLog(@"self.videos.count  =%ld",self.videos.count);
-            [self.videoView setModels:self.videos index:0];
+            NSLog(@"self.playIndex  =%ld",self.playIndex);
+            [self.videoView setModels:self.videos index:self.playIndex];
         } failure:^(NSError * _Nonnull error) {
             
         }];
