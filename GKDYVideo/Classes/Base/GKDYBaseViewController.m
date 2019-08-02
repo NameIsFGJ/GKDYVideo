@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithHex:@"#222934"];
+    self.view.backgroundColor = kMainColor
     [self setNavBarLeftButton];
     
 }

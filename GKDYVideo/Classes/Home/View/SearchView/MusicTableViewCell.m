@@ -25,7 +25,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
-    self.contentView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+    self.contentView.backgroundColor = kMainColor
       self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self.contentView addSubview:self.iconImageView];
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,7 +76,7 @@
     {
         _musicNameLabel = [[UILabel alloc]init];
         _musicNameLabel.font = kFontSize(18);
-        [_musicNameLabel setTextColor:[UIColor whiteColor]];
+        [_musicNameLabel setTextColor:kWhiteColor];
     }
     return _musicNameLabel;
 }
@@ -87,7 +87,7 @@
     {
         _musicTimeLabel = [[UILabel alloc]init];
         _musicTimeLabel.font = kFontSize(15);
-        [_musicTimeLabel setTextColor:[UIColor whiteColor]];
+        [_musicTimeLabel setTextColor:kWhiteColor];
     }
     return _musicTimeLabel;
 }
@@ -98,7 +98,7 @@
     {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_playButton setBackgroundColor:[UIColor redColor]];
-        [_playButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_playButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_playButton setTitle:@"拍同款" forState:UIControlStateNormal];
         _playButton.layer.cornerRadius = 3;
         _playButton.layer.masksToBounds = YES;

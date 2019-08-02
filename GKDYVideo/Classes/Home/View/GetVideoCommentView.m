@@ -207,7 +207,7 @@
     if (!_titleLabel)
     {
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.textColor = kWhiteColor;
         _titleLabel.font = kFontSize(14);
         _titleLabel.text = @"553条评论";
     }

@@ -93,7 +93,7 @@
     }];
     
     submitButton.backgroundColor = [UIColor colorWithHex:@"#FEA93B"];
-    [submitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [submitButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [submitButton setTitle:@"确定" forState:UIControlStateNormal];
     [submitButton addTarget:self action:@selector(submitButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
@@ -106,7 +106,7 @@
         make.top.mas_equalTo(0);
     }];
     numberLabel.text = @"+86";
-    [numberLabel setTextColor:[UIColor whiteColor]];
+    [numberLabel setTextColor:kWhiteColor];
     
     self.numberTextField = [[UITextField alloc]init];
     [view1 addSubview:self.numberTextField];

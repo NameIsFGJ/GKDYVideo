@@ -34,7 +34,7 @@
 
         UIView *view1 = [[UIView alloc]init];
         [self addSubview:view1];
-        view1.backgroundColor = [UIColor colorWithHex:@"#222934"];
+        view1.backgroundColor = kMainColor
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(clearView.mas_bottom).offset(0);
             make.left.right.mas_equalTo(0);
@@ -75,7 +75,7 @@
             }];
             label.text = titleArrray[i];
             label.font = kFontSize(14);
-            label.textColor = [UIColor whiteColor];
+            label.textColor = kWhiteColor;
 
         }
 
@@ -88,7 +88,7 @@
         }];
         [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
         [cancleButton setBackgroundColor:[UIColor colorWithHex:@"#222934"]];
-        [cancleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [cancleButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [cancleButton addTarget:self action:@selector(missView) forControlEvents:UIControlEventTouchUpInside];
         cancleButton.titleLabel.font = [UIFont systemFontOfSize:15];
         

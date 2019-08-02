@@ -27,7 +27,7 @@
         UIView *lineView = [[UIView alloc]init];
         [self addSubview:lineView];
         lineView.frame = CGRectMake(CGRectGetMaxX(searchImageView.frame)+ 5, 12, 1, 15);
-        lineView.backgroundColor = [UIColor whiteColor];
+        lineView.backgroundColor = kWhiteColor;
         
         self.searchTextField = [[UITextField alloc]init];
         [self addSubview:self.searchTextField];

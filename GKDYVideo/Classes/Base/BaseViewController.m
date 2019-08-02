@@ -24,13 +24,14 @@
 }
 - (void)setBackGroundColor
 {
-     self.view.backgroundColor = [UIColor colorWithHex:@"#222934"];
+     self.view.backgroundColor = kMainColor
 }
 
 - (void)setNavItemTitle
 {
     self.navigationItem.title = self.title;
 }
+
 - (void)setBackViewControler
 {
     if (self.navigationItem.leftBarButtonItems == nil)
@@ -41,6 +42,7 @@
         }
     }
 }
+
 - (UIBarButtonItem *)backButtonItem
 {
     UIImage *img = [UIImage imageNamed:@"common_white_back"];

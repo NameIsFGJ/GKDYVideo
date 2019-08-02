@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = kWhiteColor;
     kUser.user_token = @"";
     kUser.user_id = @"";
     kUser.mobile = @"";

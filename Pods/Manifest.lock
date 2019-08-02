@@ -37,6 +37,7 @@ PODS:
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - TXLiteAVSDK_Player (6.3.7088)
+  - TZImagePickerController (3.2.1)
   - WMPageController (2.5.2)
   - YYModel (1.0.4)
 
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - ReactiveCocoa (= 2.3.1)
   - SDWebImage (= 5.0.6)
   - TXLiteAVSDK_Player
+  - TZImagePickerController (= 3.2.1)
   - WMPageController
   - YYModel (= 1.0.4)
 
@@ -72,6 +74,7 @@ SPEC REPOS:
     - ReactiveCocoa
     - SDWebImage
     - TXLiteAVSDK_Player
+    - TZImagePickerController
     - WMPageController
     - YYModel
 
@@ -89,9 +92,10 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 3fe9b233ca6db810e86681b5749488564c1179a1
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   TXLiteAVSDK_Player: 79dff307726719163a35266ade3cb9ea815f360a
+  TZImagePickerController: bf4c57b98d8707fce41ea6be872414a71c7a8c9d
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 8b14f4bde132aa0ae2041ce5a480ae5315b9dcda
+PODFILE CHECKSUM: 452972057043584c334b3e2e33d5516c65b9c49a
 
 COCOAPODS: 1.7.2

@@ -26,7 +26,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        self.contentView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+        self.contentView.backgroundColor = kMainColor
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         [self.contentView addSubview:self.iconImageView];
@@ -110,7 +110,7 @@
     {
         _userNameLabel = [[UILabel alloc]init];
         _userNameLabel.font = kFontSize(18);
-        [_userNameLabel setTextColor:[UIColor whiteColor]];
+        [_userNameLabel setTextColor:kWhiteColor];
     }
     return _userNameLabel;
 }
@@ -130,7 +130,7 @@
     {
         _followingButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_followingButton setBackgroundColor:[UIColor redColor]];
-        [_followingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_followingButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_followingButton setTitle:@"关注" forState:UIControlStateNormal];
         _followingButton.layer.cornerRadius = 3;
         _followingButton.layer.masksToBounds = YES;

@@ -157,7 +157,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-         _tableView.backgroundColor  = [UIColor colorWithHex:@"#222934"];
+         _tableView.backgroundColor  = kMainColor
         [_tableView registerClass:[SearchHistoryTableViewCell class] forCellReuseIdentifier:@"SearchHistoryTableViewCellID"];
         UIButton *clearSearchHistoryButton = [UIButton buttonWithType:UIButtonTypeCustom];
         clearSearchHistoryButton.frame = CGRectMake(0, 0, kWindowWidth, 40);

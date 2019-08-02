@@ -9,10 +9,9 @@
 #ifndef ColorConstants_h
 #define ColorConstants_h
 
-#define kMainRedColor             [UIColor blackColor]
+#define kMainColor             [UIColor colorWithHex:@"#222934"];
 #define kWhiteColor               [UIColor whiteColor]
 #define kBackgroundColor          [UIColor whiteColor]
-
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0    \
@@ -49,7 +48,7 @@ alpha:1.0]
 #define ColorRoseRed RGBA(220.0, 46.0, 123.0, 1.0)
 #define ColorClear [UIColor clearColor]
 #define ColorBlack [UIColor blackColor]
-#define ColorWhite [UIColor whiteColor]
+#define ColorWhite kWhiteColor
 #define ColorGray  [UIColor grayColor]
 #define ColorBlue RGBA(40.0, 120.0, 255.0, 1.0)
 #define ColorGrayLight RGBA(40.0, 40.0, 40.0, 1.0)

@@ -28,7 +28,7 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.showsVerticalScrollIndicator = NO;
-    self.collectionView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+    self.collectionView.backgroundColor = kMainColor
     [self.view addSubview:self.collectionView];
 }
 

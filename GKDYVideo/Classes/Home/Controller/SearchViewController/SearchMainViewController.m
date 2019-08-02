@@ -39,7 +39,7 @@
     [super viewDidLoad];
     
    // [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.view.backgroundColor = [UIColor colorWithHex:@"#222934"];
+    self.view.backgroundColor = kMainColor
     [self creatNav];
     
 }
@@ -57,8 +57,8 @@
     if (self = [super init]) {
         self.titleSizeSelected = 15;
         self.titleSizeNormal = 15;
-        self.titleColorSelected = [UIColor whiteColor];
-        self.titleColorNormal = [UIColor whiteColor];
+        self.titleColorSelected = kWhiteColor;
+        self.titleColorNormal = kWhiteColor;
         self.menuViewStyle = WMMenuViewStyleLine;
         
     }

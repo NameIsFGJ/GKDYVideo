@@ -7,7 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
-#import "UIImage+Category.h"
+
 @interface BaseNavigationController ()<UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
 @end
@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak BaseNavigationController * weakSelf = self;
-    [self.navigationBar setBarTintColor:kMainRedColor];
+    [self.navigationBar setBarTintColor:[UIColor blackColor]];
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
     {
         self.interactivePopGestureRecognizer.delegate = weakSelf;

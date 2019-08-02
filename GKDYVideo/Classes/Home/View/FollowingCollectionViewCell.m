@@ -14,7 +14,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-         self.contentView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+         self.contentView.backgroundColor = kMainColor
         [self.contentView addSubview:self.pictureImageView];
         self.pictureImageView.frame = self.bounds;
     }

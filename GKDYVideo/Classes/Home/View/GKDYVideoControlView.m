@@ -251,7 +251,7 @@
         _iconView = [UIImageView new];
         _iconView.layer.cornerRadius = ADAPTATIONRATIO * 50.0f;
         _iconView.layer.masksToBounds = YES;
-        _iconView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _iconView.layer.borderColor = kWhiteColor.CGColor;
         _iconView.layer.borderWidth = 1.0f;
         _iconView.userInteractionEnabled = YES;
         _iconView.hidden = YES;
@@ -265,7 +265,7 @@
     if (!_praiseBtn) {
         _praiseBtn = [GKDYVideoItemButton new];
         _praiseBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
-        [_praiseBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_praiseBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_praiseBtn addTarget:self action:@selector(praiseBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _praiseBtn;
@@ -276,7 +276,7 @@
         _commentBtn = [GKDYVideoItemButton new];
         [_commentBtn setImage:[UIImage imageNamed:@"ss_icon_comment"] forState:UIControlStateNormal];
         _commentBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
-        [_commentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_commentBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_commentBtn addTarget:self action:@selector(commentBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _commentBtn;
@@ -287,7 +287,7 @@
         _shareBtn = [GKDYVideoItemButton new];
         [_shareBtn setImage:[UIImage imageNamed:@"ss_icon_share"] forState:UIControlStateNormal];
         _shareBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
-        [_shareBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_shareBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_shareBtn addTarget:self action:@selector(shareBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _shareBtn;
@@ -296,7 +296,7 @@
 - (UILabel *)nameLabel {
     if (!_nameLabel) {
         _nameLabel = [UILabel new];
-        _nameLabel.textColor = [UIColor whiteColor];
+        _nameLabel.textColor = kWhiteColor;
         _nameLabel.font = [UIFont boldSystemFontOfSize:15.0f];
         _nameLabel.userInteractionEnabled = YES;
         
@@ -310,7 +310,7 @@
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
         _contentLabel.numberOfLines = 3;
-        _contentLabel.textColor = [UIColor whiteColor];
+        _contentLabel.textColor = kWhiteColor;
         _contentLabel.font = [UIFont systemFontOfSize:14.0f];
     }
     return _contentLabel;
@@ -322,7 +322,7 @@
         _sliderView.isHideSliderBlock = YES;
         _sliderView.sliderHeight = ADAPTATIONRATIO * 2.0f;
         _sliderView.maximumTrackTintColor = [UIColor grayColor];
-        _sliderView.minimumTrackTintColor = [UIColor whiteColor];
+        _sliderView.minimumTrackTintColor = kWhiteColor;
         _sliderView.hidden = YES;
     }
     return _sliderView;
@@ -350,7 +350,7 @@
         _headImageView = [UIImageView new];
         _headImageView.layer.cornerRadius = ADAPTATIONRATIO * 28.0f;
         _headImageView.layer.masksToBounds = YES;
-        _headImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _headImageView.layer.borderColor = kWhiteColor.CGColor;
         _headImageView.layer.borderWidth = 1.0f;
         _headImageView.userInteractionEnabled = YES;
         
@@ -365,7 +365,7 @@
     if (!_followingButton) {
         _followingButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _followingButton.backgroundColor = [UIColor redColor];
-        [_followingButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_followingButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_followingButton setTitle:@"关注" forState:UIControlStateNormal];
         _followingButton.titleLabel.font = [UIFont systemFontOfSize:20 *ADAPTATIONRATIO];
         _followingButton.layer.cornerRadius = 3;

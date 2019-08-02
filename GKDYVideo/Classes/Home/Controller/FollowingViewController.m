@@ -69,7 +69,7 @@
     if (kind == UICollectionElementKindSectionHeader)
     {
         UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"MyCollectionViewHeaderView" forIndexPath:indexPath];
-        headView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+        headView.backgroundColor = kMainColor
         UIImageView *iconImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 36, 36)];
         //iconImageView.backgroundColor = [UIColor yellowColor];
         iconImageView.layer.cornerRadius = 18;
@@ -78,7 +78,7 @@
         
         UILabel *userLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(iconImageView.frame)+10, 10, 200, 30)];
         [headView addSubview:userLabel];
-        [userLabel setTextColor:[UIColor whiteColor]];
+        [userLabel setTextColor:kWhiteColor];
         [userLabel setFont:[UIFont systemFontOfSize:18]];
         //userLabel.text = @"漫饭一号";
         // 赋值
@@ -100,11 +100,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"indexPath.section  =%ld",indexPath.section);
-    NSLog(@"indexPath.row      =%ld",indexPath.row);
     VideoGuanModel *model = self.itemsArray[indexPath.section];
-    //VideoModel *videoModel = model.video[indexPath.row];
-    NSLog(@"model.video.count  =%ld",model.video.count);
     NSMutableArray *itemsArray = [NSMutableArray array];
     for (int i = 0; i< model.video.count; i++) {
         
@@ -123,8 +119,6 @@
     //
     //        [itemsArray addObject:indexModel];
     //    }
-    
-    NSLog(@"indexPath.item  =%ld",indexPath.item);
     GKDYPlayerViewController *playerVC = [[GKDYPlayerViewController alloc]initWithVideos:itemsArray index:indexPath.item];
     
     [self.navigationController pushViewController:playerVC animated:YES];
@@ -163,7 +157,7 @@
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+        _collectionView.backgroundColor = kMainColor
         _collectionView.showsVerticalScrollIndicator = NO;
         [_collectionView registerClass:[FollowingCollectionViewCell class] forCellWithReuseIdentifier:@"FollowingCollectionViewCellID"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MyCollectionViewHeaderView"];

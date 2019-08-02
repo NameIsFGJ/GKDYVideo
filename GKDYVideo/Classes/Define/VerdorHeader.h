@@ -25,10 +25,12 @@
 #import <GKNavigationBarViewController/GKNavigationBarViewController.h>
 #import <GKMessageTool/GKMessageTool.h>
 #import <WMPageController/WMPageController.h>
+#import <TZImagePickerController.h>
 // 分类
 #import "NSObject+HUD.h"
 #import "UIColor+Category.h"
 #import "User.h"
 #import "UIViewController+Category.h"
 #import "UIView+Acategory.h"
+#import "UIImage+Category.h"
 #endif /* VerdorHeader_h */

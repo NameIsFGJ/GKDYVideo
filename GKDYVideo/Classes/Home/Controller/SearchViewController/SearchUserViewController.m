@@ -22,7 +22,7 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
-    self.tableView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+    self.tableView.backgroundColor = kMainColor
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;

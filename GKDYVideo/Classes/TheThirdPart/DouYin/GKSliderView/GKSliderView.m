@@ -268,7 +268,7 @@
 - (UIView *)bufferProgressView {
     if (!_bufferProgressView) {
         _bufferProgressView = [UIImageView new];
-        _bufferProgressView.backgroundColor = [UIColor whiteColor];
+        _bufferProgressView.backgroundColor = kWhiteColor;
         _bufferProgressView.contentMode = UIViewContentModeScaleAspectFill;
         _bufferProgressView.clipsToBounds = YES;
     }
@@ -288,7 +288,7 @@
 - (GKSliderButton *)sliderBtn {
     if (!_sliderBtn) {
         _sliderBtn = [GKSliderButton new];
-//        _sliderBtn.backgroundColor = [UIColor whiteColor];
+//        _sliderBtn.backgroundColor = kWhiteColor;
         [_sliderBtn addTarget:self action:@selector(sliderBtnTouchBegin:) forControlEvents:UIControlEventTouchDown];
         [_sliderBtn addTarget:self action:@selector(sliderBtnTouchEnded:) forControlEvents:UIControlEventTouchCancel];
         [_sliderBtn addTarget:self action:@selector(sliderBtnTouchEnded:) forControlEvents:UIControlEventTouchUpInside];

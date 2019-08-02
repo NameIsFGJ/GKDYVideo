@@ -7,14 +7,13 @@
 //
 
 #import "HomeSegmentedControl.h"
-#import "UIImage+Category.h"
 @implementation HomeSegmentedControl
 
 - (instancetype)initWithItems:(NSArray *)items
 {
     self = [super initWithItems:items];
     
-    self.tintColor = [UIColor whiteColor];
+    self.tintColor = kWhiteColor;
     self.selectedSegmentIndex = 0;
     self.momentary = NO;
 
@@ -25,7 +24,7 @@
     [self setTitleTextAttributes:normalDic forState:UIControlStateNormal];
 
     UIFont *font1 = [UIFont systemFontOfSize:16];
-    UIColor*textColor1 = [UIColor whiteColor];
+    UIColor*textColor1 = kWhiteColor;
     NSDictionary *selectDic = @{NSFontAttributeName:font1,NSForegroundColorAttributeName:textColor1};
     [self setTitleTextAttributes:selectDic forState:UIControlStateSelected];
 
@@ -35,7 +34,7 @@
     [self setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
 
     // 竖线
-    [self setDividerImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(1, 10)] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setDividerImage:[UIImage imageWithColor:kWhiteColor size:CGSizeMake(1, 10)] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 
     return self;
 }

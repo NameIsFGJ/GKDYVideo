@@ -9,7 +9,6 @@
 #import "GKDYMainViewController.h"
 #import "GKDYPlayerViewController.h"
 #import "MarketViewController.h"
-#import "AddGoodsViewController.h"
 #import "MessageViewController.h"
 #import "MineViewController.h"
 #import "UIImage+GKcategory.h"
@@ -17,6 +16,7 @@
 #import "GKDYPageViewController.h"
 #import "BaseNavigationController.h"
 #import "LoginViewController.h"
+#import "AddGoodsViewController.h"
 @interface GKDYMainViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -31,10 +31,8 @@
     
     [self addChildVC:[GKDYPageViewController new] withTitle:@"首页"];
     [self addChildVC:[MarketViewController new] withTitle:@"商城"];
-    
     [self addChildVC:[AddGoodsViewController new] withImage:@"addGood" withSelectImage:@"addGood_select"];
     [self addChildVCWithHasNewMessage:[MessageViewController new] withTitle:@"消息"];
- //   [self addChildVC:[MessageViewController new] withTitle:@"消息"];
     [self addChildVC:[MineViewController new] withTitle:@"我"];
 }
 
@@ -58,7 +56,7 @@
     childVC.tabBarItem.imageInsets = UIEdgeInsetsMake(28, 0, -28, 0);
     
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
-    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: kWhiteColor} forState:UIControlStateSelected];
     
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
     [self addChildViewController:nav];
@@ -73,7 +71,7 @@
     childVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6,0);
     
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
-    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: kWhiteColor} forState:UIControlStateSelected];
     
        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
     [self addChildViewController:nav];
@@ -92,7 +90,7 @@
     childVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, 0,5, -36);
     
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
-    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: kWhiteColor} forState:UIControlStateSelected];
     
      BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
     nav.gk_openScrollLeftPush = YES;
@@ -103,19 +101,9 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
 
-//     kUser.user_token = @"";
-//     kUser.user_id = @"";
-//     kUser.mobile = @"";
-//     kUser.nick_name = @"";
-//     kUser.head_pic = @"";
-//     kUser.user_money = @"";
-//[[NSUserDefaults standardUserDefaults] stringForKey:kuser_token];
-    NSString *string1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_token"];
-    NSLog(@"string1  =%@",string1);
-       NSString *string2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_id"];
-NSLog(@"string2  =%@",string2);
-       NSString *string3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.mobile"];
-    NSLog(@"string3  =%@",string3);
+//    NSString *string1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_token"];
+//       NSString *string2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_id"];
+//       NSString *string3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.mobile"];
     BaseNavigationController * nav = (BaseNavigationController *)viewController;
     if ([[nav.viewControllers lastObject] isKindOfClass:[MineViewController class]])
     {

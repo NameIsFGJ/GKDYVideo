@@ -32,7 +32,7 @@
     if (self)
     {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.contentView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+        self.contentView.backgroundColor = kMainColor
         [self.contentView addSubview:self.iconImageView];
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(26, 26));
@@ -67,7 +67,7 @@
     if (!_titleLabel)
     {
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.textColor = kWhiteColor;
         _titleLabel.font = kFontSize(13);
     }
     return _titleLabel;

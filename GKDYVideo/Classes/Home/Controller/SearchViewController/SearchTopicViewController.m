@@ -25,7 +25,7 @@
         make.left.top.right.mas_equalTo(0);
         make.bottom.equalTo(self.view.mas_bottom).offset(64);
     }];
-    self.tableView.backgroundColor = [UIColor colorWithHex:@"#222934"];
+    self.tableView.backgroundColor = kMainColor
 }
 
 #pragma mark UITableViewDelegate

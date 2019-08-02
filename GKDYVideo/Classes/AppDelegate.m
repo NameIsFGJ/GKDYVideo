@@ -20,14 +20,14 @@
     [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
         configure.backStyle             = GKNavigationBarBackStyleWhite;
         configure.titleFont             = [UIFont systemFontOfSize:18.0f];
-        configure.titleColor            = [UIColor whiteColor];
+        configure.titleColor            = kWhiteColor;
         configure.gk_navItemLeftSpace   = 12.0f;
         configure.gk_navItemRightSpace  = 12.0f;
         configure.statusBarStyle        = UIStatusBarStyleLightContent;
     }];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = kWhiteColor;
 
     self.main = [GKDYMainViewController new];
     
