@@ -33,4 +33,6 @@
 #import "UIViewController+Category.h"
 #import "UIView+Acategory.h"
 #import "UIImage+Category.h"
+#import "NSDictionary+log.h"
+#import "NSArray+log.h"
 #endif /* VerdorHeader_h */

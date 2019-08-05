@@ -67,6 +67,10 @@
 		915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */; };
 		91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC622E8316000642E47 /* UIView+Acategory.m */; };
 		91611DCA22E849DF00642E47 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC922E849DF00642E47 /* SetViewController.m */; };
+		916C6D2322F7D26700D2538F /* AddGoodsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D2222F7D26700D2538F /* AddGoodsInfoModel.m */; };
+		916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D3822F80E6A00D2538F /* NSArray+log.m */; };
+		916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D3B22F80EB200D2538F /* NSDictionary+log.m */; };
+		916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D4422F8246300D2538F /* AddGoodsSuccessViewController.m */; };
 		9176295022F16234003CF389 /* BaseAddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176294F22F16234003CF389 /* BaseAddGoodsViewController.m */; };
 		9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176295522F16877003CF389 /* AddGoodsViewController.m */; };
 		9176295922F168E1003CF389 /* AddGoodsChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176295822F168E1003CF389 /* AddGoodsChildViewController.m */; };
@@ -74,6 +78,9 @@
 		91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */; };
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */; };
+		91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */; };
+		91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */; };
+		91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17D22F42BC20090AE00 /* AddGoodsModel.m */; };
 		91C9C1D222E69D7E00D0A87E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D122E69D7E00D0A87E /* User.m */; };
 		91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */; };
 		91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */; };
@@ -241,6 +248,14 @@
 		91611DC622E8316000642E47 /* UIView+Acategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Acategory.m"; sourceTree = "<group>"; };
 		91611DC822E849DF00642E47 /* SetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		91611DC922E849DF00642E47 /* SetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		916C6D2122F7D26700D2538F /* AddGoodsInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsInfoModel.h; sourceTree = "<group>"; };
+		916C6D2222F7D26700D2538F /* AddGoodsInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsInfoModel.m; sourceTree = "<group>"; };
+		916C6D3722F80E6A00D2538F /* NSArray+log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+log.h"; sourceTree = "<group>"; };
+		916C6D3822F80E6A00D2538F /* NSArray+log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+log.m"; sourceTree = "<group>"; };
+		916C6D3A22F80EB200D2538F /* NSDictionary+log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+log.h"; sourceTree = "<group>"; };
+		916C6D3B22F80EB200D2538F /* NSDictionary+log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+log.m"; sourceTree = "<group>"; };
+		916C6D4322F8246300D2538F /* AddGoodsSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsSuccessViewController.h; sourceTree = "<group>"; };
+		916C6D4422F8246300D2538F /* AddGoodsSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsSuccessViewController.m; sourceTree = "<group>"; };
 		9176294E22F16234003CF389 /* BaseAddGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseAddGoodsViewController.h; sourceTree = "<group>"; };
 		9176294F22F16234003CF389 /* BaseAddGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseAddGoodsViewController.m; sourceTree = "<group>"; };
 		9176295422F16877003CF389 /* AddGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsViewController.h; sourceTree = "<group>"; };
@@ -255,6 +270,12 @@
 		91BBB70922E7F2460060ADDD /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
 		91BD725B22EFEC2D00F517F6 /* SearchVideosNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideosNetworking.h; sourceTree = "<group>"; };
 		91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideosNetworking.m; sourceTree = "<group>"; };
+		91C1F17622F3CC2E0090AE00 /* AddGoodsInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsInfoView.h; sourceTree = "<group>"; };
+		91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsInfoView.m; sourceTree = "<group>"; };
+		91C1F17922F42B020090AE00 /* AddGoodsNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsNetworking.h; sourceTree = "<group>"; };
+		91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsNetworking.m; sourceTree = "<group>"; };
+		91C1F17C22F42BC20090AE00 /* AddGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsModel.h; sourceTree = "<group>"; };
+		91C1F17D22F42BC20090AE00 /* AddGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsModel.m; sourceTree = "<group>"; };
 		91C9C1D022E69D7E00D0A87E /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		91C9C1D122E69D7E00D0A87E /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
@@ -610,6 +631,10 @@
 				91BBB70922E7F2460060ADDD /* UIViewController+Category.m */,
 				91611DC522E8316000642E47 /* UIView+Acategory.h */,
 				91611DC622E8316000642E47 /* UIView+Acategory.m */,
+				916C6D3722F80E6A00D2538F /* NSArray+log.h */,
+				916C6D3822F80E6A00D2538F /* NSArray+log.m */,
+				916C6D3A22F80EB200D2538F /* NSDictionary+log.h */,
+				916C6D3B22F80EB200D2538F /* NSDictionary+log.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -662,6 +687,8 @@
 				9176295522F16877003CF389 /* AddGoodsViewController.m */,
 				9176295722F168E1003CF389 /* AddGoodsChildViewController.h */,
 				9176295822F168E1003CF389 /* AddGoodsChildViewController.m */,
+				916C6D4322F8246300D2538F /* AddGoodsSuccessViewController.h */,
+				916C6D4422F8246300D2538F /* AddGoodsSuccessViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -669,6 +696,10 @@
 		912F4D9122E18C93004CF0DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91C1F17C22F42BC20090AE00 /* AddGoodsModel.h */,
+				91C1F17D22F42BC20090AE00 /* AddGoodsModel.m */,
+				916C6D2122F7D26700D2538F /* AddGoodsInfoModel.h */,
+				916C6D2222F7D26700D2538F /* AddGoodsInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -676,6 +707,8 @@
 		912F4D9222E18C93004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				91C1F17622F3CC2E0090AE00 /* AddGoodsInfoView.h */,
+				91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -723,6 +756,8 @@
 		912F4D9622E18C93004CF0DF /* AddGoods */ = {
 			isa = PBXGroup;
 			children = (
+				91C1F17922F42B020090AE00 /* AddGoodsNetworking.h */,
+				91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */,
 			);
 			path = AddGoods;
 			sourceTree = "<group>";
@@ -1160,6 +1195,8 @@
 				91CC13D722ED620E00FF0C12 /* SearchMainViewController.m in Sources */,
 				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
+				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
+				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
 				91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */,
@@ -1176,6 +1213,7 @@
 				9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */,
 				91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */,
 				91C9C1D222E69D7E00D0A87E /* User.m in Sources */,
+				916C6D2322F7D26700D2538F /* AddGoodsInfoModel.m in Sources */,
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
 				91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */,
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
@@ -1195,8 +1233,11 @@
 				9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */,
 				9154CCC122F015910066ECC5 /* SearchVideoPlayViewController.m in Sources */,
 				915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */,
+				91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */,
 				79CC62E82157401E00101773 /* GKDYVideoView.m in Sources */,
+				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
 				79CC62E521573FC500101773 /* GKDYScrollView.m in Sources */,
+				91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */,
 				91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */,
 				79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */,
 				91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */,
@@ -1230,6 +1271,7 @@
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,
 				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
+				916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,
 				9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */,

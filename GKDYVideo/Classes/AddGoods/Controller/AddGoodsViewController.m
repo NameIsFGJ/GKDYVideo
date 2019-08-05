@@ -8,6 +8,7 @@
 
 #import "AddGoodsViewController.h"
 #import "AddGoodsChildViewController.h"
+#import "AddGoodsSuccessViewController.h"
 @interface AddGoodsViewController ()
 
 @end
@@ -47,7 +48,8 @@
 - (void)pushGoodsAction
 {
     AddGoodsChildViewController *vc = [[AddGoodsChildViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    vc.hidesBottomBarWhenPushed = YES;
+   [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

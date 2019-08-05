@@ -1,8 +1,8 @@
 //
-//  AddGoodsChildViewController.h
+//  AddGoodsSuccessViewController.h
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/7/31.
+//  Created by 冯高杰 on 2019/8/5.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AddGoodsChildViewController : BaseAddGoodsViewController
+@interface AddGoodsSuccessViewController : BaseAddGoodsViewController
 
 @end
+
 NS_ASSUME_NONNULL_END
