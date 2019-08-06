@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCellID" rowHeight="70" id="KGk-i7-Jjw" customClass="MessageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-Rp-Uby">
+                        <rect key="frame" x="13" y="21.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="4I8-62-gaO"/>
+                            <constraint firstAttribute="width" constant="40" id="70f-2S-lXH"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRl-fO-mr9">
+                        <rect key="frame" x="66" y="21.5" width="212" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漫饭一号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRp-CD-IqZ">
+                                <rect key="frame" x="0.0" y="0.0" width="212" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当你出现的时候,连周围的空气都是甜的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqC-Cp-Dh8">
+                                <rect key="frame" x="0.0" y="20" width="212" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.16078431372549018" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HqC-Cp-Dh8" firstAttribute="width" secondItem="rRp-CD-IqZ" secondAttribute="width" id="1SD-P5-60x"/>
+                            <constraint firstAttribute="trailing" secondItem="HqC-Cp-Dh8" secondAttribute="trailing" id="VcO-W0-I3V"/>
+                            <constraint firstAttribute="bottom" secondItem="HqC-Cp-Dh8" secondAttribute="bottom" id="Vrc-q4-gtq"/>
+                            <constraint firstAttribute="trailing" secondItem="rRp-CD-IqZ" secondAttribute="trailing" id="dS0-cI-CSH"/>
+                            <constraint firstItem="HqC-Cp-Dh8" firstAttribute="top" secondItem="rRp-CD-IqZ" secondAttribute="bottom" id="pZ9-aL-FdO"/>
+                            <constraint firstItem="rRp-CD-IqZ" firstAttribute="top" secondItem="JRl-fO-mr9" secondAttribute="top" id="tzD-uX-Mla"/>
+                            <constraint firstAttribute="height" constant="40" id="vIq-gp-HX1"/>
+                            <constraint firstItem="rRp-CD-IqZ" firstAttribute="leading" secondItem="JRl-fO-mr9" secondAttribute="leading" id="w59-5d-eoa"/>
+                            <constraint firstItem="HqC-Cp-Dh8" firstAttribute="height" secondItem="rRp-CD-IqZ" secondAttribute="height" id="wqI-pv-dii"/>
+                            <constraint firstItem="HqC-Cp-Dh8" firstAttribute="leading" secondItem="JRl-fO-mr9" secondAttribute="leading" id="zLk-ub-uik"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07.29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-Oi-LM3">
+                        <rect key="frame" x="277" y="34" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.13333333333333333" green="0.16078431372549018" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="JRl-fO-mr9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5TX-U9-PnZ"/>
+                    <constraint firstItem="7fg-Rp-Uby" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="JIE-wb-g64"/>
+                    <constraint firstItem="7fg-Rp-Uby" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PbJ-AK-zD4"/>
+                    <constraint firstItem="9AT-Oi-LM3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Z7W-4p-Sum"/>
+                    <constraint firstAttribute="trailing" secondItem="9AT-Oi-LM3" secondAttribute="trailing" constant="12" id="bSl-Sc-pse"/>
+                    <constraint firstItem="JRl-fO-mr9" firstAttribute="leading" secondItem="7fg-Rp-Uby" secondAttribute="trailing" constant="13" id="joa-aV-f0X"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="creatTime" destination="9AT-Oi-LM3" id="dLl-r5-BSX"/>
+                <outlet property="desc" destination="HqC-Cp-Dh8" id="jbk-bk-eR4"/>
+                <outlet property="head_pic" destination="7fg-Rp-Uby" id="Mka-5h-Pck"/>
+                <outlet property="nickName" destination="rRp-CD-IqZ" id="4Yl-tR-CCs"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="93.415178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chat_icon" width="48" height="48"/>
+    </resources>
+</document>

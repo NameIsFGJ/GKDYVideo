@@ -72,7 +72,6 @@
         make.bottom.left.right.mas_equalTo(0);
         make.height.mas_equalTo(100);
     }];
-    
 }
 
 - (void)shareButtonAction:(UIButton *)btn
@@ -82,11 +81,9 @@
 
 - (void)cancleButtonAction
 {
-    // self
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
-
 }
 
 @end
