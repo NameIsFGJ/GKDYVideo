@@ -118,7 +118,7 @@
     }];
     self.numberTextField.placeholder = @"输入手机号码";
     [self.numberTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
-    
+    self.numberTextField.textColor = [UIColor whiteColor];
     self.importCode = [[UITextField alloc]init];
     [view2 addSubview:self.importCode];
     [self.importCode mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -130,7 +130,7 @@
     self.importCode.layer.cornerRadius = 5;
     self.importCode.layer.masksToBounds = YES;
     self.importCode.backgroundColor = [UIColor colorWithHex:@"#F1F1F4" alpha:.1];
-    
+    self.importCode.textColor = [UIColor whiteColor];
     self.codeButton = [JKCountDownButton buttonWithType:UIButtonTypeCustom];
     [view2 addSubview:self.codeButton];
     [self.codeButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -167,45 +167,36 @@
 // 接收验证码
 - (void)codeButtonAction
 {
-    [SendRegisterCodeNetworking postSendRegisterCode:self.numberTextField.text completion:^(BaseModel * _Nonnull model, NSError * _Nonnull error) {
-        
-        switch (model.error_code) {
-            case 0:
-                [self showSuccessMsg:@"发送成功"];
-                break;
-            case 600:
-                [self showErrorMsg:@"验证码不正确"];
-                break;
-            case 610:
-                [self showErrorMsg:@"验证码已失效"];
-                break;
-            default:
-                break;
-        }
+    [SendRegisterCodeNetworking postSendRegisterCode:self.numberTextField.text withScene:@"mobilelogin" completion:^(BaseModel * _Nonnull model, NSError * _Nonnull error) {
+        switch (model.code) {
+                            case 1:
+                                [self showSuccessMsg:@"发送成功"];
+                                break;
+                            case 600:
+                                [self showErrorMsg:@"验证码不正确"];
+                                break;
+                            case 610:
+                                [self showErrorMsg:@"验证码已失效"];
+                                break;
+                            default:
+                                break;
+                        }
     }];
 }
 
 // 确定按钮
 - (void)submitButtonAction
 {
-    [LoginNetworking postLogin:self.numberTextField.text codeNumber:self.importCode.text completionHandle:^(LoginBaseModel * _Nonnull model, NSError * _Nonnull error) {
+    [LoginNetworking postLogin:self.numberTextField.text codeNumber:self.importCode.text completionHandle:^(DataModel * _Nonnull model, NSError * _Nonnull error) {
         
-        if (model.error_code == 0)
-        {
-            Data *data = model.data;
-            kUser.user_token = data.user_token;
-            kUser.user_id = data.user_id;
-            kUser.mobile = data.mobile;
-            kUser.nick_name = data.nick_name;
-            kUser.head_pic = model.data.head_pic;
-            kUser.user_money = model.data.user_money;
-            
+       
+           // Data *data = model.data;
+            kUser.user_token = model.token;
+            kUser.user_id = model.user_id;
+            kUser.nickname = model.nickname;
+      
             [[(AppDelegate *)[UIApplication sharedApplication].delegate main] setSelectedIndex:kTabBar_Index_mine];
             [self dismissViewControllerAnimated:YES completion:nil];
-//
-        }else{
-            [self showErrorMsg:@"服务器出错"];
-        }
     }];
 }
 

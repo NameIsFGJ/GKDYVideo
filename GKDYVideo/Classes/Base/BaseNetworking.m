@@ -127,20 +127,21 @@ static AFHTTPSessionManager *manager = nil;
     }
     else
     {
-        if ([(NSString *)response[@"code"] isEqualToString:@"needLogin"])
-        {
-            //            mWugt.token = @"";
-            //            mWugt.mobile = @"";
-            //            mWugt.memberID = @"";
-            //            mWugt.userName = @"";
-            //            // mWugt.gestureCipher = @"";
-            //            [self postCustomNotificationName:@"LoginOrLogout" object:nil];
-        }
-        NSError *error = [NSError errorWithDomain:[(NSString *)response[@"message"] length] == 0 ?
-                          @"网络请求出错请重试" : response[@"message"]
-                                             code:[(NSString *)response[@"code"] length] == 0 ?
-                          9999 : [(NSNumber *)response[@"code"] integerValue]
-                                         userInfo:response];
+//        if ([(NSString *)response[@"code"] isEqualToString:@"needLogin"])
+//        {
+//            //            mWugt.token = @"";
+//            //            mWugt.mobile = @"";
+//            //            mWugt.memberID = @"";
+//            //            mWugt.userName = @"";
+//            //            // mWugt.gestureCipher = @"";
+//            //            [self postCustomNotificationName:@"LoginOrLogout" object:nil];
+//        }
+        NSError *error;
+//       NSError *error = [NSError errorWithDomain:[(NSString *)response[@"message"] length] == 0 ?
+//                          @"网络请求出错请重试" : response[@"message"]
+//                                             code:[(NSString *)response[@"code"] length] == 0 ?
+//                          9999 : [(NSNumber *)response[@"code"] integerValue]
+//                                         userInfo:response];
         return error;
     }
 }

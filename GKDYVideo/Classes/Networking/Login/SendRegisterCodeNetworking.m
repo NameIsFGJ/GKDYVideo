@@ -9,17 +9,17 @@
 #import "SendRegisterCodeNetworking.h"
 
 @implementation SendRegisterCodeNetworking
-+(void)postSendRegisterCode:(NSString *)phone
++(void)postSendRegisterCode:(NSString *)phone withScene:(NSString *)sceneType
                  completion:(void(^)(BaseModel *model,NSError *error))complectionhandle;
 {
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/sendaliyundayusms"];
-    NSDictionary *parameters = @{@"user_mobile":phone};
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/sendCaptcha"];
+    NSDictionary *parameters = @{@"mobile":phone,@"scene":sceneType};
     [self POST:urlStr
     parameters:parameters
       progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-       // NSLog(@"responseObj  =%@",responseObj);
+            NSLog(@"respo34nseObj  =%@",responseObj);
         complectionhandle([BaseModel yy_modelWithDictionary:responseObj],error);
     }];
 }

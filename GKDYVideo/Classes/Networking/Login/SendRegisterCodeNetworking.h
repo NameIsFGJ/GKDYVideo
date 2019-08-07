@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SendRegisterCodeNetworking : BaseNetworking
-+(void)postSendRegisterCode:(NSString *)phone completion:(void(^)(BaseModel *model,NSError *error))complectionhandle;
++(void)postSendRegisterCode:(NSString *)phone withScene:(NSString *)sceneType completion:(void(^)(BaseModel *model,NSError *error))complectionhandle;
 @end
 
 NS_ASSUME_NONNULL_END

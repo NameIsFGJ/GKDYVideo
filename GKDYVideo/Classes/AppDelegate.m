@@ -26,6 +26,8 @@
         configure.statusBarStyle        = UIStatusBarStyleLightContent;
     }];
     
+    kUser.user_token = @"2c15fd2b-6590-4db9-bba2-6506259d6f84";
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = kWhiteColor;
 

@@ -7,14 +7,14 @@
 //
 
 #import "BaseNetworking.h"
-#import "LoginBaseModel.h"
+#import "DataModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginNetworking : BaseNetworking
 
 + (void)postLogin:(NSString *)mobile
        codeNumber:(NSString *)code
- completionHandle:(void(^)(LoginBaseModel *model,NSError *error))complectionhandle;
+ completionHandle:(void(^)(DataModel *model,NSError *error))complectionhandle;
 
 @end
 

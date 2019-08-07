@@ -15,7 +15,15 @@
 #define kTabBar_Index_message          3
 #define kTabBar_Index_mine             4
 
-#define kSERVICE   @"https://mf.zjchuanwen.com"
+#ifdef DEBUG
+
+#define kSERVICE   @"https://mftest.zjchuanwen.com"
+
+#else
+
+#define kSERVICE    @"https://mf.zjchuanwen.com"
+
+#endif
 // 宽 高
 #define kWindowWidth CGRectGetWidth([UIScreen mainScreen].bounds)
 #define kWindowHeight CGRectGetHeight([UIScreen mainScreen].bounds)

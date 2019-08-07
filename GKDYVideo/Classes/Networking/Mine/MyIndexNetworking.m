@@ -10,21 +10,24 @@
 
 @implementation MyIndexNetworking
 + (void)postMyIndex:(NSString *)token
-             userID:(NSNumber *)uid
-   completionHandle:(void(^)(BaseModel *model, NSError *error))complectionhandle;
+   completionHandle:(void(^)(DataModel *model, NSError *error))complectionhandle;
 {
-    NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/my/index"];
-    NSDictionary *parameters = @{@"user_token":token,@"user_id":uid};
+    NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/index"];
+    NSDictionary *parameters = @{@"token":token};
     [self POST:url
     parameters:parameters
       progress:^(NSProgress * _Nonnull progress)
     {
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
         if (!error) {
-             complectionhandle([BaseModel yy_modelWithDictionary:responseObj],nil);
+            if ((NSInteger)[responseObj objectForKey:@"code"] == 1) {
+                
+            }
+             complectionhandle([DataModel yy_modelWithDictionary:responseObj[@"data"]],nil);
         }else{
              complectionhandle(nil,error);
         }
     }];
 }
+
 @end

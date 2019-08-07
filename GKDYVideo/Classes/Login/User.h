@@ -17,18 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString * user_token;
 @property (strong, nonatomic)NSString * user_id;
 @property (strong, nonatomic)NSString * mobile;
-@property (strong, nonatomic)NSString * nick_name;
+@property (strong, nonatomic)NSString * nickname;
 @property (strong, nonatomic)NSString * head_pic;
-@property (strong, nonatomic)NSString * user_money;
-@property (strong, nonatomic)NSArray *  history;
-//@property (strong, nonatomic)NSString * city;
-//@property (strong, nonatomic)NSString * mf_num;
-//@property (assign, nonatomic)NSInteger is_edit;
-//@property (strong, nonatomic)NSString * ali_bank;
-//@property (assign, nonatomic)NSInteger is_set_paypw;
-//@property (strong, nonatomic)NSString * signs;
-//@property (assign, nonatomic)float user_money;
-//@property (strong, nonatomic)NSDictionary * info;
+@property (strong, nonatomic)NSString * money;
+@property (assign, nonatomic)NSInteger sex;
+@property (strong, nonatomic)NSArray *history;
+
 @end
 
 @interface Info : NSObject
@@ -36,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString * id_pic_un;
 @property (strong, nonatomic)NSString * true_name;
 @property (assign, nonatomic)NSInteger id_status;
+
 @end
 NS_ASSUME_NONNULL_END
 

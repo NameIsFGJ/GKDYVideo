@@ -82,15 +82,15 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 {
-    NSString *value = textField.text;
-    NSString *key = [self getCurrentTimes];
-    NSDictionary *dic = [NSDictionary dictionaryWithObject:value forKey:key];
-    NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
-    [muArray addObject:dic];
-
-    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"khistory"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+//    NSString *value = textField.text;
+//    NSString *key = [self getCurrentTimes];
+//    NSDictionary *dic = [NSDictionary dictionaryWithObject:value forKey:key];
+//    NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
+//    [muArray addObject:dic];
+//
+//    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"khistory"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//
     return YES;
 }
 

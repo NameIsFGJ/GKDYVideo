@@ -20,9 +20,9 @@
     kUser.user_token = @"";
     kUser.user_id = @"";
     kUser.mobile = @"";
-    kUser.nick_name = @"";
+    kUser.nickname = @"";
     kUser.head_pic = @"";
-    kUser.user_money = @"";
+    kUser.money = @"";
     [self showNormalMsg:@"退出登录"];
 }
 

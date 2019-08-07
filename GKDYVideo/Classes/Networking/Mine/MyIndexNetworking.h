@@ -8,14 +8,13 @@
 
 #import "BaseNetworking.h"
 #import "User.h"
-#import "BaseModel.h"
+#import "DataModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyIndexNetworking : BaseNetworking
-//+ (void)postMyIndex:()
+
 + (void)postMyIndex:(NSString *)token
-               userID:(NSNumber *)uid
-     completionHandle:(void(^)(BaseModel *model, NSError *error))complectionhandle;
+     completionHandle:(void(^)(DataModel *model, NSError *error))complectionhandle;
 
 @end
 

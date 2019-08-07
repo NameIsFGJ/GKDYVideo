@@ -11,10 +11,10 @@
 @implementation LoginNetworking
 + (void)postLogin:(NSString *)mobile
        codeNumber:(NSString *)code
- completionHandle:(void(^)(LoginBaseModel *model,NSError *error))complectionhandle;
+ completionHandle:(void(^)(DataModel *model,NSError *error))complectionhandle;
 {
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/login"];
-    NSDictionary *parameters = @{@"user_mobile":mobile,@"code":code};
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/mobilelogin"];
+    NSDictionary *parameters = @{@"mobile":mobile,@"captcha":code};
     [self POST:urlStr
     parameters:parameters
       progress:^(NSProgress * _Nonnull progress)
@@ -22,10 +22,10 @@
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error)
     {
-       // NSLog(@"responseObj  =%@",responseObj);
+       NSLog(@"respons333eObj  =%@",responseObj);
         if (!error)
         {
-            complectionhandle([LoginBaseModel yy_modelWithDictionary:responseObj],nil);
+            complectionhandle([DataModel yy_modelWithDictionary:responseObj],nil);
         }
     }];
 }
