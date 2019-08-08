@@ -185,7 +185,7 @@
         make.height.mas_equalTo(55);
         make.top.mas_equalTo(self.countView.mas_bottom);
     }];
-
+    
     [self.bottomView addSubview:self.videoView];
     [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);

@@ -27,6 +27,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:@"#222934"]] forBarMetrics:UIBarMetricsDefault];
+    
+    [self networking];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -40,7 +43,7 @@
     
     [self creatNav];
     [self creatTableView];
-    [self networking];
+  //  [self networking];
     
 }
 
@@ -64,14 +67,13 @@
 
 - (void)networking
 {
-    NSLog(@"kUser.user_token  =%@",kUser.user_token);
     [MyIndexNetworking postMyIndex:kUser.user_token completionHandle:^(DataModel * _Nonnull model, NSError * _Nonnull error) {
         self.model = model;
         self.headView.nickNameLabel.text = model.nickname;
         self.headView.mfNumberLabel.text = model.mf_num;
-        NSLog(@"model.head_pic  =%@",model.head_pic);
+        NSString *picUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,model.head_pic];
+        [self.headView.head_pic sd_setImageWithURL:[NSURL URLWithString:picUrl]];
         [self.tableView reloadData];
-       // self.headView.nickNameLabel.text = model.nickname;
     }];
 }
 

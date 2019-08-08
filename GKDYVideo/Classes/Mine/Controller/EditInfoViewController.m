@@ -9,21 +9,41 @@
 #import "EditInfoViewController.h"
 #import "EditTableViewCell.h"
 #import "EditHeadView.h"
-@interface EditInfoViewController()<UITableViewDelegate,UITableViewDataSource>
+#import "UpLoadAvatarNetworking.h"
+#import "MyIndexNetworking.h"
+#import "EditNickNameViewController.h"
+#import "EditMFNumbViewController.h"
+#import "EditSignsViewController.h"
+#import "BirthPickerView.h"
+@interface EditInfoViewController()<UITableViewDelegate,UITableViewDataSource,TZImagePickerControllerDelegate>
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSArray *itemsArray;
 @property (strong,nonatomic)EditHeadView *headView;
+@property (strong, nonatomic)BirthPickerView *birthView;
+
 @end
 
 @implementation EditInfoViewController
+ - (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self networking];
+}
+
 - (void)viewDidLoad
 {
-    
-   
     [super viewDidLoad];
     [self creatNav];
     [self creatTableView];
     
+}
+
+- (void)networking
+{
+    [MyIndexNetworking postMyIndex:kUser.user_token completionHandle:^(DataModel * _Nonnull model, NSError * _Nonnull error) {
+        self.model = model;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)creatNav
@@ -34,81 +54,51 @@
     label.textColor = [UIColor blackColor];
     self.navigationItem.titleView = label;
     
-    
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(pushMyFriendsVC) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
-    self.navigationItem.leftBarButtonItem = rightItem;
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(pushViewController) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
 }
 
 - (void)creatTableView
 {
     self.headView = [[EditHeadView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 180)];
-  //  UIGestureRecognizer *tap = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(changeIconButtonAction)];
-       // [self.headView.changeIconImageView addGestureRecognizer:tap];
     [self.headView.changeIconButton addTarget:self action:@selector(changeIconButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.headView.changeIconBlackButton addTarget:self action:@selector(changeIconButtonAction) forControlEvents:UIControlEventTouchUpInside];
-//    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 180)];
-//    UIView *contentView = [[UIView alloc]init];
-//    [headView addSubview:contentView];
-//    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.top.right.mas_equalTo(0);
-//        make.height.mas_equalTo(140);
-//    }];
-//
-//    UIImageView *headPicImageView = [[UIImageView alloc]init];
-//    [contentView addSubview:headPicImageView];
-//    [headPicImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(90, 90));
-//        make.center.equalTo(contentView).offset(0);
-//    }];
-//    headPicImageView.image = [UIImage imageNamed:@"userIcon"];
-//    headPicImageView.layer.cornerRadius = 90/2.0f;
-//    headPicImageView.layer.masksToBounds = YES;
-//
-//    UIImageView *changeIconImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"editImage"]];
-//    [headPicImageView addSubview:changeIconImageView];
-//
-//    changeIconImageView.contentMode = UIViewContentModeCenter;
-//    [changeIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//      make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
-//    }];
-//    changeIconImageView.backgroundColor = [UIColor colorWithHex:@"#000000" alpha:.6];
-//
-//    UIGestureRecognizer *tap = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(changeIconButtonAction)];
-//    [changeIconImageView addGestureRecognizer:tap];
-//
-//
-//    UIButton *changeIconButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [headView addSubview:changeIconButton];
-//    [changeIconButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(110, 15));
-//        make.top.equalTo(contentView.mas_bottom).offset(0);
-//        make.centerX.mas_equalTo(0);
-//        //make.left.mas_equalTo(100);
-//    }];
-//    [changeIconButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-//    [changeIconButton setTitle:@"点击更换头像" forState:UIControlStateNormal];
-//    [changeIconButton.titleLabel setFont:kFontSize(15)];
-//    [changeIconButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-//    [changeIconButton addTarget:self action:@selector(changeIconButtonAction) forControlEvents:UIControlEventTouchUpInside];
-
-    
-    
+    NSString *head_pic = [NSString stringWithFormat:@"%@%@",kSERVICE,self.model.head_pic];
+    [self.headView.headPicImageView sd_setImageWithURL:[NSURL URLWithString:head_pic]];
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
     self.tableView.tableHeaderView = self.headView;
-    
 }
-- (void)pushMyFriendsVC
+
+- (void)pushViewController
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)changeIconButtonAction
 {
-    NSLog(@"点击头像");
+    TZImagePickerController *pickerVC = [[TZImagePickerController alloc]initWithMaxImagesCount:1 delegate:self];
+    // 允许选择图片
+    pickerVC.allowPickingImage = YES;
+    [self presentViewController:pickerVC animated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark TZImagePickerControllerDelegate
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto;
+{
+    UIImage *image = [photos firstObject];
+ 
+    [UpLoadAvatarNetworking postUploadAvatarWithToken:kUser.user_token withAvator:image completion:^(UploadAvatarModel * _Nonnull model, NSError * _Nonnull error) {
+        if (model.code == 1)
+        {
+            self.headView.headPicImageView.image = image;
+        }
+    }];
 }
 
 #pragma mark UITableViewDelegate
@@ -132,7 +122,7 @@
         cell.contentLabel.text = self.model.nickname;
     }else if (indexPath.row == 1){
         cell.infoLabel.hidden = NO;
-        cell.contentLabel.text = [NSString stringWithFormat:@"%ld",self.model.mf_num];
+        cell.contentLabel.text = self.model.mf_num;
     }else if (indexPath.row == 2){
         cell.infoLabel.hidden = YES;
         cell.contentLabel.text = self.model.signs;
@@ -160,6 +150,40 @@
 {
     return 55;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 昵称
+    if (indexPath.row == 0)
+    {
+        EditNickNameViewController *vc = [[EditNickNameViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 1) // 漫饭
+    {
+        EditMFNumbViewController *vc = [[EditMFNumbViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 2)// 签名
+    {
+        EditSignsViewController *vc = [[EditSignsViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 3) // 性别
+    {
+        
+    }else if (indexPath.row == 4)// 生日
+    {
+        [self.view addSubview:self.birthView];
+        self.birthView.frame = self.view.bounds;
+        
+    }else if (indexPath.row == 5)// 地区
+    {
+        
+    }
+}
+
+#pragma mark Action
+
+
+#pragma mark 懒加载
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -178,4 +202,13 @@
     }
     return _itemsArray;
 }
+
+- (BirthPickerView *)birthView
+{
+    if (!_birthView) {
+        _birthView = [[BirthPickerView alloc]init];
+    }
+    return _birthView;
+}
+
 @end

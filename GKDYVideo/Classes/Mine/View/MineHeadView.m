@@ -39,7 +39,7 @@
         make.size.mas_equalTo(CGSizeMake(86, 86));
     }];
     self.head_pic.image = [UIImage imageNamed:@"chat_icon"];
-    self.head_pic.layer.cornerRadius = self.head_pic.frame.size.width/2.0f;
+    self.head_pic.layer.cornerRadius =86/2.0f;
     self.head_pic.layer.masksToBounds = YES;
     
     self.nickNameLabel = [[UILabel alloc]init];

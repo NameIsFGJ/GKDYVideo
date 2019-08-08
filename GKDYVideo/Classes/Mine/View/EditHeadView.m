@@ -44,11 +44,10 @@
         
         [self.changeIconBlackButton setImage:[UIImage imageNamed:@"editImage"] forState:UIControlStateNormal];
         self.changeIconBlackButton.imageView.contentMode = UIViewContentModeCenter;
-      //  self.changeIconImageView.contentMode = UIViewContentModeCenter;
         [ self.changeIconBlackButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
-        self.changeIconBlackButton.backgroundColor = [UIColor colorWithHex:@"#000000" alpha:.6];
+        self.changeIconBlackButton.backgroundColor = [UIColor colorWithHex:@"#000000" alpha:.5];
         self.changeIconBlackButton.userInteractionEnabled = YES;
         
         self.changeIconButton = [UIButton buttonWithType:UIButtonTypeCustom];
