@@ -28,6 +28,8 @@
 		79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62ED2157405400101773 /* GKDYVideoViewModel.m */; };
 		79CC62F52158E44300101773 /* GKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62F42158E44300101773 /* GKNetworking.m */; };
 		79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */; };
+		91084BAE22FD057B00021B29 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 91084BAD22FD057B00021B29 /* city.json */; };
+		91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91084BB322FD16B100021B29 /* ProvinceModel.m */; };
 		9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9112CEA722EFDE4B00D2A71E /* SearchVideoModel.m */; };
 		9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E14922EA8B5B00FFFCF0 /* ShareView.m */; };
 		9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9113E14D22EAAD1400FFFCF0 /* FollowingViewController.m */; };
@@ -83,6 +85,7 @@
 		9176295022F16234003CF389 /* BaseAddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176294F22F16234003CF389 /* BaseAddGoodsViewController.m */; };
 		9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176295522F16877003CF389 /* AddGoodsViewController.m */; };
 		9176295922F168E1003CF389 /* AddGoodsChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176295822F168E1003CF389 /* AddGoodsChildViewController.m */; };
+		9189A4F822FE9B5000EA50E0 /* SexPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9189A4F722FE9B5000EA50E0 /* SexPickerView.m */; };
 		91ABABAB22FBB6E700E4593A /* UpLoadAvatarNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABAA22FBB6E700E4593A /* UpLoadAvatarNetworking.m */; };
 		91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABAD22FBB85C00E4593A /* UploadAvatarModel.m */; };
 		91ABABB122FBC8D700E4593A /* EditNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABB022FBC8D700E4593A /* EditNickNameViewController.m */; };
@@ -196,6 +199,9 @@
 		79CC62F92158F2BB00101773 /* GKDYPersonalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYPersonalModel.h; sourceTree = "<group>"; };
 		79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYPersonalModel.m; sourceTree = "<group>"; };
 		81CC8427C037D4E8A4B61B49 /* Pods_GKDYVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKDYVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91084BAD22FD057B00021B29 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		91084BB222FD16B100021B29 /* ProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		91084BB322FD16B100021B29 /* ProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
 		9112CEA622EFDE4B00D2A71E /* SearchVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideoModel.h; sourceTree = "<group>"; };
 		9112CEA722EFDE4B00D2A71E /* SearchVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideoModel.m; sourceTree = "<group>"; };
 		9113E14822EA8B5B00FFFCF0 /* ShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
@@ -308,6 +314,8 @@
 		9176295522F16877003CF389 /* AddGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsViewController.m; sourceTree = "<group>"; };
 		9176295722F168E1003CF389 /* AddGoodsChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsChildViewController.h; sourceTree = "<group>"; };
 		9176295822F168E1003CF389 /* AddGoodsChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsChildViewController.m; sourceTree = "<group>"; };
+		9189A4F622FE9B5000EA50E0 /* SexPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SexPickerView.h; sourceTree = "<group>"; };
+		9189A4F722FE9B5000EA50E0 /* SexPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SexPickerView.m; sourceTree = "<group>"; };
 		91ABABA922FBB6E700E4593A /* UpLoadAvatarNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadAvatarNetworking.h; sourceTree = "<group>"; };
 		91ABABAA22FBB6E700E4593A /* UpLoadAvatarNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpLoadAvatarNetworking.m; sourceTree = "<group>"; };
 		91ABABAC22FBB85C00E4593A /* UploadAvatarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadAvatarModel.h; sourceTree = "<group>"; };
@@ -471,6 +479,7 @@
 		79CC62912157377400101773 /* GKDYVideo */ = {
 			isa = PBXGroup;
 			children = (
+				91084BAD22FD057B00021B29 /* city.json */,
 				79CC62C521573AB400101773 /* Classes */,
 				79CC629D2157377600101773 /* LaunchScreen.storyboard */,
 				79CC62A02157377600101773 /* Info.plist */,
@@ -1054,6 +1063,8 @@
 			children = (
 				91ABABAC22FBB85C00E4593A /* UploadAvatarModel.h */,
 				91ABABAD22FBB85C00E4593A /* UploadAvatarModel.m */,
+				91084BB222FD16B100021B29 /* ProvinceModel.h */,
+				91084BB322FD16B100021B29 /* ProvinceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1070,10 +1081,12 @@
 				9162CFB522FAB67D0094EB7E /* EditTableViewCell.xib */,
 				91CC4ECF22FB0DD500A1D7B1 /* EditHeadView.h */,
 				91CC4ED022FB0DD500A1D7B1 /* EditHeadView.m */,
-				91FD0F5C22FC513600951823 /* CityPickerView.h */,
-				91FD0F5D22FC513600951823 /* CityPickerView.m */,
+				9189A4F622FE9B5000EA50E0 /* SexPickerView.h */,
+				9189A4F722FE9B5000EA50E0 /* SexPickerView.m */,
 				91FD0F5F22FC538100951823 /* BirthPickerView.h */,
 				91FD0F6022FC538100951823 /* BirthPickerView.m */,
+				91FD0F5C22FC513600951823 /* CityPickerView.h */,
+				91FD0F5D22FC513600951823 /* CityPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1262,6 +1275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91084BAE22FD057B00021B29 /* city.json in Resources */,
 				606A77DF215E0B3000DC2F63 /* README.md in Resources */,
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
 				79CC629F2157377600101773 /* LaunchScreen.storyboard in Resources */,
@@ -1386,6 +1400,7 @@
 				91ABABB722FBCE1B00E4593A /* EditSignsViewController.m in Sources */,
 				9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */,
 				79CC62A22157377600101773 /* main.m in Sources */,
+				9189A4F822FE9B5000EA50E0 /* SexPickerView.m in Sources */,
 				91DD30B022F0818700192D7E /* VideoGuanModel.m in Sources */,
 				9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */,
 				9154CCC122F015910066ECC5 /* SearchVideoPlayViewController.m in Sources */,
@@ -1433,6 +1448,7 @@
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
+				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,

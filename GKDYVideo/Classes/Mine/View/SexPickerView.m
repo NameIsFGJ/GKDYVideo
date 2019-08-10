@@ -1,44 +1,34 @@
 //
-//  BirthPickerView.m
+//  SexPickerView.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/8/8.
+//  Created by 冯高杰 on 2019/8/10.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "BirthPickerView.h"
+#import "SexPickerView.h"
 #import "EditProfileNetworking.h"
-@interface BirthPickerView()<UIPickerViewDataSource,UIPickerViewDelegate>
+@interface SexPickerView()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (strong, nonatomic)UIPickerView *pickerView;
-@property (nonatomic, strong) NSMutableArray *yearArray;
-@property (nonatomic, strong) NSMutableArray *monthArray;
-@property (nonatomic, strong) NSMutableArray *dayArray;
 @property (strong, nonatomic) UIView *topView;
-@property (strong, nonatomic) NSString *currentYear;
-@property (strong, nonatomic) NSString *currentMonth;
-@property (strong, nonatomic) NSString *currentDay;
+@property (strong, nonatomic) NSMutableArray *itemsArray;
 @property (strong,nonatomic) UIButton *submitButton;
+@property (strong, nonatomic) NSString *currentSex;
 @end
 
-@implementation BirthPickerView
-
+@implementation SexPickerView
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.userInteractionEnabled = YES;
         [self makeUI];
-        [self networking];
     }
     return self;
 }
 
-#pragma mark Action
-
--(void)makeUI
+- (void)makeUI
 {
-
     UIView *blackView = [[UIView alloc]init];
     [self addSubview:blackView];
     [blackView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -49,7 +39,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(missView)];
     [blackView addGestureRecognizer:tap];
     
-    
     [self addSubview:self.topView];
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
@@ -59,69 +48,32 @@
     
     [self addSubview:self.pickerView];
     [self.pickerView mas_makeConstraints:^(MASConstraintMaker *make) {
-       // make.left.right.bottom.mas_equalTo(0);
+        // make.left.right.bottom.mas_equalTo(0);
         make.height.mas_equalTo(300);
         make.left.right.mas_equalTo(0);
         make.top.equalTo(self.topView.mas_bottom).offset(0);
     }];
     self.pickerView.backgroundColor = [UIColor whiteColor];
     
+    self.currentSex = @"男";
 }
-
-- (void)networking
-{
-    for (int i = 1940; i< 2020; i ++) {
-        
-        [self.yearArray addObject:[NSString stringWithFormat:@"%d",i]];
-    }
-    
-    for (int i = 1; i < 13; i ++) {
-        [self.monthArray addObject:[NSString stringWithFormat:@"%.2d",i]];
-    }
-   
-    for (int i = 1; i < 32; i ++) {
-        [self.dayArray addObject:[NSString stringWithFormat:@"%.2d",i]];
-    }
-}
-
-#pragma mark UIPickerViewDelegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 3;
+    return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-//    return 5;
-    if (component == 0) {
-        return self.yearArray.count;
-    }else if (component == 1){
-        return self.monthArray.count;
-    }else if (component == 2){
-        return self.dayArray.count;
-    }
-    return 0;
+    return self.itemsArray.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    if (component == 0) {
-        return self.yearArray[row];
-    }else if (component == 1){
-        return self.monthArray[row];
-    }else if (component == 2){
-        return self.dayArray[row];
-    }
-    return @"2";
+   
+    return self.itemsArray[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    if (component == 0) {
-        self.currentYear = self.yearArray[row];
-    }else if (component == 1){
-        self.currentMonth = self.monthArray[row];
-    }else if (component == 2){
-        self.currentDay = self.dayArray[row];
-    }
+    self.currentSex = self.itemsArray[row];
 }
 
 #pragma mark 懒加载
@@ -135,40 +87,12 @@
     return _pickerView;
 }
 
-- (NSMutableArray *)yearArray {
-    if (!_yearArray) {
-        _yearArray = [NSMutableArray array];
-    }
-    return _yearArray;
-}
-
-- (NSMutableArray *)monthArray {
-    if (!_monthArray) {
-        _monthArray = [NSMutableArray array];
-    }
-    return _monthArray;
-}
-
-- (NSMutableArray *)dayArray {
-    if (!_dayArray) {
-        _dayArray = [NSMutableArray array];
-    }
-    return _dayArray;
-}
-
-- (UIButton *)submitButton
+- (NSMutableArray *)itemsArray
 {
-    if (!_submitButton) {
-        _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_submitButton setTitle:@"确定" forState:UIControlStateNormal];
-        [_submitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_submitButton addTarget:self action:@selector(buttonAcion) forControlEvents:UIControlEventTouchUpInside];
-        _submitButton.layer.cornerRadius = 5;
-        _submitButton.layer.masksToBounds = YES;
-        _submitButton.layer.borderWidth = .5;
-        _submitButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    if (!_itemsArray) {
+        _itemsArray = [NSMutableArray arrayWithObjects:@"男",@"女", nil];
     }
-    return _submitButton;
+    return _itemsArray;
 }
 
 - (UIView *)topView
@@ -195,15 +119,11 @@
 
 - (void)buttonAcion
 {
-
-    NSString *birthday = [NSString stringWithFormat:@"%@-%@-%@",self.currentYear,self.currentMonth,self.currentDay];
-    [EditProfileNetworking postEditProfile:kUser.user_token withKey:@"birthday" WithValue:birthday completion:^(NewBaseModel * _Nonnull model, NSError * _Nonnull error) {
+    [EditProfileNetworking postEditProfile:kUser.user_token withKey:@"sex" WithValue:self.currentSex completion:^(NewBaseModel * _Nonnull model, NSError * _Nonnull error) {
         if (model.code == 1) {
             [self showSuccessMsg:@"修改成功"];
         }
-        
         [self missView];
-        
     }];
 }
 
@@ -213,5 +133,20 @@
         [self removeFromSuperview];
         self.block();
     }];
+}
+
+- (UIButton *)submitButton
+{
+    if (!_submitButton) {
+        _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_submitButton setTitle:@"确定" forState:UIControlStateNormal];
+        [_submitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_submitButton addTarget:self action:@selector(buttonAcion) forControlEvents:UIControlEventTouchUpInside];
+        _submitButton.layer.cornerRadius = 5;
+        _submitButton.layer.masksToBounds = YES;
+        _submitButton.layer.borderWidth = .5;
+        _submitButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }
+    return _submitButton;
 }
 @end

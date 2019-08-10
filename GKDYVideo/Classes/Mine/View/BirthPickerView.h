@@ -10,8 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^ReloadDataBlock)(void);
+
 @interface BirthPickerView : UIView
-@property (strong,nonatomic) UIButton *submitButton;
+@property (copy, nonatomic)ReloadDataBlock block;
+
 @end
 
 NS_ASSUME_NONNULL_END

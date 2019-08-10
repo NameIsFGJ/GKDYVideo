@@ -15,12 +15,15 @@
 #import "EditMFNumbViewController.h"
 #import "EditSignsViewController.h"
 #import "BirthPickerView.h"
+#import "CityPickerView.h"
+#import "SexPickerView.h"
 @interface EditInfoViewController()<UITableViewDelegate,UITableViewDataSource,TZImagePickerControllerDelegate>
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSArray *itemsArray;
-@property (strong,nonatomic)EditHeadView *headView;
+@property (strong, nonatomic)EditHeadView *headView;
 @property (strong, nonatomic)BirthPickerView *birthView;
-
+@property (strong, nonatomic)CityPickerView *cityView;
+@property (strong, nonatomic)SexPickerView *sexView;
 @end
 
 @implementation EditInfoViewController
@@ -38,8 +41,11 @@
     
 }
 
+#pragma mark Action
 - (void)networking
 {
+    self.model = nil;
+    
     [MyIndexNetworking postMyIndex:kUser.user_token completionHandle:^(DataModel * _Nonnull model, NSError * _Nonnull error) {
         self.model = model;
         [self.tableView reloadData];
@@ -105,7 +111,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    //return 6;
     return self.itemsArray.count;
 }
 
@@ -127,6 +132,7 @@
         cell.infoLabel.hidden = YES;
         cell.contentLabel.text = self.model.signs;
     }else if (indexPath.row == 3){
+        NSLog(@"self.model.sex  =%ld",self.model.sex);
         cell.infoLabel.hidden = YES;
         NSString *sexString;
         if (self.model.sex == 1) {
@@ -168,19 +174,34 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 3) // 性别
     {
-        
+        [self.view addSubview:self.sexView];
+        self.sexView.frame = self.view.bounds;
+         __weak EditInfoViewController *weakSelf = self;
+        self.sexView.block = ^{
+            [weakSelf networking];
+        };
     }else if (indexPath.row == 4)// 生日
     {
         [self.view addSubview:self.birthView];
         self.birthView.frame = self.view.bounds;
-        
+       
+        __weak EditInfoViewController *weakSelf = self;
+        self.birthView.block = ^{
+          
+            [weakSelf networking];
+        };
     }else if (indexPath.row == 5)// 地区
     {
-        
+        [self.view addSubview:self.cityView];
+        self.cityView.frame = self.view.bounds;
+         __weak EditInfoViewController *weakSelf = self;
+        self.cityView.block = ^{
+            [weakSelf networking];
+        };
     }
 }
 
-#pragma mark Action
+
 
 
 #pragma mark 懒加载
@@ -211,4 +232,19 @@
     return _birthView;
 }
 
+- (CityPickerView *)cityView
+{
+    if (!_cityView) {
+        _cityView = [[CityPickerView alloc]init];
+    }
+    return _cityView;
+}
+
+- (SexPickerView *)sexView
+{
+    if (!_sexView) {
+        _sexView = [[SexPickerView alloc]init];
+    }
+    return _sexView;
+}
 @end
