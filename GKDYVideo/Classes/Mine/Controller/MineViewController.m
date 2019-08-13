@@ -11,8 +11,10 @@
 #import "MyIndexNetworking.h"
 #import "SetViewController.h"
 #import "MineHeadView.h"
+// 设置
 #import "EditInfoViewController.h"
-
+// 我的发布
+#import "IssueViewController.h"
 
 @interface MineViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
@@ -80,9 +82,23 @@
 #pragma mark Action
 - (void)pushSetViewController
 {
-    EditInfoViewController *vc = [[EditInfoViewController alloc]init];
-    vc.model = self.model;
+    //EditInfoViewController *vc = [[EditInfoViewController alloc]init];
+    //vc.model = self.model;
+    SetViewController *vc = [[SetViewController alloc]init];
+    vc.imageUrl = self.model.head_pic;
+     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+    
+    /*
+     self.view.backgroundColor = kWhiteColor;
+     kUser.user_token = @"";
+     kUser.user_id = @"";
+     kUser.mobile = @"";
+     kUser.nickname = @"";
+     kUser.head_pic = @"";
+     kUser.money = @"";
+     [self showNormalMsg:@"退出登录"];
+     */
 }
 
 #pragma mark UITableView Delegate
@@ -94,7 +110,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
     static NSString *cellID = @"MineTableViewCellID";
     MineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.leftImageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
     cell.leftLabel.text = self.titleArray[indexPath.row];
     if (indexPath.row == 3) {
@@ -108,13 +124,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 3)
+    if (indexPath.row == 0)
     {
-        SetViewController *vc = [[SetViewController alloc]init];
+        IssueViewController *vc = [[IssueViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 55;
+}
 #pragma mark  loaz load
 - (UITableView *)tableView
 {

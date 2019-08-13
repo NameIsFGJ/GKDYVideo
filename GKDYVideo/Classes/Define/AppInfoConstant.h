@@ -28,6 +28,13 @@
 #define kWindowWidth CGRectGetWidth([UIScreen mainScreen].bounds)
 #define kWindowHeight CGRectGetHeight([UIScreen mainScreen].bounds)
 
+// 状态栏高度
+#define KStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+// 导航栏高度
+#define KNavBarHeight self.navigationController.navigationBar.frame.size.height
+
+// Nav总体的高度
+#define KTopViewHeight KStatusBarHeight + KNavBarHeight
 // 适配比例
 #define ADAPTATIONRATIO     kWindowWidth / 750.0f
 

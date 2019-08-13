@@ -86,7 +86,7 @@
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.top.equalTo(self.textfield.mas_bottom).offset(0);
-        make.right.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
         make.height.mas_equalTo(.5);
     }];
     

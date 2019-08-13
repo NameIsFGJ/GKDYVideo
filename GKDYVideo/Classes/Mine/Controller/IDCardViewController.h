@@ -1,8 +1,8 @@
 //
-//  MarketViewController.h
+//  IDCardViewController.h
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/8/10.
+//  Created by 冯高杰 on 2019/8/11.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MarketViewController : BaseViewController
+@interface IDCardViewController : BaseViewController
 
 @end
 

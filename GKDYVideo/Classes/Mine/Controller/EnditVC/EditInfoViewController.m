@@ -44,10 +44,12 @@
 #pragma mark Action
 - (void)networking
 {
-    self.model = nil;
+   // self.model = nil;
     
     [MyIndexNetworking postMyIndex:kUser.user_token completionHandle:^(DataModel * _Nonnull model, NSError * _Nonnull error) {
         self.model = model;
+        NSString *head_pic = [NSString stringWithFormat:@"%@%@",kSERVICE,self.model.head_pic];
+        [self.headView.headPicImageView sd_setImageWithURL:[NSURL URLWithString:head_pic]];
         [self.tableView reloadData];
     }];
 }
@@ -72,8 +74,7 @@
     self.headView = [[EditHeadView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 180)];
     [self.headView.changeIconButton addTarget:self action:@selector(changeIconButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.headView.changeIconBlackButton addTarget:self action:@selector(changeIconButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    NSString *head_pic = [NSString stringWithFormat:@"%@%@",kSERVICE,self.model.head_pic];
-    [self.headView.headPicImageView sd_setImageWithURL:[NSURL URLWithString:head_pic]];
+   
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
     self.tableView.tableHeaderView = self.headView;

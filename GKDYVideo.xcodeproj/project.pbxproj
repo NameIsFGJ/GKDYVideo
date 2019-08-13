@@ -68,13 +68,19 @@
 		915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62C22E00E8E00894F64 /* GKDYNavigationController.m */; };
 		915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */; };
 		91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC622E8316000642E47 /* UIView+Acategory.m */; };
-		91611DCA22E849DF00642E47 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91611DC922E849DF00642E47 /* SetViewController.m */; };
 		9162CFA922F976A70094EB7E /* MineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9162CFA822F976A70094EB7E /* MineHeadView.m */; };
 		9162CFAF22F97C010094EB7E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9162CFAE22F97C010094EB7E /* MineViewController.m */; };
 		9162CFB222FA5D7B0094EB7E /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9162CFB122FA5D7B0094EB7E /* EditInfoViewController.m */; };
 		9162CFB622FAB67D0094EB7E /* EditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9162CFB422FAB67D0094EB7E /* EditTableViewCell.m */; };
 		9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9162CFB522FAB67D0094EB7E /* EditTableViewCell.xib */; };
 		9162CFBA22FABA680094EB7E /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9162CFB922FABA680094EB7E /* DataModel.m */; };
+		9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165C22922FEA89E0015ED06 /* MarketViewController.m */; };
+		9165C23022FEAC320015ED06 /* MarketHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165C22F22FEAC320015ED06 /* MarketHeadView.m */; };
+		9165E367230102B600556AB7 /* IdCardUploadNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E366230102B600556AB7 /* IdCardUploadNetworking.m */; };
+		9165E36A2301339100556AB7 /* DealSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E3692301339100556AB7 /* DealSetViewController.m */; };
+		9165E36D2301530E00556AB7 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E36C2301530E00556AB7 /* IssueViewController.m */; };
+		9165E3762301657300556AB7 /* IssueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E3742301657300556AB7 /* IssueTableViewCell.m */; };
+		9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9165E3752301657300556AB7 /* IssueTableViewCell.xib */; };
 		916C6D2322F7D26700D2538F /* AddGoodsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D2222F7D26700D2538F /* AddGoodsInfoModel.m */; };
 		916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D3822F80E6A00D2538F /* NSArray+log.m */; };
 		916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C6D3B22F80EB200D2538F /* NSDictionary+log.m */; };
@@ -95,6 +101,7 @@
 		91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABBC22FC029500E4593A /* NewBaseModel.m */; };
 		91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2256522EEF34700FFAA84 /* SearchUsersNetworking.m */; };
 		91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */; };
+		91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB79BC23000BF10049BC41 /* IDCardViewController.m */; };
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */; };
 		91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */; };
@@ -128,9 +135,11 @@
 		91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */; };
 		91DD30B022F0818700192D7E /* VideoGuanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30AF22F0818700192D7E /* VideoGuanModel.m */; };
 		91DD30B322F0835F00192D7E /* VideoGuanNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30B222F0835F00192D7E /* VideoGuanNetworking.m */; };
-		91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ED83BF22DF5C7800B124E0 /* MarketViewController.m */; };
+		91DD442D22FFDE2B009A4790 /* MarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD442C22FFDE2B009A4790 /* MarketModel.m */; };
+		91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD443322FFE442009A4790 /* SetTableViewCell.m */; };
+		91DD443622FFE442009A4790 /* SetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DD443422FFE442009A4790 /* SetTableViewCell.xib */; };
+		91DD443C22FFEAEE009A4790 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD443B22FFEAEE009A4790 /* SetViewController.m */; };
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
-		91FD0F5922FC508800951823 /* city.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91FD0F5822FC508800951823 /* city.txt */; };
 		91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F5D22FC513600951823 /* CityPickerView.m */; };
 		91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F6022FC538100951823 /* BirthPickerView.m */; };
 		91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD85D722E5B81000EBF3B2 /* BaseNavigationController.m */; };
@@ -282,8 +291,6 @@
 		915BC62F22E00FE200894F64 /* UIImage+GKcategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GKcategory.m"; sourceTree = "<group>"; };
 		91611DC522E8316000642E47 /* UIView+Acategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Acategory.h"; sourceTree = "<group>"; };
 		91611DC622E8316000642E47 /* UIView+Acategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Acategory.m"; sourceTree = "<group>"; };
-		91611DC822E849DF00642E47 /* SetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
-		91611DC922E849DF00642E47 /* SetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		9162CFA722F976A70094EB7E /* MineHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeadView.h; sourceTree = "<group>"; };
 		9162CFA822F976A70094EB7E /* MineHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeadView.m; sourceTree = "<group>"; };
 		9162CFAD22F97C010094EB7E /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -295,6 +302,19 @@
 		9162CFB522FAB67D0094EB7E /* EditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTableViewCell.xib; sourceTree = "<group>"; };
 		9162CFB822FABA680094EB7E /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		9162CFB922FABA680094EB7E /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		9165C22822FEA89E0015ED06 /* MarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
+		9165C22922FEA89E0015ED06 /* MarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
+		9165C22E22FEAC320015ED06 /* MarketHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketHeadView.h; sourceTree = "<group>"; };
+		9165C22F22FEAC320015ED06 /* MarketHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketHeadView.m; sourceTree = "<group>"; };
+		9165E365230102B600556AB7 /* IdCardUploadNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdCardUploadNetworking.h; sourceTree = "<group>"; };
+		9165E366230102B600556AB7 /* IdCardUploadNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdCardUploadNetworking.m; sourceTree = "<group>"; };
+		9165E3682301339100556AB7 /* DealSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealSetViewController.h; sourceTree = "<group>"; };
+		9165E3692301339100556AB7 /* DealSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DealSetViewController.m; sourceTree = "<group>"; };
+		9165E36B2301530E00556AB7 /* IssueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
+		9165E36C2301530E00556AB7 /* IssueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
+		9165E3732301657300556AB7 /* IssueTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssueTableViewCell.h; sourceTree = "<group>"; };
+		9165E3742301657300556AB7 /* IssueTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewCell.m; sourceTree = "<group>"; };
+		9165E3752301657300556AB7 /* IssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueTableViewCell.xib; sourceTree = "<group>"; };
 		916C6D2122F7D26700D2538F /* AddGoodsInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsInfoModel.h; sourceTree = "<group>"; };
 		916C6D2222F7D26700D2538F /* AddGoodsInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsInfoModel.m; sourceTree = "<group>"; };
 		916C6D3722F80E6A00D2538F /* NSArray+log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+log.h"; sourceTree = "<group>"; };
@@ -334,6 +354,8 @@
 		91B2256522EEF34700FFAA84 /* SearchUsersNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUsersNetworking.m; sourceTree = "<group>"; };
 		91B2F52F22EC84CB0030B6C2 /* SearchHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryTableViewCell.h; sourceTree = "<group>"; };
 		91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryTableViewCell.m; sourceTree = "<group>"; };
+		91BB79BB23000BF10049BC41 /* IDCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCardViewController.h; sourceTree = "<group>"; };
+		91BB79BC23000BF10049BC41 /* IDCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCardViewController.m; sourceTree = "<group>"; };
 		91BBB70822E7F2460060ADDD /* UIViewController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
 		91BBB70922E7F2460060ADDD /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
 		91BD725B22EFEC2D00F517F6 /* SearchVideosNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideosNetworking.h; sourceTree = "<group>"; };
@@ -397,11 +419,15 @@
 		91DD30AF22F0818700192D7E /* VideoGuanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoGuanModel.m; sourceTree = "<group>"; };
 		91DD30B122F0835F00192D7E /* VideoGuanNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoGuanNetworking.h; sourceTree = "<group>"; };
 		91DD30B222F0835F00192D7E /* VideoGuanNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoGuanNetworking.m; sourceTree = "<group>"; };
-		91ED83BE22DF5C7800B124E0 /* MarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
-		91ED83BF22DF5C7800B124E0 /* MarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
+		91DD442B22FFDE2B009A4790 /* MarketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketModel.h; sourceTree = "<group>"; };
+		91DD442C22FFDE2B009A4790 /* MarketModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketModel.m; sourceTree = "<group>"; };
+		91DD443222FFE442009A4790 /* SetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetTableViewCell.h; sourceTree = "<group>"; };
+		91DD443322FFE442009A4790 /* SetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetTableViewCell.m; sourceTree = "<group>"; };
+		91DD443422FFE442009A4790 /* SetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetTableViewCell.xib; sourceTree = "<group>"; };
+		91DD443A22FFEAEE009A4790 /* SetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		91DD443B22FFEAEE009A4790 /* SetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeadView.h; sourceTree = "<group>"; };
 		91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeadView.m; sourceTree = "<group>"; };
-		91FD0F5822FC508800951823 /* city.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city.txt; sourceTree = "<group>"; };
 		91FD0F5C22FC513600951823 /* CityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPickerView.h; sourceTree = "<group>"; };
 		91FD0F5D22FC513600951823 /* CityPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPickerView.m; sourceTree = "<group>"; };
 		91FD0F5F22FC538100951823 /* BirthPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BirthPickerView.h; sourceTree = "<group>"; };
@@ -479,7 +505,6 @@
 		79CC62912157377400101773 /* GKDYVideo */ = {
 			isa = PBXGroup;
 			children = (
-				91084BAD22FD057B00021B29 /* city.json */,
 				79CC62C521573AB400101773 /* Classes */,
 				79CC629D2157377600101773 /* LaunchScreen.storyboard */,
 				79CC62A02157377600101773 /* Info.plist */,
@@ -870,6 +895,8 @@
 				91ABABAA22FBB6E700E4593A /* UpLoadAvatarNetworking.m */,
 				91ABABB822FC021800E4593A /* EditProfileNetworking.h */,
 				91ABABB922FC021800E4593A /* EditProfileNetworking.m */,
+				9165E365230102B600556AB7 /* IdCardUploadNetworking.h */,
+				9165E366230102B600556AB7 /* IdCardUploadNetworking.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -963,7 +990,7 @@
 		912F4DA022E18C94004CF0DF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				91FD0F5822FC508800951823 /* city.txt */,
+				91084BAD22FD057B00021B29 /* city.json */,
 				79CC629B2157377600101773 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -1001,8 +1028,8 @@
 		912F4DA422E18C94004CF0DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				91ED83BE22DF5C7800B124E0 /* MarketViewController.h */,
-				91ED83BF22DF5C7800B124E0 /* MarketViewController.m */,
+				9165C22822FEA89E0015ED06 /* MarketViewController.h */,
+				9165C22922FEA89E0015ED06 /* MarketViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1010,6 +1037,8 @@
 		912F4DA522E18C94004CF0DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91DD442B22FFDE2B009A4790 /* MarketModel.h */,
+				91DD442C22FFDE2B009A4790 /* MarketModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1017,6 +1046,8 @@
 		912F4DA622E18C94004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9165C22E22FEAC320015ED06 /* MarketHeadView.h */,
+				9165C22F22FEAC320015ED06 /* MarketHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1044,16 +1075,15 @@
 			children = (
 				9162CFAD22F97C010094EB7E /* MineViewController.h */,
 				9162CFAE22F97C010094EB7E /* MineViewController.m */,
-				9162CFB022FA5D7B0094EB7E /* EditInfoViewController.h */,
-				9162CFB122FA5D7B0094EB7E /* EditInfoViewController.m */,
-				91ABABAF22FBC8D700E4593A /* EditNickNameViewController.h */,
-				91ABABB022FBC8D700E4593A /* EditNickNameViewController.m */,
-				91ABABB222FBCDB500E4593A /* EditMFNumbViewController.h */,
-				91ABABB322FBCDB500E4593A /* EditMFNumbViewController.m */,
-				91ABABB522FBCE1B00E4593A /* EditSignsViewController.h */,
-				91ABABB622FBCE1B00E4593A /* EditSignsViewController.m */,
-				91611DC822E849DF00642E47 /* SetViewController.h */,
-				91611DC922E849DF00642E47 /* SetViewController.m */,
+				91BB79BA230004D60049BC41 /* EnditVC */,
+				91DD443A22FFEAEE009A4790 /* SetViewController.h */,
+				91DD443B22FFEAEE009A4790 /* SetViewController.m */,
+				91BB79BB23000BF10049BC41 /* IDCardViewController.h */,
+				91BB79BC23000BF10049BC41 /* IDCardViewController.m */,
+				9165E3682301339100556AB7 /* DealSetViewController.h */,
+				9165E3692301339100556AB7 /* DealSetViewController.m */,
+				9165E36B2301530E00556AB7 /* IssueViewController.h */,
+				9165E36C2301530E00556AB7 /* IssueViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1076,19 +1106,30 @@
 				91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */,
 				9162CFA722F976A70094EB7E /* MineHeadView.h */,
 				9162CFA822F976A70094EB7E /* MineHeadView.m */,
-				9162CFB322FAB67D0094EB7E /* EditTableViewCell.h */,
-				9162CFB422FAB67D0094EB7E /* EditTableViewCell.m */,
-				9162CFB522FAB67D0094EB7E /* EditTableViewCell.xib */,
-				91CC4ECF22FB0DD500A1D7B1 /* EditHeadView.h */,
-				91CC4ED022FB0DD500A1D7B1 /* EditHeadView.m */,
-				9189A4F622FE9B5000EA50E0 /* SexPickerView.h */,
-				9189A4F722FE9B5000EA50E0 /* SexPickerView.m */,
-				91FD0F5F22FC538100951823 /* BirthPickerView.h */,
-				91FD0F6022FC538100951823 /* BirthPickerView.m */,
-				91FD0F5C22FC513600951823 /* CityPickerView.h */,
-				91FD0F5D22FC513600951823 /* CityPickerView.m */,
+				91DD443222FFE442009A4790 /* SetTableViewCell.h */,
+				91DD443322FFE442009A4790 /* SetTableViewCell.m */,
+				91DD443422FFE442009A4790 /* SetTableViewCell.xib */,
+				9165E3732301657300556AB7 /* IssueTableViewCell.h */,
+				9165E3742301657300556AB7 /* IssueTableViewCell.m */,
+				9165E3752301657300556AB7 /* IssueTableViewCell.xib */,
+				91DD442E22FFE033009A4790 /* SetView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		91BB79BA230004D60049BC41 /* EnditVC */ = {
+			isa = PBXGroup;
+			children = (
+				9162CFB022FA5D7B0094EB7E /* EditInfoViewController.h */,
+				9162CFB122FA5D7B0094EB7E /* EditInfoViewController.m */,
+				91ABABAF22FBC8D700E4593A /* EditNickNameViewController.h */,
+				91ABABB022FBC8D700E4593A /* EditNickNameViewController.m */,
+				91ABABB222FBCDB500E4593A /* EditMFNumbViewController.h */,
+				91ABABB322FBCDB500E4593A /* EditMFNumbViewController.m */,
+				91ABABB522FBCE1B00E4593A /* EditSignsViewController.h */,
+				91ABABB622FBCE1B00E4593A /* EditSignsViewController.m */,
+			);
+			path = EnditVC;
 			sourceTree = "<group>";
 		};
 		91C9C1E222E6DFBF00D0A87E /* Login */ = {
@@ -1167,6 +1208,24 @@
 				91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */,
 			);
 			path = SearchNetworking;
+			sourceTree = "<group>";
+		};
+		91DD442E22FFE033009A4790 /* SetView */ = {
+			isa = PBXGroup;
+			children = (
+				9162CFB322FAB67D0094EB7E /* EditTableViewCell.h */,
+				9162CFB422FAB67D0094EB7E /* EditTableViewCell.m */,
+				9162CFB522FAB67D0094EB7E /* EditTableViewCell.xib */,
+				91CC4ECF22FB0DD500A1D7B1 /* EditHeadView.h */,
+				91CC4ED022FB0DD500A1D7B1 /* EditHeadView.m */,
+				9189A4F622FE9B5000EA50E0 /* SexPickerView.h */,
+				9189A4F722FE9B5000EA50E0 /* SexPickerView.m */,
+				91FD0F5F22FC538100951823 /* BirthPickerView.h */,
+				91FD0F6022FC538100951823 /* BirthPickerView.m */,
+				91FD0F5C22FC513600951823 /* CityPickerView.h */,
+				91FD0F5D22FC513600951823 /* CityPickerView.m */,
+			);
+			path = SetView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1278,12 +1337,13 @@
 				91084BAE22FD057B00021B29 /* city.json in Resources */,
 				606A77DF215E0B3000DC2F63 /* README.md in Resources */,
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
+				9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */,
 				79CC629F2157377600101773 /* LaunchScreen.storyboard in Resources */,
+				91DD443622FFE442009A4790 /* SetTableViewCell.xib in Resources */,
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
 				79CC629C2157377600101773 /* Assets.xcassets in Resources */,
 				91D2AC6322F9172600179C88 /* MessageCommonTableViewCell.xib in Resources */,
 				91D2AC6E22F9565000179C88 /* MyFansTableViewCell.xib in Resources */,
-				91FD0F5922FC508800951823 /* city.txt in Resources */,
 				9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1357,18 +1417,22 @@
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
-				91ED83C022DF5C7800B124E0 /* MarketViewController.m in Sources */,
+				91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */,
 				91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
 				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
 				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
+				9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */,
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
+				91DD442D22FFDE2B009A4790 /* MarketModel.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
 				91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */,
+				9165E367230102B600556AB7 /* IdCardUploadNetworking.m in Sources */,
 				91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */,
+				91DD443C22FFEAEE009A4790 /* SetViewController.m in Sources */,
 				9162CFB622FAB67D0094EB7E /* EditTableViewCell.m in Sources */,
 				91D2AC5E22F912A600179C88 /* GetZanViewController.m in Sources */,
 				9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */,
@@ -1405,6 +1469,7 @@
 				9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */,
 				9154CCC122F015910066ECC5 /* SearchVideoPlayViewController.m in Sources */,
 				915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */,
+				9165E36D2301530E00556AB7 /* IssueViewController.m in Sources */,
 				91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */,
 				79CC62E82157401E00101773 /* GKDYVideoView.m in Sources */,
 				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
@@ -1417,11 +1482,13 @@
 				91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
+				91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */,
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				9162CFBA22FABA680094EB7E /* DataModel.m in Sources */,
 				9162CFAF22F97C010094EB7E /* MineViewController.m in Sources */,
 				91D2AC6222F9172600179C88 /* MessageCommonTableViewCell.m in Sources */,
 				91D2E82622EEB3F80065FB0B /* UserTableViewCell.m in Sources */,
+				9165E36A2301339100556AB7 /* DealSetViewController.m in Sources */,
 				91D2AC7422F9608700179C88 /* MyFansNetworking.m in Sources */,
 				91D2AC7722F9675600179C88 /* MyfriendsViewController.m in Sources */,
 				914034D822E5DF46006F1699 /* LikeVideoModel.m in Sources */,
@@ -1440,8 +1507,8 @@
 				79CC62CB21573B4700101773 /* GKSliderView.m in Sources */,
 				91ABABAB22FBB6E700E4593A /* UpLoadAvatarNetworking.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
-				91611DCA22E849DF00642E47 /* SetViewController.m in Sources */,
 				91ABABBA22FC021800E4593A /* EditProfileNetworking.m in Sources */,
+				9165E3762301657300556AB7 /* IssueTableViewCell.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
@@ -1451,6 +1518,7 @@
 				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
+				9165C23022FEAC320015ED06 /* MarketHeadView.m in Sources */,
 				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,
 				91ABABB422FBCDB500E4593A /* EditMFNumbViewController.m in Sources */,
 				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
