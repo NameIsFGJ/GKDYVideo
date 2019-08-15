@@ -18,7 +18,6 @@
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
         if (!error) {
-            NSLog(@"responseObj  =%@",responseObj);
              completionHandle([NewBaseModel yy_modelWithDictionary:responseObj],nil);
         }else{
              completionHandle(nil,error);

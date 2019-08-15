@@ -154,13 +154,14 @@
 
 - (void)setModel:(IndexModel *)model {
     _model = model;
-
     // 背景图
     [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.pic_url]]];
     // 头像
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.head_pic]]];
+    NSString *head_pic = [model.user objectForKey:@"head_pic"];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,head_pic]]];
     // 昵称
-    self.nameLabel.text = model.nickname;
+    NSString *nickname = [model.user objectForKey:@"nickname"];
+    self.nameLabel.text = nickname;
     // 标题
     self.contentLabel.text = model.desc;
     //点赞
@@ -176,7 +177,6 @@
    // NSLog(@"%@",model);
     //关注按钮
     self.followingButton.hidden = model.is_guan? YES: NO;
-    NSLog(@"model.is_34guan  =%ld",model.is_guan);
 }
 
 #pragma mark - Public Methods

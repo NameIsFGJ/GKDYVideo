@@ -12,17 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IndexModel : NSObject
 @property (assign, nonatomic) NSInteger identify;
-@property (assign, nonatomic) NSInteger u_id;
+@property (assign, nonatomic) NSInteger user_id;
 @property (strong, nonatomic) NSString *desc;
 @property (strong, nonatomic) NSString *pic_url;
 @property (strong, nonatomic) NSString *video_url;
 @property (assign, nonatomic) NSInteger z_count;
 @property (assign, nonatomic) NSInteger c_count;
 @property (assign, nonatomic) NSInteger share_count;
-@property (strong, nonatomic) NSString *nickname;
-@property (strong, nonatomic) NSString *head_pic;
 @property (assign, nonatomic) NSInteger is_like;
 @property (assign, nonatomic) NSInteger is_guan;
+@property (strong, nonatomic) NSDictionary *user;
+
 @end
 
 NS_ASSUME_NONNULL_END

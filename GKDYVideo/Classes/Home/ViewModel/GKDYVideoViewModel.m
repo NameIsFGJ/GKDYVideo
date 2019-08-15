@@ -37,12 +37,6 @@
     
     NSDictionary *params;
      params = @{@"page":@1,@"token":kUser.user_token};
-   // NSLog(@"kUser.user_token  %@",kUser.user_token);
-//    if ([User isLogin]){
-//        params = @{@"page":@1,@"user_id":kUser.user_id};
-//    }else{
-//        params =@{@"page":@1};
-//    }
     
     [GKNetworking get:url params:params success:^(id  _Nonnull responseObject) {
         //----------------------------------

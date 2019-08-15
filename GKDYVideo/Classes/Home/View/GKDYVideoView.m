@@ -57,11 +57,6 @@
         }];
         
         if (!isPushed) {
-//            [self.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
-//                [self setModels:list index:0];
-//            } failure:^(NSError * _Nonnull error) {
-//                NSLog(@"%@", error);
-//            }];
         }
     }
     return self;

@@ -16,7 +16,7 @@
 #import "FlollowingNetworking.h"
 #import "GetVideoCommentView.h"
 #import "ShareView.h"
-
+#import "GKDYUserMainViewController.h"
 @interface GKDYPlayerViewController ()<GKDYVideoViewDelegate>
 @property (strong, nonatomic) UIView *mainView;
 @property (strong, nonatomic) GetVideoCommentView *commentView;
@@ -96,12 +96,18 @@
 - (void)videoView:(GKDYVideoView *)videoView didClickIcon:(IndexModel *)videoModel;
 {
     NSLog(@" 点击头像");
+//    NSLog(@"is_guan =%ld",videoModel.is_guan);
+//    NSLog(@"z_count =%ld",videoModel.z_count);
+    NSLog(@"user_id  =%ld",videoModel.user_id);
+    GKDYUserMainViewController *vc = [[GKDYUserMainViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.userID = videoModel.user_id;
+  
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)videoView:(GKDYVideoView *)videoView didClickPraise:(IndexModel *)videoModel{
     
-    NSLog(@"videoModel.is_like  =%ld",videoModel.is_like);
-
     if (videoModel.is_like) {
         [LikeVideoNewtworking postLikeVideo:kUser.user_token videoID:videoModel.identify completionHandle:^(NewBaseModel * _Nonnull model, NSError * _Nonnull error) {
             if (model.code == 1) {
@@ -123,37 +129,10 @@
             }
         }];
     }
-        //    if (videoModel.is_like)
-//    {
-//        [UnlikeVideoNetworking postUnLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:videoModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
-//            NSLog(@"1model.msg  =%@",model.msg);
-//            if (model.status == 1) {
-//                [self showNormalMsg:@"点赞取消"];
-//                [videoView.currentPlayView.praiseBtn setImage:[UIImage imageNamed:@"ss_icon_star_normal"] forState:UIControlStateNormal];
-//                videoModel.is_like = 0;
-//                videoModel.z_count = videoModel.z_count -1;
-//                [videoView.currentPlayView.praiseBtn setTitle:[NSString stringWithFormat:@"%ld",videoModel.z_count] forState:UIControlStateNormal];
-//            }
-//        }];
-//    }else{
-//        [LikeVideoNewtworking postLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:videoModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
-//            NSLog(@"2model.msg  =%@",model.msg);
-//            if (model.status == 1) {
-//                [self showNormalMsg:@"点赞成功"];
-//                [videoView.currentPlayView.praiseBtn setImage:[UIImage imageNamed:@"ss_icon_star_selected"] forState:UIControlStateNormal];
-//                videoModel.is_like = 1;
-//                videoModel.z_count = videoModel.z_count +1;
-//                [videoView.currentPlayView.praiseBtn setTitle:[NSString stringWithFormat:@"%ld",videoModel.z_count] forState:UIControlStateNormal];
-//            }else if (model.status == -9){
-//                [self showNormalMsg:@"无需重复点赞"];
-//            }
-//        }];
-//    }
 }
 
 - (void)videoView:(GKDYVideoView *)videoView didClickComment:(IndexModel *)videoModel
 {
-   // [self islogin];
     GetVideoCommentView *commentView = [[GetVideoCommentView alloc]initWithFrame:CGRectMake(0, kWindowHeight, kWindowWidth, kWindowHeight) AndModel:videoModel];
     [[UIApplication sharedApplication].keyWindow addSubview:commentView];
     [commentView showView];
@@ -161,7 +140,6 @@
 
 - (void)videoView:(GKDYVideoView *)videoView didClickShare:(IndexModel *)videoModel
 {
-   // [self islogin];
     ShareView *shareView = [[ShareView alloc]init];
     shareView.frame = CGRectMake(0, kWindowHeight, kWindowWidth, kWindowHeight);
      [[UIApplication sharedApplication].keyWindow addSubview:shareView];
@@ -170,9 +148,7 @@
 
 - (void)videoView:(GKDYVideoView *)videoView didClickFollow:(IndexModel *)videoModel
 {
-    //[self islogin];
     [FlollowingNetworking postFlollowing:kUser.user_token toUseID:videoModel.identify  completionHandle:^(NewBaseModel * _Nonnull model, NSError * _Nonnull error) {
-        NSLog(@"model.co33de  =%ld",model.code);
         if (model.code == 1) {
             [self showSuccessMsg:@"操作成功"];
             [UIView animateWithDuration:.5 animations:^{

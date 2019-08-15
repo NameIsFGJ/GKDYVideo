@@ -92,6 +92,10 @@
 		9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176295522F16877003CF389 /* AddGoodsViewController.m */; };
 		9176295922F168E1003CF389 /* AddGoodsChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176295822F168E1003CF389 /* AddGoodsChildViewController.m */; };
 		9189A4F822FE9B5000EA50E0 /* SexPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9189A4F722FE9B5000EA50E0 /* SexPickerView.m */; };
+		919843662304FF14001148B9 /* GKDYUserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919843652304FF14001148B9 /* GKDYUserMainViewController.m */; };
+		919843692304FF81001148B9 /* UserHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 919843682304FF81001148B9 /* UserHeadView.m */; };
+		9198436C230553C6001148B9 /* UserNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198436B230553C6001148B9 /* UserNetworking.m */; };
+		919843722305568B001148B9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 919843712305568B001148B9 /* UserModel.m */; };
 		91ABABAB22FBB6E700E4593A /* UpLoadAvatarNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABAA22FBB6E700E4593A /* UpLoadAvatarNetworking.m */; };
 		91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABAD22FBB85C00E4593A /* UploadAvatarModel.m */; };
 		91ABABB122FBC8D700E4593A /* EditNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABB022FBC8D700E4593A /* EditNickNameViewController.m */; };
@@ -114,6 +118,7 @@
 		91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1E822E6DFEF00D0A87E /* LoginViewController.m */; };
 		91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */; };
 		91CC13D722ED620E00FF0C12 /* SearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC13D622ED620E00FF0C12 /* SearchMainViewController.m */; };
+		91CC2E752305987A00F153A6 /* GKDYUserVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */; };
 		91CC4ED122FB0DD500A1D7B1 /* EditHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC4ED022FB0DD500A1D7B1 /* EditHeadView.m */; };
 		91D2AC5E22F912A600179C88 /* GetZanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2AC5D22F912A600179C88 /* GetZanViewController.m */; };
 		91D2AC6222F9172600179C88 /* MessageCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2AC6022F9172600179C88 /* MessageCommonTableViewCell.m */; };
@@ -343,6 +348,14 @@
 		9176295822F168E1003CF389 /* AddGoodsChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsChildViewController.m; sourceTree = "<group>"; };
 		9189A4F622FE9B5000EA50E0 /* SexPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SexPickerView.h; sourceTree = "<group>"; };
 		9189A4F722FE9B5000EA50E0 /* SexPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SexPickerView.m; sourceTree = "<group>"; };
+		919843642304FF14001148B9 /* GKDYUserMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYUserMainViewController.h; sourceTree = "<group>"; };
+		919843652304FF14001148B9 /* GKDYUserMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYUserMainViewController.m; sourceTree = "<group>"; };
+		919843672304FF81001148B9 /* UserHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserHeadView.h; sourceTree = "<group>"; };
+		919843682304FF81001148B9 /* UserHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserHeadView.m; sourceTree = "<group>"; };
+		9198436A230553C5001148B9 /* UserNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNetworking.h; sourceTree = "<group>"; };
+		9198436B230553C6001148B9 /* UserNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserNetworking.m; sourceTree = "<group>"; };
+		919843702305568B001148B9 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		919843712305568B001148B9 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		91ABABA922FBB6E700E4593A /* UpLoadAvatarNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadAvatarNetworking.h; sourceTree = "<group>"; };
 		91ABABAA22FBB6E700E4593A /* UpLoadAvatarNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpLoadAvatarNetworking.m; sourceTree = "<group>"; };
 		91ABABAC22FBB85C00E4593A /* UploadAvatarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadAvatarModel.h; sourceTree = "<group>"; };
@@ -387,6 +400,8 @@
 		91C9C1EC22E708CA00D0A87E /* SendRegisterCodeNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendRegisterCodeNetworking.m; sourceTree = "<group>"; };
 		91CC13D522ED620E00FF0C12 /* SearchMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMainViewController.h; sourceTree = "<group>"; };
 		91CC13D622ED620E00FF0C12 /* SearchMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMainViewController.m; sourceTree = "<group>"; };
+		91CC2E732305987A00F153A6 /* GKDYUserVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYUserVideoViewController.h; sourceTree = "<group>"; };
+		91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYUserVideoViewController.m; sourceTree = "<group>"; };
 		91CC4ECF22FB0DD500A1D7B1 /* EditHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHeadView.h; sourceTree = "<group>"; };
 		91CC4ED022FB0DD500A1D7B1 /* EditHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHeadView.m; sourceTree = "<group>"; };
 		91D2AC5C22F912A600179C88 /* GetZanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetZanViewController.h; sourceTree = "<group>"; };
@@ -619,6 +634,10 @@
 				79CC62D621573C2C00101773 /* GKDYPlayerViewController.m */,
 				606A77DC215DFCB100DC2F63 /* GKDYPersonalViewController.h */,
 				606A77DB215DFCB000DC2F63 /* GKDYPersonalViewController.m */,
+				919843642304FF14001148B9 /* GKDYUserMainViewController.h */,
+				919843652304FF14001148B9 /* GKDYUserMainViewController.m */,
+				91CC2E732305987A00F153A6 /* GKDYUserVideoViewController.h */,
+				91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -643,6 +662,8 @@
 				91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */,
 				9113E14822EA8B5B00FFFCF0 /* ShareView.h */,
 				9113E14922EA8B5B00FFFCF0 /* ShareView.m */,
+				919843672304FF81001148B9 /* UserHeadView.h */,
+				919843682304FF81001148B9 /* UserHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -663,6 +684,8 @@
 				9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */,
 				91DD30AE22F0818700192D7E /* VideoGuanModel.h */,
 				91DD30AF22F0818700192D7E /* VideoGuanModel.m */,
+				919843702305568B001148B9 /* UserModel.h */,
+				919843712305568B001148B9 /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -881,6 +904,8 @@
 				9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */,
 				91DD30B122F0835F00192D7E /* VideoGuanNetworking.h */,
 				91DD30B222F0835F00192D7E /* VideoGuanNetworking.m */,
+				9198436A230553C5001148B9 /* UserNetworking.h */,
+				9198436B230553C6001148B9 /* UserNetworking.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1454,7 +1479,9 @@
 				91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
 				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
+				919843722305568B001148B9 /* UserModel.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
+				919843662304FF14001148B9 /* GKDYUserMainViewController.m in Sources */,
 				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
 				9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */,
@@ -1470,6 +1497,7 @@
 				91D2AC5E22F912A600179C88 /* GetZanViewController.m in Sources */,
 				9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */,
 				916C6D4F22F833B700D2538F /* MessageTableViewCell.m in Sources */,
+				91CC2E752305987A00F153A6 /* GKDYUserVideoViewController.m in Sources */,
 				91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */,
 				91C9C1D222E69D7E00D0A87E /* User.m in Sources */,
 				916C6D2322F7D26700D2538F /* AddGoodsInfoModel.m in Sources */,
@@ -1514,6 +1542,7 @@
 				91D2AC6622F91E3E00179C88 /* GetZanModel.m in Sources */,
 				91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */,
 				91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */,
+				919843692304FF81001148B9 /* UserHeadView.m in Sources */,
 				79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */,
 				91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
@@ -1554,6 +1583,7 @@
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
 				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
 				91DFEF872302559700DA2458 /* MyBusinessTableViewCell.m in Sources */,
+				9198436C230553C6001148B9 /* UserNetworking.m in Sources */,
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				9165C23022FEAC320015ED06 /* MarketHeadView.m in Sources */,

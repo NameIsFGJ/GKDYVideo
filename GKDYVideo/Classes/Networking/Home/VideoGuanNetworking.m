@@ -16,7 +16,6 @@
     [self POST:urlStr parameters:par progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"responseObj  =%@",responseObj);
         if ([responseObj[@"code"]integerValue] == 1) {
             NSArray *array = responseObj[@"data"][@"rows"];
             NSMutableArray *tempArray = [NSMutableArray array];

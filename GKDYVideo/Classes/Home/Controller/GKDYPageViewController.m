@@ -80,6 +80,7 @@
 
 - (void)buttonAction:(HomeSegmentedControl *)control
 {
+    
     self.selectIndex = control.selectedSegmentIndex;
 }
 
@@ -98,6 +99,13 @@
              [_selectVC didMoveToParentViewController:self];
             _selectIndex = selectIndex;
         }];
+    }
+    
+    if (_selectIndex == 0) {
+        [self.playVC.videoView pause];
+    }else if (_selectIndex == 1)
+    {
+        [self.playVC.videoView resume];
     }
 }
 
