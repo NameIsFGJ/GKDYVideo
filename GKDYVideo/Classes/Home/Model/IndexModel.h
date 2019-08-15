@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *nickname;
 @property (strong, nonatomic) NSString *head_pic;
 @property (assign, nonatomic) NSInteger is_like;
+@property (assign, nonatomic) NSInteger is_guan;
 @end
 
 NS_ASSUME_NONNULL_END

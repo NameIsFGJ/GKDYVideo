@@ -35,7 +35,6 @@
 #pragma mark UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    NSLog(@"self.itemsArr33ay.count  =%ld",self.itemsArray.count);
     return self.itemsArray.count;
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;

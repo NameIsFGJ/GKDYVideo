@@ -9,15 +9,16 @@
 #import "VideoGuanNetworking.h"
 #import "VideoGuanModel.h"
 @implementation VideoGuanNetworking
-+ (void)postVideoGuanWithUserID:(NSInteger)userID withPage:(NSInteger)page completion:(void(^)(NSArray *array,NSError *error))completionHandle;
++ (void)postVideoGuanWithUserID:(NSString *)token withPage:(NSInteger)page completion:(void(^)(NSArray *array,NSError *error))completionHandle;
 {
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/videoGuan"];
-    NSDictionary *par = @{@"user_id":@(userID),@"page":@(page)};
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/guanVideo"];
+    NSDictionary *par = @{@"token":token,@"page":@(page)};
     [self POST:urlStr parameters:par progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
-            NSArray *array = responseObj[@"data"];
+        NSLog(@"responseObj  =%@",responseObj);
+        if ([responseObj[@"code"]integerValue] == 1) {
+            NSArray *array = responseObj[@"data"][@"rows"];
             NSMutableArray *tempArray = [NSMutableArray array];
             for (NSDictionary *dic in array)
             {

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoGuanNetworking : BaseNetworking
-+ (void)postVideoGuanWithUserID:(NSInteger)userID withPage:(NSInteger)page completion:(void(^)(NSArray *array,NSError *error))completionHandle;
++ (void)postVideoGuanWithUserID:(NSString *)token withPage:(NSInteger)page completion:(void(^)(NSArray *array,NSError *error))completionHandle;
 
 @end
 

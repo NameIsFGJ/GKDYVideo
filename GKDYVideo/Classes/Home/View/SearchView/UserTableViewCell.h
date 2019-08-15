@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class SearchUserData;
+@class SearchUserModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserTableViewCell : UITableViewCell
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)UILabel *userNameLabel;
 @property (strong, nonatomic)UIImageView *userSexImageView;
 @property (strong, nonatomic)UIButton *followingButton;
-@property (strong, nonatomic)SearchUserData *model;
+@property (strong, nonatomic)SearchUserModel  *model;
 @end
 
 NS_ASSUME_NONNULL_END

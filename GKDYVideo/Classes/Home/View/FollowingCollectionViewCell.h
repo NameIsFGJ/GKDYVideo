@@ -11,8 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FollowingCollectionViewCell : UICollectionViewCell
+
 @property (strong, nonatomic)UIImageView *pictureImageView;
 @property (strong, nonatomic)VideoModel *model;
+@property (strong, nonatomic)UILabel *nickNameLabel;
+@property (strong, nonatomic)UIImageView *isLikeImageView;
+@property (strong, nonatomic)UILabel *isLikeLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END

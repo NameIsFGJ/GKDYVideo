@@ -43,7 +43,7 @@
 @property (strong, nonatomic)UIImageView *headImageView;
 @property (nonatomic, strong) UIActivityIndicatorView   *loadingView;
 @property (nonatomic, strong) UIButton                  *playBtn;
-@property (strong, nonatomic) UIButton *followingButton;
+
 
 @end
 
@@ -173,9 +173,10 @@
     NSString *praiseImag = model.is_like ? @"ss_icon_star_selected":@"ss_icon_star_normal";
     [self.praiseBtn setImage:[UIImage imageNamed:praiseImag] forState:UIControlStateNormal];
     
+   // NSLog(@"%@",model);
     //关注按钮
-   // self.followingButton.hidden = model.is_like? YES: NO;
-    
+    self.followingButton.hidden = model.is_guan? YES: NO;
+    NSLog(@"model.is_34guan  =%ld",model.is_guan);
 }
 
 #pragma mark - Public Methods

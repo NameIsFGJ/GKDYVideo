@@ -10,12 +10,11 @@
 
 @implementation UnflollowingNetworking
 + (void)postUnFlollowing:(NSString *)token
-               fromUseID:(NSNumber *)fuid
                  toUseID:(NSNumber *)tuid
         completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/following"];
-    NSDictionary *dic = @{@"user_token":token,@"from_user_id":fuid,@"to_user_id":tuid};
+    NSDictionary *dic = @{@"user_token":token,@"to_user_id":tuid};
     [self POST:urlStr parameters:dic progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {

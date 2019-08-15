@@ -34,7 +34,7 @@
 }
 - (void)networking
 {
-    [VideoGuanNetworking postVideoGuanWithUserID:1 withPage:1 completion:^(NSArray * _Nonnull array, NSError * _Nonnull error) {
+    [VideoGuanNetworking postVideoGuanWithUserID:kUser.user_token withPage:1 completion:^(NSArray * _Nonnull array, NSError * _Nonnull error) {
         self.itemsArray = array;
         [self.collectionView reloadData];
     }];
@@ -53,13 +53,12 @@
     FollowingCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     VideoGuanModel *model = self.itemsArray[indexPath.section];
     cell.model = model.video[indexPath.row];
-    
     return cell;
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
 {
-    
     return self.itemsArray.count;
 }
 
@@ -71,7 +70,7 @@
         UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"MyCollectionViewHeaderView" forIndexPath:indexPath];
         headView.backgroundColor = kMainColor
         UIImageView *iconImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 36, 36)];
-        //iconImageView.backgroundColor = [UIColor yellowColor];
+        iconImageView.backgroundColor = [UIColor yellowColor];
         iconImageView.layer.cornerRadius = 18;
         iconImageView.layer.masksToBounds = YES;
         [headView addSubview:iconImageView];
@@ -80,13 +79,13 @@
         [headView addSubview:userLabel];
         [userLabel setTextColor:kWhiteColor];
         [userLabel setFont:[UIFont systemFontOfSize:18]];
-        //userLabel.text = @"漫饭一号";
+        userLabel.text = @"漫饭一号";
         // 赋值
-         VideoGuanModel *model = self.itemsArray[indexPath.section];
-        NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,model.head_pic];
+        VideoGuanModel *model = self.itemsArray[indexPath.section];
+
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,[model.to_user objectForKey:@"head_pic"]];
         [iconImageView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
-        
-        userLabel.text = model.nickname;
+        userLabel.text = [model.to_user objectForKey:@"nickname"];
         return headView;
     }
     return nil;
@@ -107,18 +106,23 @@
         VideoModel *videoModel = model.video[i];
         IndexModel *indexModel = [[IndexModel alloc]init];
         indexModel.identify = i;
+        indexModel.z_count = [[videoModel valueForKey:@"z_count"]integerValue];
+        indexModel.c_count = [[videoModel valueForKey:@"c_count"]integerValue];
+        indexModel.share_count = [[videoModel valueForKey:@"share_count"]integerValue];
         indexModel.video_url = [videoModel valueForKey:@"video_url"];
+        indexModel.is_like = [[videoModel valueForKey:@"is_like"]integerValue];
+        indexModel.is_guan = 1;
         [itemsArray addObject:indexModel];
     }
     
-    //    NSMutableArray *itemsArray = [NSMutableArray array];
-    //    for (SearchVideoModel *videoModel in self.itemsArray) {
-    //        IndexModel *indexModel = [[IndexModel alloc]init];
-    //        indexModel.video_url = videoModel.video_url;
-    //        indexModel.identify = 34;
-    //
-    //        [itemsArray addObject:indexModel];
-    //    }
+//        NSMutableArray *itemsArray = [NSMutableArray array];
+//        for (SearchVideoModel *videoModel in self.itemsArray) {
+//            IndexModel *indexModel = [[IndexModel alloc]init];
+//            indexModel.video_url = videoModel.video_url;
+//            indexModel.identify = 34;
+//
+//            [itemsArray addObject:indexModel];
+//        }
     GKDYPlayerViewController *playerVC = [[GKDYPlayerViewController alloc]initWithVideos:itemsArray index:indexPath.item];
     
     [self.navigationController pushViewController:playerVC animated:YES];

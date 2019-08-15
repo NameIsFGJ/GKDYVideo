@@ -9,5 +9,8 @@
 #import "SearchVideoModel.h"
 
 @implementation SearchVideoModel
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ide" : @"id",
+             };
+}
 @end

@@ -11,12 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchVideoModel : BaseModel
-@property (assign, nonatomic)int iden;
+@property (assign, nonatomic)int ide;
 @property (assign, nonatomic)int user_id;
-@property (strong, nonatomic)NSString *nickname;
-@property (strong, nonatomic)NSString *desc;
-@property (strong, nonatomic)NSString *pic_url;
+@property (strong, nonatomic)NSString *name;
+@property (strong, nonatomic)NSString *image;
+@property (strong, nonatomic)NSString *z_count;
 @property (strong, nonatomic)NSString *video_url;
+@property (strong, nonatomic)NSDictionary *user;
+
 @end
 
 NS_ASSUME_NONNULL_END

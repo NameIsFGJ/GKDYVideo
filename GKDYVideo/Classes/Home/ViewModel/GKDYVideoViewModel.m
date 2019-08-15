@@ -36,16 +36,18 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/index"];
     
     NSDictionary *params;
-    if ([User isLogin]){
-        params = @{@"page":@1,@"user_id":kUser.user_id};
-    }else{
-        params =@{@"page":@1};
-    }
+     params = @{@"page":@1,@"token":kUser.user_token};
+   // NSLog(@"kUser.user_token  %@",kUser.user_token);
+//    if ([User isLogin]){
+//        params = @{@"page":@1,@"user_id":kUser.user_id};
+//    }else{
+//        params =@{@"page":@1};
+//    }
     
     [GKNetworking get:url params:params success:^(id  _Nonnull responseObject) {
         //----------------------------------
         NSMutableArray *itemsArray = [NSMutableArray array];
-        NSArray *array = [responseObject objectForKey:@"data"];
+        NSArray *array = [[responseObject objectForKey:@"data"] objectForKey:@"rows"];
         for (NSDictionary *dic in array)
         {
             IndexModel *model = [IndexModel yy_modelWithDictionary:dic];

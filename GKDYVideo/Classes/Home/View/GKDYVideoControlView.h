@@ -48,7 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) GKDYVideoItemButton   *commentBtn;
 // 分享按钮
 @property (nonatomic, strong) GKDYVideoItemButton   *shareBtn;
-
+// 关注
+@property (strong, nonatomic) UIButton *followingButton;
 // 留言板
 @property (nonatomic, strong) GetVideoCommentView *commentView;
 

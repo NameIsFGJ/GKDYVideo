@@ -15,6 +15,8 @@
 #import "EditInfoViewController.h"
 // 我的发布
 #import "IssueViewController.h"
+//  我卖出的
+#import "MyBusinessViewController.h"
 
 @interface MineViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
@@ -124,9 +126,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 我发布的
     if (indexPath.row == 0)
     {
         IssueViewController *vc = [[IssueViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        //  我买入的
+    }else if (indexPath.row == 1)
+    {
+        MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
+        vc.type = sellTyle;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        //   我买出的
+    }else if (indexPath.row == 2)
+    {
+        MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
+        vc.type = sellTyle;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }

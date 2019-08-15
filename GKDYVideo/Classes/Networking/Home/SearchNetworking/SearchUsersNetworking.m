@@ -11,23 +11,23 @@
 @implementation SearchUsersNetworking
 + (void)postSearchUsers:(NSInteger)page
                keyworld: (NSString *)keyworld
-                user_id:(NSInteger)inde
+                  token:(NSString *)token
        completionHandle:(void(^)(NSMutableArray *modelArray,NSError *error))complectionHandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/searchUsers"];
-    NSDictionary *params = @{@"page":@(page),@"keyword":keyworld,@"user_id":@(inde)};
+    NSDictionary *params = @{@"page":@(page),@"keyword":keyworld,@"token":token};
     
     [self POST:urlStr parameters:params progress:^(NSProgress * _Nonnull progress) {
 
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
        
-        if ([responseObj[@"error_msg"] isEqualToString:@"success"])
+        if ([responseObj[@"code"] integerValue] == 1)
         {
-            NSArray *array = responseObj[@"data"];
+            NSArray *array = responseObj[@"data"][@"rows"];
             NSMutableArray *tempArray = [NSMutableArray array];
             for (NSDictionary *dic in array)
             {
-                SearchUserData *mode = [SearchUserData yy_modelWithDictionary:dic];
+                SearchUserModel *mode = [SearchUserModel yy_modelWithDictionary:dic];
                 [tempArray addObject:mode];
             }
             complectionHandle(tempArray,nil);

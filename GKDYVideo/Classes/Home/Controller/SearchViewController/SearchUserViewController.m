@@ -8,7 +8,7 @@
 
 #import "SearchUserViewController.h"
 #import "UserTableViewCell.h"
-
+#import "SearchUsersNetworking.h"
 @interface SearchUserViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -17,13 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    [self makeUI];
+    [self networking];
+    
+}
+
+- (void)makeUI
+{
     // self.view.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
     self.tableView.backgroundColor = kMainColor
+    
 }
+
+- (void)networking
+{
+
+}
+
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {

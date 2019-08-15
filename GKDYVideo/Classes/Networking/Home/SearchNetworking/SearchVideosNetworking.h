@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SearchVideosNetworking : BaseNetworking
 + (void)postSearchVideoWithPage:(NSInteger)page
                         keyword:(NSString *)keyword
-                         userId:(NSInteger )userid
+                         token:(NSString * )token
                      completion:(void(^)(NSMutableArray *modelArray,NSError *error))completionHandle;
 @end
 

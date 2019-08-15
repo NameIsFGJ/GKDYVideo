@@ -10,21 +10,23 @@
 
 @implementation FlollowingNetworking
 + (void)postFlollowing:(NSString *)token
-             fromUseID:(NSNumber *)fuid
-               toUseID:(NSNumber *)tuid
-      completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
+               toUseID:(NSInteger )tuid
+      completionHandle:(void(^)(NewBaseModel *model, NSError *error))complectionhandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/following"];
-    NSDictionary *dic = @{@"user_token":token,@"from_user_id":fuid,@"to_user_id":tuid};
+    NSDictionary *dic = @{@"token":token,@"to_id":@(tuid)};
+    NSLog(@"dic  =%@",dic);
     [self POST:urlStr parameters:dic progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
-            NSDictionary *dic = responseObj[@"data"];
-            complectionhandle([LikeVideoModel yy_modelWithDictionary:dic],nil);
-        }else{
-            complectionhandle(nil,error);
-        }
+        NSLog(@"respo34nseObj  =%@",responseObj);
+       // NSDictionary *dic = responseObj[@"data"];
+        complectionhandle([NewBaseModel yy_modelWithDictionary:responseObj],nil);
+//        if ([responseObj[@"code"] integerValue] == 1) {
+//              
+//        }else{
+//            complectionhandle(nil,error);
+//        }
     }];
 }
 

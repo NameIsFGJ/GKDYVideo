@@ -61,7 +61,7 @@
     return self;
 }
 
-- (void)setModel:(SearchUserData *)model
+- (void)setModel:(SearchUserModel *)model
 {
     _model = model;
     
@@ -90,7 +90,6 @@
         self.followingButton.enabled = NO;
     }
 }
-
 
 #pragma mark 懒加载
 - (UIImageView *)iconImageView

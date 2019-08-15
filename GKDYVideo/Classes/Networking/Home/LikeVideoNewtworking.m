@@ -10,24 +10,24 @@
 
 @implementation LikeVideoNewtworking
 + (void)postLikeVideo:(NSString *)token
-               userID:(NSInteger )uid
               videoID:(NSInteger )vid
-     completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
+     completionHandle:(void(^)(NewBaseModel *model, NSError *error))complectionhandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/likeVideo"];
-    NSDictionary *dic = @{@"user_token":token,@"user_id":@(uid),@"v_id":@(vid)};
+    NSDictionary *dic = @{@"token":token,@"v_id":@(vid)};
     NSLog(@"urlStr  =%@",urlStr);
     NSLog(@"dic  =%@",dic);
     [self POST:urlStr parameters:dic progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        
-        if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
-            NSDictionary *dic = responseObj[@"data"];
-            complectionhandle([LikeVideoModel yy_modelWithDictionary:dic],nil);
-        }else{
-            complectionhandle(nil,error);
-        }
+        NSLog(@"responseObj  =%@",responseObj);
+        complectionhandle([NewBaseModel yy_modelWithDictionary:responseObj],nil);
+//        if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
+//            NSDictionary *dic = responseObj[@"data"];
+//            complectionhandle([NewBaseModel yy_modelWithDictionary:dic],nil);
+//        }else{
+//            complectionhandle(nil,error);
+//        }
     }];
     
 }

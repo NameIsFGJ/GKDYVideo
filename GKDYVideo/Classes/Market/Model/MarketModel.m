@@ -8,6 +8,36 @@
 
 #import "MarketModel.h"
 
+@implementation HotGoodsModel
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ide" : @"id",
+             };
+}
+
+@end
+
 @implementation MarketModel
+
+@end
+
+@implementation HotRentModel
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ide" : @"id",
+             };
+}
+
+@end
+
+@implementation CategoryModel
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ide" : @"id",
+             };
+}
+
+
+
 
 @end

@@ -10,17 +10,20 @@
 #import "SearchVideoModel.h"
 
 @implementation SearchVideosNetworking
-+(void)postSearchVideoWithPage:(NSInteger)page keyword:(NSString *)keyword userId:(NSInteger )userid completion:(void(^)(NSMutableArray *modelArray,NSError *error))completionHandle;
++ (void)postSearchVideoWithPage:(NSInteger)page
+                        keyword:(NSString *)keyword
+                          token:(NSString * )token
+                     completion:(void(^)(NSMutableArray *modelArray,NSError *error))completionHandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/searchVideo"];
-    NSDictionary *params = @{@"page":@(page),@"keyword":keyword,@"user_id":@(userid)};
+    NSDictionary *params = @{@"page":@(page),@"keyword":keyword,@"token":token};
     
     [self POST:urlStr parameters:params progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
        
-        if ([responseObj[@"error_msg"] isEqualToString:@"success"]) {
-            NSArray *array = responseObj[@"data"];
+        if ([responseObj[@"code"]integerValue] == 1) {
+            NSArray *array = responseObj[@"data"][@"rows"];
             NSMutableArray *tempArray = [NSMutableArray array];
             for (NSDictionary *dic in array)
             {

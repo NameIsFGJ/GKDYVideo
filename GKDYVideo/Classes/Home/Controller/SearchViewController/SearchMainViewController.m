@@ -64,6 +64,7 @@
     }
     return self;
 }
+
 - (void)creatNav
 {
     self.navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
@@ -175,24 +176,16 @@
     
     if (self.currentIndex == 0)
     {
-        [SearchVideosNetworking postSearchVideoWithPage:1
-                                                keyword:@"昵称"
-                                                 userId:[kUser.user_id integerValue] completion:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
-                                                     SearchTogetherViewController *view = (SearchTogetherViewController *)viewController;
-                                                     view.itemsArray = modelArray;
-                                                     SearchVideoModel *model = [modelArray firstObject];
-                                                     NSLog(@"model.pic_url  =%@",model.pic_url);
-                                                     [view.collectionView reloadData];
-                                                     NSLog(@"mode3lArray.count  =%ld",modelArray.count);
+        [SearchVideosNetworking postSearchVideoWithPage:1 keyword:self.searchContentString token:kUser.user_token completion:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
+            SearchTogetherViewController *view = (SearchTogetherViewController *)viewController;
+            view.itemsArray = modelArray;
+            [view.collectionView reloadData];
         }];
     }else if (self.currentIndex == 1){
-        [SearchUsersNetworking postSearchUsers:1
-                                      keyworld:@"昵称"
-                                       user_id:[kUser.user_id integerValue] completionHandle:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
-            
+        [SearchUsersNetworking postSearchUsers:1 keyworld:self.searchContentString token:kUser.user_token completionHandle:^(NSMutableArray * _Nonnull modelArray, NSError * _Nonnull error) {
             SearchUserViewController *view = (SearchUserViewController *)viewController;
-            view.itemArray = modelArray;
-            [view.tableView reloadData];
+                       view.itemArray = modelArray;
+                       [view.tableView reloadData];
         }];
     }
 }
@@ -201,7 +194,7 @@
 - (NSArray *)titleArray
 {
     if (!_titleArray) {
-        _titleArray = [NSArray arrayWithObjects:@"综合",@"用户",@"音乐",@"话题", nil];
+        _titleArray = [NSArray arrayWithObjects:@"视频",@"用户",@"音乐",@"话题", nil];
     }
     return _titleArray;
 }

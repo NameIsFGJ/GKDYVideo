@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UnflollowingNetworking : BaseNetworking
 + (void)postUnFlollowing:(NSString *)token
-             fromUseID:(NSNumber *)fuid
                toUseID:(NSNumber *)tuid
       completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
 @end

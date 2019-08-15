@@ -10,18 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchUserData : NSObject
-@property(assign, nonatomic)NSInteger user_id;
+@interface SearchUserModel : BaseModel
+@property(assign, nonatomic)NSInteger identify;
 @property(assign, nonatomic)NSInteger sex;
 @property(strong, nonatomic)NSString * nickname;
 @property(strong, nonatomic)NSString * head_pic;
 @property(strong, nonatomic)NSString * mf_num;
 @property(assign, nonatomic)NSInteger is_guan;
 
-@end
-
-@interface SearchUserModel : BaseModel
-@property (strong, nonatomic)SearchUserData *data;
 @end
 
 NS_ASSUME_NONNULL_END

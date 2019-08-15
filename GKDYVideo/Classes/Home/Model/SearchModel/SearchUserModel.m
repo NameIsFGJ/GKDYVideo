@@ -9,8 +9,9 @@
 #import "SearchUserModel.h"
 
 @implementation SearchUserModel
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"identify" : @"id",
+             };
+}
 @end
-@implementation  SearchUserData
 
-@end

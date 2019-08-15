@@ -25,9 +25,11 @@
 - (void)setModel:(SearchVideoModel *)model
 {
     _model = model;
-    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,model.pic_url];
-    NSLog(@"imageUrl =%@",imageUrl);
-    [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,model.image];
+    NSLog(@"ima333ge =%@",model.image);
+   // [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"image1"]];
 }
 
 @end

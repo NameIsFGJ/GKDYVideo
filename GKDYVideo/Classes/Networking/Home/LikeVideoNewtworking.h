@@ -7,14 +7,13 @@
 //
 
 #import "BaseNetworking.h"
-#import "LikeVideoModel.h"
+#import "NewBaseModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LikeVideoNewtworking : BaseNetworking
 + (void)postLikeVideo:(NSString *)token
-               userID:(NSInteger )uid
               videoID:(NSInteger )vid
-     completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
+     completionHandle:(void(^)(NewBaseModel *model, NSError *error))complectionhandle;
 
 @end
 

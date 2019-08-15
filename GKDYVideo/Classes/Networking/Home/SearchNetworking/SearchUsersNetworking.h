@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SearchUsersNetworking : BaseNetworking
 + (void)postSearchUsers:(NSInteger)page
                keyworld: (NSString *)keyworld
-                user_id:(NSInteger)inde
+                token:(NSString *)token
        completionHandle:(void(^)(NSMutableArray *modelArray,NSError *error))complectionHandle;
 
 @end

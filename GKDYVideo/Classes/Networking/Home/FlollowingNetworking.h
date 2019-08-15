@@ -7,14 +7,13 @@
 //
 
 #import "BaseNetworking.h"
-#import "LikeVideoModel.h"
+#import "NewBaseModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FlollowingNetworking : BaseNetworking
 + (void)postFlollowing:(NSString *)token
-             fromUseID:(NSNumber *)fuid
-               toUseID:(NSNumber *)tuid
-      completionHandle:(void(^)(LikeVideoModel *model, NSError *error))complectionhandle;
+               toUseID:(NSInteger )tuid
+      completionHandle:(void(^)(NewBaseModel *model, NSError *error))complectionhandle;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -18,3 +18,11 @@
 @implementation VideoGuanModel
 
 @end
+
+@implementation ToUserModel
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ide" : @"id",
+             };
+}
+
+@end
