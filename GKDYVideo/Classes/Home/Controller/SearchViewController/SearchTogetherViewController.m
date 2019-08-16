@@ -37,6 +37,7 @@
 {
     return self.itemsArray.count;
 }
+
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *cellID = @"VideoCollectionViewCellID";

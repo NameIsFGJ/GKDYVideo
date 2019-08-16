@@ -31,7 +31,6 @@
             make.top.equalTo(self.bannerView.mas_bottom);
             
         }];
-        
     }
     return self;
 }

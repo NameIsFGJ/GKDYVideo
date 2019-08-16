@@ -12,6 +12,7 @@
 #import "FlollowingNetworking.h"
 #import "UserModel.h"
 #import "GKDYUserVideoViewController.h"
+#import "UserVideoNetworking.h"
 @interface GKDYUserMainViewController ()<UserViewDelegaete>
 @property (strong, nonatomic)UserHeadView *userView;
 @property (strong, nonatomic)UserModel *model;
@@ -21,6 +22,7 @@
 @property (strong, nonatomic)UIView *childView;
 @property (strong, nonatomic) UIButton *myOwnerButton;
 @property (strong, nonatomic) UIButton *myLikeButton;
+
 @end
 
 @implementation GKDYUserMainViewController
@@ -112,18 +114,20 @@
     
     [self.view addSubview:self.childView];
     [self.childView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.mas_equalTo(0);
-        make.top.equalTo(self.lineView.mas_bottom).offset(0);
+        make.bottom.mas_equalTo(-3);
+        make.top.equalTo(self.lineView.mas_bottom).offset(3);
+        make.left.mas_equalTo(12);
+        make.right.mas_equalTo(-12);
     }];
     
-    
+    self.childView.backgroundColor = [UIColor yellowColor];
     
     [self addChildViewController:self.myOwnerVC];
     [self.childView addSubview:self.myOwnerVC.view];
     
     [self addChildViewController:self.myLikeVC];
     [self.childView addSubview:self.myLikeVC.view];
-
+    
 }
 
 - (void)networking
@@ -161,6 +165,16 @@
         self.userView.fansNumberLabel.text = [NSString stringWithFormat:@"%ld  粉丝",model.fans_num];
         
     }];
+    
+    [UserVideoNetworking postSomeBodyVideo:kUser.user_token withType:myOwnerVideo withPage:1 withUserID:self.userID complection:^(NSArray * _Nonnull array, NSError * _Nonnull error) {
+        self.myOwnerVC.itemsArray = array;
+        [self.myOwnerVC.mainView reloadData];
+    }];
+    
+    [UserVideoNetworking postSomeBodyVideo:kUser.user_token withType:myLikeVideo withPage:1 withUserID:self.userID complection:^(NSArray * _Nonnull array, NSError * _Nonnull error) {
+        self.myLikeVC.itemsArray = array;
+        [self.myLikeVC.mainView reloadData];
+    }];
 }
 
 - (void)myOwnerButtonAction{
@@ -174,8 +188,6 @@
             make.left.mas_equalTo(12);
             make.size.mas_equalTo(CGSizeMake((kWindowWidth-24)/2, .5));
         }];
-        
-       
     }];
 }
 
@@ -235,6 +247,7 @@
 {
     if (!_myOwnerVC) {
         _myOwnerVC = [[GKDYUserVideoViewController alloc]init];
+        _myOwnerVC.view.frame = self.childView.frame;
         _myOwnerVC.vcType = myOwnerVideo;
     }
     return _myOwnerVC;
@@ -244,6 +257,7 @@
 {
     if (!_myLikeVC) {
         _myLikeVC = [[GKDYUserVideoViewController alloc]init];
+        _myLikeVC.view.frame = self.childView.frame;
         _myLikeVC.vcType = myLikeVideo;
     }
     return _myLikeVC;

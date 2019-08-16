@@ -9,14 +9,15 @@
 #import "GKDYBaseViewController.h"
 
 typedef enum{
-    myOwnerVideo = 0,
+    myOwnerVideo = 1,
     myLikeVideo
 }ViewControllerType;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GKDYUserVideoViewController : GKDYBaseViewController
 @property (assign, nonatomic)ViewControllerType vcType;
-
+@property (strong, nonatomic)NSArray *itemsArray;
+@property (strong, nonatomic)UICollectionView *mainView;
 @end
 
 NS_ASSUME_NONNULL_END

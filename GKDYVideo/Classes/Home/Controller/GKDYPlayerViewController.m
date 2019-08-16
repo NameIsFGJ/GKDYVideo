@@ -17,6 +17,7 @@
 #import "GetVideoCommentView.h"
 #import "ShareView.h"
 #import "GKDYUserMainViewController.h"
+#import "GKDYUserVideoViewController.h"
 @interface GKDYPlayerViewController ()<GKDYVideoViewDelegate>
 @property (strong, nonatomic) UIView *mainView;
 @property (strong, nonatomic) GetVideoCommentView *commentView;
@@ -95,14 +96,13 @@
 #pragma mark Delegate
 - (void)videoView:(GKDYVideoView *)videoView didClickIcon:(IndexModel *)videoModel;
 {
-    NSLog(@" 点击头像");
-//    NSLog(@"is_guan =%ld",videoModel.is_guan);
-//    NSLog(@"z_count =%ld",videoModel.z_count);
-    NSLog(@"user_id  =%ld",videoModel.user_id);
+
+   
     GKDYUserMainViewController *vc = [[GKDYUserMainViewController alloc]init];
+   // GKDYUserVideoViewController *vc = [[GKDYUserVideoViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.userID = videoModel.user_id;
-  
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

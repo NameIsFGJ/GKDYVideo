@@ -151,6 +151,8 @@
 		91DFEF912302A41C00DA2458 /* MarketNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF902302A41C00DA2458 /* MarketNetworking.m */; };
 		91DFEF982302B00F00DA2458 /* MarketCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF962302B00F00DA2458 /* MarketCollectionFooterView.m */; };
 		91DFEF992302B00F00DA2458 /* MarketCollectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DFEF972302B00F00DA2458 /* MarketCollectionFooterView.xib */; };
+		91E19A0E2306677B000E70D5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A0D2306677B000E70D5 /* TestViewController.m */; };
+		91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A10230676A1000E70D5 /* UserVideoNetworking.m */; };
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
 		91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F5D22FC513600951823 /* CityPickerView.m */; };
 		91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F6022FC538100951823 /* BirthPickerView.m */; };
@@ -460,6 +462,10 @@
 		91DFEF952302B00F00DA2458 /* MarketCollectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketCollectionFooterView.h; sourceTree = "<group>"; };
 		91DFEF962302B00F00DA2458 /* MarketCollectionFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketCollectionFooterView.m; sourceTree = "<group>"; };
 		91DFEF972302B00F00DA2458 /* MarketCollectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketCollectionFooterView.xib; sourceTree = "<group>"; };
+		91E19A0C2306677B000E70D5 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		91E19A0D2306677B000E70D5 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		91E19A0F230676A1000E70D5 /* UserVideoNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserVideoNetworking.h; sourceTree = "<group>"; };
+		91E19A10230676A1000E70D5 /* UserVideoNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserVideoNetworking.m; sourceTree = "<group>"; };
 		91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeadView.h; sourceTree = "<group>"; };
 		91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeadView.m; sourceTree = "<group>"; };
 		91FD0F5C22FC513600951823 /* CityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPickerView.h; sourceTree = "<group>"; };
@@ -636,6 +642,8 @@
 				606A77DB215DFCB000DC2F63 /* GKDYPersonalViewController.m */,
 				919843642304FF14001148B9 /* GKDYUserMainViewController.h */,
 				919843652304FF14001148B9 /* GKDYUserMainViewController.m */,
+				91E19A0C2306677B000E70D5 /* TestViewController.h */,
+				91E19A0D2306677B000E70D5 /* TestViewController.m */,
 				91CC2E732305987A00F153A6 /* GKDYUserVideoViewController.h */,
 				91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */,
 			);
@@ -906,6 +914,8 @@
 				91DD30B222F0835F00192D7E /* VideoGuanNetworking.m */,
 				9198436A230553C5001148B9 /* UserNetworking.h */,
 				9198436B230553C6001148B9 /* UserNetworking.m */,
+				91E19A0F230676A1000E70D5 /* UserVideoNetworking.h */,
+				91E19A10230676A1000E70D5 /* UserVideoNetworking.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1579,6 +1589,7 @@
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
+				91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */,
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
 				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
@@ -1591,6 +1602,7 @@
 				91ABABB422FBCDB500E4593A /* EditMFNumbViewController.m in Sources */,
 				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
 				916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */,
+				91E19A0E2306677B000E70D5 /* TestViewController.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,
 				9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */,

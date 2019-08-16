@@ -18,6 +18,14 @@
 @end
 
 @implementation MarketModel
+// 声明自定义类参数类型
++ (NSDictionary *)modelContainerPropertyGenericClass {
+   
+    return @{@"ad_list" : [AdListModel class],
+             @"category":[CategoryModel class],
+             @"hot_goods":[HotGoodsModel class],
+             @"hot_rent":[HotRentModel class]};
+}
 
 @end
 
@@ -36,8 +44,13 @@
     return @{@"ide" : @"id",
              };
 }
+@end
 
+@implementation AdListModel
 
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ide" : @"id",
+             };
+}
 
 @end

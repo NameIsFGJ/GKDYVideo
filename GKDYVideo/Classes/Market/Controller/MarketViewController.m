@@ -43,12 +43,14 @@ static NSInteger currentRow;
 - (void)networking
 {
     [MarketNetworking postIndexWithCompletion:^(MarketModel * _Nonnull model, NSError * _Nonnull error) {
-        for (NSDictionary *dic in model.category) {
-            CategoryModel *model = [CategoryModel yy_modelWithDictionary:dic];
-            [self.categoryArray addObject:model];
-        }
+        NSLog(@"ad_list  =%ld",model.ad_list.count);
         
-        NSLog(@"self.categoryArray.count  =%ld",self.categoryArray.count);
+//        for (NSDictionary *dic in model.category) {
+//            CategoryModel *model = [CategoryModel yy_modelWithDictionary:dic];
+//            [self.categoryArray addObject:model];
+//        }
+        
+       // NSLog(@"self.categoryArray.count  =%ld",self.categoryArray.count);
     }];
 }
 

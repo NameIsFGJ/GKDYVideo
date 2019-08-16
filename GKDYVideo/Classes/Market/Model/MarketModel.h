@@ -55,10 +55,10 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface MarketModel : NSObject
-@property (strong, nonatomic)NSArray *ad_list;
-@property (strong, nonatomic)NSArray *category;
-@property (strong, nonatomic)NSArray *hot_goods;
-@property (strong, nonatomic)NSArray *hot_rent;
+@property (strong, nonatomic)NSArray <AdListModel *>*ad_list;
+@property (strong, nonatomic)NSArray <CategoryModel *>*category;
+@property (strong, nonatomic)NSArray <HotGoodsModel *>*hot_goods;
+@property (strong, nonatomic)NSArray <HotRentModel *>*hot_rent;
 @end
 
 NS_ASSUME_NONNULL_END
