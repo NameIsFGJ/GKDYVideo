@@ -1,8 +1,8 @@
 //
-//  MarketCollectionFooterView.h
+//  MarkCollectionFootView.h
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/8/13.
+//  Created by 冯高杰 on 2019/8/19.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MarketCollectionFooterView : UICollectionReusableView
+@interface MarkCollectionFootView : UICollectionReusableView
 
 @end
 

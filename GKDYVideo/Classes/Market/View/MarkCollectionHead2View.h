@@ -1,8 +1,8 @@
 //
-//  MarketHeadView.h
+//  MarkCollectionHead2View.h
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/8/10.
+//  Created by 冯高杰 on 2019/8/19.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MarketHeadView : UIView
+@interface MarkCollectionHead2View : UICollectionReusableView
 
 @end
 

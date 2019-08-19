@@ -28,6 +28,7 @@
 		79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62ED2157405400101773 /* GKDYVideoViewModel.m */; };
 		79CC62F52158E44300101773 /* GKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62F42158E44300101773 /* GKNetworking.m */; };
 		79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */; };
+		9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */; };
 		91084BAE22FD057B00021B29 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 91084BAD22FD057B00021B29 /* city.json */; };
 		91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91084BB322FD16B100021B29 /* ProvinceModel.m */; };
 		9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9112CEA722EFDE4B00D2A71E /* SearchVideoModel.m */; };
@@ -75,7 +76,6 @@
 		9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9162CFB522FAB67D0094EB7E /* EditTableViewCell.xib */; };
 		9162CFBA22FABA680094EB7E /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9162CFB922FABA680094EB7E /* DataModel.m */; };
 		9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165C22922FEA89E0015ED06 /* MarketViewController.m */; };
-		9165C23022FEAC320015ED06 /* MarketHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165C22F22FEAC320015ED06 /* MarketHeadView.m */; };
 		9165E367230102B600556AB7 /* IdCardUploadNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E366230102B600556AB7 /* IdCardUploadNetworking.m */; };
 		9165E36A2301339100556AB7 /* DealSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E3692301339100556AB7 /* DealSetViewController.m */; };
 		9165E36D2301530E00556AB7 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E36C2301530E00556AB7 /* IssueViewController.m */; };
@@ -107,6 +107,8 @@
 		91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */; };
 		91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB79BC23000BF10049BC41 /* IDCardViewController.m */; };
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
+		91BC3644230A9D6A0052A11A /* MarketTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3643230A9D6A0052A11A /* MarketTestViewController.m */; };
+		91BC3647230AA0420052A11A /* MarkCollectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3646230AA0420052A11A /* MarkCollectionFootView.m */; };
 		91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */; };
 		91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */; };
 		91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */; };
@@ -149,10 +151,9 @@
 		91DFEF882302559700DA2458 /* MyBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DFEF862302559700DA2458 /* MyBusinessTableViewCell.xib */; };
 		91DFEF8B230288D500DA2458 /* MarkCollectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */; };
 		91DFEF912302A41C00DA2458 /* MarketNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF902302A41C00DA2458 /* MarketNetworking.m */; };
-		91DFEF982302B00F00DA2458 /* MarketCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF962302B00F00DA2458 /* MarketCollectionFooterView.m */; };
-		91DFEF992302B00F00DA2458 /* MarketCollectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DFEF972302B00F00DA2458 /* MarketCollectionFooterView.xib */; };
 		91E19A0E2306677B000E70D5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A0D2306677B000E70D5 /* TestViewController.m */; };
 		91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A10230676A1000E70D5 /* UserVideoNetworking.m */; };
+		91E19A172306AE44000E70D5 /* UIButton+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A162306AE44000E70D5 /* UIButton+category.m */; };
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
 		91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F5D22FC513600951823 /* CityPickerView.m */; };
 		91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F6022FC538100951823 /* BirthPickerView.m */; };
@@ -222,6 +223,8 @@
 		79CC62F92158F2BB00101773 /* GKDYPersonalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYPersonalModel.h; sourceTree = "<group>"; };
 		79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYPersonalModel.m; sourceTree = "<group>"; };
 		81CC8427C037D4E8A4B61B49 /* Pods_GKDYVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKDYVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9104F9C6230A46060033C40A /* MarkCollectionHead2View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkCollectionHead2View.h; sourceTree = "<group>"; };
+		9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionHead2View.m; sourceTree = "<group>"; };
 		91084BAD22FD057B00021B29 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		91084BB222FD16B100021B29 /* ProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
 		91084BB322FD16B100021B29 /* ProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
@@ -318,8 +321,6 @@
 		9162CFB922FABA680094EB7E /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		9165C22822FEA89E0015ED06 /* MarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
 		9165C22922FEA89E0015ED06 /* MarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
-		9165C22E22FEAC320015ED06 /* MarketHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketHeadView.h; sourceTree = "<group>"; };
-		9165C22F22FEAC320015ED06 /* MarketHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketHeadView.m; sourceTree = "<group>"; };
 		9165E365230102B600556AB7 /* IdCardUploadNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdCardUploadNetworking.h; sourceTree = "<group>"; };
 		9165E366230102B600556AB7 /* IdCardUploadNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdCardUploadNetworking.m; sourceTree = "<group>"; };
 		9165E3682301339100556AB7 /* DealSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DealSetViewController.h; sourceTree = "<group>"; };
@@ -380,6 +381,10 @@
 		91BB79BC23000BF10049BC41 /* IDCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCardViewController.m; sourceTree = "<group>"; };
 		91BBB70822E7F2460060ADDD /* UIViewController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
 		91BBB70922E7F2460060ADDD /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
+		91BC3642230A9D6A0052A11A /* MarketTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTestViewController.h; sourceTree = "<group>"; };
+		91BC3643230A9D6A0052A11A /* MarketTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketTestViewController.m; sourceTree = "<group>"; };
+		91BC3645230AA0420052A11A /* MarkCollectionFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkCollectionFootView.h; sourceTree = "<group>"; };
+		91BC3646230AA0420052A11A /* MarkCollectionFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionFootView.m; sourceTree = "<group>"; };
 		91BD725B22EFEC2D00F517F6 /* SearchVideosNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideosNetworking.h; sourceTree = "<group>"; };
 		91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideosNetworking.m; sourceTree = "<group>"; };
 		91C1F17622F3CC2E0090AE00 /* AddGoodsInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsInfoView.h; sourceTree = "<group>"; };
@@ -459,13 +464,12 @@
 		91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionHeadView.m; sourceTree = "<group>"; };
 		91DFEF8F2302A41C00DA2458 /* MarketNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketNetworking.h; sourceTree = "<group>"; };
 		91DFEF902302A41C00DA2458 /* MarketNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketNetworking.m; sourceTree = "<group>"; };
-		91DFEF952302B00F00DA2458 /* MarketCollectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketCollectionFooterView.h; sourceTree = "<group>"; };
-		91DFEF962302B00F00DA2458 /* MarketCollectionFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketCollectionFooterView.m; sourceTree = "<group>"; };
-		91DFEF972302B00F00DA2458 /* MarketCollectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketCollectionFooterView.xib; sourceTree = "<group>"; };
 		91E19A0C2306677B000E70D5 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		91E19A0D2306677B000E70D5 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		91E19A0F230676A1000E70D5 /* UserVideoNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserVideoNetworking.h; sourceTree = "<group>"; };
 		91E19A10230676A1000E70D5 /* UserVideoNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserVideoNetworking.m; sourceTree = "<group>"; };
+		91E19A152306AE44000E70D5 /* UIButton+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+category.h"; sourceTree = "<group>"; };
+		91E19A162306AE44000E70D5 /* UIButton+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+category.m"; sourceTree = "<group>"; };
 		91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeadView.h; sourceTree = "<group>"; };
 		91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeadView.m; sourceTree = "<group>"; };
 		91FD0F5C22FC513600951823 /* CityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPickerView.h; sourceTree = "<group>"; };
@@ -803,6 +807,8 @@
 				916C6D3822F80E6A00D2538F /* NSArray+log.m */,
 				916C6D3A22F80EB200D2538F /* NSDictionary+log.h */,
 				916C6D3B22F80EB200D2538F /* NSDictionary+log.m */,
+				91E19A152306AE44000E70D5 /* UIButton+category.h */,
+				91E19A162306AE44000E70D5 /* UIButton+category.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -1086,6 +1092,8 @@
 			children = (
 				9165C22822FEA89E0015ED06 /* MarketViewController.h */,
 				9165C22922FEA89E0015ED06 /* MarketViewController.m */,
+				91BC3642230A9D6A0052A11A /* MarketTestViewController.h */,
+				91BC3643230A9D6A0052A11A /* MarketTestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1102,13 +1110,12 @@
 		912F4DA622E18C94004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9165C22E22FEAC320015ED06 /* MarketHeadView.h */,
-				9165C22F22FEAC320015ED06 /* MarketHeadView.m */,
 				91DFEF89230288D500DA2458 /* MarkCollectionHeadView.h */,
 				91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */,
-				91DFEF952302B00F00DA2458 /* MarketCollectionFooterView.h */,
-				91DFEF962302B00F00DA2458 /* MarketCollectionFooterView.m */,
-				91DFEF972302B00F00DA2458 /* MarketCollectionFooterView.xib */,
+				9104F9C6230A46060033C40A /* MarkCollectionHead2View.h */,
+				9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */,
+				91BC3645230AA0420052A11A /* MarkCollectionFootView.h */,
+				91BC3646230AA0420052A11A /* MarkCollectionFootView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1409,7 +1416,6 @@
 				91DD443622FFE442009A4790 /* SetTableViewCell.xib in Resources */,
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
 				79CC629C2157377600101773 /* Assets.xcassets in Resources */,
-				91DFEF992302B00F00DA2458 /* MarketCollectionFooterView.xib in Resources */,
 				91D2AC6322F9172600179C88 /* MessageCommonTableViewCell.xib in Resources */,
 				91D2AC6E22F9565000179C88 /* MyFansTableViewCell.xib in Resources */,
 				9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */,
@@ -1527,11 +1533,11 @@
 				9162CFB222FA5D7B0094EB7E /* EditInfoViewController.m in Sources */,
 				91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */,
 				9113E15622EAD87700FFFCF0 /* SearchView.m in Sources */,
-				91DFEF982302B00F00DA2458 /* MarketCollectionFooterView.m in Sources */,
 				914034D522E5DECE006F1699 /* BaseModel.m in Sources */,
 				9113E15C22EAE64E00FFFCF0 /* SearchViewController.m in Sources */,
 				91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */,
 				9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */,
+				91E19A172306AE44000E70D5 /* UIButton+category.m in Sources */,
 				79CC62EB2157402800101773 /* GKDYVideoControlView.m in Sources */,
 				91ABABB722FBCE1B00E4593A /* EditSignsViewController.m in Sources */,
 				9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */,
@@ -1571,6 +1577,7 @@
 				91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */,
 				91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */,
 				916C6D4822F831B800D2538F /* MessageViewController.m in Sources */,
+				91BC3644230A9D6A0052A11A /* MarketTestViewController.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
 				9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */,
 				915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */,
@@ -1584,6 +1591,7 @@
 				91ABABAB22FBB6E700E4593A /* UpLoadAvatarNetworking.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
 				91ABABBA22FC021800E4593A /* EditProfileNetworking.m in Sources */,
+				9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */,
 				9165E3762301657300556AB7 /* IssueTableViewCell.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
@@ -1597,8 +1605,8 @@
 				9198436C230553C6001148B9 /* UserNetworking.m in Sources */,
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
-				9165C23022FEAC320015ED06 /* MarketHeadView.m in Sources */,
 				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,
+				91BC3647230AA0420052A11A /* MarkCollectionFootView.m in Sources */,
 				91ABABB422FBCDB500E4593A /* EditMFNumbViewController.m in Sources */,
 				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
 				916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */,
@@ -1775,7 +1783,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 644PYJX94Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GKDYVideo/Classes/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = GKDYVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1786,7 +1794,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manfan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
@@ -1798,7 +1806,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 644PYJX94Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GKDYVideo/Classes/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = GKDYVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1809,7 +1817,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manfan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;

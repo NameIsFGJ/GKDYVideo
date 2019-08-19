@@ -26,6 +26,7 @@
 #import <GKMessageTool/GKMessageTool.h>
 #import <WMPageController/WMPageController.h>
 #import <TZImagePickerController.h>
+#import <SDCycleScrollView.h>
 // 分类
 #import "NSObject+HUD.h"
 #import "UIColor+Category.h"
@@ -35,4 +36,5 @@
 #import "UIImage+Category.h"
 #import "NSDictionary+log.h"
 #import "NSArray+log.h"
+#import "UIButton+category.h"
 #endif /* VerdorHeader_h */

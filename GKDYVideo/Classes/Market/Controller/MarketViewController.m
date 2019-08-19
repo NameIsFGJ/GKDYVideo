@@ -8,14 +8,18 @@
 
 #import "MarketViewController.h"
 #import "MarkCollectionHeadView.h"
+#import "MarkCollectionHead2View.h"
+#import "MarkCollectionFootView.h"
 #import "MarketNetworking.h"
-#import "MarketCollectionFooterView.h"
+
 static NSInteger currentRow;
 
 @interface MarketViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic)UICollectionView *collectionView;
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @property (strong, nonatomic)NSMutableArray *categoryArray;
+@property (strong, nonatomic)MarkCollectionHeadView *headView;
+@property (strong, nonatomic)MarkCollectionHead2View *head2View;
 
 @end
 
@@ -43,14 +47,10 @@ static NSInteger currentRow;
 - (void)networking
 {
     [MarketNetworking postIndexWithCompletion:^(MarketModel * _Nonnull model, NSError * _Nonnull error) {
-        NSLog(@"ad_list  =%ld",model.ad_list.count);
+        self.headView.model = model;
+        [self.headView reloadData];
         
-//        for (NSDictionary *dic in model.category) {
-//            CategoryModel *model = [CategoryModel yy_modelWithDictionary:dic];
-//            [self.categoryArray addObject:model];
-//        }
-        
-       // NSLog(@"self.categoryArray.count  =%ld",self.categoryArray.count);
+        [self.collectionView reloadData];
     }];
 }
 
@@ -92,7 +92,7 @@ static NSInteger currentRow;
 // cell 缩进
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 {
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return UIEdgeInsetsMake(0, 10, 0, 10);
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -104,43 +104,42 @@ static NSInteger currentRow;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
 {
-    if (section == 0) {
-         return CGSizeMake(kWindowWidth, 400);
+    if (section == 0)
+    {
+         return CGSizeMake(kWindowWidth, 440);
+    }else if (section == 1)
+    {
+        return CGSizeMake(kWindowWidth, 80);
     }
-    return CGSizeMake(0, 0);
+         return CGSizeMake(0, 0);
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 {
-    if (section == 0) {
-        return CGSizeMake(kWindowWidth, 55);
-    }
-    return CGSizeMake(0, 0);
+    return CGSizeMake(kWindowWidth, 50);
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-       UICollectionReusableView *reusableView = nil;
-    if (indexPath.section == 0)
+    UICollectionReusableView *reusableView = nil;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader])
     {
-        if ([kind isEqual:UICollectionElementKindSectionHeader])
+        if (indexPath.section ==0)
         {
-            [collectionView registerClass:[MarkCollectionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHeadViewID"];
-            
-            MarkCollectionHeadView *headView = [collectionView  dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHeadViewID" forIndexPath:indexPath];
-            reusableView = headView;
+            self.headView = [collectionView  dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHeadViewID" forIndexPath:indexPath];
+            reusableView = self.headView;
         }
-        if ([kind isEqual:UICollectionElementKindSectionFooter]) {
-            [collectionView registerNib:[UINib nibWithNibName:@"MarketCollectionFooterView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"MarketCollectionFooterViewID"];
-            
-            MarketCollectionFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"MarketCollectionFooterViewID" forIndexPath:indexPath];
-            reusableView = footerView;
-            
-            
+        if (indexPath.section == 1){
+            self.head2View = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHead2ViewID" forIndexPath:indexPath];
+             reusableView = self.head2View;
         }
-        return reusableView;
     }
-    return nil;
-   
+    
+    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+        MarkCollectionFootView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"MarkCollectionFootViewID" forIndexPath:indexPath];
+        reusableView = view;
+    }
+    return reusableView;
 }
 
 #pragma mark UICollectionViewDelegate
@@ -150,9 +149,19 @@ static NSInteger currentRow;
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCellID"];
+        
         _collectionView.delegate =self;
         _collectionView.dataSource = self;
+        
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        
+        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCellID"];
+        
+         [_collectionView registerClass:[MarkCollectionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHeadViewID"];
+        
+        [_collectionView registerClass:[MarkCollectionHead2View class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHead2ViewID"];
+    
+        [_collectionView registerClass:[MarkCollectionFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"MarkCollectionFootViewID"];
     }
     return _collectionView;
 }
