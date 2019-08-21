@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchView : UIView
 @property (strong, nonatomic)UITextField *searchTextField;
+@property (strong, nonatomic)UIImageView *searchImageView;
+@property (strong, nonatomic)UIView *lineView;
+@property (strong, nonatomic)UIButton *cleanSearchButton;
 @end
 
 NS_ASSUME_NONNULL_END

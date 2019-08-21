@@ -11,12 +11,16 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^PushuIndexBlock)(NSInteger index);
 
+typedef void(^GetModelBlock)(MarketModel *model);
+
+
 @interface MarkCollectionHeadView : UICollectionReusableView
 
 @property (strong, nonatomic)SDCycleScrollView *scrollView;
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @property (copy, nonatomic)PushuIndexBlock block;
 @property (strong, nonatomic) MarketModel *model;
+@property (copy, nonatomic)GetModelBlock getBlock;
 
 - (void)reloadData;
 

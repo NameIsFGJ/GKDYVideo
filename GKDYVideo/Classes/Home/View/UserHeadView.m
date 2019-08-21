@@ -64,7 +64,7 @@
     [self.cityButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mfNumLabel.mas_top).offset(0);
         make.left.equalTo(self.mfNumLabel.mas_right).offset(10);
-        make.size.mas_equalTo(CGSizeMake(50, 12));
+        make.size.mas_equalTo(CGSizeMake(100, 12));
     }];
     
     [contentView addSubview:self.shopButton];
@@ -215,6 +215,7 @@
         [_cityButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cityButton setTitle:@"杭州" forState:UIControlStateNormal];
         [_cityButton setImage:[UIImage imageNamed:@"dingwei"] forState:UIControlStateNormal];
+        [_cityButton.titleLabel adjustsFontSizeToFitWidth];
         _cityButton.titleLabel.font = kFontSize(12);
         _cityButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
     }

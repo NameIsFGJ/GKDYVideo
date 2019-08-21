@@ -30,7 +30,7 @@
     
     UILabel *titleLabel = [[UILabel alloc]init];
     [contentView addSubview:titleLabel];
-    titleLabel.text = @"热门商品";
+    titleLabel.text = @"热门租赁";
     titleLabel.font = kFontSize(18);
     titleLabel.textColor = [UIColor blackColor];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

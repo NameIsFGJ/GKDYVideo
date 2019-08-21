@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarketCollectionViewCellID" id="gTV-IL-0wX" customClass="MarketCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="251"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="251"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-uP-c4N">
+                        <rect key="frame" x="17" y="17" width="136" height="160"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="160" id="i1N-O3-FNx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二次元商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oc-nH-7g7">
+                        <rect key="frame" x="17" y="194" width="136" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥392.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omj-XO-kwR">
+                        <rect key="frame" x="17" y="220" width="136" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hnf-uP-c4N" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="0fr-LG-hUJ"/>
+                <constraint firstItem="5oc-nH-7g7" firstAttribute="leading" secondItem="hnf-uP-c4N" secondAttribute="leading" id="1PC-6g-Fff"/>
+                <constraint firstItem="omj-XO-kwR" firstAttribute="top" secondItem="5oc-nH-7g7" secondAttribute="bottom" constant="8" id="340-C3-g61"/>
+                <constraint firstItem="omj-XO-kwR" firstAttribute="leading" secondItem="hnf-uP-c4N" secondAttribute="leading" id="JAT-rz-acf"/>
+                <constraint firstItem="hnf-uP-c4N" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="MHd-kM-uqZ"/>
+                <constraint firstItem="5oc-nH-7g7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Nfc-0w-l8f"/>
+                <constraint firstAttribute="trailing" secondItem="hnf-uP-c4N" secondAttribute="trailing" constant="17" id="aHw-rX-TxX"/>
+                <constraint firstItem="hnf-uP-c4N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="cad-wH-TC4"/>
+                <constraint firstItem="omj-XO-kwR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="e44-2d-f2T"/>
+                <constraint firstItem="5oc-nH-7g7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="fs2-DO-Xnr"/>
+                <constraint firstItem="omj-XO-kwR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="iT1-Xc-s0e"/>
+                <constraint firstItem="5oc-nH-7g7" firstAttribute="top" secondItem="hnf-uP-c4N" secondAttribute="bottom" constant="17" id="kH6-VL-tgH"/>
+                <constraint firstAttribute="trailing" secondItem="5oc-nH-7g7" secondAttribute="trailing" constant="17" id="tIU-yM-v0k"/>
+                <constraint firstAttribute="trailing" secondItem="omj-XO-kwR" secondAttribute="trailing" constant="17" id="uHt-Q0-7GD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="goodsImageView" destination="hnf-uP-c4N" id="gnf-lX-CIx"/>
+                <outlet property="goodsNameLabel" destination="5oc-nH-7g7" id="EPj-J5-NXI"/>
+                <outlet property="goodsPriceLabel" destination="omj-XO-kwR" id="fex-0o-uh2"/>
+                <outlet property="imageHeight" destination="i1N-O3-FNx" id="Yu7-EN-D7u"/>
+            </connections>
+            <point key="canvasLocation" x="-257.97101449275362" y="82.700892857142847"/>
+        </collectionViewCell>
+    </objects>
+</document>

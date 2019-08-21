@@ -18,28 +18,28 @@
         self.layer.cornerRadius = 2.5f;
         self.layer.masksToBounds = YES;
     
-        UIImageView *searchImageView = [[UIImageView alloc]init];
-        [self addSubview:searchImageView];
-        searchImageView.frame = CGRectMake(10,12, 15, 15);
+        self.searchImageView = [[UIImageView alloc]init];
+        [self addSubview:self.searchImageView];
+        self.searchImageView.frame = CGRectMake(10,12, 15, 15);
         
-        searchImageView.image = [UIImage imageNamed:@"search"];
+        self.searchImageView.image = [UIImage imageNamed:@"search"];
         //rame:CGRectMake(22, 15, 1, 10)];
-        UIView *lineView = [[UIView alloc]init];
-        [self addSubview:lineView];
-        lineView.frame = CGRectMake(CGRectGetMaxX(searchImageView.frame)+ 5, 12, 1, 15);
-        lineView.backgroundColor = kWhiteColor;
+        self.lineView = [[UIView alloc]init];
+        [self addSubview:self.lineView];
+        self.lineView.frame = CGRectMake(CGRectGetMaxX(self.searchImageView.frame)+ 5, 12, 1, 15);
+        self.lineView.backgroundColor = kWhiteColor;
         
         self.searchTextField = [[UITextField alloc]init];
         [self addSubview:self.searchTextField];
-        self.searchTextField.frame = CGRectMake(CGRectGetMaxX(lineView.frame)+10, 12, 150, 12);
+        self.searchTextField.frame = CGRectMake(CGRectGetMaxX(self.lineView.frame)+10, 12, 150, 12);
         self.searchTextField.placeholder = @"搜索您要找的内容";
         [self.searchTextField setValue:[UIFont boldSystemFontOfSize:14.f] forKeyPath:@"_placeholderLabel.font"];
         self.searchTextField.font = kFontSize(14);
-        UIButton *cleanSearchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        cleanSearchButton.frame = CGRectMake(240, 12, 15, 15);
-        [self addSubview:cleanSearchButton];
-        [cleanSearchButton setImage:[UIImage imageNamed:@"closeLoginVC"] forState:UIControlStateNormal];
-        [cleanSearchButton addTarget:self action:@selector(cleanSearchButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        self.cleanSearchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.cleanSearchButton.frame = CGRectMake(240, 12, 15, 15);
+        [self addSubview:self.cleanSearchButton];
+        [self.cleanSearchButton setImage:[UIImage imageNamed:@"closeLoginVC"] forState:UIControlStateNormal];
+        [self.cleanSearchButton addTarget:self action:@selector(cleanSearchButtonAction) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return self;

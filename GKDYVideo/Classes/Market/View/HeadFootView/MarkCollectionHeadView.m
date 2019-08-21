@@ -10,9 +10,14 @@
 #import "MarketModel.h"
 #import <UIButton+WebCache.h>
 #import "MarketTestViewController.h"
+#import "MarketSearchViewController.h"
+#import "MarketMessageViewController.h"
+#import "MarketUserShopViewController.h"
 @interface MarkCollectionHeadView()<SDCycleScrollViewDelegate>
 
 @property (strong, nonatomic)UIView *bannerView;
+@property (strong, nonatomic)UIButton *searchButton;
+@property (strong, nonatomic)UIButton *messageButton;
 @property (strong, nonatomic)UIView *buttonView;
 @property (strong, nonatomic)UIView *sectionView;
 @property (strong, nonatomic)UIButton *btn0;
@@ -24,6 +29,7 @@
 @property (strong, nonatomic)UIButton *btn6;
 @property (strong, nonatomic)UIButton *btn7;
 @end
+
 @implementation MarkCollectionHeadView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -31,51 +37,61 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self makeUI];
+        [self reloadData];
     }
     return self;
 }
 
 - (void)reloadData
 {
-    NSArray *array = self.model.ad_list;
-    NSMutableArray *itemsArray = [NSMutableArray array];
-    for (AdListModel *model in array) {
-        NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,model.image];
-        [itemsArray addObject:url];
-    }
     
-    self.scrollView.imageURLStringsGroup = itemsArray;
+    __block MarkCollectionHeadView *weakSelf = self;
     
-    NSArray *btnArray = [NSArray arrayWithObjects:self.btn0,self.btn1,self.btn2,self.btn3,self.btn4,self.btn5,self.btn6,self.btn7, nil];
-    // 数据
-    NSArray *buttonArray = self.model.category;
-    for (int i = 0; i < btnArray.count; i ++) {
-        CategoryModel *model = buttonArray[i];
-        UIButton *btn = btnArray[i];
-        UIImageView *contentImageView = [[UIImageView alloc]init];
-        [btn addSubview:contentImageView];
-        [contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_offset(0);
-            make.size.mas_equalTo(CGSizeMake(40, 40));
-            make.centerX.mas_equalTo(btn.mas_centerX);
-        }];
+    self.getBlock = ^(MarketModel * _Nonnull model) {
+      
+        NSArray *array = model.ad_list;
+        NSMutableArray *itemsArray = [NSMutableArray array];
+        for (AdListModel *model in array) {
+            NSString *url = [NSString stringWithFormat:@"%@%@",kSERVICE,model.image];
+            [itemsArray addObject:url];
+        }
         
-        NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,model.image];
-        [contentImageView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
-        UILabel *contentLabel = [[UILabel alloc]init];
-        [btn addSubview:contentLabel];
-        [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.mas_equalTo(0);
-            make.height.mas_equalTo(30);
-        }];
+        weakSelf.scrollView.imageURLStringsGroup = itemsArray;
         
-        contentLabel.font = kFontSize(15);
-        contentLabel.textColor = [UIColor blackColor];
-        contentLabel.text = model.name;
-        contentLabel.textAlignment = NSTextAlignmentCenter;
-        [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        NSArray *btnArray = [NSArray arrayWithObjects:weakSelf.btn0,weakSelf.btn1,weakSelf.btn2,weakSelf.btn3,weakSelf.btn4,weakSelf.btn5,weakSelf.btn6,weakSelf.btn7, nil];
+        // 数据
+        NSArray *buttonArray = model.category;
+        for (int i = 0; i < btnArray.count; i ++) {
+            CategoryModel *model = buttonArray[i];
+            UIButton *btn = btnArray[i];
+            UIImageView *contentImageView = [[UIImageView alloc]init];
+            [btn addSubview:contentImageView];
+            [contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_offset(0);
+                make.size.mas_equalTo(CGSizeMake(40, 40));
+                make.centerX.mas_equalTo(btn.mas_centerX);
+            }];
+            
+            NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,model.image];
+            [contentImageView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+            UILabel *contentLabel = [[UILabel alloc]init];
+            [btn addSubview:contentLabel];
+            [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.right.bottom.mas_equalTo(0);
+                make.height.mas_equalTo(30);
+            }];
+            
+            contentLabel.font = kFontSize(15);
+            contentLabel.textColor = [UIColor blackColor];
+            contentLabel.text = model.name;
+            contentLabel.textAlignment = NSTextAlignmentCenter;
+            [btn addTarget:weakSelf action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }
         
-    }
+    };
+    
+   
 }
 
 - (void)makeUI
@@ -91,9 +107,25 @@
     [self.bannerView addSubview:self.scrollView];
     self.scrollView.frame = self.bannerView.bounds;
     
+    [self.bannerView addSubview:self.searchButton];
+    [self.searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.bannerView.mas_centerX);
+        make.top.mas_equalTo(25);
+        make.size.mas_equalTo(CGSizeMake(261, 35));
+    }];
+    
+    [self.bannerView addSubview:self.messageButton];
+    [self.messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.searchButton.mas_right).offset(20);
+        make.centerY.mas_equalTo(self.searchButton.mas_centerY);
+        make.size.mas_equalTo(CGSizeMake(25, 25));
+    }];
+    
+    
+    
     self.buttonView = [[UIView alloc]init];
     [self addSubview:self.buttonView];
-    //[self.buttonView setBackgroundColor:[UIColor blueColor]];
+    
     [self.buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(self.bannerView.mas_bottom);
@@ -109,18 +141,10 @@
     }];
     
     self.sectionView.backgroundColor = [UIColor whiteColor];
-    
-    // 数据
-    //NSArray *buttonArray = self.model.category;
-    
     for (int i = 0; i < 4; i ++) {
-        
-       // CategoryModel *model = buttonArray[i];
-        
+
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.buttonView addSubview:button];
-       // [button setTitle:model.name forState:UIControlStateNormal];
-     //   [button.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.image]]];
         button.tag = 100+i;
         button.titleLabel.font = kFontSize(15);
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,8 +217,24 @@
 - (void)buttonAction:(UIButton *)btn
 {
     MarketTestViewController *vc = [[MarketTestViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
     [[self viewController].navigationController pushViewController:vc animated:YES];
 }
+
+- (void)pushSearchVCAction
+{
+    MarketSearchViewController *vc = [[MarketSearchViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [[self viewController].navigationController pushViewController:vc animated:YES];
+}
+
+- (void)pushMessageVCAction
+{
+    MarketUserShopViewController *vc = [[MarketUserShopViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [[self viewController].navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark BannerViewDelegate
 /** 点击图片回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
@@ -227,4 +267,27 @@
     return _itemsArray;
 }
 
+- (UIButton *)searchButton
+{
+    if (!_searchButton) {
+        _searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_searchButton setImage:[UIImage imageNamed:@"searchImageView"] forState:UIControlStateNormal];
+        _searchButton.layer.cornerRadius = 3;
+        _searchButton.layer.masksToBounds = YES;
+        [_searchButton addTarget:self
+                          action:@selector(pushSearchVCAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _searchButton;
+}
+
+- (UIButton *)messageButton
+{
+    if (!_messageButton) {
+        _messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_messageButton setImage:[UIImage imageNamed:@"liuyan"] forState:UIControlStateNormal];
+        [_messageButton addTarget:self
+                           action:@selector(pushMessageVCAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _messageButton;
+}
 @end

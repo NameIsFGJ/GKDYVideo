@@ -1,39 +1,27 @@
 //
-//  MarketTestViewController.m
+//  MarketMessageViewController.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/8/19.
+//  Created by 冯高杰 on 2019/8/20.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "MarketTestViewController.h"
+#import "MarketMessageViewController.h"
 
-@interface MarketTestViewController ()
+@interface MarketMessageViewController ()
 
 @end
 
-@implementation MarketTestViewController
+@implementation MarketMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self makeNav];
-    self.view.backgroundColor = [UIColor whiteColor];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    self.view.backgroundColor = [UIColor whiteColor];
 }
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
 - (void)makeNav
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
@@ -53,14 +41,5 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

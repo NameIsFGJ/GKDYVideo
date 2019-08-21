@@ -105,6 +105,8 @@
 		91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABBC22FC029500E4593A /* NewBaseModel.m */; };
 		91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2256522EEF34700FFAA84 /* SearchUsersNetworking.m */; };
 		91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */; };
+		91BABCE5230ACC1E00047A64 /* MarketCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BABCE3230ACC1E00047A64 /* MarketCollectionViewCell.m */; };
+		91BABCE6230ACC1E00047A64 /* MarketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BABCE4230ACC1E00047A64 /* MarketCollectionViewCell.xib */; };
 		91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB79BC23000BF10049BC41 /* IDCardViewController.m */; };
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91BC3644230A9D6A0052A11A /* MarketTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3643230A9D6A0052A11A /* MarketTestViewController.m */; };
@@ -139,6 +141,12 @@
 		91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82822EECA2E0065FB0B /* MusicTableViewCell.m */; };
 		91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */; };
 		91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E83222EEE9C80065FB0B /* SearchUserModel.m */; };
+		91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72D5230CE2FE0085312E /* MarketUserShopViewController.m */; };
+		91DA72DA230CE7F80085312E /* MarketUserShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72D8230CE7F80085312E /* MarketUserShopCollectionViewCell.m */; };
+		91DA72DB230CE7F80085312E /* MarketUserShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DA72D9230CE7F80085312E /* MarketUserShopCollectionViewCell.xib */; };
+		91DA72F0230D2B120085312E /* MarketUserShopNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72EF230D2B120085312E /* MarketUserShopNetworking.m */; };
+		91DA72F3230D2C050085312E /* MarketUserShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72F2230D2C050085312E /* MarketUserShopModel.m */; };
+		91DA72F6230D39BD0085312E /* MarkUserShopCollectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72F5230D39BD0085312E /* MarkUserShopCollectionHeadView.m */; };
 		91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */; };
 		91DD30B022F0818700192D7E /* VideoGuanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30AF22F0818700192D7E /* VideoGuanModel.m */; };
 		91DD30B322F0835F00192D7E /* VideoGuanNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30B222F0835F00192D7E /* VideoGuanNetworking.m */; };
@@ -151,9 +159,15 @@
 		91DFEF882302559700DA2458 /* MyBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DFEF862302559700DA2458 /* MyBusinessTableViewCell.xib */; };
 		91DFEF8B230288D500DA2458 /* MarkCollectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */; };
 		91DFEF912302A41C00DA2458 /* MarketNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF902302A41C00DA2458 /* MarketNetworking.m */; };
-		91E19A0E2306677B000E70D5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A0D2306677B000E70D5 /* TestViewController.m */; };
 		91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A10230676A1000E70D5 /* UserVideoNetworking.m */; };
 		91E19A172306AE44000E70D5 /* UIButton+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A162306AE44000E70D5 /* UIButton+category.m */; };
+		91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */; };
+		91F62222230BBD2E0088730D /* WSLWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */; };
+		91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62224230BD4AF0088730D /* MarketSearchViewController.m */; };
+		91F62228230BD7E70088730D /* MarketMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62227230BD7E70088730D /* MarketMessageViewController.m */; };
+		91F6222C230BE94E0088730D /* MarketSearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6222A230BE94E0088730D /* MarketSearchCollectionViewCell.m */; };
+		91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F6222B230BE94E0088730D /* MarketSearchCollectionViewCell.xib */; };
+		91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6222F230BF00B0088730D /* UILabel+fontHeight.m */; };
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
 		91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F5D22FC513600951823 /* CityPickerView.m */; };
 		91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F6022FC538100951823 /* BirthPickerView.m */; };
@@ -377,6 +391,9 @@
 		91B2256522EEF34700FFAA84 /* SearchUsersNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUsersNetworking.m; sourceTree = "<group>"; };
 		91B2F52F22EC84CB0030B6C2 /* SearchHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryTableViewCell.h; sourceTree = "<group>"; };
 		91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryTableViewCell.m; sourceTree = "<group>"; };
+		91BABCE2230ACC1E00047A64 /* MarketCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketCollectionViewCell.h; sourceTree = "<group>"; };
+		91BABCE3230ACC1E00047A64 /* MarketCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketCollectionViewCell.m; sourceTree = "<group>"; };
+		91BABCE4230ACC1E00047A64 /* MarketCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketCollectionViewCell.xib; sourceTree = "<group>"; };
 		91BB79BB23000BF10049BC41 /* IDCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCardViewController.h; sourceTree = "<group>"; };
 		91BB79BC23000BF10049BC41 /* IDCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCardViewController.m; sourceTree = "<group>"; };
 		91BBB70822E7F2460060ADDD /* UIViewController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
@@ -442,6 +459,17 @@
 		91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
 		91D2E83122EEE9C80065FB0B /* SearchUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserModel.h; sourceTree = "<group>"; };
 		91D2E83222EEE9C80065FB0B /* SearchUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserModel.m; sourceTree = "<group>"; };
+		91DA72D4230CE2FE0085312E /* MarketUserShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopViewController.h; sourceTree = "<group>"; };
+		91DA72D5230CE2FE0085312E /* MarketUserShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketUserShopViewController.m; sourceTree = "<group>"; };
+		91DA72D7230CE7F80085312E /* MarketUserShopCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopCollectionViewCell.h; sourceTree = "<group>"; };
+		91DA72D8230CE7F80085312E /* MarketUserShopCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketUserShopCollectionViewCell.m; sourceTree = "<group>"; };
+		91DA72D9230CE7F80085312E /* MarketUserShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketUserShopCollectionViewCell.xib; sourceTree = "<group>"; };
+		91DA72EE230D2B120085312E /* MarketUserShopNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopNetworking.h; sourceTree = "<group>"; };
+		91DA72EF230D2B120085312E /* MarketUserShopNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketUserShopNetworking.m; sourceTree = "<group>"; };
+		91DA72F1230D2C050085312E /* MarketUserShopModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopModel.h; sourceTree = "<group>"; };
+		91DA72F2230D2C050085312E /* MarketUserShopModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketUserShopModel.m; sourceTree = "<group>"; };
+		91DA72F4230D39BD0085312E /* MarkUserShopCollectionHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkUserShopCollectionHeadView.h; sourceTree = "<group>"; };
+		91DA72F5230D39BD0085312E /* MarkUserShopCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkUserShopCollectionHeadView.m; sourceTree = "<group>"; };
 		91DD30AB22F0766E00192D7E /* FollowingCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowingCollectionViewCell.h; sourceTree = "<group>"; };
 		91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowingCollectionViewCell.m; sourceTree = "<group>"; };
 		91DD30AE22F0818700192D7E /* VideoGuanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoGuanModel.h; sourceTree = "<group>"; };
@@ -464,12 +492,23 @@
 		91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionHeadView.m; sourceTree = "<group>"; };
 		91DFEF8F2302A41C00DA2458 /* MarketNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketNetworking.h; sourceTree = "<group>"; };
 		91DFEF902302A41C00DA2458 /* MarketNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketNetworking.m; sourceTree = "<group>"; };
-		91E19A0C2306677B000E70D5 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		91E19A0D2306677B000E70D5 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		91E19A0F230676A1000E70D5 /* UserVideoNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserVideoNetworking.h; sourceTree = "<group>"; };
 		91E19A10230676A1000E70D5 /* UserVideoNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserVideoNetworking.m; sourceTree = "<group>"; };
 		91E19A152306AE44000E70D5 /* UIButton+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+category.h"; sourceTree = "<group>"; };
 		91E19A162306AE44000E70D5 /* UIButton+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+category.m"; sourceTree = "<group>"; };
+		91F62219230B8F1C0088730D /* MarketTestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTestCollectionViewCell.h; sourceTree = "<group>"; };
+		91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketTestCollectionViewCell.m; sourceTree = "<group>"; };
+		91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLWaterFlowLayout.m; sourceTree = "<group>"; };
+		91F62221230BBD2E0088730D /* WSLWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLWaterFlowLayout.h; sourceTree = "<group>"; };
+		91F62223230BD4AF0088730D /* MarketSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketSearchViewController.h; sourceTree = "<group>"; };
+		91F62224230BD4AF0088730D /* MarketSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketSearchViewController.m; sourceTree = "<group>"; };
+		91F62226230BD7E70088730D /* MarketMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketMessageViewController.h; sourceTree = "<group>"; };
+		91F62227230BD7E70088730D /* MarketMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketMessageViewController.m; sourceTree = "<group>"; };
+		91F62229230BE94E0088730D /* MarketSearchCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketSearchCollectionViewCell.h; sourceTree = "<group>"; };
+		91F6222A230BE94E0088730D /* MarketSearchCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketSearchCollectionViewCell.m; sourceTree = "<group>"; };
+		91F6222B230BE94E0088730D /* MarketSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketSearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		91F6222E230BF00B0088730D /* UILabel+fontHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+fontHeight.h"; sourceTree = "<group>"; };
+		91F6222F230BF00B0088730D /* UILabel+fontHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+fontHeight.m"; sourceTree = "<group>"; };
 		91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeadView.h; sourceTree = "<group>"; };
 		91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeadView.m; sourceTree = "<group>"; };
 		91FD0F5C22FC513600951823 /* CityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPickerView.h; sourceTree = "<group>"; };
@@ -646,8 +685,6 @@
 				606A77DB215DFCB000DC2F63 /* GKDYPersonalViewController.m */,
 				919843642304FF14001148B9 /* GKDYUserMainViewController.h */,
 				919843652304FF14001148B9 /* GKDYUserMainViewController.m */,
-				91E19A0C2306677B000E70D5 /* TestViewController.h */,
-				91E19A0D2306677B000E70D5 /* TestViewController.m */,
 				91CC2E732305987A00F153A6 /* GKDYUserVideoViewController.h */,
 				91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */,
 			);
@@ -809,6 +846,8 @@
 				916C6D3B22F80EB200D2538F /* NSDictionary+log.m */,
 				91E19A152306AE44000E70D5 /* UIButton+category.h */,
 				91E19A162306AE44000E70D5 /* UIButton+category.m */,
+				91F6222E230BF00B0088730D /* UILabel+fontHeight.h */,
+				91F6222F230BF00B0088730D /* UILabel+fontHeight.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -966,6 +1005,8 @@
 			children = (
 				91DFEF8F2302A41C00DA2458 /* MarketNetworking.h */,
 				91DFEF902302A41C00DA2458 /* MarketNetworking.m */,
+				91DA72EE230D2B120085312E /* MarketUserShopNetworking.h */,
+				91DA72EF230D2B120085312E /* MarketUserShopNetworking.m */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -1043,6 +1084,7 @@
 		912F4D9F22E18C94004CF0DF /* TheThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				91F6221F230BBD2E0088730D /* WSLWaterFlowLayout */,
 				9113E16C22EAFB0B00FFFCF0 /* WMPageViewController */,
 				79CC62C721573B2700101773 /* DouYin */,
 			);
@@ -1092,8 +1134,14 @@
 			children = (
 				9165C22822FEA89E0015ED06 /* MarketViewController.h */,
 				9165C22922FEA89E0015ED06 /* MarketViewController.m */,
+				91F62223230BD4AF0088730D /* MarketSearchViewController.h */,
+				91F62224230BD4AF0088730D /* MarketSearchViewController.m */,
+				91F62226230BD7E70088730D /* MarketMessageViewController.h */,
+				91F62227230BD7E70088730D /* MarketMessageViewController.m */,
 				91BC3642230A9D6A0052A11A /* MarketTestViewController.h */,
 				91BC3643230A9D6A0052A11A /* MarketTestViewController.m */,
+				91DA72D4230CE2FE0085312E /* MarketUserShopViewController.h */,
+				91DA72D5230CE2FE0085312E /* MarketUserShopViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1103,6 +1151,8 @@
 			children = (
 				91DD442B22FFDE2B009A4790 /* MarketModel.h */,
 				91DD442C22FFDE2B009A4790 /* MarketModel.m */,
+				91DA72F1230D2C050085312E /* MarketUserShopModel.h */,
+				91DA72F2230D2C050085312E /* MarketUserShopModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1110,12 +1160,8 @@
 		912F4DA622E18C94004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				91DFEF89230288D500DA2458 /* MarkCollectionHeadView.h */,
-				91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */,
-				9104F9C6230A46060033C40A /* MarkCollectionHead2View.h */,
-				9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */,
-				91BC3645230AA0420052A11A /* MarkCollectionFootView.h */,
-				91BC3646230AA0420052A11A /* MarkCollectionFootView.m */,
+				91DA72E5230CF4D60085312E /* HeadFootView */,
+				91DA72E4230CF4CD0085312E /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1283,6 +1329,39 @@
 			path = SearchNetworking;
 			sourceTree = "<group>";
 		};
+		91DA72E4230CF4CD0085312E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				91BABCE2230ACC1E00047A64 /* MarketCollectionViewCell.h */,
+				91BABCE3230ACC1E00047A64 /* MarketCollectionViewCell.m */,
+				91BABCE4230ACC1E00047A64 /* MarketCollectionViewCell.xib */,
+				91F62219230B8F1C0088730D /* MarketTestCollectionViewCell.h */,
+				91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */,
+				91F62229230BE94E0088730D /* MarketSearchCollectionViewCell.h */,
+				91F6222A230BE94E0088730D /* MarketSearchCollectionViewCell.m */,
+				91F6222B230BE94E0088730D /* MarketSearchCollectionViewCell.xib */,
+				91DA72D7230CE7F80085312E /* MarketUserShopCollectionViewCell.h */,
+				91DA72D8230CE7F80085312E /* MarketUserShopCollectionViewCell.m */,
+				91DA72D9230CE7F80085312E /* MarketUserShopCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		91DA72E5230CF4D60085312E /* HeadFootView */ = {
+			isa = PBXGroup;
+			children = (
+				91DFEF89230288D500DA2458 /* MarkCollectionHeadView.h */,
+				91DFEF8A230288D500DA2458 /* MarkCollectionHeadView.m */,
+				9104F9C6230A46060033C40A /* MarkCollectionHead2View.h */,
+				9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */,
+				91BC3645230AA0420052A11A /* MarkCollectionFootView.h */,
+				91BC3646230AA0420052A11A /* MarkCollectionFootView.m */,
+				91DA72F4230D39BD0085312E /* MarkUserShopCollectionHeadView.h */,
+				91DA72F5230D39BD0085312E /* MarkUserShopCollectionHeadView.m */,
+			);
+			path = HeadFootView;
+			sourceTree = "<group>";
+		};
 		91DD442E22FFE033009A4790 /* SetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1299,6 +1378,15 @@
 				91FD0F5D22FC513600951823 /* CityPickerView.m */,
 			);
 			path = SetView;
+			sourceTree = "<group>";
+		};
+		91F6221F230BBD2E0088730D /* WSLWaterFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				91F62221230BBD2E0088730D /* WSLWaterFlowLayout.h */,
+				91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */,
+			);
+			path = WSLWaterFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1409,7 +1497,9 @@
 			files = (
 				91084BAE22FD057B00021B29 /* city.json in Resources */,
 				606A77DF215E0B3000DC2F63 /* README.md in Resources */,
+				91BABCE6230ACC1E00047A64 /* MarketCollectionViewCell.xib in Resources */,
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
+				91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */,
 				9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */,
 				79CC629F2157377600101773 /* LaunchScreen.storyboard in Resources */,
 				91DFEF882302559700DA2458 /* MyBusinessTableViewCell.xib in Resources */,
@@ -1417,6 +1507,7 @@
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
 				79CC629C2157377600101773 /* Assets.xcassets in Resources */,
 				91D2AC6322F9172600179C88 /* MessageCommonTableViewCell.xib in Resources */,
+				91DA72DB230CE7F80085312E /* MarketUserShopCollectionViewCell.xib in Resources */,
 				91D2AC6E22F9565000179C88 /* MyFansTableViewCell.xib in Resources */,
 				9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */,
 			);
@@ -1489,6 +1580,7 @@
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
+				91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
 				91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */,
@@ -1498,11 +1590,13 @@
 				919843722305568B001148B9 /* UserModel.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
 				919843662304FF14001148B9 /* GKDYUserMainViewController.m in Sources */,
+				91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */,
 				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
 				9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */,
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
+				91BABCE5230ACC1E00047A64 /* MarketCollectionViewCell.m in Sources */,
 				91DD442D22FFDE2B009A4790 /* MarketModel.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
 				91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */,
@@ -1520,6 +1614,7 @@
 				91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */,
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
 				91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */,
+				91F62228230BD7E70088730D /* MarketMessageViewController.m in Sources */,
 				9162CFA922F976A70094EB7E /* MineHeadView.m in Sources */,
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
 				91D2AC7B22F968C700179C88 /* MyFriendTableViewCell.m in Sources */,
@@ -1531,16 +1626,20 @@
 				9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */,
 				91D2AC6922F91F5A00179C88 /* GetZanNetworking.m in Sources */,
 				9162CFB222FA5D7B0094EB7E /* EditInfoViewController.m in Sources */,
+				91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */,
 				91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */,
+				91DA72F3230D2C050085312E /* MarketUserShopModel.m in Sources */,
 				9113E15622EAD87700FFFCF0 /* SearchView.m in Sources */,
 				914034D522E5DECE006F1699 /* BaseModel.m in Sources */,
 				9113E15C22EAE64E00FFFCF0 /* SearchViewController.m in Sources */,
 				91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */,
 				9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */,
+				91F62222230BBD2E0088730D /* WSLWaterFlowLayout.m in Sources */,
 				91E19A172306AE44000E70D5 /* UIButton+category.m in Sources */,
 				79CC62EB2157402800101773 /* GKDYVideoControlView.m in Sources */,
 				91ABABB722FBCE1B00E4593A /* EditSignsViewController.m in Sources */,
 				9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */,
+				91DA72F0230D2B120085312E /* MarketUserShopNetworking.m in Sources */,
 				79CC62A22157377600101773 /* main.m in Sources */,
 				91DFEF912302A41C00DA2458 /* MarketNetworking.m in Sources */,
 				9189A4F822FE9B5000EA50E0 /* SexPickerView.m in Sources */,
@@ -1564,6 +1663,7 @@
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
 				91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */,
+				91F6222C230BE94E0088730D /* MarketSearchCollectionViewCell.m in Sources */,
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				9162CFBA22FABA680094EB7E /* DataModel.m in Sources */,
 				9162CFAF22F97C010094EB7E /* MineViewController.m in Sources */,
@@ -1579,11 +1679,13 @@
 				916C6D4822F831B800D2538F /* MessageViewController.m in Sources */,
 				91BC3644230A9D6A0052A11A /* MarketTestViewController.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
+				91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */,
 				9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */,
 				915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */,
 				9176295922F168E1003CF389 /* AddGoodsChildViewController.m in Sources */,
 				91DD30B322F0835F00192D7E /* VideoGuanNetworking.m in Sources */,
 				91DFEF8B230288D500DA2458 /* MarkCollectionHeadView.m in Sources */,
+				91DA72DA230CE7F80085312E /* MarketUserShopCollectionViewCell.m in Sources */,
 				79CC62942157377400101773 /* AppDelegate.m in Sources */,
 				9116615A22E18FAA00A5F9C2 /* NSString+MD5.m in Sources */,
 				9176295022F16234003CF389 /* BaseAddGoodsViewController.m in Sources */,
@@ -1610,13 +1712,13 @@
 				91ABABB422FBCDB500E4593A /* EditMFNumbViewController.m in Sources */,
 				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
 				916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */,
-				91E19A0E2306677B000E70D5 /* TestViewController.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,
 				9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */,
 				9116615522E18FAA00A5F9C2 /* UIImage+Category.m in Sources */,
 				91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */,
 				9116615922E18FAA00A5F9C2 /* UIColor+Category.m in Sources */,
+				91DA72F6230D39BD0085312E /* MarkUserShopCollectionHeadView.m in Sources */,
 				9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

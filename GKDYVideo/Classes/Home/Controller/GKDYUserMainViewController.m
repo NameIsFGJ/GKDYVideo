@@ -13,6 +13,7 @@
 #import "UserModel.h"
 #import "GKDYUserVideoViewController.h"
 #import "UserVideoNetworking.h"
+#import "MarketUserShopViewController.h"
 @interface GKDYUserMainViewController ()<UserViewDelegaete>
 @property (strong, nonatomic)UserHeadView *userView;
 @property (strong, nonatomic)UserModel *model;
@@ -29,9 +30,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     [self makeNav];
     [self makeUI];
     [self networking];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)makeNav
@@ -131,8 +147,8 @@
 }
 
 - (void)networking
-{
-    [UserNetworking postVideoGuanWithUserID:kUser.user_id withUserID:self.userID completion:^(UserModel * _Nonnull model, NSError * _Nonnull error) {
+{         
+    [UserNetworking postVideoGuanWithUserID:kUser.user_token withUserID:self.userID completion:^(UserModel * _Nonnull model, NSError * _Nonnull error) {
         
         self.model = model;
         
@@ -164,6 +180,18 @@
         //粉丝
         self.userView.fansNumberLabel.text = [NSString stringWithFormat:@"%ld  粉丝",model.fans_num];
         
+        // 签名
+        self.userView.signsLabel.text = model.signs;
+        
+        // 漫饭号
+        self.userView.mfNumLabel.text = [NSString stringWithFormat:@"漫饭号: %@",model.mf_num];
+        
+        // 定位
+        [self.userView.cityButton setTitle:model.city forState:UIControlStateNormal];
+        
+        // 商铺
+        self.userView.shopButton.hidden = !model.is_shop;
+        
     }];
     
     [UserVideoNetworking postSomeBodyVideo:kUser.user_token withType:myOwnerVideo withPage:1 withUserID:self.userID complection:^(NSArray * _Nonnull array, NSError * _Nonnull error) {
@@ -177,6 +205,7 @@
     }];
 }
 
+#pragma makr 切换页面
 - (void)myOwnerButtonAction{
     
     [self transitionFromViewController:self.myOwnerVC toViewController:self.myLikeVC duration:.2 options:UIViewAnimationOptionTransitionNone animations:^{
@@ -233,7 +262,15 @@
 // TA 的商铺
 - (void)controlViewDidTAShop:(UserHeadView *)userView;
 {
-     NSLog(@"点击了TA 的商铺");
+    MarketUserShopViewController *vc = [[MarketUserShopViewController alloc]init];
+    NSLog(@"%ld",self.model.ide);
+     NSLog(@"%@",self.model.head_pic);
+     NSLog(@"nickname  =%@",self.model.nickname);
+    vc.userID = self.model.ide;
+    vc.head_url = self.model.head_pic;
+    vc.nickName = self.model.nickname;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //  私信

@@ -12,7 +12,7 @@
 + (void)postVideoGuanWithUserID:(NSString *)token withUserID:(NSInteger)userID completion:(void(^)(UserModel *model,NSError *error))completionHandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/user"];
-    NSDictionary *para = @{@"token":kUser.user_token,@"user_id":@(userID)};
+    NSDictionary *para = @{@"token":token,@"user_id":@(userID)};
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {

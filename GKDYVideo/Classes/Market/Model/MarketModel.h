@@ -45,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)NSString *name;
 @property (strong, nonatomic)NSString *cover;
+@property (assign, nonatomic)NSInteger imagewidth;
+@property (assign, nonatomic)NSInteger imageheight;
 @end
 
 @interface HotRentModel : NSObject
@@ -52,6 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)NSString *name;
 @property (strong, nonatomic)NSString *cover;
+@property (assign, nonatomic)NSInteger imagewidth;
+@property (assign, nonatomic)NSInteger imageheight;
 @end
 
 @interface MarketModel : NSObject

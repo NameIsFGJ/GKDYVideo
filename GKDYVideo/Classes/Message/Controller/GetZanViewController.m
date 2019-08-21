@@ -51,7 +51,6 @@
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    NSLog(@"self.itemsArray.count  =%ld",self.itemsArray.count);
     //return 5;
     return self.itemsArray.count;
 }

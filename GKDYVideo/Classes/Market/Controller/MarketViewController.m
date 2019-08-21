@@ -11,16 +11,17 @@
 #import "MarkCollectionHead2View.h"
 #import "MarkCollectionFootView.h"
 #import "MarketNetworking.h"
-
-static NSInteger currentRow;
-
-@interface MarketViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+#import "MarketCollectionViewCell.h"
+#import "MarketModel.h"
+#import "WSLWaterFlowLayout.h"
+@interface MarketViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
 @property (strong, nonatomic)UICollectionView *collectionView;
-@property (strong, nonatomic)NSMutableArray *itemsArray;
-@property (strong, nonatomic)NSMutableArray *categoryArray;
+@property (strong, nonatomic)NSArray *itemsArray;
 @property (strong, nonatomic)MarkCollectionHeadView *headView;
 @property (strong, nonatomic)MarkCollectionHead2View *head2View;
-
+@property (strong, nonatomic)MarketModel *model;
+@property (strong, nonatomic)NSArray *tempArray;
+@property (strong, nonatomic)WSLWaterFlowLayout *flowLayout;
 @end
 
 @implementation MarketViewController
@@ -28,11 +29,44 @@ static NSInteger currentRow;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
-    
-    [self makeUI];
-    [self networking];
-    
    
+     [self makeUI];
+     [self networking];
+    
+    HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
+    model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model0.ide = 0;
+    model0.imageheight = 250;
+    model0.imagewidth = 606;
+    model0.name = @"裤子";
+    model0.price = @"33.11" ;
+    
+    HotGoodsModel *model1 = [[HotGoodsModel alloc]init];
+    model1.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model1.ide = 1;
+    model1.imageheight = 190;
+    model1.imagewidth = 806;
+    model1.name = @"袜子";
+    model1.price = @"999.90" ;
+    
+    HotGoodsModel *model2 = [[HotGoodsModel alloc]init];
+    model2.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model2.ide = 2;
+    model2.imageheight = 250;
+    model2.imagewidth = 606;
+    model2.name = @"绳阿斯顿飞子";
+    model2.price = @"2321.222" ;
+    
+    HotGoodsModel *model3 = [[HotGoodsModel alloc]init];
+    model3.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model3.ide = 3;
+    model3.imageheight = 190;
+    model3.imagewidth = 606;
+    model3.name = @"是淡粉色";
+    model3.price = @"9091.23" ;
+    
+    self.tempArray = [NSArray arrayWithObjects:model0,model1,model2,model3, nil];
+
 }
 
 - (void)makeUI
@@ -46,77 +80,56 @@ static NSInteger currentRow;
 
 - (void)networking
 {
-    [MarketNetworking postIndexWithCompletion:^(MarketModel * _Nonnull model, NSError * _Nonnull error) {
-        self.headView.model = model;
-        [self.headView reloadData];
-        
-        [self.collectionView reloadData];
-    }];
+        [MarketNetworking postIndexWithCompletion:^(MarketModel * _Nonnull model, NSError * _Nonnull error) {
+            //
+            self.model = model;
+            self.itemsArray = [NSArray arrayWithObjects:model.hot_goods,model.hot_rent, nil];
+            [self.collectionView reloadData];
+            
+           // self.flowLayout.collectionview
+        }];
 }
 
 #pragma mark UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    return 6;
+    if (section == 0) {
+        NSArray *array0 = self.itemsArray[0];
+        NSLog(@"array0.count  =%ld",array0.count);
+    //   return array0.count;
+       // return 4;
+        return self.tempArray.count;
+    }
+    if (section == 1) {
+        NSArray *array1 = self.itemsArray[1];
+        NSLog(@"array1.count  =%ld",array1.count);
+       // return array1.count;
+    return 4;
+    }
+    return 11;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
 {
-    return 2;
-}
-
-// 返回cell 的尺度大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
-{
-    currentRow += indexPath.row;
-    if (currentRow %2 == 0) {
-        return CGSizeMake((kWindowWidth -30)/2, 220);
-    }else
-    {
-        return CGSizeMake((kWindowWidth -30)/2, 250);
-    }
-}
-
-// 行 间隙
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 10;
-}
-
-// 列 间隙
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 10;
-}
-
-// cell 缩进
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
-{
-    return UIEdgeInsetsMake(0, 10, 0, 10);
+   return self.itemsArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCellID" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+   MarketCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MarketCollectionViewCellID" forIndexPath:indexPath];
+    if (indexPath.row % 2 == 0) {
+        cell.backgroundColor = [UIColor colorWithHex:@"#FFE3EE"];
+    }else{
+         cell.backgroundColor = [UIColor colorWithHex:@"#DAE1FF"];
+    }
+    cell.model = self.tempArray[indexPath.row];
+    
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (section == 0)
-    {
-         return CGSizeMake(kWindowWidth, 440);
-    }else if (section == 1)
-    {
-        return CGSizeMake(kWindowWidth, 80);
-    }
-         return CGSizeMake(0, 0);
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
-{
-    return CGSizeMake(kWindowWidth, 50);
+   // NSLog(@"indexPath.row  =%ld",indexPath.row);
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -127,35 +140,95 @@ static NSInteger currentRow;
         if (indexPath.section ==0)
         {
             self.headView = [collectionView  dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHeadViewID" forIndexPath:indexPath];
+            self.headView.getBlock(self.model);
+            
             reusableView = self.headView;
         }
-        if (indexPath.section == 1){
+        if (indexPath.section == 1)
+        {
             self.head2View = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHead2ViewID" forIndexPath:indexPath];
              reusableView = self.head2View;
         }
     }
     
-    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+    if ([kind isEqualToString:UICollectionElementKindSectionFooter])
+    {
         MarkCollectionFootView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"MarkCollectionFootViewID" forIndexPath:indexPath];
         reusableView = view;
     }
     return reusableView;
 }
 
-#pragma mark UICollectionViewDelegate
+#pragma mark WSLWaterFlowLayoutDelegate
+- (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    HotGoodsModel *model = self.tempArray[indexPath.row];
+    
+    return CGSizeMake(0, model.imageheight);
+}
 
+/** 头视图Size */
+-(CGSize )waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForHeaderViewInSection:(NSInteger)section;
+{
+            if (section == 0)
+            {
+                 return CGSizeMake(kWindowWidth, 440);
+            }else if (section == 1)
+            {
+                 return CGSizeMake(kWindowWidth, 80);
+            }
+                 return CGSizeMake(0, 0);
+}
+/** 脚视图Size */
+-(CGSize )waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForFooterViewInSection:(NSInteger)section;
+{
+     return CGSizeMake(kWindowWidth, 50);
+}
+
+/** 列数*/
+-(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;
+{
+    return 2;
+    
+}
+/** 行数*/
+-(CGFloat)rowCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;
+{
+    return self.tempArray.count/2;
+}
+/** 列间距*/
+-(CGFloat)columnMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;
+{
+    return 10;
+}
+/** 行间距*/
+-(CGFloat)rowMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;
+{
+    return 10;
+}
+/** 边缘之间的间距*/
+-(UIEdgeInsets)edgeInsetInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;
+{
+     return UIEdgeInsetsMake(0, 10, 0, 10);
+}
+
+
+
+#pragma makr 懒加载
 - (UICollectionView *)collectionView
 {
     if (!_collectionView) {
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+        self.flowLayout = [[WSLWaterFlowLayout alloc]init];
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
+        self.flowLayout.delegate = self;
+        self.flowLayout.flowLayoutStyle = WSLWaterFlowVerticalEqualWidth;
         
         _collectionView.delegate =self;
         _collectionView.dataSource = self;
         
         _collectionView.backgroundColor = [UIColor whiteColor];
         
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCellID"];
+        [_collectionView registerNib:[UINib nibWithNibName:@"MarketCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"MarketCollectionViewCellID"];
         
          [_collectionView registerClass:[MarkCollectionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MarkCollectionHeadViewID"];
         
@@ -166,11 +239,4 @@ static NSInteger currentRow;
     return _collectionView;
 }
 
-- (NSMutableArray *)categoryArray
-{
-    if (!_categoryArray) {
-        _categoryArray = [NSMutableArray array];
-    }
-    return _categoryArray;
-}
 @end

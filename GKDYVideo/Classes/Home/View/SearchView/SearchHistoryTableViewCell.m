@@ -27,7 +27,6 @@
     if (self)
     {
         self.backgroundColor = [UIColor clearColor];
-        //self.backgroundColor  = kMainColor
         UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"historyIcon"]];
         imageView.frame = CGRectMake(40, 10, 13, 13);
         [self.contentView addSubview:imageView];
@@ -35,7 +34,6 @@
         self.historyLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame)+ 10, CGRectGetMinY(imageView.frame), 200, 13)];
         [self.historyLabel setTextColor:kWhiteColor];
         [self.contentView addSubview:self.historyLabel];
-        
     }
     return self;
 }
