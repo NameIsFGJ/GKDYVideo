@@ -263,9 +263,6 @@
 - (void)controlViewDidTAShop:(UserHeadView *)userView;
 {
     MarketUserShopViewController *vc = [[MarketUserShopViewController alloc]init];
-    NSLog(@"%ld",self.model.ide);
-     NSLog(@"%@",self.model.head_pic);
-     NSLog(@"nickname  =%@",self.model.nickname);
     vc.userID = self.model.ide;
     vc.head_url = self.model.head_pic;
     vc.nickName = self.model.nickname;

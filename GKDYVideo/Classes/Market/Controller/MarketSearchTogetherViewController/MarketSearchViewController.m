@@ -10,6 +10,7 @@
 #import "SearchView.h"
 #import "WSLWaterFlowLayout.h"
 #import "MarketSearchCollectionViewCell.h"
+#import "MarketSearchGoodsMainController.h"
 @interface MarketSearchViewController ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
 @property (strong, nonatomic)UIView *navView;
 @property (strong, nonatomic)SearchView *searchView;
@@ -33,19 +34,30 @@
 #pragma mark Action
 - (void)creatNav
 {
-    self.navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
+    self.navView = [[UIView alloc]init];
     [self.view addSubview:self.navView];
-
+    [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.mas_equalTo(0);
+        make.height.mas_equalTo(KTopViewHeight);
+    }];
+    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.navView addSubview:backButton];
     [backButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
-    backButton.frame = CGRectMake(0, 25, 40, 40);
-    
+ 
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.top.mas_equalTo(25);
+        make.size.mas_equalTo(CGSizeMake(40, 40));
+    }];
     [backButton addTarget:self action:@selector(pushViewController) forControlEvents:UIControlEventTouchUpInside];
     
     [self.navView addSubview:self.searchView];
-    self.searchView.frame = CGRectMake(60, 25, 260, 34);
-    
+    [self.searchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(60);
+        make.top.mas_equalTo(25);
+        make.size.mas_equalTo(CGSizeMake(260, 34));
+    }];
 }
 
 - (void)pushViewController
@@ -55,22 +67,84 @@
 
 - (void)makeUI
 {
-    UIView *view0 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, 30)];
+    UIView *view0 = [[UIView alloc]init];
     [self.view addSubview:view0];
-    UILabel *label0 = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 80, 30)];
+    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.navView.mas_bottom);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(30);
+    }];
+
+    UILabel *label0 = [[UILabel alloc]init];//WithFrame:CGRectMake(10, 0, 80, 30)];
     [view0 addSubview:label0];
+    [label0 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.top.mas_equalTo(0);
+        make.height.mas_equalTo(30);
+    }];
+   
     label0.text = @"最近搜索";
     label0.font = kFontSize(14);
     label0.textColor = [UIColor blackColor];
     
     UIImageView *deleteImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"deleleImage2"]];
     [view0 addSubview:deleteImageView];
-    deleteImageView.frame = CGRectMake(kWindowWidth - 30, 0, 14, 16);
+    [deleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-30);
+        make.top.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(14, 16));
+    }];
     
     [self.view addSubview:self.mainView];
-    self.mainView.frame = CGRectMake(0, CGRectGetMaxY(view0.frame), kWindowWidth, 200);
+    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view0.mas_bottom).offset(10);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(300);
+    }];
+}
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+{
+    NSString *value = textField.text;
+    NSString *key = [self getCurrentTimes];
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:value forKey:key];
+    NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.goodsHistory];
+    [muArray addObject:dic];
+    [self.itemsArray addObjectsFromArray:muArray];
+    
+    [self.mainView reloadData];
+    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"kGoodsHistory"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    self.searchStr = value;
+    MarketSearchGoodsMainController *vc = [[MarketSearchGoodsMainController alloc]init];
+    NSLog(@"value  =%@",value);
+    vc.searchStr = self.searchStr;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    return YES;
 }
 
+-(NSString*)getCurrentTimes{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    
+    [formatter setDateFormat:@"YYYYMMddHHmmss"];
+    
+    //现在时间,你可以输出来看下是什么格式
+    
+    NSDate *datenow = [NSDate date];
+    
+    //----------将nsdate按formatter格式转成nsstring
+    
+    NSString *currentTimeString = [formatter stringFromDate:datenow];
+    
+    return currentTimeString;
+    
+}
 #pragma mark UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
@@ -86,16 +160,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"self.itemsArray  =%@",self.itemsArray[indexPath.row]);
+    self.searchStr = self.itemsArray[indexPath.row];
+    NSLog(@"self.itemsArray[indexPath.row]  =%@",self.itemsArray[indexPath.row]);
+    MarketSearchGoodsMainController *vc = [[MarketSearchGoodsMainController alloc]init];
+    vc.searchStr = self.searchStr;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark WSLWaterCollectionViewDelegate
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     NSString *string = self.itemsArray[indexPath.row];
-    NSLog(@"string  =%@",string);
     CGSize fontSize = [string sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13.0f]}];
-    NSLog(@"fontSize.heig34ht  =%f",fontSize.height);
     return CGSizeMake(fontSize.width + 30, 30);
 }
 /** 头视图Size */
@@ -106,26 +183,17 @@
 -(CGSize )waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForFooterViewInSection:(NSInteger)section{
     return CGSizeMake(0, 0);
 }
-//
-///** 列数*/
-//-(CGFloat)columnCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
-//    return 3;
-//}
-///** 行数*/
-//-(CGFloat)rowCountInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
-//
-//    return 5;
-//   // return ceil(self.itemsArray.count /3);
-//}
 
 /** 列间距*/
 -(CGFloat)columnMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;{
     return 10;
 }
+
 /** 行间距*/
 -(CGFloat)rowMarginInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout{
     return 10;
 }
+
 /** 边缘之间的间距*/
 -(UIEdgeInsets)edgeInsetInWaterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout;
 {

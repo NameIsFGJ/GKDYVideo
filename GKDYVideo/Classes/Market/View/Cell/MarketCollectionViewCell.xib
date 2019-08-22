@@ -37,6 +37,15 @@
                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="销量: 531" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRg-mE-pdv">
+                        <rect key="frame" x="108" y="232" width="56" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="Mzu-IE-BXB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -46,8 +55,10 @@
                 <constraint firstItem="omj-XO-kwR" firstAttribute="leading" secondItem="hnf-uP-c4N" secondAttribute="leading" id="JAT-rz-acf"/>
                 <constraint firstItem="hnf-uP-c4N" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="MHd-kM-uqZ"/>
                 <constraint firstItem="5oc-nH-7g7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Nfc-0w-l8f"/>
+                <constraint firstAttribute="trailing" secondItem="QRg-mE-pdv" secondAttribute="trailing" constant="6" id="VNb-Qy-m5Y"/>
                 <constraint firstAttribute="trailing" secondItem="hnf-uP-c4N" secondAttribute="trailing" constant="17" id="aHw-rX-TxX"/>
                 <constraint firstItem="hnf-uP-c4N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="cad-wH-TC4"/>
+                <constraint firstAttribute="bottom" secondItem="QRg-mE-pdv" secondAttribute="bottom" constant="6" id="cde-l4-2Ux"/>
                 <constraint firstItem="omj-XO-kwR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="e44-2d-f2T"/>
                 <constraint firstItem="5oc-nH-7g7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="fs2-DO-Xnr"/>
                 <constraint firstItem="omj-XO-kwR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="iT1-Xc-s0e"/>
@@ -61,6 +72,7 @@
                 <outlet property="goodsNameLabel" destination="5oc-nH-7g7" id="EPj-J5-NXI"/>
                 <outlet property="goodsPriceLabel" destination="omj-XO-kwR" id="fex-0o-uh2"/>
                 <outlet property="imageHeight" destination="i1N-O3-FNx" id="Yu7-EN-D7u"/>
+                <outlet property="saleCountLabel" destination="QRg-mE-pdv" id="hsT-FR-qOD"/>
             </connections>
             <point key="canvasLocation" x="-257.97101449275362" y="82.700892857142847"/>
         </collectionViewCell>

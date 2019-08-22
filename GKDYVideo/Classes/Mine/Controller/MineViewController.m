@@ -30,16 +30,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:@"#222934"]] forBarMetrics:UIBarMetricsDefault];
-    
+   // self.navigationController seth
+   // [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:@"#222934"]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self networking];
-    
+   // [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+  //  [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad {
@@ -54,18 +56,18 @@
 
 - (void)creatNav
 {
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:[UIImage imageNamed:@"setImage"] forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(pushSetViewController) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
-    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)creatTableView
 {
     [self.view addSubview:self.tableView];
-     self.headView = [[MineHeadView alloc]init];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.mas_equalTo(0);
+        make.top.mas_equalTo(-KTopViewHeight);
+    }];
+    self.headView = [[MineHeadView alloc]init];
     self.headView.frame = CGRectMake(0, 0, kWindowWidth, 160);
+    [self.headView.rightButton addTarget:self action:@selector(pushSetViewController) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableHeaderView = self.headView;
 }
 
@@ -157,7 +159,7 @@
 - (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"MineTableViewCellID"];

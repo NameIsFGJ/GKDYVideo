@@ -38,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.view.backgroundColor = kMainColor
     [self creatNav];
     
@@ -124,9 +123,6 @@
 - (void)clearSearchHistoryButtonAction
 {
     [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"khistory"];
-  //  self.itemsArray = nil;
-  //  self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
-   // [self.tableView reloadData];
 }
 
 #pragma mark UIPageViewControllerDelegate

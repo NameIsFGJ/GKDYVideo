@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString * money;
 @property (assign, nonatomic)NSInteger sex;
 @property (strong, nonatomic)NSArray *history;
-
+@property (strong, nonatomic)NSArray *goodsHistory;
 @end
 
 @interface Info : NSObject

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MarketSearchViewController : BaseViewController
-
+@property (strong, nonatomic)NSString *searchStr;
 @end
 
 NS_ASSUME_NONNULL_END

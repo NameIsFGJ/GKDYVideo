@@ -7,6 +7,8 @@
 //
 
 #import "MineHeadView.h"
+#import "SetViewController.h"
+#import "PrefixHeader.pch"
 
 @implementation MineHeadView
 
@@ -14,10 +16,28 @@
 {
     self = [super init];
     
+    UIView *view0 = [[UIView alloc]init];
+    [self addSubview:view0];
+    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(0);
+        make.height.mas_equalTo(64);
+    }];
+    view0.backgroundColor = kMainColor;
+    
+    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [view0 addSubview:self.rightButton];
+    [self.rightButton setImage:[UIImage imageNamed:@"setImage"] forState:UIControlStateNormal];
+    [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-13);
+        make.top.mas_equalTo(KStatusBarHeight +10);
+        make.size.mas_equalTo(CGSizeMake(20, 20));
+    }];
+    
     UIView *view1 = [[UIView alloc]init];
     [self addSubview:view1];
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.left.mas_equalTo(0);
+        make.top.equalTo(view0.mas_bottom).offset(0);
+        make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(100);
     }];
     view1.backgroundColor = kMainColor;
@@ -64,4 +84,6 @@
     
     return self;
 }
+
+
 @end

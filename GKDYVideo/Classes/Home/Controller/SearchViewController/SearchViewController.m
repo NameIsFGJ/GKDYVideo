@@ -51,6 +51,15 @@
 {
     [self.view addSubview:self.tableView];
     self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count * 40);
+   NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+   NSArray *goodsArray  = [userDefault objectForKey:@"kHistory"];
+    NSLog(@"goodsArray.count  =%ld",goodsArray.count);
+   // self.itemsArray = kUser.history;
+  
+  //  NSLog(@"kUser.history.count  =%ld",kUser.history.count);
+    
+     //NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
@@ -60,9 +69,9 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObject:value forKey:key];
     NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
     [muArray addObject:dic];
-    self.itemsArray = muArray;
-    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
-    [self.tableView reloadData];
+//    self.itemsArray = muArray;
+//    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
+//    [self.tableView reloadData];
     [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"khistory"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -111,6 +120,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"self.itemsArray.count  =%ld",self.itemsArray.count);
     return self.itemsArray.count;
 }
 
@@ -121,7 +131,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSDictionary *dic = self.itemsArray[indexPath.row];
     NSArray *valueArray = [dic allValues];
-    cell.historyLabel.text = [valueArray firstObject] ;
+    cell.historyLabel.text = valueArray[indexPath.row] ;
     
     return cell;
 }

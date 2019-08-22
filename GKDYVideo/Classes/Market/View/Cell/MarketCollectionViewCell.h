@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class HotGoodsModel;
+@class RowsModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MarketCollectionViewCell : UICollectionViewCell
@@ -16,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *goodsPriceLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
 @property (strong, nonatomic)HotGoodsModel *model;
+@property (strong, nonatomic)RowsModel *searchModel;
+@property (weak, nonatomic) IBOutlet UILabel *saleCountLabel;
 
 
 

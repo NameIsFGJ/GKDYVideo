@@ -15,6 +15,7 @@ NSString * const khead_pic = @"com.manfan.head_pic";
 NSString * const kuser_money = @"com.manfan.user_money";
 NSString * const khistory = @"com.manfan.history";
 NSString * const ksex = @"com.manfan.sex";
+NSString * const kGoodsHistory = @"com.manfan.goodsHistory";
 @implementation Info
 
 @end
@@ -123,6 +124,18 @@ static User *sharedInstance = nil;
     }else{
         [[NSUserDefaults standardUserDefaults] setObject:history forKey:khistory];
     }
+      [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setGoodsHistory:(NSArray *)goodsHistory
+{
+    _goodsHistory = goodsHistory;
+    if (nil == goodsHistory) {
+         [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kGoodsHistory];
+    }else{
+         [[NSUserDefaults standardUserDefaults] setObject:goodsHistory forKey:kGoodsHistory];
+    }
+      [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

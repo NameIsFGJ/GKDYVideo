@@ -9,7 +9,6 @@
 #import "MarkCollectionHeadView.h"
 #import "MarketModel.h"
 #import <UIButton+WebCache.h>
-#import "MarketTestViewController.h"
 #import "MarketSearchViewController.h"
 #import "MarketMessageViewController.h"
 #import "MarketUserShopViewController.h"
@@ -216,9 +215,7 @@
 
 - (void)buttonAction:(UIButton *)btn
 {
-    MarketTestViewController *vc = [[MarketTestViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [[self viewController].navigationController pushViewController:vc animated:YES];
+    NSLog(@"按钮点击");
 }
 
 - (void)pushSearchVCAction
@@ -230,9 +227,7 @@
 
 - (void)pushMessageVCAction
 {
-    MarketUserShopViewController *vc = [[MarketUserShopViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [[self viewController].navigationController pushViewController:vc animated:YES];
+    NSLog(@"pushMessageVCAction");
 }
 
 #pragma mark BannerViewDelegate

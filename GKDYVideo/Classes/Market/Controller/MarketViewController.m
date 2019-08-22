@@ -81,12 +81,10 @@
 - (void)networking
 {
         [MarketNetworking postIndexWithCompletion:^(MarketModel * _Nonnull model, NSError * _Nonnull error) {
-            //
+            
             self.model = model;
             self.itemsArray = [NSArray arrayWithObjects:model.hot_goods,model.hot_rent, nil];
             [self.collectionView reloadData];
-            
-           // self.flowLayout.collectionview
         }];
 }
 

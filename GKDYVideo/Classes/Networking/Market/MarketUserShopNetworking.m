@@ -15,11 +15,9 @@
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/goods/urShop"];
     NSDictionary *para = @{@"user_id":@(userID),@"page":@(page)};
-    NSLog(@"urlStr  =%@,para  =%@",urlStr,para);
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"responseObj  =%@",responseObj);
         if ([[responseObj objectForKey:@"code"] integerValue] == 1) {
             NSDictionary *dic = [responseObj objectForKey:@"data"];
             completionHandle([MarketUserShopModel yy_modelWithDictionary:dic],nil);

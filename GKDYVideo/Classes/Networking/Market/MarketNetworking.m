@@ -20,8 +20,6 @@
             completionHanle([MarketModel yy_modelWithDictionary:dic],nil);
         }
     }];
-    
-    
 }
 
 @end

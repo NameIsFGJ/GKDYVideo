@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)UIImageView *head_pic;
 @property (strong, nonatomic)UILabel *nickNameLabel;
 @property (strong, nonatomic)UILabel *mfNumberLabel;
+@property (strong, nonatomic)UIButton *rightButton;
 //@property (strong, nonatomic)UILabel *head_pic;
 //@property (strong, nonatomic)UILabel *mf_num;
 

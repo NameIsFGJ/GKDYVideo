@@ -16,9 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)NSString *original_price;
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)NSString *cover;
-
+@property (assign, nonatomic)NSInteger imageheight;
+@property (assign, nonatomic)NSInteger imagewidth;
+@property (assign, nonatomic)NSInteger sale_count;
 @end
-
 
 @interface MarketUserShopModel : NSObject
 @property (assign, nonatomic)NSInteger total;
