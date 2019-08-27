@@ -21,44 +21,76 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self creatNav];
+   
+     [self creatNav];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+   
     [super viewWillAppear:animated];
-    [self creatUI];
-    
+    [self.navigationController setNavigationBarHidden:YES];
+     [self creatUI];
 }
+
 - (void)creatNav
 {
-    self.navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
+    self.navView = [[UIView alloc]init];
     [self.view addSubview:self.navView];
+    [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(KStatusBarHeight+3);
+        make.height.mas_equalTo(64);
+    }];
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.navView addSubview:backButton];
-    [backButton setImage:[UIImage imageNamed:@"common_white_back"] forState:UIControlStateNormal];
+   [backButton setImage:[UIImage imageNamed:@"common_white_back"] forState:UIControlStateNormal];
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.top.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(40, 40));
+    }];
     backButton.frame = CGRectMake(0, 25, 40, 40);
     [backButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
-
+    
     [self.navView addSubview:self.searchView];
-    self.searchView.frame = CGRectMake(40, 25, 260, 34);
-
+   
+    [self.searchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.navView.mas_centerX);
+        make.top.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(260, 34));
+    }];
 }
 
 - (void)creatUI
 {
     [self.view addSubview:self.tableView];
-    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count * 40);
-   NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-   NSArray *goodsArray  = [userDefault objectForKey:@"kHistory"];
-    NSLog(@"goodsArray.count  =%ld",goodsArray.count);
-   // self.itemsArray = kUser.history;
-  
-  //  NSLog(@"kUser.history.count  =%ld",kUser.history.count);
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [user objectForKey:@"com.manfan.history"];
+    NSLog(@"array.11coun34t  =%ld",array.count);
+    NSLog(@"array  =%@",array);
+    // 判断是否是第一次进入 没有 history
+//    NSDictionary *firstStr = (NSDictionary *)[array firstObject];
+//    NSArray *value = [firstStr allValues];
+//    NSString *string = [value firstObject];
+//    NSLog(@"string3 3 =%@",string);
+    if (array.count == 0) {
+        self.itemsArray = nil;
+        self.tableView.frame = CGRectZero;
+    }else{
+        NSLog(@"不是空置");
+        self.itemsArray = array;
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.top.equalTo(self.navView.mas_bottom).offset(0);
+            make.height.mas_equalTo((self.itemsArray.count + 2) *40);
+        }];
+    }
     
-     //NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
+    [self.tableView reloadData];
     
 }
 
@@ -67,14 +99,14 @@
     NSString *value = textField.text;
     NSString *key = [self getCurrentTimes];
     NSDictionary *dic = [NSDictionary dictionaryWithObject:value forKey:key];
-    NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.history];
-    [muArray addObject:dic];
-//    self.itemsArray = muArray;
-//    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
-//    [self.tableView reloadData];
-    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"khistory"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
+    NSMutableArray * muArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"com.manfan.history"]];
+    
+    [muArray addObject:dic];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"com.manfan.history"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
     SearchMainViewController *mainVC = [[SearchMainViewController alloc]init];
     mainVC.searchContentString = self.searchView.searchTextField.text;
     [self.navigationController pushViewController:mainVC animated:YES];
@@ -110,9 +142,31 @@
 
 - (void)clearSearchHistoryButtonAction
 {
-    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"khistory"];
+     NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    [userDef removeObjectForKey:@"com.manfan.history"];
+    
+//     NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+//     NSArray *array = [userDef objectForKey:@"com.manfan.history"];
+//     NSDictionary *firstStr = [array firstObject];
+//     NSArray *value = [firstStr allValues];
+//     NSString *string = [value firstObject];
+//     if ([string isKindOfClass:[NSNull class]]) {
+//     NSDictionary *dic = @{@"key":@""};
+//     NSArray *array = [NSArray arrayWithObject:dic];
+//     [userDef setObject:array forKey:@"com.manfan.history"];
+//     }
+//     [[NSUserDefaults standardUserDefaults] synchronize];
+//------------------------------------------------------------------
+//    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"com.manfan.history"];
+//    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+//    NSDictionary *dic = @{@"key":@""};
+//    NSArray *array = [NSArray arrayWithObject:dic];
+//    [userDef setObject:array forKey:@"com.manfan.history"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//
+//
     self.itemsArray = nil;
-    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.navView.frame), kWindowWidth, self.itemsArray.count *40);
+    self.tableView.frame = CGRectZero;
     [self.tableView reloadData];
 }
 
@@ -120,7 +174,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"self.itemsArray.count  =%ld",self.itemsArray.count);
     return self.itemsArray.count;
 }
 
@@ -129,10 +182,14 @@
     static NSString *cellID = @"SearchHistoryTableViewCellID";
     SearchHistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    NSDictionary *dic = self.itemsArray[indexPath.row];
-    NSArray *valueArray = [dic allValues];
-    cell.historyLabel.text = valueArray[indexPath.row] ;
-    
+    if (self.itemsArray.count >0)
+    {
+        NSDictionary *dic = self.itemsArray[indexPath.row];
+        NSArray *valueArray = [dic allValues];
+        cell.historyLabel.text = [NSString stringWithFormat:@"%@",[valueArray firstObject]];
+        cell.backgroundColor = [UIColor redColor];
+    }
+   
     return cell;
 }
 
@@ -141,11 +198,16 @@
     return 40;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
+{
+    return 30;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dic = self.itemsArray[indexPath.row];
     NSArray *valueArray = [dic allValues];
-    self.searchView.searchTextField.text = [valueArray firstObject] ;;
+    self.searchView.searchTextField.text = [valueArray firstObject] ;
     SearchMainViewController *mainVC = [[SearchMainViewController alloc]init];
     [self.navigationController pushViewController:mainVC animated:YES];
 }
@@ -167,6 +229,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+       // _tableView.scrollEnabled = NO;
          _tableView.backgroundColor  = kMainColor
         [_tableView registerClass:[SearchHistoryTableViewCell class] forCellReuseIdentifier:@"SearchHistoryTableViewCellID"];
         UIButton *clearSearchHistoryButton = [UIButton buttonWithType:UIButtonTypeCustom];

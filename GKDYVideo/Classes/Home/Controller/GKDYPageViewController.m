@@ -67,7 +67,6 @@
     // 取消push代理
    // self.gk_pushDelegate = nil;
      [self.playVC.videoView pause];
-    
 }
 
 #pragma mark Action
@@ -75,12 +74,12 @@
 - (void)pushSearchViewController
 {
     SearchViewController *searchVC = [[SearchViewController alloc]init];
+    searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 - (void)buttonAction:(HomeSegmentedControl *)control
 {
-    
     self.selectIndex = control.selectedSegmentIndex;
 }
 

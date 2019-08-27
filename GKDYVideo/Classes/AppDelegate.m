@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AppDelegate+Vendor.h"
 @interface AppDelegate ()
 
 @end
@@ -17,17 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.backStyle             = GKNavigationBarBackStyleWhite;
-        configure.titleFont             = [UIFont systemFontOfSize:18.0f];
-        configure.titleColor            = kWhiteColor;
-        configure.gk_navItemLeftSpace   = 12.0f;
-        configure.gk_navItemRightSpace  = 12.0f;
-        configure.statusBarStyle        = UIStatusBarStyleLightContent;
-    }];
-    
-    kUser.user_token = @"2c15fd2b-6590-4db9-bba2-6506259d6f84";
-    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = kWhiteColor;
 
@@ -36,21 +25,21 @@
     self.window.rootViewController = self.main;
     [self.window makeKeyAndVisible];
     
+    [self initializeVendorWithApplication:application];
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     //13735887308
     //shanshan944675
+    //短视频APP平台应具备哪些资质证明？都有网络文化经营许可证(文网文)、信息网络传播视听节目许可证、广播电视节目制作经营许可证，
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.

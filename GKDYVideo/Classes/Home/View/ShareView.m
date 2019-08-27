@@ -31,7 +31,7 @@
         }];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(missView)];
         [clearView addGestureRecognizer:tap];
-
+        
         UIView *view1 = [[UIView alloc]init];
         [self addSubview:view1];
         view1.backgroundColor = kMainColor
@@ -40,7 +40,7 @@
             make.left.right.mas_equalTo(0);
             make.height.mas_equalTo(136);
         }];
-
+        
         UIView *contentView = [[UIView alloc]init];
         [view1 addSubview:contentView];
         [contentView mas_makeConstraints:^(MASConstraintMaker *make) {

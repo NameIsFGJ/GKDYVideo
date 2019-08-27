@@ -21,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSArray *userArray = [user objectForKey:@"com.manfan.history"];
+    NSLog(@"userAr34ray.count  =%ld",userArray.count);
+    
+    
+    
     UICollectionViewFlowLayout *layou = [[UICollectionViewFlowLayout alloc]init];
     layou.scrollDirection = UICollectionViewScrollDirectionVertical;
    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, kWindowHeight- 64- 48- 40) collectionViewLayout:layou];

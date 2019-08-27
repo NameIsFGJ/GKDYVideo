@@ -19,12 +19,27 @@
     [self initializeIQKeyboard];
     
     // 判断是否登录
-   // [self userLoad];
+    [self userLoad];
+    
+    // 配置NavBar
+    [self initializeNavBar];
+}
+
+- (void)initializeNavBar
+{
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.backStyle             = GKNavigationBarBackStyleWhite;
+        configure.titleFont             = [UIFont systemFontOfSize:18.0f];
+        configure.titleColor            = kWhiteColor;
+        configure.gk_navItemLeftSpace   = 12.0f;
+        configure.gk_navItemRightSpace  = 12.0f;
+        configure.statusBarStyle        = UIStatusBarStyleLightContent;
+    }];
 }
 
 - (void)userLoad
 {
-    
+    kUser.user_token = @"2c15fd2b-6590-4db9-bba2-6506259d6f84";
 }
 
 - (void)initializeAFNetworkActivityIndicatorManager

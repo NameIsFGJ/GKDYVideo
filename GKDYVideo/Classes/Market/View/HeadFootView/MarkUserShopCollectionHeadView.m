@@ -44,13 +44,28 @@
         make.height.mas_equalTo(55);
     }];
     
+    //view0.backgroundColor = [UIColor redColor];
     [view0 addSubview:self.nameLabel];
     [view0 addSubview:self.totalLabel];
-    NSArray *array = [NSArray arrayWithObjects:self.nameLabel,self.totalLabel, nil];
-    [array mas_distributeViewsAlongAxis: MASAxisTypeVertical
-                       withFixedSpacing:0
-                            leadSpacing:0
-                            tailSpacing:0];
+    
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+
+        make.left.right.top.mas_equalTo(0);
+        make.height.mas_equalTo(view0.mas_height).multipliedBy(.5);
+    }];
+
+    [self.totalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(0);
+        make.height.mas_equalTo(view0.mas_height).multipliedBy(.5);
+    }];
+    
+    
+//    NSArray *array = [NSArray arrayWithObjects:self.nameLabel,self.totalLabel, nil];
+//
+//    [array mas_distributeViewsAlongAxis: MASAxisTypeVertical
+//                       withFixedSpacing:0
+//                            leadSpacing:0
+//                            tailSpacing:0];
     
     self.nameLabel.text = @"依然饭特西的商铺";
     self.totalLabel.text = @"全部商品: 59";

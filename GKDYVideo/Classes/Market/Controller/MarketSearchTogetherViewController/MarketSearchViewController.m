@@ -16,7 +16,8 @@
 @property (strong, nonatomic)SearchView *searchView;
 @property (strong, nonatomic)UICollectionView *mainView;
 @property (strong, nonatomic)WSLWaterFlowLayout *flowLayout;
-@property (strong, nonatomic)NSMutableArray *itemsArray;
+@property (strong, nonatomic)NSArray *itemsArray;
+@property (strong, nonatomic)UIView *view0;
 @end
 
 @implementation MarketSearchViewController
@@ -29,6 +30,11 @@
      self.view.backgroundColor = [UIColor whiteColor];
      [self creatNav];
      [self makeUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self networking];
 }
 
 #pragma mark Action
@@ -67,16 +73,16 @@
 
 - (void)makeUI
 {
-    UIView *view0 = [[UIView alloc]init];
-    [self.view addSubview:view0];
-    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.view0 = [[UIView alloc]init];
+    [self.view addSubview:self.view0];
+    [self.view0 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navView.mas_bottom);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(30);
     }];
 
     UILabel *label0 = [[UILabel alloc]init];//WithFrame:CGRectMake(10, 0, 80, 30)];
-    [view0 addSubview:label0];
+    [self.view0 addSubview:label0];
     [label0 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.top.mas_equalTo(0);
@@ -87,20 +93,76 @@
     label0.font = kFontSize(14);
     label0.textColor = [UIColor blackColor];
     
-    UIImageView *deleteImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"deleleImage2"]];
-    [view0 addSubview:deleteImageView];
-    [deleteImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [deleteButton setImage:[UIImage imageNamed:@"deleleImage2"] forState:UIControlStateNormal];
+    [self.view0 addSubview:deleteButton];
+    [deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-30);
         make.top.mas_equalTo(0);
         make.size.mas_equalTo(CGSizeMake(14, 16));
     }];
+    [deleteButton addTarget:self action:@selector(clearItemArray) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.mainView];
     [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(view0.mas_bottom).offset(10);
+        make.top.equalTo(self.view0.mas_bottom).offset(10);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(300);
     }];
+
+}
+
+- (void)networking
+{
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [user objectForKey:@"com.manfan.goodsHistory"];
+    NSLog(@"array.coun34t  =%ld",array.count);
+    // 判断是否是第一次进入 没有 history
+    NSDictionary *firstStr = [array firstObject];
+    NSArray *value = [firstStr allValues];
+    NSString *string = [value firstObject];
+    if (string.length == 0) {
+        self.itemsArray = nil;
+        [self.mainView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(0);
+        }];
+        [self.mainView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view0.mas_bottom).offset(10);
+            make.left.right.mas_equalTo(0);
+            make.height.mas_equalTo(0);
+        }];
+    }else{
+        NSLog(@"不是空置");
+        self.itemsArray = array;
+        [self.mainView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view0.mas_bottom).offset(10);
+                        make.left.right.mas_equalTo(0);
+                        make.height.mas_equalTo(300);
+        }];
+//        [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(view0.mas_bottom).offset(10);
+//            make.left.right.mas_equalTo(0);
+//            make.height.mas_equalTo(300);
+//        }];
+//        [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(0);
+//            make.right.mas_equalTo(0);
+//            make.top.equalTo(self.navView.mas_bottom).offset(0);
+//            make.height.mas_equalTo((self.itemsArray.count + 2) *40);
+//        }];
+    }
+    
+    [self.mainView reloadData];
+}
+
+ - (void)clearItemArray
+{
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    [userDef removeObjectForKey:@"com.manfan.goodsHistory"];
+    
+    self.itemsArray = nil;
+    self.mainView.frame = CGRectZero;
+    [self.mainView reloadData];
 }
 #pragma mark UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
@@ -108,17 +170,18 @@
     NSString *value = textField.text;
     NSString *key = [self getCurrentTimes];
     NSDictionary *dic = [NSDictionary dictionaryWithObject:value forKey:key];
-    NSMutableArray *muArray = [NSMutableArray arrayWithArray:kUser.goodsHistory];
+    // 取出偏好设置中的 数组
+     NSMutableArray * muArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"com.manfan.goodsHistory"]];
     [muArray addObject:dic];
-    [self.itemsArray addObjectsFromArray:muArray];
+    // 存入偏好设置中的数组
+    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"com.manfan.goodsHistory"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.mainView reloadData];
-    [[NSUserDefaults standardUserDefaults] setObject:muArray forKey:@"kGoodsHistory"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
     self.searchStr = value;
     MarketSearchGoodsMainController *vc = [[MarketSearchGoodsMainController alloc]init];
-    NSLog(@"value  =%@",value);
+    
     vc.searchStr = self.searchStr;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
@@ -145,6 +208,7 @@
     return currentTimeString;
     
 }
+
 #pragma mark UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
@@ -154,14 +218,21 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MarketSearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MarketSearchCollectionViewCellID" forIndexPath:indexPath];
-    cell.searchLabel.text = self.itemsArray[indexPath.row];
+    
+    if (self.itemsArray.count >0)
+    {
+        NSDictionary *dic = self.itemsArray[indexPath.row];
+        NSArray *valueArray = [dic allValues];
+        cell.searchLabel.text = [NSString stringWithFormat:@"%@",[valueArray firstObject]];
+    }
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.searchStr = self.itemsArray[indexPath.row];
-    NSLog(@"self.itemsArray[indexPath.row]  =%@",self.itemsArray[indexPath.row]);
+    NSDictionary *dic = self.itemsArray[indexPath.row];
+    NSArray *valueArray = [dic allValues];
+    self.searchStr = [valueArray firstObject];
     MarketSearchGoodsMainController *vc = [[MarketSearchGoodsMainController alloc]init];
     vc.searchStr = self.searchStr;
     vc.hidesBottomBarWhenPushed = YES;
@@ -171,10 +242,17 @@
 #pragma mark WSLWaterCollectionViewDelegate
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    NSString *string = self.itemsArray[indexPath.row];
-    CGSize fontSize = [string sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13.0f]}];
-    return CGSizeMake(fontSize.width + 30, 30);
+    if (self.itemsArray.count >0) {
+        NSDictionary *dic = self.itemsArray[indexPath.row];
+        NSArray *valueArray = [dic allValues];
+        NSString *string = [valueArray firstObject];
+        //NSString *string = self.itemsArray[indexPath.row];
+        CGSize fontSize = [string sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13.0f]}];
+        return CGSizeMake(fontSize.width + 30, 30);
+    }
+    return CGSizeMake(0, 0);
 }
+
 /** 头视图Size */
 -(CGSize )waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForHeaderViewInSection:(NSInteger)section{
      return CGSizeMake(0, 0);
@@ -210,7 +288,7 @@
         _searchView.lineView.backgroundColor = [UIColor lightGrayColor];
         _searchView.searchImageView.image = [UIImage imageNamed:@"searchGrayImage"];
         [_searchView.cleanSearchButton setImage:[UIImage imageNamed:@"deleteGrayImage"] forState:UIControlStateNormal];
-        _searchView.searchTextField.text = @"adfafasdf";
+       // _searchView.searchTextField.text = @"adfafasdf";
         _searchView.searchTextField.delegate = self;
         _searchView.searchTextField.keyboardType = UIKeyboardTypeWebSearch;
     }
@@ -240,11 +318,13 @@
     return _flowLayout;
 }
 
-- (NSMutableArray *)itemsArray
+- (NSArray *)itemsArray
 {
-    if (!_itemsArray) {
-        _itemsArray = [NSMutableArray arrayWithObjects:@"色哦的色哦色哦的色哦的色的色哦的色哦的色哦的色哦的",@"色哦的色",@"行",@"多个",@"色",@"色哦的色",@"色哦的色",@"色哦的色", nil];
+    if (!_itemsArray)
+    {
+        _itemsArray = kUser.goodsHistory;
     }
     return _itemsArray;
 }
+
 @end

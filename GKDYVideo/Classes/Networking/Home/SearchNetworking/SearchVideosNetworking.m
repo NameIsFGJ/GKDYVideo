@@ -16,6 +16,9 @@
                      completion:(void(^)(NSMutableArray *modelArray,NSError *error))completionHandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/searchVideo"];
+    if (keyword == nil) {
+        keyword = @"";
+    }
     NSDictionary *params = @{@"page":@(page),@"keyword":keyword,@"token":token};
     
     [self POST:urlStr parameters:params progress:^(NSProgress * _Nonnull progress) {

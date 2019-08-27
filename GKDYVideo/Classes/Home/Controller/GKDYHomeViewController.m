@@ -22,7 +22,6 @@
 @property (nonatomic, strong) GKDYSearchViewController  *searchVC;
 @property (nonatomic, strong) GKDYPlayerViewController  *playerVC;
 
-
 @end
 
 @implementation GKDYHomeViewController

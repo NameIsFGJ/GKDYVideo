@@ -66,18 +66,45 @@
 
 - (void)creatNav
 {
-    self.navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
+    self.navView = [[UIView alloc]init];
     [self.view addSubview:self.navView];
+    [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(KStatusBarHeight+3);
+        make.height.mas_equalTo(64);
+    }];
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.navView addSubview:backButton];
     [backButton setImage:[UIImage imageNamed:@"common_white_back"] forState:UIControlStateNormal];
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.top.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(40, 40));
+    }];
     backButton.frame = CGRectMake(0, 25, 40, 40);
     [backButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     
     [self.navView addSubview:self.searchView];
-    self.searchView.frame = CGRectMake(40, 25, 260, 34);
-    self.searchView.searchTextField.text = self.searchContentString;
+    
+    [self.searchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.navView.mas_centerX);
+        make.top.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(260, 34));
+    }];
+     self.searchView.searchTextField.text = self.searchContentString;
+//    self.navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
+//    [self.view addSubview:self.navView];
+//
+//    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [self.navView addSubview:backButton];
+//    [backButton setImage:[UIImage imageNamed:@"common_white_back"] forState:UIControlStateNormal];
+//    backButton.frame = CGRectMake(0, 25, 40, 40);
+//    [backButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+//
+//    [self.navView addSubview:self.searchView];
+//    self.searchView.frame = CGRectMake(40, 25, 260, 34);
+//    self.searchView.searchTextField.text = self.searchContentString;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;

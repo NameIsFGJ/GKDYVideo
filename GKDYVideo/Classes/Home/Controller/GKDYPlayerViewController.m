@@ -78,7 +78,7 @@
             
         [self.videoView setModels:list index:0];
         } failure:^(NSError * _Nonnull error) {
-            NSLog(@"error  %@", error);
+            NSLog(@"error3=34  %@", error);
         }];
     }
 }
@@ -98,7 +98,7 @@
 {
 
    
-    GKDYUserMainViewController *vc = [[GKDYUserMainViewController alloc]init];
+   GKDYUserMainViewController *vc = [[GKDYUserMainViewController alloc]init];
    // GKDYUserVideoViewController *vc = [[GKDYUserVideoViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.userID = videoModel.user_id;
