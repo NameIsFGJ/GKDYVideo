@@ -9,6 +9,7 @@
 #import "AddGoodsViewController.h"
 #import "AddGoodsChildViewController.h"
 #import "AddGoodsSuccessViewController.h"
+#import "AddVideoViewController.h"
 @interface AddGoodsViewController ()
 
 @end
@@ -34,6 +35,7 @@
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     [view addSubview:btn2];
     [btn2 setImage:[UIImage imageNamed:@"pushVideo"] forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(pushVideoAction) forControlEvents:UIControlEventTouchUpInside];
     
     NSArray *btnArray = [NSArray arrayWithObjects:btn1,btn2, nil];
     
@@ -45,6 +47,7 @@
     }];
 }
 
+#pragma mark Action
 - (void)pushGoodsAction
 {
     AddGoodsChildViewController *vc = [[AddGoodsChildViewController alloc]init];
@@ -52,4 +55,10 @@
    [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)pushVideoAction
+{
+    AddVideoViewController *vc = [[AddVideoViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

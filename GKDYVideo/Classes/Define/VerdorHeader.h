@@ -27,13 +27,14 @@
 #import <WMPageController/WMPageController.h>
 #import <TZImagePickerController.h>
 #import <SDCycleScrollView.h>
+#import <PLShortVideoKit/PLShortVideoKit.h>
 // 分类
 #import "NSObject+HUD.h"
 #import "UIColor+Category.h"
 #import "User.h"
 #import "UIViewController+Category.h"
 #import "UIView+Acategory.h"
-#import "UIImage+Category.h"
+#import "UIImage+GKcategory.h"
 #import "NSDictionary+log.h"
 #import "NSArray+log.h"
 #import "UIButton+category.h"

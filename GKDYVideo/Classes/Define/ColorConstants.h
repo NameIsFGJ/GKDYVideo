@@ -19,7 +19,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0             \
 alpha:1.0]
 
 #define RGBA(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
-
+ 
 #define ColorWhiteAlpha10 RGBA(255.0, 255.0, 255.0, 0.1)
 #define ColorWhiteAlpha20 RGBA(255.0, 255.0, 255.0, 0.2)
 #define ColorWhiteAlpha40 RGBA(255.0, 255.0, 255.0, 0.4)

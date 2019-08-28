@@ -4,11 +4,14 @@ ${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
 ${BUILT_PRODUCTS_DIR}/GKMessageTool/GKMessageTool.framework
 ${BUILT_PRODUCTS_DIR}/GKNavigationBarViewController/GKNavigationBarViewController.framework
+${BUILT_PRODUCTS_DIR}/HappyDNS/HappyDNS.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/JKCountDownButton/JKCountDownButton.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${PODS_ROOT}/PLPlayerKit/Pod/Library/PLPlayerKit.framework
+${BUILT_PRODUCTS_DIR}/Qiniu/Qiniu.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework
 ${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

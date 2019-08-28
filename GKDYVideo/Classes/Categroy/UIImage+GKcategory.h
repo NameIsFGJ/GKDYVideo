@@ -19,6 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
  @return 图片
  */
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
++ (UIImage *) imageWithColor: (UIColor *) color;
+//+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
