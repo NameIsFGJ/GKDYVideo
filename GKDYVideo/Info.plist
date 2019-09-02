@@ -50,5 +50,7 @@
 	<string>是否允许App使用麦克风</string>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允许App使用相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>是否允许App保存视频到相册</string>
 </dict>
 </plist>
