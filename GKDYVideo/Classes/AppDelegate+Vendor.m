@@ -39,7 +39,8 @@
 
 - (void)userLoad
 {
-    kUser.user_token = @"2c15fd2b-6590-4db9-bba2-6506259d6f84";
+    //kUser.user_token = @"2c15fd2b-6590-4db9-bba2-6506259d6f84";
+    kUser.user_token = @"1ef1bd74-1a7e-44ca-afa5-a914ae71c702";
 }
 
 - (void)initializeAFNetworkActivityIndicatorManager

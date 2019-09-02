@@ -43,9 +43,19 @@
         make.top.equalTo(self.leftImageView.mas_top);
     }];
     
+    
+    
+    UIImageView *pushImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"youbianjiantou"]];
+    [self.contentView addSubview:pushImageView];
+    [pushImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(10, 15));
+        make.right.mas_equalTo(-10);
+        make.top.equalTo(self.leftImageView.mas_top);
+    }];
+    
     [self.contentView addSubview:self.rightLabel];
     [self.rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(0);
+        make.right.equalTo(pushImageView.mas_left).offset(-10);
          make.top.equalTo(self.leftImageView.mas_top);
     }];
     
@@ -80,5 +90,7 @@
     }
     return _rightLabel;
 }
+
+
 
 @end

@@ -66,7 +66,7 @@
         make.top.mas_equalTo(-KTopViewHeight);
     }];
     self.headView = [[MineHeadView alloc]init];
-    self.headView.frame = CGRectMake(0, 0, kWindowWidth, 160);
+    self.headView.frame = CGRectMake(0, 0, kWindowWidth, 230);
     [self.headView.rightButton addTarget:self action:@selector(pushSetViewController) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableHeaderView = self.headView;
 }

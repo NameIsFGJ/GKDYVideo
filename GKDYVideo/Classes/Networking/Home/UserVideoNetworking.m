@@ -17,7 +17,6 @@
 {
     NSString *strUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/video/somebodyVideo"];
     NSDictionary *para = @{@"token":token,@"type":@(type),@"page":@(page),@"user_id":@(userID)};
-    NSLog(@"par34a =%@",para);
     [self POST:strUrl parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
