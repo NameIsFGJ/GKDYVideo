@@ -10,6 +10,8 @@
 #import "AddGoodsChildViewController.h"
 #import "AddGoodsSuccessViewController.h"
 #import "AddVideoViewController.h"
+#import "EditViewController.h"
+#import "UploadViewController.h"
 @interface AddGoodsViewController ()
 
 @end
@@ -57,10 +59,10 @@
 
 - (void)pushVideoAction
 {
-    AddVideoViewController *vc = [[AddVideoViewController alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    UploadViewController *vc = [[UploadViewController alloc]init];
+   // AddVideoViewController *vc = [[AddVideoViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+   [self.navigationController pushViewController:vc animated:YES];
 }
-
-
 
 @end

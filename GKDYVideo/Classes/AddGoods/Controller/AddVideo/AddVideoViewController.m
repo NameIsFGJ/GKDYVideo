@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
     [self configVideo];
     
     [self creatLeftView];
@@ -48,8 +50,8 @@
     [self.shortVideoRecorder startCaptureSession];
     
     // 单位为秒
-    self.shortVideoRecorder.maxDuration = 15;
-    self.shortVideoRecorder.minDuration = 3.0f;
+    self.shortVideoRecorder.maxDuration = 30;
+    self.shortVideoRecorder.minDuration = 5.0f;
     
     // 默认为 NO，不启用自动确定
     self.shortVideoRecorder.adaptationRecording = YES;
@@ -128,7 +130,9 @@
 {
     
     MusicsViewController *vc = [[MusicsViewController alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+   // [self presentViewController:vc animated:YES completion:nil];
     //self.musicButton.selected = !self.musicButton.selected;
     //    if (self.musicButton.selected) {
     //        // 背景音乐
@@ -409,10 +413,12 @@
     plsMovieSettings[PLSVolumeKey] = [NSNumber numberWithFloat:1.0f];
     outputSettings[PLSMovieSettingsKey] = plsMovieSettings;
     
-    EditViewController *videoEditViewController = [[EditViewController alloc] init];
-    videoEditViewController.settings = outputSettings;
-    videoEditViewController.filesURLArray = filesURLArray;
-   [self presentViewController:videoEditViewController animated:YES completion:nil];
+    EditViewController *vc = [[EditViewController alloc] init];
+    vc.settings = outputSettings;
+    vc.filesURLArray = filesURLArray;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    //[self presentViewController:vc animated:YES completion:nil];
     
 }
 

@@ -23,13 +23,16 @@
 // 播放/暂停按钮，点击视频预览区域实现播放/暂停功能
 @property (strong, nonatomic) UIButton *playButton;
 
+@property (strong,nonatomic) UIImage *videoImage;
+
+@property (strong, nonatomic) MBProgressHUD *progress;
 @end
 
 @implementation EditViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.outputSettings = [[NSMutableDictionary alloc] init];
@@ -45,6 +48,8 @@
     
     [self setupBaseToolboxView];
     [self setupEditDisplayView];
+    
+    [self getImage];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,7 +108,6 @@
 }
 
 - (void)setupBaseToolboxView {
-    self.view.backgroundColor = [UIColor blackColor];
     
     self.baseToolboxView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
     self.baseToolboxView.backgroundColor = [UIColor blueColor];
@@ -149,20 +153,32 @@
     nextButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [nextButton addTarget:self action:@selector(nextButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.baseToolboxView addSubview:nextButton];
+    
+    // 菊花
+//    self.progress = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    self.progress.backgroundColor = kMainColor;
+//    self.progress.detailsLabel.font = [UIFont systemFontOfSize:13];
+//    self.progress.removeFromSuperViewOnHide = YES;
+//    self.progress.hidden = YES;
 }
 
 #pragma mark - 返回
 - (void)backButtonClick {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+   // [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - 下一步
 - (void)nextButtonClick
 {
-    
+        self.progress = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.progress.backgroundColor = kMainColor;
+        self.progress.detailsLabel.font = [UIFont systemFontOfSize:13];
+        self.progress.removeFromSuperViewOnHide = YES;
+      //  self.progress.hidden = YES;
     [self.shortVideoEditor stopEditing];
     self.playButton.selected = YES;
-    [self showProgress];
+    
     AVAsset *asset = self.movieSettings[PLSAssetKey];
     PLSAVAssetExportSession *exportSession = [[PLSAVAssetExportSession alloc] initWithAsset:asset];
     exportSession.outputFileType = PLSFileTypeMPEG4;
@@ -175,12 +191,12 @@
     exportSession.outputVideoFrameRate = MIN(60, asset.pls_normalFrameRate);
     // 设置视频的导出分辨率，会将原视频缩放
     exportSession.outputVideoSize = self.videoSize;
-
+    
     __weak typeof(self) weakSelf = self;
     [exportSession setCompletionBlock:^(NSURL *url) {
         NSLog(@"Asset Export Completed");
-        
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.progress hideAnimated:YES];
             [weakSelf joinNextViewController:url];
         });
     }];
@@ -191,7 +207,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //[weakSelf removeActivityIndicatorView];
           //  AlertViewShow(error);
-             [self hideProgress];
+            // [self hideProgress];
             [self showError:error];
            
         });
@@ -201,19 +217,27 @@
         // 更新进度 UI
         NSLog(@"Asset Export Progress: %f", progress);
         dispatch_async(dispatch_get_main_queue(), ^{
-           // weakSelf.progressLabel.text = [NSString stringWithFormat:@"%d%%", (int)(progress * 100)];
+        
+          //  self.progress = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+          //  self.progress.backgroundColor = kMainColor;
+           // self.progress.detailsLabel.text = [NSString stringWithFormat:@"%d%%", (int)(progress * 100)];
+           // self.progress.detailsLabel.font = [UIFont systemFontOfSize:13];
+           // self.progress.removeFromSuperViewOnHide = YES;
+            
         });
     }];
-    
     [exportSession exportAsynchronously];
 }
 
 #pragma mark - 完成视频合成跳转到下一页面
 - (void)joinNextViewController:(NSURL *)url {
-    [self hideProgress];
+    
     UploadViewController *vc = [[UploadViewController alloc] init];
     vc.url = url;
-    [self presentViewController:vc animated:YES completion:nil];
+    vc.videoImage = self.videoImage;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    //[self presentViewController:vc animated:YES completion:nil];
 }
 
 //  displayView
@@ -235,7 +259,15 @@
     [self.playButton addTarget:self action:@selector(playButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
 }
-
+#pragma mark 获取视频封面
+- (void)getImage
+{
+       AVAsset *asset = self.movieSettings[PLSAssetKey];
+       CGSize size = [asset pls_videoSize];
+    [PLSGifComposer getImagesWithAsset:asset startTime:0 endTime:1 imageCount:1 imageSize:size completionBlock:^(NSError *error, NSArray *images) {
+        self.videoImage = images[0];
+    }];
+}
 #pragma mark - 启动/暂停视频预览
 - (void)playButtonClicked:(UIButton *)button {
     if (self.shortVideoEditor.isEditing) {

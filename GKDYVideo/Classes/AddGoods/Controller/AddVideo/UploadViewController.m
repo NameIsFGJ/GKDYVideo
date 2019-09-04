@@ -9,14 +9,11 @@
 #import "UploadViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlayerView.h"
-
-//static NSString *const kUploadToken = @"QxZugR8TAhI38AiJ_cptTl3RbzLyca3t-AAiH-Hh:3hK7jJJQKwmemseSwQ1duO5AXOw=:eyJzY29wZSI6InNhdmUtc2hvcnQtdmlkZW8tZnJvbS1kZW1vIiwiZGVhZGxpbmUiOjM1NTk2OTU4NzYsInVwaG9zdHMiOlsiaHR0cDovL3VwLXoyLnFpbml1LmNvbSIsImh0dHA6Ly91cGxvYWQtejIucWluaXUuY29tIiwiLUggdXAtejIucWluaXUuY29tIGh0dHA6Ly8xNC4xNTIuMzcuNCJdfQ==";
-//static NSString *const kURLPrefix = @"http://panm32w98.bkt.clouddn.com";
-
-static NSString *const kUploadToken = @"-Pmt3VoQfBYM2IvALOsfBaSt8tosuVCFRhy0Ebls:KlAYwOMrBwWtzY-8IwiTdNyxk7U=:eyJzY29wZSI6Im1hbmZhbiIsImRlYWRsaW5lIjoxNTY3NDEyMTc2fQ==";
-static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
-
-@interface UploadViewController ()<PLShortVideoUploaderDelegate,UIGestureRecognizerDelegate>
+#import "QiniuTokenNetworking.h"
+#import "AppDelegate.h"
+#import "UploadVideoNetworking.h"
+#import "SuccessVideoViewController.h"
+@interface UploadViewController ()<PLShortVideoUploaderDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
 {
         id _timeObserver;
 }
@@ -33,7 +30,7 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
 @property (strong, nonatomic) AVPlayer *player;
 @property (strong, nonatomic) PlayerView *playerView;
 @property (strong, nonatomic) UIProgressView *processView;
-
+@property (strong, nonatomic) MBProgressHUD *progress;
 // gif 图预览
 //@property (strong, nonatomic) FLAnimatedImageView *gifView;
 
@@ -45,6 +42,11 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
 // 定时器监听
 @property (strong, nonatomic) NSTimer * timer;
 
+@property (strong, nonatomic) NSString *QiniuToken;
+@property (strong, nonatomic) NSString *QiniuUrl;
+
+@property (strong, nonatomic) NSString *urlString;
+@property (strong, nonatomic) UITextField *titleTextField;
 @end
 
 @implementation UploadViewController
@@ -52,31 +54,17 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     self.navigationController.navigationBarHidden = YES;
+
     if (self.actionType == PLSActionTypePlayer) {
-        // 播放器初始化
-        [self initPlayer];
         
-        
-        // 配置播放信息视图
-        [self setupPlayerUI];
-        
-        // 单指单击，播放视频
-        UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleFingerToPlayVideoEvent:)];
-        singleFingerOne.numberOfTouchesRequired = 1; // 手指数
-        singleFingerOne.numberOfTapsRequired = 1; // tap次数
-        singleFingerOne.delegate = self;
-        [self.view addGestureRecognizer:singleFingerOne];
-    }
-    if (self.actionType == PLSActionTypeGif) {
-        // 显示 gif 动图
-      //  self.gifView = [[FLAnimatedImageView alloc] init];
-       // self.gifView.frame = CGRectMake(0, PLS_BaseToolboxView_HEIGHT, PLS_SCREEN_WIDTH, PLS_SCREEN_HEIGHT - PLS_BaseToolboxView_HEIGHT);
-       // self.gifView.contentMode = UIViewContentModeScaleAspectFit;
-       // [self.view addSubview:self.gifView];
     }
     
     // 配置工具视图
     [self setupToolboxUI];
+    
+    // 配置内容视图
+    [self setupContentView];
     
     // 文件上传（可上传视频、Gif 等）
     [self setupFileUpload];
@@ -88,10 +76,6 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
     
     if (self.actionType == PLSActionTypePlayer) {
         [self.player play];
-    }
-    if (self.actionType == PLSActionTypeGif) {
-     //   FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL:self.url]];
-       // self.gifView.animatedImage = image;
     }
     
     [self addObserver];
@@ -138,36 +122,112 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
         [self.player play];
     }
 }
+#pragma mark 封面图
+- (void)getImageView
+{
+//      AVAsset *asset = self.movieSettings[PLSAssetKey];
+//       CGSize size = [asset pls_videoSize];
+}
+
 
 #pragma mark -- 视图配置
 - (void)setupToolboxUI {
-    self.view.backgroundColor = kMainColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    self.baseToolboxView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWindowWidth, 64)];
-    self.baseToolboxView.backgroundColor = [UIColor clearColor];
+    self.baseToolboxView = [[UIView alloc] init];
     [self.view addSubview:self.baseToolboxView];
+    self.baseToolboxView.backgroundColor = [UIColor clearColor];
+    [self.baseToolboxView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.mas_equalTo(0);
+        make.height.mas_equalTo(64);
+    }];
     
     //关闭按钮
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setImage:[UIImage imageNamed:@"btn_bar_back_a"] forState:UIControlStateNormal];
-    [backButton setImage:[UIImage imageNamed:@"btn_bar_back_b"] forState:UIControlStateHighlighted];
-    [backButton setTitle:@"返回" forState:UIControlStateNormal];
-    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.baseToolboxView addSubview:backButton];
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.centerY.mas_equalTo(self.baseToolboxView.mas_centerY);
+        make.size.mas_equalTo(CGSizeMake(40, 40));
+    }];
+    
+    [backButton setImage:[UIImage imageNamed:@"blackBack"]
+                forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateHighlighted];
+    
+   // [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-    backButton.frame = CGRectMake(0, 0, 80, 64);
+    
     backButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [backButton addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.baseToolboxView addSubview:backButton];
+    
+    UILabel *titleLabel = [[UILabel alloc]init];
+    [self.baseToolboxView addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 64));
+        make.center.equalTo(self.baseToolboxView);
+    }];
+    
+    [titleLabel setText:@"发布视频"];
+    [titleLabel setFont:[UIFont systemFontOfSize:17]];
     
     self.uploadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.uploadButton setTitle:@"上传" forState:UIControlStateNormal];
     [self.uploadButton setTitle:@"取消" forState:UIControlStateSelected];
-    [self.uploadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.uploadButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.uploadButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-    self.uploadButton.frame = CGRectMake(kWindowWidth - 80, 0, 80, 64);
+    //self.uploadButton.frame = CGRectMake(kWindowWidth - 80, 0, 80, 64);
     self.uploadButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [self.uploadButton addTarget:self action:@selector(uploadButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.baseToolboxView addSubview:self.uploadButton];
+    
+    UIView *lineView = [[UIView alloc]init];
+    [self.baseToolboxView addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kWindowWidth, .3));
+        make.bottom.mas_equalTo(1);
+        make.left.right.mas_equalTo(0);
+    }];
+    
+    lineView.backgroundColor = [UIColor lightGrayColor];
+}
+
+- (void)setupContentView
+{
+    self.titleTextField = [[UITextField alloc]init];
+    [self.view addSubview:self.titleTextField];
+    self.titleTextField.font = [UIFont systemFontOfSize:13];
+    self.titleTextField.placeholder = @"请填写标题";
+    [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.top.equalTo(self.baseToolboxView.mas_bottom).offset(10);
+        make.size.mas_equalTo(CGSizeMake(kWindowWidth-10-150, 50));
+    }];
+    
+    UIImageView *videoImageView = [[UIImageView alloc]init];
+    videoImageView.image = self.videoImage;
+  //  videoImageView.image = [UIImage imageNamed:@"jay"];
+    [self.view addSubview:videoImageView];
+    
+    [videoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleTextField.mas_top);
+        make.left.equalTo(self.titleTextField.mas_right).offset(5);
+        make.size.mas_equalTo(CGSizeMake(140, 200));
+    }];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kWindowWidth, 50));
+        make.bottom.mas_equalTo(0);
+        make.left.right.mas_equalTo(0);
+    }];
+    
+    [btn setTitle:@"确认发布" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setBackgroundColor:[UIColor orangeColor]];
+    [btn addTarget:self action:@selector(uploadButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)setupPlayerUI {
@@ -193,6 +253,7 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
     self.playSlider.maximumValue = 1;
     [self.playSlider addTarget:self action:@selector(playSeekTo:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.playSlider];
+    
 }
 
 #pragma mark -- 播放器初始化
@@ -200,7 +261,6 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
     if (!self.url) {
         return;
     }
-    
     self.player = [[AVPlayer alloc] initWithURL:self.url];
     self.playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 64, kWindowWidth, kWindowHeight-64)];
     self.playerView.player = self.player;
@@ -213,7 +273,7 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
     self.progressView.progress = 0.0;
     self.progressView.hidden = YES;
     self.progressView.trackTintColor = [UIColor blackColor];
-    self.progressView.progressTintColor = [UIColor whiteColor];
+    self.progressView.progressTintColor = [UIColor orangeColor];
     self.progressView.center = self.view.center;
     [self.view addSubview:self.progressView];
     
@@ -226,23 +286,35 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyyMMddHHmmss";
+    
+    int x = arc4random() % 1000;
+  
+    NSString *videoName = [NSString stringWithFormat:@"%@%d",[formatter stringFromDate:[NSDate date]],x];
+
     NSString *key;
     if (self.actionType == PLSActionTypePlayer) {
-        key = [NSString stringWithFormat:@"short_video_%@.mp4", [formatter stringFromDate:[NSDate date]]];
+        key = [NSString stringWithFormat:@"short_video_%@.mp4", videoName];
     }
+    
     if (self.actionType == PLSActionTypeGif) {
         key = [NSString stringWithFormat:@"short_video_%@.gif", [formatter stringFromDate:[NSDate date]]];
     }
     
-    PLSUploaderConfiguration * uploadConfig = [[PLSUploaderConfiguration alloc] initWithToken:kUploadToken videoKey:key https:YES recorder:nil];
-    self.shortVideoUploader = [[PLShortVideoUploader alloc] initWithConfiguration:uploadConfig];
-    self.shortVideoUploader.delegate = self;
+    [QiniuTokenNetworking postQiniuTokenNetworkingCompletion:^(NSDictionary * _Nonnull dic, NSError * _Nonnull error) {
+         self.QiniuUrl = [dic objectForKey:@"url"];
+         self.QiniuToken = [dic objectForKey:@"token"];
+        
+        PLSUploaderConfiguration * uploadConfig = [[PLSUploaderConfiguration alloc] initWithToken:self.QiniuToken  videoKey:key https:YES recorder:nil];
+        self.shortVideoUploader = [[PLShortVideoUploader alloc] initWithConfiguration:uploadConfig];
+        self.shortVideoUploader.delegate = self;
+    }];
 }
 
 #pragma mark -- 按钮的响应事件
 #pragma mark -- 返回
 - (void)backButtonClick {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+   // [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -- 播放
@@ -256,6 +328,7 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
 
 #pragma mark -- 本地视频上传到云端
 - (void)uploadButtonClick:(id)sender {
+    [self showProgress];
     NSString *filePath = _url.path;
     
     self.uploadButton.selected = !self.uploadButton.selected;
@@ -285,25 +358,41 @@ static NSString *const kURLPrefix = @"px6zdyhyb.bkt.cloulddn.com";
     NSLog(@"alert message: %@", message);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+    alert.delegate = self;
+}
+
+#pragma mark UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    SuccessVideoViewController *vc = [[SuccessVideoViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+   // [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - PLShortVideoUploaderDelegate 视频上传
 - (void)shortVideoUploader:(PLShortVideoUploader *)uploader completeInfo:(PLSUploaderResponseInfo *)info uploadKey:(NSString *)uploadKey resp:(NSDictionary *)resp {
-    self.progressView.hidden = YES;
+    
     self.uploadButton.selected = NO;
     if(info.error){
         [self showAlertWithMessage:[NSString stringWithFormat:@"上传失败，error: %@", info.error]];
         return ;
     }
-    NSString *urlString = [NSString stringWithFormat:@"%@/%@", kURLPrefix, uploadKey];
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = urlString;
     
-    [self showAlertWithMessage:[NSString stringWithFormat:@"上传成功，地址：%@ 已复制到系统剪贴板", urlString]];
-    NSLog(@"uploadInfo: %@",info);
-    NSLog(@"uploadKey:%@",uploadKey);
-    NSLog(@"resp: %@",resp);
+    self.urlString = [NSString stringWithFormat:@"%@/%@", self.QiniuUrl, uploadKey];
     
+    NSString *title = self.titleTextField.text;
+    if (title.length <1) {
+        title = @"暂未填写标题";
+    }
+    
+    [UploadVideoNetworking postUploadVideoWithToken:kUser.user_token withVideoUrl:self.urlString withTitle:title complection:^(NSString * _Nonnull msg, NSError * _Nonnull error) {
+        
+        [self showAlertWithMessage:@"上传成功"];
+       
+    }];
+    
+  
 }
 
 - (void)shortVideoUploader:(PLShortVideoUploader *)uploader uploadKey:(NSString *)uploadKey uploadPercent:(float)uploadPercent {

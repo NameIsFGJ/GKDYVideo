@@ -49,7 +49,7 @@
     
     [self.view addSubview:self.mainView];
     self.mainView.frame = self.view.bounds;
-    [self.mainView setBackgroundColor: [UIColor yellowColor]];
+//[self.mainView setBackgroundColor: [UIColor yellowColor]];
     [self.mainView addSubview:self.contentView];
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.mainView);
@@ -195,7 +195,7 @@
     
     [self.bottomView addSubview:self.submitButton];
     [self.submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.videoView.mas_bottom);
+        make.top.equalTo(self.videoView.mas_bottom).offset(73);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(50);
     }];

@@ -28,6 +28,8 @@
 		79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62ED2157405400101773 /* GKDYVideoViewModel.m */; };
 		79CC62F52158E44300101773 /* GKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62F42158E44300101773 /* GKNetworking.m */; };
 		79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */; };
+		91009144231E0648000F0767 /* QiniuTokenNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91009143231E0648000F0767 /* QiniuTokenNetworking.m */; };
+		91009147231E316E000F0767 /* UploadVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91009146231E316E000F0767 /* UploadVideoNetworking.m */; };
 		9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */; };
 		91084BAE22FD057B00021B29 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 91084BAD22FD057B00021B29 /* city.json */; };
 		91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91084BB322FD16B100021B29 /* ProvinceModel.m */; };
@@ -190,6 +192,8 @@
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
 		91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F5D22FC513600951823 /* CityPickerView.m */; };
 		91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F6022FC538100951823 /* BirthPickerView.m */; };
+		91FD2DE7231F9D3600FC2520 /* SuccessVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD2DE6231F9D3600FC2520 /* SuccessVideoViewController.m */; };
+		91FD2DEA231F9E2900FC2520 /* ShareVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD2DE9231F9E2900FC2520 /* ShareVideoView.m */; };
 		91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD85D722E5B81000EBF3B2 /* BaseNavigationController.m */; };
 		AA70E41FD2C5EC1F0C249206 /* Pods_GKDYVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CC8427C037D4E8A4B61B49 /* Pods_GKDYVideo.framework */; };
 /* End PBXBuildFile section */
@@ -256,6 +260,10 @@
 		79CC62F92158F2BB00101773 /* GKDYPersonalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYPersonalModel.h; sourceTree = "<group>"; };
 		79CC62FA2158F2BB00101773 /* GKDYPersonalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYPersonalModel.m; sourceTree = "<group>"; };
 		81CC8427C037D4E8A4B61B49 /* Pods_GKDYVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKDYVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91009142231E0648000F0767 /* QiniuTokenNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiniuTokenNetworking.h; sourceTree = "<group>"; };
+		91009143231E0648000F0767 /* QiniuTokenNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiniuTokenNetworking.m; sourceTree = "<group>"; };
+		91009145231E316E000F0767 /* UploadVideoNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadVideoNetworking.h; sourceTree = "<group>"; };
+		91009146231E316E000F0767 /* UploadVideoNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadVideoNetworking.m; sourceTree = "<group>"; };
 		9104F9C6230A46060033C40A /* MarkCollectionHead2View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkCollectionHead2View.h; sourceTree = "<group>"; };
 		9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionHead2View.m; sourceTree = "<group>"; };
 		91084BAD22FD057B00021B29 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
@@ -567,6 +575,10 @@
 		91FD0F5D22FC513600951823 /* CityPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPickerView.m; sourceTree = "<group>"; };
 		91FD0F5F22FC538100951823 /* BirthPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BirthPickerView.h; sourceTree = "<group>"; };
 		91FD0F6022FC538100951823 /* BirthPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BirthPickerView.m; sourceTree = "<group>"; };
+		91FD2DE5231F9D3600FC2520 /* SuccessVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessVideoViewController.h; sourceTree = "<group>"; };
+		91FD2DE6231F9D3600FC2520 /* SuccessVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessVideoViewController.m; sourceTree = "<group>"; };
+		91FD2DE8231F9E2900FC2520 /* ShareVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareVideoView.h; sourceTree = "<group>"; };
+		91FD2DE9231F9E2900FC2520 /* ShareVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareVideoView.m; sourceTree = "<group>"; };
 		91FD85D622E5B81000EBF3B2 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		91FD85D722E5B81000EBF3B2 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		ACB89D940248F84479D31DDA /* Pods-GKDYVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKDYVideo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKDYVideo/Pods-GKDYVideo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1011,6 +1023,8 @@
 				91A05A09231CB4B200322752 /* VideoDeleteButton.m */,
 				91A05A11231CED2E00322752 /* PlayerView.h */,
 				91A05A12231CED2E00322752 /* PlayerView.m */,
+				91FD2DE8231F9E2900FC2520 /* ShareVideoView.h */,
+				91FD2DE9231F9E2900FC2520 /* ShareVideoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1072,6 +1086,10 @@
 				91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */,
 				91A05A02231CB20D00322752 /* MusicsDowonLoadNetWorking.h */,
 				91A05A03231CB20D00322752 /* MusicsDowonLoadNetWorking.m */,
+				91009142231E0648000F0767 /* QiniuTokenNetworking.h */,
+				91009143231E0648000F0767 /* QiniuTokenNetworking.m */,
+				91009145231E316E000F0767 /* UploadVideoNetworking.h */,
+				91009146231E316E000F0767 /* UploadVideoNetworking.m */,
 			);
 			path = AddGoods;
 			sourceTree = "<group>";
@@ -1349,6 +1367,8 @@
 				91A05A0C231CC3D500322752 /* EditViewController.m */,
 				91A05A0E231CECA200322752 /* UploadViewController.h */,
 				91A05A0F231CECA200322752 /* UploadViewController.m */,
+				91FD2DE5231F9D3600FC2520 /* SuccessVideoViewController.h */,
+				91FD2DE6231F9D3600FC2520 /* SuccessVideoViewController.m */,
 			);
 			path = AddVideo;
 			sourceTree = "<group>";
@@ -1708,9 +1728,11 @@
 				91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */,
 				91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
+				91FD2DEA231F9E2900FC2520 /* ShareVideoView.m in Sources */,
 				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
 				919843722305568B001148B9 /* UserModel.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
+				91009144231E0648000F0767 /* QiniuTokenNetworking.m in Sources */,
 				919843662304FF14001148B9 /* GKDYUserMainViewController.m in Sources */,
 				91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */,
 				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
@@ -1721,6 +1743,7 @@
 				91BABCE5230ACC1E00047A64 /* MarketCollectionViewCell.m in Sources */,
 				91A05A13231CED2E00322752 /* PlayerView.m in Sources */,
 				91DD442D22FFDE2B009A4790 /* MarketModel.m in Sources */,
+				91FD2DE7231F9D3600FC2520 /* SuccessVideoViewController.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
 				91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */,
 				9165E367230102B600556AB7 /* IdCardUploadNetworking.m in Sources */,
@@ -1831,6 +1854,7 @@
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				916B67622317A1AD000E6F8A /* MusicModel.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
+				91009147231E316E000F0767 /* UploadVideoNetworking.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
 				91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */,

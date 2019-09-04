@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)postSearchGoodsWithKeyword:(NSString *)keyword
                           withPage:(NSInteger)page
                           withSale:(NSInteger)sale
-                         withPrice:(NSInteger)price complection:(void(^)(MarketUserShopModel *model,NSError *error))complectionHandle;
+                         withPrice:(NSInteger)price
+                       complection:(void(^)(MarketUserShopModel *model,NSError *error))complectionHandle;
 @end
 
 NS_ASSUME_NONNULL_END

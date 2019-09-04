@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UploadViewController : UIViewController
 @property (assign, nonatomic) PLSActionType actionType;
 @property (strong, nonatomic) NSURL *url;
+@property (strong, nonatomic) UIImage *videoImage;
 @end
 
 NS_ASSUME_NONNULL_END
