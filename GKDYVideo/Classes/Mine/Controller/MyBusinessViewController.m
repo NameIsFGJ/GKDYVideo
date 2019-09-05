@@ -8,9 +8,11 @@
 
 #import "MyBusinessViewController.h"
 #import "MyBusinessTableViewCell.h"
+#import "MyBusinessNetworking.h"
 @interface MyBusinessViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
-@property (strong, nonatomic)NSArray *itemsArray;
+@property (strong, nonatomic)NSMutableArray *itemsArray;
+
 @end
 
 @implementation MyBusinessViewController
@@ -20,8 +22,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self makeNav];
     [self makeUI];
+    [self networking];
 }
 
+#pragma mark Action
 - (void)makeNav
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
@@ -47,6 +51,13 @@
 {
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
+}
+
+- (void)networking
+{
+    [MyBusinessNetworking postMyBusinessWithToken:kUser.user_token withPage:1 withType:self.type completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
+            
+    }];
 }
 
 #pragma mark UITableViewDelegate
@@ -87,12 +98,13 @@
     return _tableView;
 }
 
-- (NSArray *)itemsArray
+- (NSMutableArray *)itemsArray
 {
     if (!_itemsArray) {
-        _itemsArray = [NSArray arrayWithObjects:@"昵称",@"漫饭号",@"签名",@"性别",@"生日",@"地区", nil];
+        _itemsArray = [NSMutableArray array];
     }
     return _itemsArray;
 }
+// 通知设置  收藏 我的视频
 
 @end

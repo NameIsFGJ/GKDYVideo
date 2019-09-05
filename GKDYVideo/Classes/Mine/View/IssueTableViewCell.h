@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MyGoodsModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IssueTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *comNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *shareImageView;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (strong, nonatomic) MyGoodsModel *model;
 
 @end
 

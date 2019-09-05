@@ -18,7 +18,6 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager POST:urlStr parameters:parma constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-        // image --> data
         NSData *imageData = UIImageJPEGRepresentation(avatar, .5);
         
         [formData appendPartWithFileData:imageData name:@"avatar" fileName:@"head_pic.jpg" mimeType:@"image/jpeg"];

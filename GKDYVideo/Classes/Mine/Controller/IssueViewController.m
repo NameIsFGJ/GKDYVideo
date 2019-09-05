@@ -8,9 +8,10 @@
 
 #import "IssueViewController.h"
 #import "IssueTableViewCell.h"
+#import "MyGoodsNetworking.h"
 @interface IssueViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
-@property (strong, nonatomic)NSArray *itemsArray;
+@property (strong, nonatomic)NSMutableArray *itemsArray;
 @end
 
 @implementation IssueViewController
@@ -20,8 +21,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self makeNav];
     [self makeUI];
+    [self networking];
+
 }
+
 #pragma mark  Action
+- (void)networking
+{
+    [MyGoodsNetworking postIssueMyGoodsWithToken:kUser.user_token withPage:1 completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
+        self.itemsArray = array;
+        [self.tableView reloadData];
+    }];
+}
+
 - (void)makeNav
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
@@ -69,10 +81,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *cellID = @"IssueTableViewCellID";
-    
     IssueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-     //cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.model = self.itemsArray[indexPath.row];
     return cell;
 }
 
@@ -98,11 +109,12 @@
     return _tableView;
 }
 
-- (NSArray *)itemsArray
+- (NSMutableArray *)itemsArray
 {
     if (!_itemsArray) {
-        _itemsArray = [NSArray arrayWithObjects:@"昵称",@"漫饭号",@"签名",@"性别",@"生日",@"地区", nil];
+        _itemsArray = [NSMutableArray array];
     }
     return _itemsArray;
 }
+
 @end
