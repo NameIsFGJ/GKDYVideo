@@ -58,25 +58,12 @@
         make.left.right.bottom.mas_equalTo(0);
         make.height.mas_equalTo(view0.mas_height).multipliedBy(.5);
     }];
-    
-    
-//    NSArray *array = [NSArray arrayWithObjects:self.nameLabel,self.totalLabel, nil];
-//
-//    [array mas_distributeViewsAlongAxis: MASAxisTypeVertical
-//                       withFixedSpacing:0
-//                            leadSpacing:0
-//                            tailSpacing:0];
-    
     self.nameLabel.text = @"依然饭特西的商铺";
     self.totalLabel.text = @"全部商品: 59";
     __weak MarkUserShopCollectionHeadView *weakSelf = self;
     self.getBlock = ^(NSInteger total) {
-      weakSelf.totalLabel.text = [NSString stringWithFormat:@"全部商品3: %ld",total];
+      weakSelf.totalLabel.text = [NSString stringWithFormat:@"全部商品: %ld",total];
     };
-//    self.getBlock = ^(MarketUserShopModel * _Nonnull model) {
-//
-//        weakSelf.totalLabel.text = [NSString stringWithFormat:@"全部商品3: %ld", model.total];
-//    };
     return self;
 }
 

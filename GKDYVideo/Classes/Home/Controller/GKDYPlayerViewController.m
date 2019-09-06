@@ -159,26 +159,7 @@
         }
         //NSLog(@"")
     }];
-    
-    
-//    [LikeVideoNewtworking postLikeVideo:kUser.user_token userID:[kUser.user_id integerValue] videoID:videoModel.identify completionHandle:^(LikeVideoModel * _Nonnull model, NSError * _Nonnull error) {
-//        switch (model.status) {
-//            case 1:
-//                [self showNormalMsg:@"关注成功"];
-//                break;
-//            case -4:
-//                [self showNormalMsg:@"不能关注自己"];
-//                break;
-//            case -5:
-//                [self showNormalMsg:@"之前关注过"];
-//                break;
-//            case -6:
-//                [self showNormalMsg:@"关注已达上限数量"];
-//                break;
-//            default:
-//                break;
-//        }
-//    }];
+
 }
 // 判断是否登录
 - (void)islogin

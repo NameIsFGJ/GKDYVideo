@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic)NSInteger userID;
 @property (strong, nonatomic)NSString *head_url;
 @property (strong, nonatomic)NSString *nickName;
+
 @end
 
 NS_ASSUME_NONNULL_END

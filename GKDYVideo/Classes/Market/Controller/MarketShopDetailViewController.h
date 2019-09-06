@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MarketShopDetailViewController : BaseViewController
+@property (assign, nonatomic) NSInteger ide;
 
 @end
 
