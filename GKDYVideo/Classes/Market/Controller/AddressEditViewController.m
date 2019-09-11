@@ -9,7 +9,9 @@
 #import "AddressEditViewController.h"
 #import "AddressEditTableViewCell.h"
 #import "AddressNetworking.h"
-@interface AddressEditViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "AddressEditNewViewController.h"
+
+@interface AddressEditViewController ()<UITableViewDelegate,UITableViewDataSource,CellButtonDelegate>
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @end
@@ -21,6 +23,11 @@
     
     [self makeNav];
     [self makeUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self networking];
 }
 
@@ -40,7 +47,7 @@
     self.navigationItem.leftBarButtonItem = leftItem;
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
+    [rightButton setImage:[UIImage imageNamed:@"jiahao"] forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(pushNewAddressAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
@@ -55,6 +62,10 @@
 - (void)pushNewAddressAction
 {
     NSLog(@"添加新的地址");
+    AddressEditNewViewController *vc = [[AddressEditNewViewController alloc]init];
+    vc.editType = newEdit;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)makeUI
@@ -65,8 +76,12 @@
 
 - (void)networking
 {
-    [AddressNetworking postAddressListWithToken:kUser.user_token withPage:1 completion:^(NSArray * _Nonnull array, NSError * _Nonnull error) {
-     //  self.itemsArray
+    [AddressNetworking postAddressListWithToken:kUser.user_token withPage:1 completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
+        
+        NSLog(@"array.count  =%ld",array.count);
+        self.itemsArray = array;
+        [self.tableView reloadData];
+        
     }];
 }
 
@@ -76,7 +91,37 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
-    return nil;
+    static NSString *cellID = @"AddressEditTableViewCellID";
+    AddressEditTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.model = self.itemsArray[indexPath.row];
+    cell.addressEditButton.tag = 100+indexPath.row;
+
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AddressListModel *model = self.itemsArray[indexPath.row];
+    self.block(model);
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma makr cellDelegate
+- (void)clickCellButtonAction:(UIButton *)button;
+{
+    
+//    NSLog(@"%ld",button.tag);
+    NSInteger index = button.tag - 100;
+    AddressListModel *model = self.itemsArray[index];
+    AddressEditNewViewController *vc = [[AddressEditNewViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.editType = oldEdit;
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark 懒加载

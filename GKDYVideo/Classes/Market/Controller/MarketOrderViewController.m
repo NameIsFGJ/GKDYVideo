@@ -7,8 +7,35 @@
 //
 
 #import "MarketOrderViewController.h"
-
+#import "AddressEditViewController.h"
+#import "AddressListModel.h"
+#import "ToPayView.h"
+#import "AddNetworking.h"
 @interface MarketOrderViewController ()
+@property (strong, nonatomic) AddressListModel *model;
+//  收件人
+@property (strong, nonatomic) UILabel *userNameLabel;
+//  地址
+@property (strong, nonatomic) UILabel *userAddressLabel;
+// 填写地址
+@property (strong, nonatomic) UILabel *addAddressLabel;
+// 数量
+@property (strong, nonatomic) UILabel *countLabel;
+// 单价
+@property (strong, nonatomic) UILabel *priceLabel;
+//  运费
+@property (strong, nonatomic) UILabel *postMoneyLabel;
+//  总价
+@property (strong, nonatomic) UILabel *totalLabel;
+
+@property (strong, nonatomic) ToPayView *payView;
+
+@property (assign, nonatomic) NSInteger addressID;
+
+// 总金额
+@property (assign, nonatomic) float orderAmount;
+// 商品数量
+@property (assign, nonatomic) NSInteger goodsNum;
 
 @end
 
@@ -16,7 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.addressID = -1;
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:NO];
     [self makeNav];
@@ -56,40 +83,40 @@
     }];
     
   // 地址
-    UILabel *addAddressLabel = [[UILabel alloc]init];
-    [addressView addSubview:addAddressLabel];
-    [addAddressLabel setTextColor:[UIColor blackColor]];
-    [addAddressLabel setText:@"填写地址"];
-    [addAddressLabel setFont:[UIFont systemFontOfSize:15]];
-    [addAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.addAddressLabel = [[UILabel alloc]init];
+    [addressView addSubview:self.addAddressLabel];
+    [self.addAddressLabel setTextColor:[UIColor blackColor]];
+    [self.addAddressLabel setText:@"填写地址"];
+    [self.addAddressLabel setFont:[UIFont systemFontOfSize:15]];
+    [self.addAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(addressView);
         make.left.mas_equalTo(12);
         make.height.mas_equalTo(20);
        
     }];
     
-    UILabel *userNameLabel = [[UILabel alloc]init];
-    [addressView addSubview:userNameLabel];
-    userNameLabel.text = @"刘刚  182****5313";
-    [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.userNameLabel = [[UILabel alloc]init];
+    [addressView addSubview:self.userNameLabel];
+    self.userNameLabel.text = @"刘刚  182****5313";
+    [self.userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
         make.left.mas_equalTo(12);
         make.height.mas_equalTo(15);
     }];
-    userNameLabel.hidden = YES;
+    self.userNameLabel.hidden = YES;
     
-    UILabel *userAddressLabel = [[UILabel alloc]init];
-    [addressView addSubview:userAddressLabel];
-    userAddressLabel.numberOfLines = 2;
-    [userAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+   self.userAddressLabel = [[UILabel alloc]init];
+    [addressView addSubview:self.userAddressLabel];
+    self.userAddressLabel.numberOfLines = 2;
+    [self.userAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(12);
-        make.top.equalTo(userNameLabel.mas_bottom).offset(10);
+        make.top.equalTo(self.userNameLabel.mas_bottom).offset(10);
         make.bottom.mas_equalTo(0);
         make.right.mas_equalTo(-12);
     }];
-    userAddressLabel.text = @"杭杭州市杭州市杭州市杭州市杭州市杭州市杭州市州市5幢603室";
-    userAddressLabel.font = [UIFont systemFontOfSize:13];
-    userAddressLabel.hidden = YES;
+    self.userAddressLabel.text = @"杭杭州市杭州市杭州市杭州市杭州市杭州市杭州市州市5幢603室";
+    self.userAddressLabel.font = [UIFont systemFontOfSize:13];
+    self.userAddressLabel.hidden = YES;
     
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"left_back"]];
     [addressView addSubview:imageView];
@@ -130,7 +157,7 @@
 
     UILabel *shopNameLabel = [[UILabel alloc]init];
     [contentView addSubview:shopNameLabel];
-    shopNameLabel.text = @"漫饭一号的商铺";
+    shopNameLabel.text = [NSString stringWithFormat:@"%@的商铺",self.nickName];
     shopNameLabel.font = [UIFont systemFontOfSize:15];
     [shopNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(imageView1.mas_right).offset(5);
@@ -159,7 +186,9 @@
         make.top.equalTo(imageView1.mas_bottom).offset(15);
     }];
     
-    UIImageView *imageListView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.image_list]];
+   // UIImageView *imageListView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.image_list]];
+    UIImageView *imageListView = [[UIImageView alloc]init];
+    [imageListView sd_setImageWithURL:[NSURL URLWithString:self.image_list]];
     [orderView addSubview:imageListView];
     [imageListView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(12);
@@ -175,19 +204,21 @@
         make.top.equalTo(imageListView.mas_top).offset(20);
         make.height.mas_equalTo(15);
     }];
-    nameLabel.text = @"奢华祖母绿戒指";
+    //nameLabel.text = @"奢华祖母绿戒指";
+    nameLabel.text = self.name;
     nameLabel.font = [UIFont systemFontOfSize:15];
     
-    UILabel *priceLabel = [[UILabel alloc]init];
-    [orderView addSubview:priceLabel];
-    priceLabel.textColor = [UIColor redColor];
-    [priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.priceLabel = [[UILabel alloc]init];
+    [orderView addSubview:self.priceLabel];
+    self.priceLabel.textColor = [UIColor redColor];
+    [self.priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(nameLabel.mas_left);
         make.bottom.equalTo(imageListView.mas_bottom);
         make.height.mas_equalTo(15);
     }];
-    priceLabel.text = @"¥25.50";
-    priceLabel.font = [UIFont systemFontOfSize:15];
+   // self.priceLabel.text = @"¥25.50";
+    self.priceLabel.text = self.price;
+    self.priceLabel.font = [UIFont systemFontOfSize:15];
     
     UILabel *label1 = [[UILabel alloc]init];
     [contentView addSubview:label1];
@@ -214,24 +245,25 @@
     addButton.layer.masksToBounds = YES;
     [addButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
-    UILabel *countLabel = [[UILabel alloc]init];
-    [contentView addSubview:countLabel];
-    [countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.countLabel = [[UILabel alloc]init];
+    [contentView addSubview:self.countLabel];
+    [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(label1.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(28*2, 28));
         make.right.equalTo(addButton.mas_left).offset(0);
     }];
-    countLabel.text = @"1";
-    countLabel.font = [UIFont systemFontOfSize:15];
-    countLabel.textAlignment = NSTextAlignmentCenter;
-    countLabel.layer.borderWidth = .5;
-    countLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    countLabel.layer.masksToBounds = YES;
+    self.countLabel.text = @"1";
+    self.count = 6;
+    self.countLabel.font = [UIFont systemFontOfSize:15];
+    self.countLabel.textAlignment = NSTextAlignmentCenter;
+    self.countLabel.layer.borderWidth = .5;
+    self.countLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.countLabel.layer.masksToBounds = YES;
     
     UIButton *subButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [contentView addSubview:subButton];
     [subButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(countLabel.mas_left).offset(0);
+        make.right.equalTo(self.countLabel.mas_left).offset(0);
         make.centerY.equalTo(label1.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(28, 28));
     }];
@@ -262,16 +294,16 @@
     }];
     label2.font = [UIFont systemFontOfSize:15];
     
-    UILabel *postMoneyLabel = [[UILabel alloc]init];
-    [contentView addSubview:postMoneyLabel];
-    [postMoneyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.postMoneyLabel = [[UILabel alloc]init];
+    [contentView addSubview:self.postMoneyLabel];
+    [self.postMoneyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-12);
         make.centerY.equalTo(label2.mas_centerY);
         make.height.mas_equalTo(15);
     }];
-    postMoneyLabel.textColor = [UIColor redColor];
-    postMoneyLabel.text = @"¥20.00";
-    
+    self.postMoneyLabel.textColor = [UIColor redColor];
+   // self.postMoneyLabel.text = @"¥20.00";
+    self.postMoneyLabel.text = [NSString stringWithFormat:@"¥ %ld",self.postMoney];
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:submitButton];
     [submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -292,16 +324,26 @@
     }];
     label3.text = @"实付:";
     
-    UILabel * totalLabel = [[UILabel alloc]init];
-    [self.view addSubview:totalLabel];
-    [totalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+   self.totalLabel = [[UILabel alloc]init];
+    [self.view addSubview:self.totalLabel];
+    [self.totalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(label3.mas_right).offset(10);
         make.centerY.equalTo(submitButton.mas_centerY);
         make.height.mas_equalTo(18);
     }];
-    totalLabel.text = @"¥391.30";
-    totalLabel.textColor = [UIColor redColor];
-    totalLabel.font = [UIFont systemFontOfSize:18];
+    self.totalLabel.textColor = [UIColor redColor];
+    self.totalLabel.font = [UIFont systemFontOfSize:22];
+    //self.totalLabel.text = @"¥00.00";
+    float price = [self.price floatValue];
+    
+    // 运费
+    float postMoney = self.postMoney;
+    
+    float total = price *1 + postMoney;
+    
+    
+    self.totalLabel.text = [NSString stringWithFormat:@"¥ %.2f",total];
+    
     
     UIView *lineView3 = [[UIView alloc]init];
     [self.view addSubview:lineView3];
@@ -310,25 +352,87 @@
         make.height.mas_equalTo(.5);
         make.bottom.equalTo(submitButton.mas_top).offset(0);
     }];
-    
     lineView3.backgroundColor = [UIColor lightGrayColor];
+    
 }
 
 
 - (void)countButtonActon:(UIButton *)btn
 {
+    //NSInteger count;
     if (btn.tag == 100)
     {
         NSLog(@"减法");
+        NSInteger count = [self.countLabel.text integerValue];
+        count --;
+        
+        if (count < 1) {
+            count = 1;
+        }
+        self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
+        
+        // 单价
+        float price = [self.price floatValue];
+        
+        // 运费
+        float postMoney = self.postMoney;
+        
+        float total = price *count + postMoney;
+        
+        self.totalLabel.text = [NSString stringWithFormat:@"¥ %.2f",total];
+        
+        self.orderAmount = total;
+        self.goodsNum = count;
+        
     }else if (btn.tag == 101)
     {
-        NSLog(@"加法");
+       
+       NSInteger count = [self.countLabel.text integerValue];
+        count ++;
+        
+        if (count > self.count) {
+            count = self.count;
+        }
+        
+        self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
+//        if (count <= self.count) {
+//            self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
+//        }
+        
+        // 计算  总价 =  单价 * 数量 + 运费
+        //       total = price * count + postMoney
+        // 单价
+        float price = [self.price floatValue];
+        
+        // 运费
+        float postMoney = self.postMoney;
+        
+        float total = price *count + postMoney;
+        
+        self.totalLabel.text = [NSString stringWithFormat:@"¥ %.2f",total];
+        
+        
+        self.orderAmount = total;
+        self.goodsNum = count;
     }
 }
 
 - (void)pushAddressButtonAction
 {
-    NSLog(@"填写地址");
+    AddressEditViewController *vc = [[AddressEditViewController alloc]init];
+    vc.block = ^(AddressListModel * _Nullable model) {
+        
+        self.userNameLabel.hidden = NO;
+        self.userAddressLabel.hidden = NO;
+        self.addAddressLabel.hidden = YES;
+        NSLog(@"model.address  =%@",model.address);
+        self.addressID = model.ide;
+        NSString *mobile = [model.mobile stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+        self.userNameLabel.text = [NSString stringWithFormat:@"%@    %@",model.consignee,mobile];
+        NSString *address = [model.city stringByReplacingOccurrencesOfString:@"/" withString:@" "];
+        self.userAddressLabel.text = [NSString stringWithFormat:@"%@%@",model.city,address];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)pushContactButtonAction
@@ -339,15 +443,36 @@
 - (void)submitButtonAction
 {
     NSLog(@"提交订单");
+    if (self.addressID == -1) {
+        [self showErrorMsg:@"请选择收货地址"];
+        return;
+    }
+    
+    [AddNetworking postAddWithToken:kUser.user_token
+                        withGoodsID:self.model.ide
+                        withSalerID:[kUser.user_id integerValue]
+                      withAddressID:self.addressID
+                    withOrderAmount:self.orderAmount
+                     withGoodsPrice:[self.price floatValue]
+                       withGoodsNum:self.goodsNum completion:^(NSInteger orderNum, NSError * _Nonnull error) {
+                           
+                           [self.view addSubview:self.payView];
+                           self.payView.orderSn = orderNum;
+                           self.payView.frame = self.view.bounds;
+                           
+    }];
+    
+   
+    
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark 懒加载
+- (ToPayView *)payView
+{
+    if (!_payView) {
+        _payView = [[ToPayView alloc]init];
+    }
+    return _payView;
 }
-*/
 
 @end

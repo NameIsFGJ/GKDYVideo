@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 
 typedef enum{
-    buyType = 0,
+    buyType = 1,
     sellTyle
 }VCType;
 

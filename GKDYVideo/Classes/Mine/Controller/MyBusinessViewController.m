@@ -55,8 +55,10 @@
 
 - (void)networking
 {
+    NSLog(@"self.type  =%ld",self.type);
     [MyBusinessNetworking postMyBusinessWithToken:kUser.user_token withPage:1 withType:self.type completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
-            
+        self.itemsArray = array;
+        [self.tableView reloadData];
     }];
 }
 

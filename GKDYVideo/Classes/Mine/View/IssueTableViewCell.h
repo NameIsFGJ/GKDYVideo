@@ -10,6 +10,17 @@
 @class MyGoodsModel;
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol IssueTableViewCellDeletgate <NSObject>
+
+// 删除
+- (void)deleteButtonActionFromCell:(UIButton *)button;
+// 编辑
+- (void)editButtonActionFromCell:(UIButton *)button;
+// 分享
+- (void)shareButtonActionFromCell:(UIButton *)button;
+
+@end
+
 @interface IssueTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (strong, nonatomic) MyGoodsModel *model;
-
+@property (weak, nonatomic) id <IssueTableViewCellDeletgate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

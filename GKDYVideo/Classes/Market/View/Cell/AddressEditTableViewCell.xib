@@ -44,6 +44,9 @@
                         <state key="normal" title="编辑">
                             <color key="titleColor" red="0.1333333333" green="0.16078431369999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="editButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hTP-1f-0bH"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

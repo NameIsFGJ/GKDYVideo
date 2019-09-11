@@ -268,7 +268,7 @@
 
 - (void)imageButtonAction:(UIButton *)btn
 {
-    NSLog(@"btn.tag ==%ld",btn.tag);
+    //SLog(@"btn.tag ==%ld",btn.tag);
 }
 
 - (void)submitButtonAction
@@ -278,23 +278,20 @@
     infoModel.user_token = kUser.user_token;
     infoModel.user_id = [kUser.user_id integerValue];
     infoModel.title = @"mac pro";
-    infoModel.desc = @"2019款 13寸";
+    infoModel.desc = @"2019款 13寸苹果电脑上的发丝地方";
     infoModel.category_id = 1;
     infoModel.original_price = 50;
     infoModel.price = 40;
-    infoModel.count = 2;
+    infoModel.count = 12;
     infoModel.avatar = (NSArray *)self.itemsArray;
-    infoModel.third_url = @"www.baidu.com";
+    infoModel.third_url = @"http://www.baidu.com";
     infoModel.video_id = 1;
     [AddGoodsNetworking postAddGoods:infoModel completion:^(AddGoodsModel * _Nonnull model, NSError * _Nonnull error) {
-        [AddGoodsNetworking postAddGoods:infoModel completion:^(AddGoodsModel * _Nonnull model, NSError * _Nonnull error) {
-            NSLog(@"model.msg  =%@",model.msg);
-            if ([model.msg isEqualToString:@"发布成功"]) {
-                [self hideProgress];
-                [self showSuccessMsg:@"发布成功"];
-                //self.navigationController popViewControllerAnimated:
-            }
-        }];
+        if ([model.msg isEqualToString:@"发布成功"]) {
+            [self hideProgress];
+            [self showSuccessMsg:@"发布成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }];
 }
 
@@ -391,8 +388,8 @@
               for (int j = 0; j < 4; j++) {
                   if ((4*i +j) > (itemsArray.count-1))
                   {
-    
-                  }else
+                  }
+                  else
                   {
                      UIButton *btn = self.buttonArray[4*i+j];
                       [self.pictureView addSubview:btn];

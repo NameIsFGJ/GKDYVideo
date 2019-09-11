@@ -9,7 +9,10 @@
 #import "IssueViewController.h"
 #import "IssueTableViewCell.h"
 #import "MyGoodsNetworking.h"
-@interface IssueViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "DeleGoodsNetworking.h"
+#import "MyGoodsModel.h"
+
+@interface IssueViewController ()<UITableViewDelegate,UITableViewDataSource,IssueTableViewCellDeletgate>
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @end
@@ -82,20 +85,56 @@
 {
     static NSString *cellID = @"IssueTableViewCellID";
     IssueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.delegate = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = self.itemsArray[indexPath.row];
+    
+    cell.deleteButton.tag = 100+ indexPath.row;
+    cell.editButton.tag = 200+ indexPath.row;
+    cell.shareButton.tag = 300+ indexPath.row;
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+ 
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120.0f;
 }
+
+#pragma mark cellDelegate
+// 删除
+- (void)deleteButtonActionFromCell:(UIButton *)button;
+{
+    MyGoodsModel *model = self.itemsArray[button.tag - 100];
+    
+    [DeleGoodsNetworking postDeleGoodNetworkingWithToken:kUser.user_token withGoodID:model.ide completion:^(NSInteger code, NSError * _Nonnull error) {
+        if (code == 1) {
+            [self.itemsArray removeAllObjects];
+            [self networking];
+        }
+    }];
+}
+
+// 编辑
+- (void)editButtonActionFromCell:(UIButton *)button;
+{
+    MyGoodsModel *model = self.itemsArray[button.tag - 200];
+    NSLog(@"编辑");
+}
+
+// 分享
+- (void)shareButtonActionFromCell:(UIButton *)button;
+{
+     MyGoodsModel *model = self.itemsArray[button.tag - 200];
+    NSLog(@"分享第%ld 个内容",model.ide);
+}
+
+
 
 #pragma mark 懒加载
 - (UITableView *)tableView

@@ -76,6 +76,9 @@
                                 <state key="normal" title="编辑">
                                     <color key="titleColor" red="1" green="0.56470588239999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZVr-0l-m29"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCL-5R-Ons">
                                 <rect key="frame" x="303" y="64.5" width="1" height="15"/>
@@ -95,10 +98,16 @@
                                 <state key="normal" title="删除">
                                     <color key="titleColor" red="1" green="0.56470588239999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E6a-jj-vb8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY8-Pr-rPa">
                                 <rect key="frame" x="306" y="0.0" width="43" height="32"/>
                                 <state key="normal" backgroundImage="fenxiang"/>
+                                <connections>
+                                    <action selector="shareButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pXE-aE-RNf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

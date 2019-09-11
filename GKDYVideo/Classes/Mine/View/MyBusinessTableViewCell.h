@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MyBusinessModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyBusinessTableViewCell : UITableViewCell
@@ -15,7 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *goodsName;
 @property (weak, nonatomic) IBOutlet UILabel *goodsPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goodsNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payStatusLabel;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *contactLabel;
+@property (weak, nonatomic) IBOutlet UIButton *refundButton;
 
+@property (strong, nonatomic) MyBusinessModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

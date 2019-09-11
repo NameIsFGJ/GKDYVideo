@@ -1,15 +1,15 @@
 //
-//  CityPickerView.m
+//  AddressSelectView.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/8/8.
+//  Created by 冯高杰 on 2019/9/9.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "CityPickerView.h"
-#import "EditProfileNetworking.h"
+#import "AddressSelectView.h"
 #import "ProvinceModel.h"
-@interface CityPickerView()<UIPickerViewDataSource,UIPickerViewDelegate>
+
+@interface AddressSelectView()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (strong, nonatomic)UIPickerView *pickerView;
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @property (strong, nonatomic) UIView *topView;
@@ -31,15 +31,15 @@
 
 // 当前 区
 @property (strong, nonatomic) NSString *currentArea;
+
 @end
 
-@implementation CityPickerView
+
+@implementation AddressSelectView
 
 - (instancetype)init
 {
     self = [super init];
-    
-    
     
     [self makeUI];
     
@@ -60,6 +60,7 @@
     blackView.backgroundColor = [UIColor colorWithHex:@"#000000" alpha:.5];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(missView)];
     [blackView addGestureRecognizer:tap];
+    
     
     [self addSubview:self.topView];
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -122,15 +123,11 @@
 
 - (void)buttonAcion
 {
-    NSString *city = [NSString stringWithFormat:@"%@/%@/%@",self.currentProvince,self.currentCity,self.currentArea];
-    [EditProfileNetworking postEditProfile:kUser.user_token withKey:@"city" WithValue:city completion:^(NewBaseModel * _Nonnull model, NSError * _Nonnull error) {
-        if (model.code == 1) {
-            [self showSuccessMsg:@"修改成功"];
-        }
-        
-        [self missView];
-        
-    }];
+    NSString *city = [NSString stringWithFormat:@"%@  %@  %@",self.currentProvince,self.currentCity,self.currentArea];
+    
+    self.getCity(city);
+    
+    [self missView];
 }
 
 - (void)missView
@@ -138,7 +135,7 @@
     [UIView animateWithDuration:.5 animations:^{
         [self removeFromSuperview];
     }];
-     self.block();
+   // self.block();
 }
 
 #pragma mark UIPickerViewDelegate
@@ -167,7 +164,7 @@
     }else if (component == 1){
         return self.cityArr[row];
     }else if (component == 2){
-           return self.areaArr[row];
+        return self.areaArr[row];
     }
     return @"s";
 }
@@ -180,7 +177,7 @@
         NSLog(@"self.currentProvince =%@",self.currentProvince);
         for (ProvinceModel *model in self.itemsArray) {
             if ([model.name isEqualToString:self.currentProvince]) {
-              
+                
                 for (NSDictionary *dic in model.city) {
                     NSString *name = [dic objectForKey:@"name"];
                     [self.cityArr addObject:name];
@@ -198,7 +195,7 @@
     }else if (component == 1){
         
         self.currentCity = self.cityArr[row];
-       
+        
         for (ProvinceModel *model in self.itemsArray) {
             if ([model.name isEqualToString:self.currentProvince]) {
                 
@@ -313,8 +310,5 @@
     }
     return _submitButton;
 }
-
-
-
 
 @end

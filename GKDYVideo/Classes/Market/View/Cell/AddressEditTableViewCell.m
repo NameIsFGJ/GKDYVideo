@@ -7,7 +7,7 @@
 //
 
 #import "AddressEditTableViewCell.h"
-
+#import "AddressListModel.h"
 @implementation AddressEditTableViewCell
 
 - (void)awakeFromNib {
@@ -20,5 +20,30 @@
 
     // Configure the view for the selected state
 }
+//- (void)clickCellButtonAction:(AddressEditTableViewCell *)cell;
+- (IBAction)editButtonAction:(UIButton *)sender {
+    
+    NSLog(@"sender.tag = %ld ",sender.tag);
+    
+    // UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    
+    if ([self respondsToSelector:@selector(editButtonAction:)]) {
+        [self.delegate clickCellButtonAction:sender];
+        
+        
+    }
+}
+
+- (void)setModel:(AddressListModel *)model
+{
+    _model = model;
+    self.userNameLabel.text = [NSString stringWithFormat:@"%@   %@",model.consignee,model.mobile];
+    
+    NSString *city = [model.city stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    
+    self.userAddressLabel.text = [NSString stringWithFormat:@"%@%@",city,model.address];
+}
+
 
 @end

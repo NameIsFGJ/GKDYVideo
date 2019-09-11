@@ -54,14 +54,28 @@
 
 - (void)makeUI
 {
-    _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, kWindowHeight)];
-    [self.view addSubview:_webView];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"test.html" ofType:nil];
-    NSString *htmlString = [[NSString alloc]initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//    _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, kWindowHeight)];
+//    [self.view addSubview:_webView];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"test.html" ofType:nil];
+//    NSString *htmlString = [[NSString alloc]initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//
+//    [_webView loadHTMLString:htmlString baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+//
+//    [self webBrige];
     
-    [_webView loadHTMLString:htmlString baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     
-    [self webBrige];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(100);
+        make.top.mas_equalTo(50);
+        make.size.mas_equalTo(CGSizeMake(60, 60));
+    }];
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn setTitle:@"立即购买" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(getBuyButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//    [[btn addTarget:self action:@selector(getBuyButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
     
 }
 - (void)networking

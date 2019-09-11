@@ -100,9 +100,8 @@
 {
     UIImage *image = [photos firstObject];
  
-    [UpLoadAvatarNetworking postUploadAvatarWithToken:kUser.user_token withAvator:image completion:^(UploadAvatarModel * _Nonnull model, NSError * _Nonnull error) {
-        if (model.code == 1)
-        {
+    [UpLoadAvatarNetworking postUploadAvatarWithToken:kUser.user_token withAvator:image completion:^(NSInteger code, NSError * _Nonnull error) {
+        if (code == 1) {
             self.headView.headPicImageView.image = image;
         }
     }];

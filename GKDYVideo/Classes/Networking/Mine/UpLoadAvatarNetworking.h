@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UpLoadAvatarNetworking : BaseNetworking
 +(void)postUploadAvatarWithToken:(NSString *)token
                       withAvator:(UIImage *)avatar
-                      completion:(void(^)(UploadAvatarModel *model,NSError *error))completionHandle;
+                      completion:(void(^)(NSInteger code,NSError *error))completionHandle;
 
 @end
 

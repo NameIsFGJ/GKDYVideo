@@ -49,7 +49,6 @@
     
     [self creatNav];
     [self creatTableView];
-  //  [self networking];
     
 }
 

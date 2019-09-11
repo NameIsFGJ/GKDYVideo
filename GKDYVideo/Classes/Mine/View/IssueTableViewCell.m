@@ -33,4 +33,33 @@
     self.comNumLabel.text = [NSString stringWithFormat:@"留言: %ld",model.com_count];
     self.countLabel.text = [NSString stringWithFormat:@"库存: %ld",model.count];
 }
+
+//  分享
+- (IBAction)shareButtonAction:(UIButton *)sender {
+    if ([self respondsToSelector:@selector(shareButtonAction:)]) {
+        [self.delegate shareButtonActionFromCell:sender];
+    }
+}
+
+// 编辑
+- (IBAction)editButtonAction:(UIButton *)sender {
+    if ([self respondsToSelector:@selector(editButtonAction:)]) {
+        [self.delegate editButtonActionFromCell:sender];
+    }
+}
+
+// 删除
+- (IBAction)deleteButtonAction:(UIButton *)sender {
+    if ([self respondsToSelector:@selector(deleteButtonAction:)]) {
+        [self.delegate deleteButtonActionFromCell:sender];
+    }
+}
+
+
+
+
+
+
+
+
 @end

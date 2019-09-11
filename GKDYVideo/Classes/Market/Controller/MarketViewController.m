@@ -131,10 +131,10 @@
 {
    // NSLog(@"indexPath.row  =%ld",indexPath.row);
     
-    MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
+  //  MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
     
-   // MarketShopDetailViewController *vc = [[MarketShopDetailViewController alloc]init];
-   // vc.ide = 1;
+   MarketShopDetailViewController *vc = [[MarketShopDetailViewController alloc]init];
+    vc.ide = 1;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     

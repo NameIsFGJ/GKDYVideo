@@ -11,27 +11,28 @@
 @implementation UpLoadAvatarNetworking
 +(void)postUploadAvatarWithToken:(NSString *)token
                       withAvator:(UIImage *)avatar
-                      completion:(void(^)(UploadAvatarModel *model,NSError *error))completionHandle{
+                      completion:(void(^)(NSInteger code,NSError *error))completionHandle{
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/uploadAvatar"];
+    NSData *imageData = UIImageJPEGRepresentation(avatar, .5);
     NSDictionary *parma = @{@"token":token};
-    
+   
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager POST:urlStr parameters:parma constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-        NSData *imageData = UIImageJPEGRepresentation(avatar, .5);
-        
         [formData appendPartWithFileData:imageData name:@"avatar" fileName:@"head_pic.jpg" mimeType:@"image/jpeg"];
-        
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"success  =%@",responseObject);
-        completionHandle([UploadAvatarModel yy_modelWithDictionary:responseObject[@"data"]],nil);
+        NSInteger code = [responseObject[@"code"] integerValue];
+        if (code == 1)
+        {
+            completionHandle(code,nil);
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error  =%@",error);
-        completionHandle(nil,error);
+       
+       // completionHandle(nil,error);
     }];
     
     

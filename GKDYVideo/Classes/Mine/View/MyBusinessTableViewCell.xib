@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="13" id="QM6-9q-Rh1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="联系买家">
+                                <state key="normal" title="取消订单">
                                     <color key="titleColor" red="1" green="0.56470588239999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -88,21 +88,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-99-4o0">
+                                <rect key="frame" x="301" y="40.5" width="50" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="hdd-cM-DMz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="退款中">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6iB-my-MOy" firstAttribute="top" secondItem="ntR-bb-akQ" secondAttribute="top" id="1Nf-iS-GIO"/>
                             <constraint firstAttribute="trailing" secondItem="pNA-PZ-FDL" secondAttribute="trailing" id="4d1-Ej-hoR"/>
+                            <constraint firstItem="pNA-PZ-FDL" firstAttribute="trailing" secondItem="eMO-99-4o0" secondAttribute="trailing" id="6Fg-gh-fGQ"/>
                             <constraint firstItem="pNA-PZ-FDL" firstAttribute="leading" secondItem="55O-yZ-1lr" secondAttribute="trailing" constant="15" id="9jn-BJ-QkO"/>
                             <constraint firstItem="ntR-bb-akQ" firstAttribute="top" secondItem="LUt-hN-3Qs" secondAttribute="bottom" constant="10" id="FMW-Nw-syP"/>
                             <constraint firstItem="pNA-PZ-FDL" firstAttribute="bottom" secondItem="uf5-Gi-neK" secondAttribute="bottom" id="JgO-Jd-F5o"/>
                             <constraint firstItem="55O-yZ-1lr" firstAttribute="leading" secondItem="uf5-Gi-neK" secondAttribute="trailing" constant="15" id="T8N-gB-UyG"/>
                             <constraint firstItem="6iB-my-MOy" firstAttribute="centerY" secondItem="ntR-bb-akQ" secondAttribute="centerY" id="TOZ-x6-U51"/>
+                            <constraint firstItem="eMO-99-4o0" firstAttribute="centerY" secondItem="ntR-bb-akQ" secondAttribute="centerY" id="UXJ-zV-qHD"/>
                             <constraint firstItem="LUt-hN-3Qs" firstAttribute="top" secondItem="uoh-AH-bAr" secondAttribute="top" constant="10" id="W7C-hZ-nZ3"/>
                             <constraint firstItem="55O-yZ-1lr" firstAttribute="bottom" secondItem="uf5-Gi-neK" secondAttribute="bottom" id="fE0-Wn-5qL"/>
                             <constraint firstAttribute="bottom" secondItem="pNA-PZ-FDL" secondAttribute="bottom" id="gGQ-12-pXO"/>
                             <constraint firstItem="y1k-Jd-rEU" firstAttribute="top" secondItem="uoh-AH-bAr" secondAttribute="top" id="hhr-4L-0py"/>
                             <constraint firstItem="6iB-my-MOy" firstAttribute="leading" secondItem="ntR-bb-akQ" secondAttribute="trailing" constant="10" id="jsq-wy-8sO"/>
+                            <constraint firstItem="pNA-PZ-FDL" firstAttribute="leading" secondItem="eMO-99-4o0" secondAttribute="leading" id="mb5-dp-VGw"/>
                             <constraint firstItem="ntR-bb-akQ" firstAttribute="leading" secondItem="LUt-hN-3Qs" secondAttribute="leading" id="rRD-dF-yvE"/>
                             <constraint firstItem="LUt-hN-3Qs" firstAttribute="leading" secondItem="y1k-Jd-rEU" secondAttribute="trailing" constant="14" id="uY5-S2-15g"/>
                             <constraint firstItem="y1k-Jd-rEU" firstAttribute="leading" secondItem="uoh-AH-bAr" secondAttribute="leading" id="wZw-Ih-4j1"/>
@@ -120,10 +133,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="contactLabel" destination="eMO-99-4o0" id="g69-ey-dZ1"/>
                 <outlet property="coverImageView" destination="y1k-Jd-rEU" id="dMm-va-4cu"/>
+                <outlet property="deleteButton" destination="uf5-Gi-neK" id="UIW-o5-uFg"/>
                 <outlet property="goodsName" destination="LUt-hN-3Qs" id="MhR-nc-kOq"/>
                 <outlet property="goodsNumLabel" destination="6iB-my-MOy" id="184-JD-B1L"/>
                 <outlet property="goodsPriceLabel" destination="ntR-bb-akQ" id="X7y-A7-8KR"/>
+                <outlet property="payStatusLabel" destination="XYz-cg-q0a" id="rjB-jT-BXc"/>
+                <outlet property="refundButton" destination="eMO-99-4o0" id="ogc-q7-e3V"/>
             </connections>
             <point key="canvasLocation" x="39.855072463768117" y="64.955357142857139"/>
         </tableViewCell>

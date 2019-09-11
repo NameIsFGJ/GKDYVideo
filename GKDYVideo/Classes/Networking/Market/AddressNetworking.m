@@ -7,9 +7,9 @@
 //
 
 #import "AddressNetworking.h"
-
+#import "AddressListModel.h"
 @implementation AddressNetworking
-+(void)postAddressListWithToken:(NSString *)token withPage:(NSInteger)page completion:(void(^)(NSArray *array,NSError *error))completionHandle;
++(void)postAddressListWithToken:(NSString *)token withPage:(NSInteger)page completion:(void(^)(NSMutableArray *array,NSError *error))completionHandle;
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/user/addressList"];
     NSDictionary *para = @{@"token":token,@"page":@(page)};
@@ -18,7 +18,12 @@
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
         if ([[responseObj objectForKey:@"code"] integerValue] == 1) {
             NSArray *array = responseObj[@"data"][@"rows"];
-            completionHandle(array,nil);
+            NSMutableArray *itemsArray = [NSMutableArray array];
+            for (NSDictionary *dic in array) {
+                AddressListModel *model = [AddressListModel yy_modelWithDictionary:dic];
+                [itemsArray addObject:model];
+            }
+            completionHandle(itemsArray,nil);
         }else{
             completionHandle(nil,error);
         }
