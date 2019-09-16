@@ -18,6 +18,16 @@
 //  我卖出的
 #import "MyBusinessViewController.h"
 
+// 订单详情 测试用的
+#import "OrderDetailStep1ViewController.h"
+#import "OrderDetailStep2ViewController.h"
+#import "OrderDetailStep3ViewController.h"
+#import "OrderDetailStep3NoExpressViewController.h"
+#import "OrderReturnSuccessViewController.h"
+#import "OrderReturnFalseViewController.h"
+#import "OrderReturnApplyViewController.h"
+
+
 @interface MineViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *imageArray;
@@ -145,6 +155,12 @@
     {
         MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
         vc.type = sellTyle;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 3)
+    {   
+        //OrderReturnSuccessViewController *vc = [[OrderReturnSuccessViewController alloc]init];
+        OrderReturnApplyViewController *vc = [[OrderReturnApplyViewController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }

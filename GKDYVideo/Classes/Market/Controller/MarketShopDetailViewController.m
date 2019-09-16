@@ -12,6 +12,9 @@
 #import "MarketUserShopViewController.h"
 #import "MarketOrderViewController.h"
 #import "GoodsDetailNetworking.h"
+#import "ReturnGoodsDetailViewController.h"
+
+
 @interface MarketShopDetailViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (strong, nonatomic)WKWebView *webView;
 @property (strong, nonatomic)WebViewJavascriptBridge *bridge;
@@ -43,13 +46,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
+  
     
     [self makeUI];
     
     [self networking];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+     [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+      [self.navigationController setNavigationBarHidden:YES];
+}
 #pragma mark Actions
 
 - (void)makeUI
@@ -169,17 +183,22 @@
 // 立即购买
 - (void)getBuyButtonAction
 {
-    NSLog(@"点击购买");
-    MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
-    vc.nickName = self.nickName;
-    vc.head_pic = self.head_pic;
-    vc.image_list = self.image_list;
-    vc.name = self.name;
-    vc.price = self.price;
-    vc.count = self.count;
-    vc.postMoney = self.postMoney;
+//    NSLog(@"点击购买");
+//    MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    vc.nickName = self.nickName;
+//    vc.head_pic = self.head_pic;
+//    vc.image_list = self.image_list;
+//    vc.name = self.name;
+//    vc.price = self.price;
+//    vc.count = self.count;
+//    vc.postMoney = self.postMoney;
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+    ReturnGoodsDetailViewController *vc = [[ReturnGoodsDetailViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 /*

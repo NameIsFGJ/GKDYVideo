@@ -9,6 +9,7 @@
 #import "CityPickerView.h"
 #import "EditProfileNetworking.h"
 #import "ProvinceModel.h"
+
 @interface CityPickerView()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (strong, nonatomic)UIPickerView *pickerView;
 @property (strong, nonatomic)NSMutableArray *itemsArray;
@@ -286,13 +287,13 @@
         UILabel *titleLabel = [[UILabel alloc]init];
         [_topView addSubview:titleLabel];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(_topView.mas_centerX).offset(0);
+            make.centerX.equalTo(self.topView.mas_centerX).offset(0);
             make.top.mas_equalTo(5);
         }];
         titleLabel.text = @"地区选择";
         [_topView addSubview:self.submitButton];
         [self.submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(_topView.mas_right).offset(-20);
+            make.right.equalTo(self.topView.mas_right).offset(-20);
             make.size.mas_equalTo(CGSizeMake(40, 30));
         }];
     }

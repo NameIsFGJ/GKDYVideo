@@ -20,9 +20,8 @@
     [manager POST:urlStr parameters:parma constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         [formData appendPartWithFileData:imageData name:@"avatar" fileName:@"head_pic.jpg" mimeType:@"image/jpeg"];
-        
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
+    
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSInteger code = [responseObject[@"code"] integerValue];
         if (code == 1)

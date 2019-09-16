@@ -28,12 +28,10 @@
                            @"order_amount":@(orderAmount),
                            @"goods_price":@(goodsPrice),
                            @"goods_num":@(goodsNum)};
-    NSLog(@"pa2ra  =%@",para);
-    NSLog(@"url3Str  =%@",urlStr);
+    
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"resp1onse331Obj  =%@",responseObj);
         NSDictionary *data = responseObj[@"data"];
         NSInteger orderSn = [[data objectForKey:@"order_sn"] integerValue];
         completionHandle(orderSn,nil);

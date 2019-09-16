@@ -78,7 +78,7 @@
     [self.view addSubview:addressView];
     [addressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(90);
+        make.top.mas_equalTo(KTopViewHeight + 30);
         make.height.mas_equalTo(90);
     }];
     
@@ -411,7 +411,6 @@
         
         self.totalLabel.text = [NSString stringWithFormat:@"¥ %.2f",total];
         
-        
         self.orderAmount = total;
         self.goodsNum = count;
     }
@@ -425,7 +424,7 @@
         self.userNameLabel.hidden = NO;
         self.userAddressLabel.hidden = NO;
         self.addAddressLabel.hidden = YES;
-        NSLog(@"model.address  =%@",model.address);
+      //  NSLog(@"model.address  =%@",model.address);
         self.addressID = model.ide;
         NSString *mobile = [model.mobile stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
         self.userNameLabel.text = [NSString stringWithFormat:@"%@    %@",model.consignee,mobile];
