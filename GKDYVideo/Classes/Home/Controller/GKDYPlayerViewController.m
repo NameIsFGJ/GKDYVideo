@@ -36,7 +36,6 @@
     if (self)
     {
         self.isPush = YES;
-        
     }
     return self;
 }
@@ -56,8 +55,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor blackColor];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.view addSubview:self.videoView];
+    [self makeNav];
     [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -65,6 +67,7 @@
     if (self.isPush)
     {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self makeCommentView];
         [self.videoView.viewModel refreshNewListWithSuccess:^(NSArray * _Nonnull list) {
             [self.videoView setModels:self.videos index:self.playIndex];
         } failure:^(NSError * _Nonnull error) {
@@ -83,8 +86,59 @@
     }
 }
 
+- (void)makeNav
+{
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
+    label.textAlignment = NSTextAlignmentCenter;
+    //label.text = @"确认订单";
+    label.textColor = [UIColor blackColor];
+    self.navigationItem.titleView = label;
+    
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+}
+
+- (void)popViewController
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)makeCommentView
+{
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:leftButton];
+    [leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.top.mas_equalTo(KStatusBarHeight);
+        make.size.mas_equalTo(CGSizeMake(22, 22));
+    }];
+    
+    [leftButton setImage:[UIImage imageNamed:@"common_white_back"] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
+   // [leftButton setBackgroundColor:[UIColor redColor]];
+    
+    
+    
+    
+    UITextField *commentView = [[UITextField alloc]init];
+    [self.view addSubview:commentView];
+    [commentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.mas_equalTo(0);
+        make.height.mas_equalTo(49);
+    }];
+    commentView.placeholder = @"   留下你的精彩评论~~~";
+    // [textField1 setValue:[UIColor greenColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [commentView setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    //commentView.backgroundColor = [UIColor redColor];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

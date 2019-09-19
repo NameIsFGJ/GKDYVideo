@@ -218,6 +218,9 @@
     }];
    // self.priceLabel.text = @"¥25.50";
     self.priceLabel.text = self.price;
+    NSLog(@"self.p34rice  =%@",self.price);
+    
+    NSLog(@"self.priceLabel.text  =%@",self.priceLabel.text);
     self.priceLabel.font = [UIFont systemFontOfSize:15];
     
     UILabel *label1 = [[UILabel alloc]init];
@@ -252,8 +255,7 @@
         make.size.mas_equalTo(CGSizeMake(28*2, 28));
         make.right.equalTo(addButton.mas_left).offset(0);
     }];
-    self.countLabel.text = @"1";
-    self.count = 6;
+    self.countLabel.text= [NSString stringWithFormat:@"%ld",self.count];
     self.countLabel.font = [UIFont systemFontOfSize:15];
     self.countLabel.textAlignment = NSTextAlignmentCenter;
     self.countLabel.layer.borderWidth = .5;
@@ -333,17 +335,18 @@
     }];
     self.totalLabel.textColor = [UIColor redColor];
     self.totalLabel.font = [UIFont systemFontOfSize:22];
-    //self.totalLabel.text = @"¥00.00";
-    float price = [self.price floatValue];
     
-    // 运费
+    float price = [self.price floatValue];
+   
     float postMoney = self.postMoney;
     
     float total = price *1 + postMoney;
     
-    
     self.totalLabel.text = [NSString stringWithFormat:@"¥ %.2f",total];
     
+    self.orderAmount = total;
+    
+    self.goodsNum = 1;
     
     UIView *lineView3 = [[UIView alloc]init];
     [self.view addSubview:lineView3];
@@ -355,7 +358,6 @@
     lineView3.backgroundColor = [UIColor lightGrayColor];
     
 }
-
 
 - (void)countButtonActon:(UIButton *)btn
 {
@@ -373,7 +375,6 @@
         
         // 单价
         float price = [self.price floatValue];
-        
         // 运费
         float postMoney = self.postMoney;
         
@@ -386,7 +387,6 @@
         
     }else if (btn.tag == 101)
     {
-       
        NSInteger count = [self.countLabel.text integerValue];
         count ++;
         
@@ -395,9 +395,6 @@
         }
         
         self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
-//        if (count <= self.count) {
-//            self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
-//        }
         
         // 计算  总价 =  单价 * 数量 + 运费
         //       total = price * count + postMoney
@@ -448,21 +445,19 @@
     }
     
     [AddNetworking postAddWithToken:kUser.user_token
-                        withGoodsID:self.model.ide
-                        withSalerID:[kUser.user_id integerValue]
+                        withGoodsID:self.goodsId
+                        withSalerID:self.salerId
                       withAddressID:self.addressID
                     withOrderAmount:self.orderAmount
                      withGoodsPrice:[self.price floatValue]
-                       withGoodsNum:self.goodsNum completion:^(NSInteger orderNum, NSError * _Nonnull error) {
+                       withGoodsNum:self.goodsNum completion:^(NSDictionary *dataDic, NSError * _Nonnull error) {
                            
                            [self.view addSubview:self.payView];
-                           self.payView.orderSn = orderNum;
+                           self.payView.orderSn = [dataDic[@"order_sn"] integerValue];
+                           self.payView.orderAmount = [dataDic[@"order_amount"] floatValue];
                            self.payView.frame = self.view.bounds;
-                           
+                            
     }];
-    
-   
-    
 }
 
 #pragma mark 懒加载

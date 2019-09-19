@@ -15,7 +15,7 @@
 #import "MarketModel.h"
 #import "WSLWaterFlowLayout.h"
 #import "MarketShopDetailViewController.h"
-#import "MarketOrderViewController.h"
+
 @interface MarketViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
 @property (strong, nonatomic)UICollectionView *collectionView;
 @property (strong, nonatomic)NSArray *itemsArray;
@@ -129,10 +129,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   // NSLog(@"indexPath.row  =%ld",indexPath.row);
-    
-  //  MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
-    
    MarketShopDetailViewController *vc = [[MarketShopDetailViewController alloc]init];
     vc.ide = 1;
     vc.hidesBottomBarWhenPushed = YES;

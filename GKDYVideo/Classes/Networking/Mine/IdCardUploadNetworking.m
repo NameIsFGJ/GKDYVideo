@@ -17,10 +17,10 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager POST:urlStr parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSData *imageData1 = UIImageJPEGRepresentation(pic, .5);
-        [formData appendPartWithFileData:imageData1 name:@"pic" fileName:@"image1" mimeType:@"image/jpeg"];
+        [formData appendPartWithFileData:imageData1 name:@"pic" fileName:@"image1.png" mimeType:@"image/jpeg"];
         
         NSData *imageData2 = UIImageJPEGRepresentation(picUn, .5);
-        [formData appendPartWithFileData:imageData2 name:@"pic_un" fileName:@"image2" mimeType:@"image/jpeg"];
+        [formData appendPartWithFileData:imageData2 name:@"pic_un" fileName:@"image2.png" mimeType:@"image/jpeg"];
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         

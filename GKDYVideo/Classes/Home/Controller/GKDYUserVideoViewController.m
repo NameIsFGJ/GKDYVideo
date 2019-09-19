@@ -27,7 +27,7 @@
 
 - (void)makeUI
 {
-    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
     
     if (self.vcType == 1) {
         NSLog(@"我的作品");
@@ -75,7 +75,7 @@
     }
     
     GKDYPlayerViewController *playerVC = [[GKDYPlayerViewController alloc]initWithVideos:itemsArray index:indexPath.item];
-    
+    playerVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:playerVC animated:YES];
 }
 

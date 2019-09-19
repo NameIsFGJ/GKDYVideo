@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSInteger count;
 // 运费
 @property (assign, nonatomic) NSInteger postMoney;
+
+// 商品id
+@property (assign, nonatomic) NSInteger goodsId;
+// 卖家 id
+@property (assign, nonatomic) NSInteger salerId;
 @end
 
 NS_ASSUME_NONNULL_END

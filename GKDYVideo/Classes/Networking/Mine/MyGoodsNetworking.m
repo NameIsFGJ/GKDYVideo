@@ -18,7 +18,6 @@
     
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        NSLog(@"respo34nseObj  =%@",responseObj);
         if ([[responseObj objectForKey:@"code"]integerValue] == 1) {
             
             NSDictionary *dic =  [responseObj objectForKey:@"data"];

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
          withOrderAmount:(float)orderAmount
           withGoodsPrice:(float)goodsPrice
             withGoodsNum:(NSInteger)goodsNum
-              completion:(void(^)(NSInteger orderNum,NSError *error))completionHandle;
+              completion:(void(^)(NSDictionary *dataDic,NSError *error))completionHandle;
 
 @end
 

@@ -20,7 +20,6 @@
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
         if ([[responseObj objectForKey:@"code"] integerValue] == 1) {
-            NSLog(@"responseOb34j  =%@",responseObj);
             NSDictionary *data = [responseObj objectForKey:@"data"];
             NSArray *rows = [data objectForKey:@"rows"];
             NSMutableArray *itemsArray = [NSMutableArray array];

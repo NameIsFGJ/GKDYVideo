@@ -19,7 +19,7 @@
     [self addSubview:self.popButton];
     [self.popButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(12);
-        make.top.mas_equalTo(24);
+        make.top.mas_equalTo(KStatusBarHeight);
         make.size.mas_equalTo(CGSizeMake(15, 23));
     }];
     

@@ -110,6 +110,7 @@
 		9166A5FC232F6F6A00BA68E5 /* OrderReturnFalseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5FB232F6F6A00BA68E5 /* OrderReturnFalseViewController.m */; };
 		9166A5FF232F720100BA68E5 /* OrderReturnApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5FE232F720100BA68E5 /* OrderReturnApplyViewController.m */; };
 		9166A602232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A601232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.m */; };
+		9166A605232F7A1000BA68E5 /* TestUploadNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A604232F7A1000BA68E5 /* TestUploadNetworking.m */; };
 		916B675F2317A172000E6F8A /* MusicNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 916B675E2317A172000E6F8A /* MusicNetworking.m */; };
 		916B67622317A1AD000E6F8A /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916B67612317A1AD000E6F8A /* MusicModel.m */; };
 		916B67652317A72C000E6F8A /* MusicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916B67642317A72C000E6F8A /* MusicsViewController.m */; };
@@ -162,11 +163,17 @@
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91BC3647230AA0420052A11A /* MarkCollectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3646230AA0420052A11A /* MarkCollectionFootView.m */; };
 		91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */; };
+		91C1E5F723307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1E5F623307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m */; };
+		91C1E5FA2330A2930058FAA4 /* ToPaySuccessNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1E5F92330A2930058FAA4 /* ToPaySuccessNetworking.m */; };
 		91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */; };
 		91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */; };
 		91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17D22F42BC20090AE00 /* AddGoodsModel.m */; };
 		91C25BFD232CACCD00A6B629 /* ReturnGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C25BFC232CACCD00A6B629 /* ReturnGoodsNetworking.m */; };
 		91C25C00232CAED700A6B629 /* ReturnGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C25BFF232CAED700A6B629 /* ReturnGoodsViewController.m */; };
+		91C3B74E233328A600BDAF46 /* OrderDetilNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B74D233328A600BDAF46 /* OrderDetilNetworking.m */; };
+		91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B75323332A3B00BDAF46 /* OrderDetailModel.m */; };
+		91C3B757233344CF00BDAF46 /* OrderDetailBuyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B756233344CF00BDAF46 /* OrderDetailBuyerViewController.m */; };
+		91C3B75A2333450100BDAF46 /* OrderDetailSalerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B7592333450100BDAF46 /* OrderDetailSalerViewController.m */; };
 		91C9C1D222E69D7E00D0A87E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D122E69D7E00D0A87E /* User.m */; };
 		91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */; };
 		91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */; };
@@ -459,6 +466,8 @@
 		9166A5FE232F720100BA68E5 /* OrderReturnApplyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderReturnApplyViewController.m; sourceTree = "<group>"; };
 		9166A600232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnGoodsDetaiSellerViewController.h; sourceTree = "<group>"; };
 		9166A601232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnGoodsDetaiSellerViewController.m; sourceTree = "<group>"; };
+		9166A603232F7A1000BA68E5 /* TestUploadNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestUploadNetworking.h; sourceTree = "<group>"; };
+		9166A604232F7A1000BA68E5 /* TestUploadNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestUploadNetworking.m; sourceTree = "<group>"; };
 		916B675D2317A172000E6F8A /* MusicNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicNetworking.h; sourceTree = "<group>"; };
 		916B675E2317A172000E6F8A /* MusicNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicNetworking.m; sourceTree = "<group>"; };
 		916B67602317A1AD000E6F8A /* MusicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
@@ -559,6 +568,10 @@
 		91BC3646230AA0420052A11A /* MarkCollectionFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionFootView.m; sourceTree = "<group>"; };
 		91BD725B22EFEC2D00F517F6 /* SearchVideosNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideosNetworking.h; sourceTree = "<group>"; };
 		91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideosNetworking.m; sourceTree = "<group>"; };
+		91C1E5F523307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailStep2BuyerViewController.h; sourceTree = "<group>"; };
+		91C1E5F623307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailStep2BuyerViewController.m; sourceTree = "<group>"; };
+		91C1E5F82330A2930058FAA4 /* ToPaySuccessNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToPaySuccessNetworking.h; sourceTree = "<group>"; };
+		91C1E5F92330A2930058FAA4 /* ToPaySuccessNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToPaySuccessNetworking.m; sourceTree = "<group>"; };
 		91C1F17622F3CC2E0090AE00 /* AddGoodsInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsInfoView.h; sourceTree = "<group>"; };
 		91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsInfoView.m; sourceTree = "<group>"; };
 		91C1F17922F42B020090AE00 /* AddGoodsNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsNetworking.h; sourceTree = "<group>"; };
@@ -569,6 +582,14 @@
 		91C25BFC232CACCD00A6B629 /* ReturnGoodsNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnGoodsNetworking.m; sourceTree = "<group>"; };
 		91C25BFE232CAED700A6B629 /* ReturnGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnGoodsViewController.h; sourceTree = "<group>"; };
 		91C25BFF232CAED700A6B629 /* ReturnGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnGoodsViewController.m; sourceTree = "<group>"; };
+		91C3B74C233328A600BDAF46 /* OrderDetilNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetilNetworking.h; sourceTree = "<group>"; };
+		91C3B74D233328A600BDAF46 /* OrderDetilNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetilNetworking.m; sourceTree = "<group>"; };
+		91C3B75223332A3B00BDAF46 /* OrderDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailModel.h; sourceTree = "<group>"; };
+		91C3B75323332A3B00BDAF46 /* OrderDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailModel.m; sourceTree = "<group>"; };
+		91C3B755233344CF00BDAF46 /* OrderDetailBuyerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailBuyerViewController.h; sourceTree = "<group>"; };
+		91C3B756233344CF00BDAF46 /* OrderDetailBuyerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailBuyerViewController.m; sourceTree = "<group>"; };
+		91C3B7582333450100BDAF46 /* OrderDetailSalerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailSalerViewController.h; sourceTree = "<group>"; };
+		91C3B7592333450100BDAF46 /* OrderDetailSalerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailSalerViewController.m; sourceTree = "<group>"; };
 		91C9C1D022E69D7E00D0A87E /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		91C9C1D122E69D7E00D0A87E /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
@@ -1318,6 +1339,8 @@
 				91009143231E0648000F0767 /* QiniuTokenNetworking.m */,
 				91009145231E316E000F0767 /* UploadVideoNetworking.h */,
 				91009146231E316E000F0767 /* UploadVideoNetworking.m */,
+				9166A603232F7A1000BA68E5 /* TestUploadNetworking.h */,
+				9166A604232F7A1000BA68E5 /* TestUploadNetworking.m */,
 			);
 			path = AddGoods;
 			sourceTree = "<group>";
@@ -1339,6 +1362,8 @@
 				917FCE572320AB2400786775 /* MyBusinessNetworking.m */,
 				91D0BD64232889C900E0ABED /* DeleGoodsNetworking.h */,
 				91D0BD65232889C900E0ABED /* DeleGoodsNetworking.m */,
+				91C3B74C233328A600BDAF46 /* OrderDetilNetworking.h */,
+				91C3B74D233328A600BDAF46 /* OrderDetilNetworking.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1370,6 +1395,8 @@
 				91CDD505232A158B00483EB8 /* ToPayNetworking.m */,
 				91C25BFB232CACCD00A6B629 /* ReturnGoodsNetworking.h */,
 				91C25BFC232CACCD00A6B629 /* ReturnGoodsNetworking.m */,
+				91C1E5F82330A2930058FAA4 /* ToPaySuccessNetworking.h */,
+				91C1E5F92330A2930058FAA4 /* ToPaySuccessNetworking.m */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -1482,6 +1509,7 @@
 			children = (
 				912F4DA422E18C94004CF0DF /* Controller */,
 				912F4DA622E18C94004CF0DF /* View */,
+				912F4DA522E18C94004CF0DF /* Model */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -1504,7 +1532,6 @@
 				91125F0E2322570600A15FFE /* AddressEditViewController.m */,
 				914A86ED232601BD00DB324E /* AddressEditNewViewController.h */,
 				914A86EE232601BD00DB324E /* AddressEditNewViewController.m */,
-				912F4DA522E18C94004CF0DF /* Model */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1589,6 +1616,8 @@
 				917FCE5A2320B26000786775 /* MyBusinessModel.m */,
 				914A86E42325E30300DB324E /* AddressListModel.h */,
 				914A86E52325E30300DB324E /* AddressListModel.m */,
+				91C3B75223332A3B00BDAF46 /* OrderDetailModel.h */,
+				91C3B75323332A3B00BDAF46 /* OrderDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1621,6 +1650,8 @@
 				9166A5B1232F3E8E00BA68E5 /* OrderDetailStep1ViewController.m */,
 				9166A5B3232F504100BA68E5 /* OrderDetailStep2ViewController.h */,
 				9166A5B4232F504100BA68E5 /* OrderDetailStep2ViewController.m */,
+				91C1E5F523307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.h */,
+				91C1E5F623307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m */,
 				9166A5AC232F3D3300BA68E5 /* OrderDetailStep3ViewController.h */,
 				9166A5AD232F3D3300BA68E5 /* OrderDetailStep3ViewController.m */,
 				9166A5B6232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.h */,
@@ -1631,6 +1662,10 @@
 				9166A5FB232F6F6A00BA68E5 /* OrderReturnFalseViewController.m */,
 				9166A5FD232F720100BA68E5 /* OrderReturnApplyViewController.h */,
 				9166A5FE232F720100BA68E5 /* OrderReturnApplyViewController.m */,
+				91C3B755233344CF00BDAF46 /* OrderDetailBuyerViewController.h */,
+				91C3B756233344CF00BDAF46 /* OrderDetailBuyerViewController.m */,
+				91C3B7582333450100BDAF46 /* OrderDetailSalerViewController.h */,
+				91C3B7592333450100BDAF46 /* OrderDetailSalerViewController.m */,
 			);
 			path = OrderVC;
 			sourceTree = "<group>";
@@ -2229,6 +2264,7 @@
 				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
+				91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */,
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
@@ -2256,6 +2292,7 @@
 				91A05A13231CED2E00322752 /* PlayerView.m in Sources */,
 				91DD442D22FFDE2B009A4790 /* MarketModel.m in Sources */,
 				91FD2DE7231F9D3600FC2520 /* SuccessVideoViewController.m in Sources */,
+				9166A605232F7A1000BA68E5 /* TestUploadNetworking.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
 				91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */,
 				9165E367230102B600556AB7 /* IdCardUploadNetworking.m in Sources */,
@@ -2343,7 +2380,9 @@
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
 				91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */,
+				91C3B74E233328A600BDAF46 /* OrderDetilNetworking.m in Sources */,
 				910A8DA6230E439D0051CDA2 /* MarketSearchPriceViewController.m in Sources */,
+				91C1E5F723307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m in Sources */,
 				91F6222C230BE94E0088730D /* MarketSearchCollectionViewCell.m in Sources */,
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				914A86F2232621F800DB324E /* AddressSelectView.m in Sources */,
@@ -2351,6 +2390,7 @@
 				91CDD577232A2AEB00483EB8 /* APOrderInfo.m in Sources */,
 				9162CFAF22F97C010094EB7E /* MineViewController.m in Sources */,
 				91D2AC6222F9172600179C88 /* MessageCommonTableViewCell.m in Sources */,
+				91C1E5FA2330A2930058FAA4 /* ToPaySuccessNetworking.m in Sources */,
 				91D2E82622EEB3F80065FB0B /* UserTableViewCell.m in Sources */,
 				9165E36A2301339100556AB7 /* DealSetViewController.m in Sources */,
 				91D2AC7422F9608700179C88 /* MyFansNetworking.m in Sources */,
@@ -2391,6 +2431,7 @@
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
 				916B67622317A1AD000E6F8A /* MusicModel.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
+				91C3B75A2333450100BDAF46 /* OrderDetailSalerViewController.m in Sources */,
 				91009147231E316E000F0767 /* UploadVideoNetworking.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
@@ -2399,6 +2440,7 @@
 				91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */,
 				917FCE582320AB2400786775 /* MyBusinessNetworking.m in Sources */,
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
+				91C3B757233344CF00BDAF46 /* OrderDetailBuyerViewController.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
 				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
 				91DFEF872302559700DA2458 /* MyBusinessTableViewCell.m in Sources */,

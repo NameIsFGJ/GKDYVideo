@@ -116,7 +116,6 @@
     [reviseOrderButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [reviseOrderButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
     
-    
     UIButton *backOrderButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [tipView1 addSubview:backOrderButton];
     [backOrderButton mas_makeConstraints:^(MASConstraintMaker *make) {

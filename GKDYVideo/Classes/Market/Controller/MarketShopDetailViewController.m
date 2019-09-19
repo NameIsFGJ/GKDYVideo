@@ -12,8 +12,6 @@
 #import "MarketUserShopViewController.h"
 #import "MarketOrderViewController.h"
 #import "GoodsDetailNetworking.h"
-#import "ReturnGoodsDetailViewController.h"
-
 
 @interface MarketShopDetailViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (strong, nonatomic)WKWebView *webView;
@@ -39,7 +37,10 @@
 @property (assign, nonatomic) NSInteger count;
 // 运费
 @property (assign, nonatomic) NSInteger postMoney;
-
+// 商品id
+@property (assign, nonatomic) NSInteger goodsId;
+// 卖家 id
+@property (assign, nonatomic) NSInteger salerId;
 @end
 
 @implementation MarketShopDetailViewController
@@ -112,8 +113,11 @@
         }
         self.name = dic[@"name"];
         self.price = dic[@"price"];
-        self.count = (NSInteger)dic[@"count"];
-        self.postMoney = 7.00;
+        self.count = [dic[@"count"] integerValue];
+        self.goodsId = [dic[@"id"] integerValue];
+        self.salerId = [dic[@"user_id"] integerValue];
+        self.postMoney = 00.00;
+        
         
     }];
 }
@@ -183,32 +187,19 @@
 // 立即购买
 - (void)getBuyButtonAction
 {
-//    NSLog(@"点击购买");
-//    MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    vc.nickName = self.nickName;
-//    vc.head_pic = self.head_pic;
-//    vc.image_list = self.image_list;
-//    vc.name = self.name;
-//    vc.price = self.price;
-//    vc.count = self.count;
-//    vc.postMoney = self.postMoney;
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    
-    ReturnGoodsDetailViewController *vc = [[ReturnGoodsDetailViewController alloc]init];
+    NSLog(@"点击购买");
+    MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.nickName = self.nickName;
+    vc.head_pic = self.head_pic;
+    vc.image_list = self.image_list;
+    vc.name = self.name;
+    vc.price = self.price;
+    vc.count = self.count;
+    vc.goodsId = self.goodsId;
+    vc.salerId = self.salerId;
+    vc.postMoney = self.postMoney;
     [self.navigationController pushViewController:vc animated:YES];
-    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

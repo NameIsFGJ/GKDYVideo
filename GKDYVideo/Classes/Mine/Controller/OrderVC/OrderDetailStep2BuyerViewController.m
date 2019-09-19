@@ -1,19 +1,19 @@
 //
-//  OrderDetailStep3ViewController.m
+//  OrderDetailStep2BuyerViewController.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/9/16.
+//  Created by 冯高杰 on 2019/9/17.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "OrderDetailStep3ViewController.h"
+#import "OrderDetailStep2BuyerViewController.h"
 //申请退款
 #import "ReturnGoodsViewController.h"
-@interface OrderDetailStep3ViewController ()
+@interface OrderDetailStep2BuyerViewController ()
 
 @end
 
-@implementation OrderDetailStep3ViewController
+@implementation OrderDetailStep2BuyerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,7 +55,7 @@
         make.height.mas_equalTo(100);
         make.top.mas_equalTo(KTopViewHeight);
     }];
-    payMomentImageView.image = [UIImage imageNamed:@"payMoment3"];
+    payMomentImageView.image = [UIImage imageNamed:@"payMoment2"];
     
     UILabel *priceLabel = [[UILabel alloc]init];
     [self.view addSubview:priceLabel];
@@ -139,11 +139,11 @@
         make.right.mas_equalTo(-12);
         make.width.mas_equalTo(100);
         make.top.equalTo(expressNumberLabel.mas_top).offset(0);
-        
+
     }];
     expressNameLabel.text = @"顺丰物流";
     expressNameLabel.font = [UIFont systemFontOfSize:12];
-    
+
     UIView *lineView3 = [[UIView alloc]init];
     [self.view addSubview:lineView3];
     [lineView3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -153,19 +153,8 @@
         make.top.equalTo(expressNumberLabel.mas_bottom).offset(15);
     }];
     lineView3.backgroundColor = [UIColor lightGrayColor];
-    
-    UIButton *deliverGoodsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:deliverGoodsButton];
-    [deliverGoodsButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(0);
-        make.size.mas_equalTo(CGSizeMake(kWindowWidth/2 - 17, 50));
-        make.bottom.mas_equalTo(-(50+35));
-    }];
-    deliverGoodsButton.backgroundColor = [UIColor orangeColor];
-    [deliverGoodsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [deliverGoodsButton setTitle:@"提醒发货" forState:UIControlStateNormal];
-    [deliverGoodsButton addTarget:self action:@selector(deleiverButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    
+
+   
     
     UIButton *returnGoodsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:returnGoodsButton];
@@ -180,19 +169,17 @@
     [returnGoodsButton setTitle:@"我要退货" forState:UIControlStateNormal];
     [returnGoodsButton addTarget:self action:@selector(returnButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *confirmGoodsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:confirmGoodsButton];
-    
-    [confirmGoodsButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *deliverGoodsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:deliverGoodsButton];
+    [deliverGoodsButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(0);
         make.size.mas_equalTo(CGSizeMake(kWindowWidth/2 - 17, 50));
         make.bottom.mas_equalTo(0);
     }];
-    confirmGoodsButton.backgroundColor = [UIColor orangeColor];
-    [confirmGoodsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [confirmGoodsButton setTitle:@"确认收货" forState:UIControlStateNormal];
-    [confirmGoodsButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    
+    deliverGoodsButton.backgroundColor = [UIColor orangeColor];
+    [deliverGoodsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [deliverGoodsButton setTitle:@"提醒发货" forState:UIControlStateNormal];
+    [deliverGoodsButton addTarget:self action:@selector(deleiverButtonAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark Aciton
@@ -207,12 +194,6 @@
     ReturnGoodsViewController *vc = [[ReturnGoodsViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)confirmButtonAction
-{
-    NSLog(@"确定按钮");
-    
 }
 
 @end

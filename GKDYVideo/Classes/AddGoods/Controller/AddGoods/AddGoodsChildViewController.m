@@ -11,6 +11,7 @@
 #import "AddGoodsNetworking.h"
 #import "AddGoodsInfoModel.h"
 #import "AddGoodsModel.h"
+#import "TestUploadNetworking.h"
 @interface AddGoodsChildViewController ()<TZImagePickerControllerDelegate>
 @property (strong, nonatomic)UIScrollView *mainView;
 @property (strong, nonatomic)UIView *contentView;
@@ -273,6 +274,8 @@
 
 - (void)submitButtonAction
 {
+    
+    @weakify(self)
     [self showProgress];
     AddGoodsInfoModel *infoModel = [[AddGoodsInfoModel alloc]init];
     infoModel.user_token = kUser.user_token;
@@ -287,9 +290,14 @@
     infoModel.third_url = @"http://www.baidu.com";
     infoModel.video_id = 1;
     [AddGoodsNetworking postAddGoods:infoModel completion:^(AddGoodsModel * _Nonnull model, NSError * _Nonnull error) {
-        if ([model.msg isEqualToString:@"发布成功"]) {
+        @strongify(self)
+        if (model.code == 1) {
             [self hideProgress];
             [self showSuccessMsg:@"发布成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+            });
+            
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];

@@ -11,8 +11,8 @@
 #import "APOrderInfo.h"
 #import "APRSASigner.h"
 #import <AlipaySDK/AlipaySDK.h>
-#import "OrderDetailViewController.h"
-#import "OrderDetailStep3ViewController.h"
+#import "OrderDetailBuyerViewController.h"
+#import "ToPaySuccessNetworking.h"
 @interface ToPayView()
 
 @property (strong, nonatomic)NSDictionary *payDic;
@@ -37,6 +37,7 @@
     
     [self networking];
     [self makeUI];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toPayNetworking) name:@"AliPaySuccess" object:nil];
     
     return self;
 }
@@ -87,8 +88,7 @@
     }];
     [aliButton setImage:[UIImage imageNamed:@"zhifubao"] forState:UIControlStateNormal];
     [aliButton setTitle:@"支付宝" forState:UIControlStateNormal];
-    //[aliButton addTarget:self action:@selector(alipayButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [aliButton addTarget:self action:@selector(paySuccessAction) forControlEvents:UIControlEventTouchUpInside];
+    [aliButton addTarget:self action:@selector(toPayNetworking) forControlEvents:UIControlEventTouchUpInside];
     aliButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [aliButton layoutButtonWithEdgeInsetsStyle:CLButtonEdgeInsetsStyleTitleBottom imageTitleSpace:3];
     UIButton *wechatButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -123,18 +123,19 @@
     
 }
 
+- (void)aliPayButtonAction2
+{
+   
+}
+
+
 // 支付宝配置
 - (void)alipayButtonAction
 {
-    
-    
-    NSString *appID = self.payDic[@"app_id"];
-    appID = @"2019042364254490";
-    
+    NSString *appID = [NSString stringWithFormat:@"%@",self.payDic[@"app_id"]];
+    //appID = @"2019042364254490";
     NSString *rsa2PrivateKey = self.payDic[@"private_key"];
     NSString *rsaPrivateKey = @"";
-    NSLog(@"appID  =%@",appID);
-    NSLog(@"%@",rsa2PrivateKey);
     //将商品信息赋予AlixPayOrder的成员变量
     APOrderInfo* order = [APOrderInfo new];
     
@@ -164,12 +165,11 @@
     order.biz_content.subject = @"1";
     order.biz_content.out_trade_no = [NSString stringWithFormat:@"%ld",self.orderSn]; //订单ID（由商家自行制定）
     order.biz_content.timeout_express = @"30m"; //超时时间设置
-    order.biz_content.total_amount = [NSString stringWithFormat:@"%.2f", 0.01]; //商品价格
-    
+    order.biz_content.total_amount = [NSString stringWithFormat:@"%.2f", self.orderAmount]; //商品价格
+    order.notify_url = @"https://mftest.zjchuanwen.com/api/order/notifyx/type/alipay";
     //将商品信息拼接成字符串
     NSString *orderInfo = [order orderInfoEncoded:NO];
     NSString *orderInfoEncoded = [order orderInfoEncoded:YES];
-    NSLog(@"orderSpec = %@",orderInfo);
     
     // NOTE: 获取私钥并将商户信息签名，外部商户的加签过程请务必放在服务端，防止公私钥数据泄露；
     //       需要遵循RSA签名规范，并将签名字符串base64编码和UrlEncode
@@ -184,18 +184,20 @@
     // NOTE: 如果加签成功，则继续执行支付
     if (signedString != nil) {
         //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
-        NSString *appScheme = @"alisdkdemo";
+        NSString *appScheme = @"aliPayScheme";
         
         // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
         NSString *orderString = [NSString stringWithFormat:@"%@&sign=%@",
                                  orderInfoEncoded, signedString];
         
         // NOTE: 调用支付结果开始支付
+        //  (没有安装支付宝的情况下)网页支付
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-            NSLog(@"reslut = %@",resultDic);
+            
             if ([resultDic[@"resultStatus"]integerValue] == 9000) {
-                NSLog(@"支付成功");
-                [self paySuccessAction];
+            
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"AliPaySuccess" object:nil];
+                
             }
         }];
     }
@@ -209,9 +211,10 @@
 
 - (void)paySuccessAction
 {
-    OrderDetailStep3ViewController *vc = [[OrderDetailStep3ViewController alloc]init];
+    OrderDetailBuyerViewController *vc = [[OrderDetailBuyerViewController alloc]init];
+    vc.orderSn = self.orderSn;
     vc.hidesBottomBarWhenPushed = YES;
-    [self.viewController.navigationController pushViewController:vc animated:YES];
+    [self.viewContainingController.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)networking
@@ -223,6 +226,14 @@
     }];
 }
 
+// 调用 自己的接口    接收消息后进行处理的方法
+- (void)toPayNetworking
+{
+    [ToPaySuccessNetworking PostToPaySuccessNetworkingWithToken:kUser.user_token withOrderAmount:[NSString stringWithFormat:@"%.2f",self.orderAmount] withOrderSn:[NSString stringWithFormat:@"%ld",self.orderSn] withPayType:@"alipay" completion:^(NSString * _Nonnull data, NSError * _Nonnull error) {
+        NSLog(@"d34ata  =%@",data);
+    }];
+}
+
 #pragma mark  取消视图
 - (void)missView
 {
@@ -231,6 +242,9 @@
     }];
 }
 
-
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AliPaySuccess" object:nil];
+}
 
 @end

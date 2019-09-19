@@ -10,7 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @interface BaseModel : NSObject
 @property (assign, nonatomic)NSInteger code;
 @property (strong, nonatomic)NSString * msg;

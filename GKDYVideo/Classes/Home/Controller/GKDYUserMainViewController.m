@@ -233,6 +233,7 @@
         }];
     }];
 }
+
 #pragma mark UserHeadViewDelegate
 // 关注
 - (void)controlViewDidFollowing:(UserHeadView *)userView;

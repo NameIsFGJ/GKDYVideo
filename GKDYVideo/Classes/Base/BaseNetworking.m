@@ -14,7 +14,8 @@ static AFHTTPSessionManager *manager = nil;
     dispatch_once(&onceToken, ^{
         
         manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", @"text/javascript", @"text/plain", @"charset=utf-8", nil];
+  manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", @"text/javascript", @"text/plain", @"charset=utf-8", nil];
+       
     });
     return manager;
 }

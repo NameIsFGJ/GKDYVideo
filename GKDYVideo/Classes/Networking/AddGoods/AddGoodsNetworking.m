@@ -23,35 +23,33 @@
                             @"third_url":infoModel.third_url,
                             @"video_id":@(infoModel.video_id),
                             };
-    NSLog(@"urlStr =%@",urlStr);
-    NSLog(@"param  =%@",param);
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", @"text/javascript", @"text/plain",@"image/jpeg", @"image/png", @"charset=utf-8", nil];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
     
     [manager POST:urlStr parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        // avatar[0]
-        // image0
+
         [infoModel.avatar enumerateObjectsUsingBlock:^(UIImage * image, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"idx 34 =%ld",idx);
             NSData *imageData = UIImageJPEGRepresentation(image, .5);
             NSString *name = [NSString stringWithFormat:@"%@[%ld]",@"avatar",idx];
-            NSString *fileName = [NSString stringWithFormat:@"%@%ld",@"image",idx];
+            NSString *fileName = [NSString stringWithFormat:@"%@%ld.png",@"image",idx];
             [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:@"image/png"];
-            NSLog(@"imageData 34 =%@",imageData);
         }];
-        
     } progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@" ---AddGoods-- %lf",1.0*uploadProgress.completedUnitCount/uploadProgress.totalUnitCount);
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseO34bject  =%@",responseObject);
-        AddGoodsModel *model = [AddGoodsModel yy_modelWithDictionary:responseObject[@"data"]];
+        AddGoodsModel *model = [[AddGoodsModel alloc]init];
+        model.code = [responseObject[@"code"] integerValue];
         complectionHandle(model,nil);
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         complectionHandle(nil, error);
-        NSLog(@"erro33r  =%@",error);
+        NSLog(@"error 34 =%@",error);
     }];
+    
+    
+    
+    
 }
 
 @end

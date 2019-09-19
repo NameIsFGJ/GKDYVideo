@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AddGoodsModel : BaseModel
 @property (assign, nonatomic)NSInteger status;
-@property (strong, nonatomic)NSString *msg;
+//@property (strong, nonatomic)NSString *msg;
 @property (strong, nonatomic)NSString *result;
 @end
 
