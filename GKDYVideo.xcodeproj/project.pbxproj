@@ -207,6 +207,7 @@
 		91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82822EECA2E0065FB0B /* MusicTableViewCell.m */; };
 		91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */; };
 		91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E83222EEE9C80065FB0B /* SearchUserModel.m */; };
+		91D9810E23345F91006A6A92 /* ToPayDataNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D9810D23345F91006A6A92 /* ToPayDataNetworking.m */; };
 		91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72D5230CE2FE0085312E /* MarketUserShopViewController.m */; };
 		91DA72DA230CE7F80085312E /* MarketUserShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72D8230CE7F80085312E /* MarketUserShopCollectionViewCell.m */; };
 		91DA72DB230CE7F80085312E /* MarketUserShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DA72D9230CE7F80085312E /* MarketUserShopCollectionViewCell.xib */; };
@@ -751,6 +752,8 @@
 		91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
 		91D2E83122EEE9C80065FB0B /* SearchUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserModel.h; sourceTree = "<group>"; };
 		91D2E83222EEE9C80065FB0B /* SearchUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserModel.m; sourceTree = "<group>"; };
+		91D9810C23345F91006A6A92 /* ToPayDataNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToPayDataNetworking.h; sourceTree = "<group>"; };
+		91D9810D23345F91006A6A92 /* ToPayDataNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToPayDataNetworking.m; sourceTree = "<group>"; };
 		91DA72D4230CE2FE0085312E /* MarketUserShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopViewController.h; sourceTree = "<group>"; };
 		91DA72D5230CE2FE0085312E /* MarketUserShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketUserShopViewController.m; sourceTree = "<group>"; };
 		91DA72D7230CE7F80085312E /* MarketUserShopCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1397,6 +1400,8 @@
 				91C25BFC232CACCD00A6B629 /* ReturnGoodsNetworking.m */,
 				91C1E5F82330A2930058FAA4 /* ToPaySuccessNetworking.h */,
 				91C1E5F92330A2930058FAA4 /* ToPaySuccessNetworking.m */,
+				91D9810C23345F91006A6A92 /* ToPayDataNetworking.h */,
+				91D9810D23345F91006A6A92 /* ToPayDataNetworking.m */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -2265,6 +2270,7 @@
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
 				91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */,
+				91D9810E23345F91006A6A92 /* ToPayDataNetworking.m in Sources */,
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,

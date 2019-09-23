@@ -12,7 +12,7 @@
 #import "MarketUserShopViewController.h"
 #import "MarketOrderViewController.h"
 #import "GoodsDetailNetworking.h"
-
+#import "ToPaySuccessNetworking.h"
 @interface MarketShopDetailViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (strong, nonatomic)WKWebView *webView;
 @property (strong, nonatomic)WebViewJavascriptBridge *bridge;
@@ -200,6 +200,7 @@
     vc.salerId = self.salerId;
     vc.postMoney = self.postMoney;
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

@@ -69,6 +69,8 @@
     
     self.tempArray = [NSArray arrayWithObjects:model0,model1,model2,model3, nil];
 
+    
+   
 }
 
 - (void)makeUI

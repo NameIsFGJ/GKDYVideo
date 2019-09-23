@@ -64,12 +64,25 @@
             openURL:(NSURL *)url
             options:(NSDictionary<NSString*, id> *)options
 {
+   
+    @weakify(self)
     if ([url.host isEqualToString:@"safepay"]) {
         // 支付跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"resu333334lt = %@",resultDic);
+            @strongify(self)
             if ([resultDic[@"resultStatus"]integerValue] == 9000) {
+                [self showSuccessMsg:@"支付成功"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"AliPaySuccess" object:nil];
+            }else if ([resultDic[@"resultStatus"] integerValue] == 6001)
+            {
+                [self showErrorMsg:@"取消支付"];
+                 [[NSNotificationCenter defaultCenter] postNotificationName:@"AliPaySuccess" object:nil];
+            }else if ([resultDic[@"resultStatus"] integerValue] == 6002)
+            {
+                [self showErrorMsg:@"网络连接错误"];
+            }else if ([resultDic[@"resultStatus"] integerValue] == 4000)
+            {
+                [self showErrorMsg:@"订单支付失败"];
             }
         }];
     }
