@@ -71,6 +71,8 @@
 		9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */; };
 		9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */; };
 		9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */; };
+		912CE5292340409C00375DDD /* NewMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912CE5282340409C00375DDD /* NewMineViewController.m */; };
+		912CE5312340433800375DDD /* NewMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912CE5302340433800375DDD /* NewMineView.m */; };
 		912FCD2D233A0B1D00601E9C /* MyOrderTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */; };
 		9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45922E8872D00875B17 /* GetVideoCommentView.m */; };
 		9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */; };
@@ -396,6 +398,10 @@
 		9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentNetworking.m; sourceTree = "<group>"; };
 		9128513C22E999BA00AF0DE6 /* GetVideoCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentModel.h; sourceTree = "<group>"; };
 		9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentModel.m; sourceTree = "<group>"; };
+		912CE5272340409C00375DDD /* NewMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMineViewController.h; sourceTree = "<group>"; };
+		912CE5282340409C00375DDD /* NewMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMineViewController.m; sourceTree = "<group>"; };
+		912CE52F2340433800375DDD /* NewMineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMineView.h; sourceTree = "<group>"; };
+		912CE5302340433800375DDD /* NewMineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMineView.m; sourceTree = "<group>"; };
 		912F4DAC22E18DF3004CF0DF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		912F4DAD22E18DF3004CF0DF /* AppInfoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoConstant.h; sourceTree = "<group>"; };
 		912F4DAE22E18DF3004CF0DF /* ColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorConstants.h; sourceTree = "<group>"; };
@@ -1215,6 +1221,82 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		912CE5252340406300375DDD /* OldVC */ = {
+			isa = PBXGroup;
+			children = (
+				9162CFAD22F97C010094EB7E /* MineViewController.h */,
+				9162CFAE22F97C010094EB7E /* MineViewController.m */,
+				9166A5AF232F3D4000BA68E5 /* OrderVC */,
+				91BB79BA230004D60049BC41 /* EnditVC */,
+				91DD443A22FFEAEE009A4790 /* SetViewController.h */,
+				91DD443B22FFEAEE009A4790 /* SetViewController.m */,
+				91BB79BB23000BF10049BC41 /* IDCardViewController.h */,
+				91BB79BC23000BF10049BC41 /* IDCardViewController.m */,
+				9165E3682301339100556AB7 /* DealSetViewController.h */,
+				9165E3692301339100556AB7 /* DealSetViewController.m */,
+				9165E36B2301530E00556AB7 /* IssueViewController.h */,
+				9165E36C2301530E00556AB7 /* IssueViewController.m */,
+				91DFEF812302522900DA2458 /* MyBusinessViewController.h */,
+				91DFEF822302522900DA2458 /* MyBusinessViewController.m */,
+				912FCD2B233A0B1D00601E9C /* MyOrderTotalViewController.h */,
+				912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */,
+				91C25BFE232CAED700A6B629 /* ReturnGoodsViewController.h */,
+				91C25BFF232CAED700A6B629 /* ReturnGoodsViewController.m */,
+				9166A5A9232F1B1300BA68E5 /* ReturnGoodsDetailViewController.h */,
+				9166A5AA232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m */,
+				9166A600232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.h */,
+				9166A601232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.m */,
+				91D80278233B528500659A01 /* EditGoodsViewController.h */,
+				91D80279233B528500659A01 /* EditGoodsViewController.m */,
+			);
+			path = OldVC;
+			sourceTree = "<group>";
+		};
+		912CE5262340407700375DDD /* NewVC */ = {
+			isa = PBXGroup;
+			children = (
+				912CE5272340409C00375DDD /* NewMineViewController.h */,
+				912CE5282340409C00375DDD /* NewMineViewController.m */,
+			);
+			path = NewVC;
+			sourceTree = "<group>";
+		};
+		912CE52A2340415F00375DDD /* OldView */ = {
+			isa = PBXGroup;
+			children = (
+				91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */,
+				91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */,
+				9162CFA722F976A70094EB7E /* MineHeadView.h */,
+				9162CFA822F976A70094EB7E /* MineHeadView.m */,
+				91DD443222FFE442009A4790 /* SetTableViewCell.h */,
+				91DD443322FFE442009A4790 /* SetTableViewCell.m */,
+				91DD443422FFE442009A4790 /* SetTableViewCell.xib */,
+				9165E3732301657300556AB7 /* IssueTableViewCell.h */,
+				9165E3742301657300556AB7 /* IssueTableViewCell.m */,
+				9165E3752301657300556AB7 /* IssueTableViewCell.xib */,
+				91DFEF842302559700DA2458 /* MyBusinessTableViewCell.h */,
+				91DFEF852302559700DA2458 /* MyBusinessTableViewCell.m */,
+				91DFEF862302559700DA2458 /* MyBusinessTableViewCell.xib */,
+				91D8026E233B189600659A01 /* MySellTableViewCell.h */,
+				91D8026F233B189600659A01 /* MySellTableViewCell.m */,
+				91D80270233B189600659A01 /* MySellTableViewCell.xib */,
+				91D80273233B19B600659A01 /* MyBuyTableViewCell.h */,
+				91D80274233B19B600659A01 /* MyBuyTableViewCell.m */,
+				91D80275233B19B600659A01 /* MyBuyTableViewCell.xib */,
+				91DD442E22FFE033009A4790 /* SetView */,
+			);
+			path = OldView;
+			sourceTree = "<group>";
+		};
+		912CE52B2340417900375DDD /* NewView */ = {
+			isa = PBXGroup;
+			children = (
+				912CE52F2340433800375DDD /* NewMineView.h */,
+				912CE5302340433800375DDD /* NewMineView.m */,
+			);
+			path = NewView;
+			sourceTree = "<group>";
+		};
 		912F4D8E22E18C93004CF0DF /* AddGoods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1580,30 +1662,8 @@
 		912F4DA922E18C94004CF0DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9162CFAD22F97C010094EB7E /* MineViewController.h */,
-				9162CFAE22F97C010094EB7E /* MineViewController.m */,
-				9166A5AF232F3D4000BA68E5 /* OrderVC */,
-				91BB79BA230004D60049BC41 /* EnditVC */,
-				91DD443A22FFEAEE009A4790 /* SetViewController.h */,
-				91DD443B22FFEAEE009A4790 /* SetViewController.m */,
-				91BB79BB23000BF10049BC41 /* IDCardViewController.h */,
-				91BB79BC23000BF10049BC41 /* IDCardViewController.m */,
-				9165E3682301339100556AB7 /* DealSetViewController.h */,
-				9165E3692301339100556AB7 /* DealSetViewController.m */,
-				9165E36B2301530E00556AB7 /* IssueViewController.h */,
-				9165E36C2301530E00556AB7 /* IssueViewController.m */,
-				91DFEF812302522900DA2458 /* MyBusinessViewController.h */,
-				91DFEF822302522900DA2458 /* MyBusinessViewController.m */,
-				912FCD2B233A0B1D00601E9C /* MyOrderTotalViewController.h */,
-				912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */,
-				91C25BFE232CAED700A6B629 /* ReturnGoodsViewController.h */,
-				91C25BFF232CAED700A6B629 /* ReturnGoodsViewController.m */,
-				9166A5A9232F1B1300BA68E5 /* ReturnGoodsDetailViewController.h */,
-				9166A5AA232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m */,
-				9166A600232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.h */,
-				9166A601232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.m */,
-				91D80278233B528500659A01 /* EditGoodsViewController.h */,
-				91D80279233B528500659A01 /* EditGoodsViewController.m */,
+				912CE5262340407700375DDD /* NewVC */,
+				912CE5252340406300375DDD /* OldVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1630,26 +1690,8 @@
 		912F4DAB22E18C94004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */,
-				91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */,
-				9162CFA722F976A70094EB7E /* MineHeadView.h */,
-				9162CFA822F976A70094EB7E /* MineHeadView.m */,
-				91DD443222FFE442009A4790 /* SetTableViewCell.h */,
-				91DD443322FFE442009A4790 /* SetTableViewCell.m */,
-				91DD443422FFE442009A4790 /* SetTableViewCell.xib */,
-				9165E3732301657300556AB7 /* IssueTableViewCell.h */,
-				9165E3742301657300556AB7 /* IssueTableViewCell.m */,
-				9165E3752301657300556AB7 /* IssueTableViewCell.xib */,
-				91DFEF842302559700DA2458 /* MyBusinessTableViewCell.h */,
-				91DFEF852302559700DA2458 /* MyBusinessTableViewCell.m */,
-				91DFEF862302559700DA2458 /* MyBusinessTableViewCell.xib */,
-				91D8026E233B189600659A01 /* MySellTableViewCell.h */,
-				91D8026F233B189600659A01 /* MySellTableViewCell.m */,
-				91D80270233B189600659A01 /* MySellTableViewCell.xib */,
-				91D80273233B19B600659A01 /* MyBuyTableViewCell.h */,
-				91D80274233B19B600659A01 /* MyBuyTableViewCell.m */,
-				91D80275233B19B600659A01 /* MyBuyTableViewCell.xib */,
-				91DD442E22FFE033009A4790 /* SetView */,
+				912CE52B2340417900375DDD /* NewView */,
+				912CE52A2340415F00375DDD /* OldView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2396,6 +2438,7 @@
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
 				91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */,
 				9162CFA922F976A70094EB7E /* MineHeadView.m in Sources */,
+				912CE5312340433800375DDD /* NewMineView.m in Sources */,
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
 				914A86E62325E30300DB324E /* AddressListModel.m in Sources */,
 				91D2AC7B22F968C700179C88 /* MyFriendTableViewCell.m in Sources */,
@@ -2474,6 +2517,7 @@
 				9162CFAF22F97C010094EB7E /* MineViewController.m in Sources */,
 				91D2AC6222F9172600179C88 /* MessageCommonTableViewCell.m in Sources */,
 				91C1E5FA2330A2930058FAA4 /* ToPaySuccessNetworking.m in Sources */,
+				912CE5292340409C00375DDD /* NewMineViewController.m in Sources */,
 				91D2E82622EEB3F80065FB0B /* UserTableViewCell.m in Sources */,
 				9165E36A2301339100556AB7 /* DealSetViewController.m in Sources */,
 				91D2AC7422F9608700179C88 /* MyFansNetworking.m in Sources */,
@@ -2712,6 +2756,7 @@
 			baseConfigurationReference = ACB89D940248F84479D31DDA /* Pods-GKDYVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 644PYJX94Q;
@@ -2768,6 +2813,7 @@
 			baseConfigurationReference = 126D76C9517C38C3B7C81D53 /* Pods-GKDYVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 644PYJX94Q;

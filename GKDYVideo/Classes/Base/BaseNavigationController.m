@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak BaseNavigationController * weakSelf = self;
-    [self.navigationBar setBarTintColor:[UIColor blackColor]];
+    [self.navigationBar setBarTintColor:[UIColor whiteColor]];
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
     {
         self.interactivePopGestureRecognizer.delegate = weakSelf;

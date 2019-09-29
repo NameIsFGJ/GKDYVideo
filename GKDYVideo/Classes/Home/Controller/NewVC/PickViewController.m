@@ -39,30 +39,13 @@
     control.selectedSegmentIndex = 0;
     
     [self.view addSubview:self.searchBar];
-    self.searchBar.frame = CGRectMake(30, CGRectGetMaxY(control.frame) + 30, kWindowWidth-60, 35);
+    self.searchBar.frame = CGRectMake(30, NAVBAR_HEIGHT, kWindowWidth-60, 35);
     self.searchBar.delegate = self;
-    
-//    self.searchBar.frame = CGRectMake(30, CGRectGetMaxY(control.frame) + 30, kWindowWidth-60, 35);
-//    self.searchBar.placeholder = @"搜索你要找的内容";
-//    //self.searchBar.backgroundImage = [UIImage imageNamed:@"bg"];
-//    self.searchBar.textFieldSearchBar.backgroundColor = [UIColor clearColor];
-//   // self.searchBar.backgroundColor = [UIColor blueColor];
-//    self.searchBar.barTintColor = [UIColor whiteColor];
-//    self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
-//    self.searchBar.showsScopeBar = YES;
-//    self.searchBar.delegate = self;
-//
-    
-    unsigned int count;
-    Ivar *inarList = class_copyIvarList([self class], &count);
-    for (unsigned int i = 0; i < count; i++) {
-        
-    }
     
     self.contentView = [[UIView alloc]init];
     [self.view addSubview:self.contentView];
-    self.contentView.frame = CGRectMake(0, 100, kWindowWidth, kWindowHeight - 100-49);
-    self.contentView.backgroundColor = [UIColor redColor];
+    self.contentView.frame = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame)+20, kWindowWidth, kWindowHeight -NAVBAR_HEIGHT-35 -TABBAR_HEIGHT-20);
+    //self.contentView.backgroundColor = [UIColor redColor];
     
     [self addChildViewController:self.recommendVC];
     self.recommendVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));

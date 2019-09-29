@@ -19,7 +19,7 @@
 #import "AddGoodsViewController.h"
 // 新版本
 #import "PickViewController.h"
-#import "PickRecommendViewController.h"
+#import "NewMineViewController.h"
 @interface GKDYMainViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -36,7 +36,7 @@
     [self addChildVC:[MarketViewController new] withTitle:@"餐厅" withImage:@"table2" withSelectImage:@"tab_2_selected"];
     [self addChildVC:[AddGoodsViewController new] withImage:@"_s-jia_icon" withSelectImage:@"_s-jia_icon"];
     [self addChildVC:[MessageViewController new] withTitle:@"饭圈" withImage:@"table3" withSelectImage:@"tab_3_selected"];
-    [self addChildVC:[MineViewController new] withTitle:@"米仓" withImage:@"table4" withSelectImage:@"tab_4_selected"];
+    [self addChildVC:[NewMineViewController new] withTitle:@"米仓" withImage:@"table4" withSelectImage:@"tab_4_selected"];
     
 }
 

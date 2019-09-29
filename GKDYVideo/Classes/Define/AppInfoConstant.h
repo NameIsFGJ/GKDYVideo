@@ -61,6 +61,8 @@ CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
 :\
 NO)
 
+#define isIPhoneXAll ([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)
+
 #pragma mark - UI
 // 屏幕宽高
 //#define kWindowWidth        [UIScreen mainScreen].bounds.size.width
