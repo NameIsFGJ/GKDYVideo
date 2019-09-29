@@ -218,9 +218,6 @@
     }];
    // self.priceLabel.text = @"¥25.50";
     self.priceLabel.text = self.price;
-    NSLog(@"self.p34rice  =%@",self.price);
-    
-    NSLog(@"self.priceLabel.text  =%@",self.priceLabel.text);
     self.priceLabel.font = [UIFont systemFontOfSize:15];
     
     UILabel *label1 = [[UILabel alloc]init];
@@ -428,6 +425,7 @@
         NSString *address = [model.city stringByReplacingOccurrencesOfString:@"/" withString:@" "];
         self.userAddressLabel.text = [NSString stringWithFormat:@"%@%@",model.city,address];
     };
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -455,6 +453,7 @@
                            [self.view addSubview:self.payView];
                            self.payView.orderSn = [dataDic[@"order_sn"] integerValue];
                            self.payView.orderAmount = [dataDic[@"order_amount"] floatValue];
+                           
                            self.payView.frame = self.view.bounds;
                             
     }];

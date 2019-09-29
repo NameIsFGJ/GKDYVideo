@@ -80,4 +80,5 @@
     
     self.saleCountLabel.text = [NSString stringWithFormat:@"销售量: %ld",searchModel.sale_count];
 }
+
 @end

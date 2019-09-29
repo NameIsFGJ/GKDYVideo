@@ -17,6 +17,11 @@
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/order/orderDetail"];
     NSDictionary *para = @{@"type":@(type),@"token":kUser.user_token,@"order_id":@(orderID)};
+    
+    NSLog(@"urlS34tr  =%@",urlStr);
+    NSLog(@"par11a  =%@",para);
+    
+    
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {

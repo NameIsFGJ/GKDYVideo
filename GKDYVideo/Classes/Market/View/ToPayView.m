@@ -130,11 +130,10 @@
 {
     @weakify(self)
     [ToPaySuccessNetworking PostToPaySuccessNetworkingWithToken:kUser.user_token withOrderAmount:[NSString stringWithFormat:@"%.2f",self.orderAmount] withOrderSn:[NSString stringWithFormat:@"%ld",self.orderSn] withPayType:@"alipay" completion:^(NSString * _Nonnull data, NSError * _Nonnull error) {
-        NSLog(@"d34at11a  =%@",data);
         if (data.length > 1) {
             
             [[AlipaySDK defaultService] payOrder:data fromScheme:@"aliPayScheme" callback:^(NSDictionary *resultDic) {
-                NSLog(@"res1ultDic  =%@",resultDic);
+                
                 if ([resultDic[@"resultStatus"] integerValue] == 9000)
                 {
                     @strongify(self)
@@ -168,7 +167,8 @@
 - (void)paySuccessAction
 {
     OrderDetailBuyerViewController *vc = [[OrderDetailBuyerViewController alloc]init];
-    vc.orderSn = self.orderSn;
+    vc.orderID = self.orderSn;
+    NSLog(@"self.orderSn323  =%ld",self.orderSn);
     vc.hidesBottomBarWhenPushed = YES;
     [self.viewContainingController.navigationController pushViewController:vc animated:YES];
 }

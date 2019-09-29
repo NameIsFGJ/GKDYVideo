@@ -16,9 +16,12 @@
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",kSERVICE,@"/api/order/myBusiness"];
     NSDictionary *para = @{@"token":kUser.user_token,@"page":@(page),@"type":@(type)};
+    NSLog(@"url34Str  =%@",urlStr);
+    NSLog(@"pa1ra =%@",para);
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
+       
         if ([[responseObj objectForKey:@"code"] integerValue] == 1) {
             NSDictionary *data = [responseObj objectForKey:@"data"];
             NSArray *rows = [data objectForKey:@"rows"];

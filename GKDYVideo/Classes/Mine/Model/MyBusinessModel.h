@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic)NSInteger saler_id;
 @property (assign, nonatomic)NSInteger goods_id;
 @property (strong, nonatomic)NSString * goods_name;
-@property (assign, nonatomic)NSString * cover;
+@property (strong, nonatomic)NSString * cover;
 @property (assign, nonatomic)NSString * goods_price;
 @property (assign, nonatomic)NSString * order_amount;
 @property (assign, nonatomic)NSInteger goods_num;

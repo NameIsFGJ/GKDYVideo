@@ -12,7 +12,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    // 我买到的
+    if (self.cellType == cellBuyType) {
+        
+        
+        
+        // 我卖出的
+    }else if (self.cellType == cellSellTyle){
+        
+    }
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,21 +33,23 @@
 
 - (void)setModel:(MyBusinessModel *)model
 {
-    _model = model;
+    __weak typeof(self)weakSelf = self;
+     _model = model;
     //  商品图片
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,model.cover]]];
-    
+   // NSLog(@"self.coverImageView  =%p",self.coverImageView);
+    [weakSelf.coverImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kSERVICE,_model.cover]]];
+    //weakSelf.coverImageView.image = [UIImage imageNamed:@"getComImage"];
     //  商品名称
-    self.goodsName.text = model.goods_name;
+    weakSelf.goodsName.text = _model.goods_name;
     
     //  单价
-    self.goodsPriceLabel.text = model.goods_price;
+    weakSelf.goodsPriceLabel.text = _model.goods_price;
     
     //  件数
-    self.goodsNumLabel.text = [NSString stringWithFormat:@"%ld",model.goods_num];
+    weakSelf.goodsNumLabel.text = [NSString stringWithFormat:@"%ld",_model.goods_num];
     
     //  联系卖家
-    NSString *mobile = model.mobile;
+    //NSString *mobile = model.mobile;
     
     //  退款状态
     
@@ -52,8 +64,8 @@
         1 已付款 +  2 已发货     显示  卖家已发货
         1 已付款 +  3 已收货     显示  交易完成
      */
-     NSInteger payStatus = model.pay_status;
-     NSInteger shipStatus = model.ship_status;
+     NSInteger payStatus = _model.pay_status;
+     NSInteger shipStatus = _model.ship_status;
    
     
     if (payStatus == 0 && shipStatus == 0) {
@@ -76,9 +88,6 @@
         self.payStatusLabel.text = @"已付款";
         [self.deleteButton setTitle:@"交易完成" forState:UIControlStateNormal];
     }
-    
-    
-    
 }
 
 @end

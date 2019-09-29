@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)HotGoodsModel *model;
 @property (strong, nonatomic)RowsModel *searchModel;
 @property (weak, nonatomic) IBOutlet UILabel *saleCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
 
 
 

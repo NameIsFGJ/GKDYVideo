@@ -11,7 +11,7 @@
 #import "AddGoodsNetworking.h"
 #import "AddGoodsInfoModel.h"
 #import "AddGoodsModel.h"
-#import "TestUploadNetworking.h"
+
 @interface AddGoodsChildViewController ()<TZImagePickerControllerDelegate>
 @property (strong, nonatomic)UIScrollView *mainView;
 @property (strong, nonatomic)UIView *contentView;
@@ -50,7 +50,6 @@
     
     [self.view addSubview:self.mainView];
     self.mainView.frame = self.view.bounds;
-//[self.mainView setBackgroundColor: [UIColor yellowColor]];
     [self.mainView addSubview:self.contentView];
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.mainView);

@@ -10,6 +10,11 @@
 @class MyBusinessModel;
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum{
+    cellBuyType = 1,
+    cellSellTyle
+}CellType;
+
 @interface MyBusinessTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UILabel *goodsName;
@@ -19,8 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *contactLabel;
 @property (weak, nonatomic) IBOutlet UIButton *refundButton;
-
 @property (strong, nonatomic) MyBusinessModel *model;
+@property (assign, nonatomic) CellType cellType;
 @end
 
 NS_ASSUME_NONNULL_END

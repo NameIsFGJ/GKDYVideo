@@ -17,6 +17,9 @@
 #import "BaseNavigationController.h"
 #import "LoginViewController.h"
 #import "AddGoodsViewController.h"
+// 新版本
+#import "PickViewController.h"
+#import "PickRecommendViewController.h"
 @interface GKDYMainViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -29,11 +32,12 @@
     self.gk_statusBarHidden = NO;
     [self changeBackgroundColor];
     
-    [self addChildVC:[GKDYPageViewController new] withTitle:@"首页"];
-    [self addChildVC:[MarketViewController new] withTitle:@"商城"];
-    [self addChildVC:[AddGoodsViewController new] withImage:@"addGood" withSelectImage:@"addGood_select"];
-    [self addChildVCWithHasNewMessage:[MessageViewController new] withTitle:@"消息"];
-    [self addChildVC:[MineViewController new] withTitle:@"我"];
+    [self addChildVC:[PickViewController new] withTitle:@"种草" withImage:@"table1" withSelectImage:@"tab_1_selected"];
+    [self addChildVC:[MarketViewController new] withTitle:@"餐厅" withImage:@"table2" withSelectImage:@"tab_2_selected"];
+    [self addChildVC:[AddGoodsViewController new] withImage:@"_s-jia_icon" withSelectImage:@"_s-jia_icon"];
+    [self addChildVC:[MessageViewController new] withTitle:@"饭圈" withImage:@"table3" withSelectImage:@"tab_3_selected"];
+    [self addChildVC:[MineViewController new] withTitle:@"米仓" withImage:@"table4" withSelectImage:@"tab_4_selected"];
+    
 }
 
 - (void)changeBackgroundColor
@@ -41,12 +45,27 @@
     // 设置一个自定义 View,大小等于 tabBar 的大小
     UIView *bgView = [[UIView alloc] initWithFrame:self.tabBar.bounds];
     // 给自定义 View 设置颜色
-    bgView.backgroundColor = [UIColor blackColor];
+    bgView.backgroundColor = [UIColor whiteColor];
     // 将自定义 View 添加到 tabBar 上
     [self.tabBar insertSubview:bgView atIndex:0];
 }
 
-// 添加w文字
+// 添加 图片以及文字
+- (void)addChildVC:(UIViewController *)childVC withTitle:(NSString *)title withImage:(NSString *)image withSelectImage:(NSString *)selectImage
+{
+    childVC.tabBarItem.title = title;
+    childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0,0);
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0f], NSForegroundColorAttributeName: [UIColor colorWithHex:@"#000000"]} forState:UIControlStateNormal];
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0f], NSForegroundColorAttributeName: [UIColor colorWithHex:@"#F8537A"]} forState:UIControlStateSelected];
+    
+    childVC.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVC.tabBarItem.selectedImage = [[UIImage imageNamed:selectImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:childVC];
+    [self addChildViewController:nav];
+    
+}
+
+// 添加文字
 - (void)addChildVC:(UIViewController *) childVC withTitle:(NSString *) title{
     childVC.tabBarItem.title = title;
     childVC.tabBarItem.image = [[UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(36, 3)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -54,7 +73,6 @@
     
     childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -14);
     childVC.tabBarItem.imageInsets = UIEdgeInsetsMake(28, 0, -28, 0);
-    
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor lightGrayColor]} forState:UIControlStateNormal];
     [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName: kWhiteColor} forState:UIControlStateSelected];
     
@@ -100,10 +118,6 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-
-//    NSString *string1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_token"];
-//       NSString *string2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.user_id"];
-//       NSString *string3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.manfan.mobile"];
     BaseNavigationController * nav = (BaseNavigationController *)viewController;
     if ([[nav.viewControllers lastObject] isKindOfClass:[MineViewController class]])
     {

@@ -72,7 +72,10 @@
 - (void)makeUI
 {
     [self.view addSubview:self.tableView];
-    self.tableView.frame = self.view.bounds;
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(64);
+        make.left.right.bottom.mas_equalTo(0);
+    }];
 }
 
 #pragma mark UITableViewDelegate
@@ -124,6 +127,10 @@
 - (void)editButtonActionFromCell:(UIButton *)button;
 {
     MyGoodsModel *model = self.itemsArray[button.tag - 200];
+    
+    
+    
+    
     NSLog(@"编辑");
 }
 

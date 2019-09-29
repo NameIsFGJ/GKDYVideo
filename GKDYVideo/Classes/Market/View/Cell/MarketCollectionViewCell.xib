@@ -46,6 +46,13 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAN-Wc-Mec">
+                        <rect key="frame" x="43" y="54" width="93" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -68,13 +75,14 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <connections>
+                <outlet property="cellLabel" destination="JAN-Wc-Mec" id="rdJ-R2-E43"/>
                 <outlet property="goodsImageView" destination="hnf-uP-c4N" id="gnf-lX-CIx"/>
                 <outlet property="goodsNameLabel" destination="5oc-nH-7g7" id="EPj-J5-NXI"/>
                 <outlet property="goodsPriceLabel" destination="omj-XO-kwR" id="fex-0o-uh2"/>
                 <outlet property="imageHeight" destination="i1N-O3-FNx" id="Yu7-EN-D7u"/>
                 <outlet property="saleCountLabel" destination="QRg-mE-pdv" id="hsT-FR-qOD"/>
             </connections>
-            <point key="canvasLocation" x="-257.97101449275362" y="82.700892857142847"/>
+            <point key="canvasLocation" x="-257.97101449275362" y="82.03125"/>
         </collectionViewCell>
     </objects>
 </document>

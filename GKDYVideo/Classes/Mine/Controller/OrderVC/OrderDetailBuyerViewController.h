@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OrderDetailBuyerViewController : BaseViewController
-@property (assign, nonatomic)NSInteger orderSn;
+@property (assign, nonatomic)NSInteger orderID;
 @end
 
 NS_ASSUME_NONNULL_END

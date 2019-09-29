@@ -12,8 +12,6 @@
 //  退货
 #import "ReturnGoodsViewController.h"
 
-
-
 @interface OrderDetailBuyerViewController ()
 @property (strong, nonatomic) OrderDetailModel *model;
 
@@ -187,7 +185,6 @@
     [self.warnGoodsButton setTitle:@"提醒发货" forState:UIControlStateNormal];
     [self.warnGoodsButton addTarget:self action:@selector(warnGoodsButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
-    
     self.returnGoodsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:self.returnGoodsButton];
     
@@ -209,6 +206,7 @@
         make.size.mas_equalTo(CGSizeMake(kWindowWidth/2 - 17, 50));
         make.bottom.mas_equalTo(0);
     }];
+    
     self.confirmGoodsButton.backgroundColor = [UIColor orangeColor];
     [self.confirmGoodsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.confirmGoodsButton setTitle:@"确认收货" forState:UIControlStateNormal];
@@ -218,7 +216,9 @@
 
 - (void)networking
 {
-    [OrderDetilNetworking postOrderDetailNetworkingWithToken:kUser.user_token withType:1 withOrderID:self.orderSn completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
+    [OrderDetilNetworking postOrderDetailNetworkingWithToken:kUser.user_token withType:1 withOrderID:self.orderID completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
+        NSLog(@"array34  =%@",array);
+        
         self.model = [array firstObject];
         
         // 1.不用变的

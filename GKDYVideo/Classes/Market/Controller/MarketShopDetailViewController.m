@@ -12,7 +12,7 @@
 #import "MarketUserShopViewController.h"
 #import "MarketOrderViewController.h"
 #import "GoodsDetailNetworking.h"
-#import "ToPaySuccessNetworking.h"
+#import "OrderDetailBuyerViewController.h"
 @interface MarketShopDetailViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (strong, nonatomic)WKWebView *webView;
 @property (strong, nonatomic)WebViewJavascriptBridge *bridge;
@@ -71,13 +71,11 @@
 {
 //    _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kWindowWidth, kWindowHeight)];
 //    [self.view addSubview:_webView];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"test.html" ofType:nil];
-//    NSString *htmlString = [[NSString alloc]initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//
-//    [_webView loadHTMLString:htmlString baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+//    NSURL *url = [NSURL URLWithString:@"http://192.168.1.224:8080/#/"];
+//    [_webView loadRequest:[NSURLRequest requestWithURL:url]];
 //
 //    [self webBrige];
-    
+
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:btn];
@@ -87,10 +85,20 @@
         make.size.mas_equalTo(CGSizeMake(60, 60));
     }];
     [btn setBackgroundColor:[UIColor redColor]];
+    btn.titleLabel
+    .adjustsFontSizeToFitWidth = YES;
+    
     [btn setTitle:@"立即购买" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(getBuyButtonAction) forControlEvents:UIControlEventTouchUpInside];
-//    [[btn addTarget:self action:@selector(getBuyButtonAction) forControlEvents:UIControlEventTouchUpInside];
+   // [btn addTarget:self action:@selector(pushOrderDetail) forControlEvents:UIControlEventTouchUpInside];
     
+}
+
+- (void)pushOrderDetail
+{
+    OrderDetailBuyerViewController *vc = [[OrderDetailBuyerViewController alloc]init];
+   // vc.orderID = 156929054072648130;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 - (void)networking
@@ -102,7 +110,7 @@
         self.nickName = dic[@"user"][@"nickname"];
         self.head_url = dic[@"user"][@"head_pic"];
         
-        // 订单
+        // 发布者的头像
         self.head_pic = dic[@"user"][@"head_pic"];
         
         NSArray *imageArray = dic[@"image_list"];
@@ -128,7 +136,12 @@
     
     //    获取id  goodsID
     [self.bridge registerHandler:@"getGoodsIDAction" handler:^(id data, WVJBResponseCallback responseCallback) {
-        responseCallback(@(self.ide));
+        // 用户id 商品id 用户 token
+//        kUser.user_token
+       // NSDictionary *dic = @{@"ide":@(self.ide),@"userID":self.userId,@"userToken":self.userToken};
+        NSString *dataStr = [NSString stringWithFormat:@"%ld+%@+%@",self.ide,kUser.user_id,kUser.user_token];
+       // responseCallback(@"我是华家池的男人");
+        responseCallback(dataStr);
     }];
     
     //    返回    getBackViewAction
@@ -137,7 +150,7 @@
     }];
     
     //   分享
-    [self.bridge registerHandler:@"getBackViewAction" handler:^(id data, WVJBResponseCallback responseCallback) {
+    [self.bridge registerHandler:@"getShareGoodsAction" handler:^(id data, WVJBResponseCallback responseCallback) {
         [self shareButtonAction];
     }];
     
@@ -172,10 +185,11 @@
 // 点击头像,进入卖家商铺
 - (void)getIconShopViewAction
 {
-    MarketUserShopViewController *vc = [[MarketUserShopViewController alloc]init];
-    vc.userID = self.userID;
-    vc.head_url = self.head_url;
-    vc.nickName = self.nickName;
+    NSLog(@"点击商铺 点击头像");
+//    MarketUserShopViewController *vc = [[MarketUserShopViewController alloc]init];
+//    vc.userID = self.userID;
+//    vc.head_url = self.head_url;
+//    vc.nickName = self.nickName;
 }
 
 // 私信

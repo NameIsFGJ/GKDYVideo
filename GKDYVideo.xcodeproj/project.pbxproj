@@ -71,6 +71,7 @@
 		9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */; };
 		9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */; };
 		9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */; };
+		912FCD2D233A0B1D00601E9C /* MyOrderTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */; };
 		9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45922E8872D00875B17 /* GetVideoCommentView.m */; };
 		9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */; };
 		914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034D122E5DDF5006F1699 /* LikeVideoNewtworking.m */; };
@@ -102,10 +103,6 @@
 		9165E3762301657300556AB7 /* IssueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9165E3742301657300556AB7 /* IssueTableViewCell.m */; };
 		9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9165E3752301657300556AB7 /* IssueTableViewCell.xib */; };
 		9166A5AB232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5AA232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m */; };
-		9166A5AE232F3D3300BA68E5 /* OrderDetailStep3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5AD232F3D3300BA68E5 /* OrderDetailStep3ViewController.m */; };
-		9166A5B2232F3E8E00BA68E5 /* OrderDetailStep1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5B1232F3E8E00BA68E5 /* OrderDetailStep1ViewController.m */; };
-		9166A5B5232F504100BA68E5 /* OrderDetailStep2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5B4232F504100BA68E5 /* OrderDetailStep2ViewController.m */; };
-		9166A5B8232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5B7232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.m */; };
 		9166A5F9232F6A4700BA68E5 /* OrderReturnSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5F8232F6A4700BA68E5 /* OrderReturnSuccessViewController.m */; };
 		9166A5FC232F6F6A00BA68E5 /* OrderReturnFalseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5FB232F6F6A00BA68E5 /* OrderReturnFalseViewController.m */; };
 		9166A5FF232F720100BA68E5 /* OrderReturnApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9166A5FE232F720100BA68E5 /* OrderReturnApplyViewController.m */; };
@@ -156,6 +153,8 @@
 		91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ABABBC22FC029500E4593A /* NewBaseModel.m */; };
 		91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2256522EEF34700FFAA84 /* SearchUsersNetworking.m */; };
 		91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */; };
+		91B6C48A233DF5D10090A00F /* IntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B6C489233DF5D10090A00F /* IntroduceViewController.m */; };
+		91B6C48D233E07060090A00F /* PickSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B6C48C233E07060090A00F /* PickSearchBar.m */; };
 		91BABCE5230ACC1E00047A64 /* MarketCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BABCE3230ACC1E00047A64 /* MarketCollectionViewCell.m */; };
 		91BABCE6230ACC1E00047A64 /* MarketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BABCE4230ACC1E00047A64 /* MarketCollectionViewCell.xib */; };
 		91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB79BC23000BF10049BC41 /* IDCardViewController.m */; };
@@ -163,7 +162,6 @@
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91BC3647230AA0420052A11A /* MarkCollectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3646230AA0420052A11A /* MarkCollectionFootView.m */; };
 		91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */; };
-		91C1E5F723307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1E5F623307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m */; };
 		91C1E5FA2330A2930058FAA4 /* ToPaySuccessNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1E5F92330A2930058FAA4 /* ToPaySuccessNetworking.m */; };
 		91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17722F3CC2E0090AE00 /* AddGoodsInfoView.m */; };
 		91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1F17A22F42B020090AE00 /* AddGoodsNetworking.m */; };
@@ -174,6 +172,12 @@
 		91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B75323332A3B00BDAF46 /* OrderDetailModel.m */; };
 		91C3B757233344CF00BDAF46 /* OrderDetailBuyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B756233344CF00BDAF46 /* OrderDetailBuyerViewController.m */; };
 		91C3B75A2333450100BDAF46 /* OrderDetailSalerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B7592333450100BDAF46 /* OrderDetailSalerViewController.m */; };
+		91C3BB7C233C83610033E286 /* PickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3BB7B233C83610033E286 /* PickViewController.m */; };
+		91C3BB7F233C86D00033E286 /* PickSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3BB7E233C86D00033E286 /* PickSegmentedControl.m */; };
+		91C3BB84233C8ECC0033E286 /* PickRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3BB83233C8ECC0033E286 /* PickRecommendViewController.m */; };
+		91C3BB87233C8EFE0033E286 /* PickFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3BB86233C8EFE0033E286 /* PickFollowViewController.m */; };
+		91C3BB90233C94A90033E286 /* PickCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3BB8E233C94A90033E286 /* PickCollectionViewCell.m */; };
+		91C3BB91233C94A90033E286 /* PickCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C3BB8F233C94A90033E286 /* PickCollectionViewCell.xib */; };
 		91C9C1D222E69D7E00D0A87E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D122E69D7E00D0A87E /* User.m */; };
 		91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D422E6A3FC00D0A87E /* MineTableViewCell.m */; };
 		91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9C1D722E6BC5200D0A87E /* MyIndexNetworking.m */; };
@@ -207,6 +211,11 @@
 		91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82822EECA2E0065FB0B /* MusicTableViewCell.m */; };
 		91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */; };
 		91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2E83222EEE9C80065FB0B /* SearchUserModel.m */; };
+		91D80271233B189600659A01 /* MySellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8026F233B189600659A01 /* MySellTableViewCell.m */; };
+		91D80272233B189600659A01 /* MySellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91D80270233B189600659A01 /* MySellTableViewCell.xib */; };
+		91D80276233B19B600659A01 /* MyBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D80274233B19B600659A01 /* MyBuyTableViewCell.m */; };
+		91D80277233B19B600659A01 /* MyBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91D80275233B19B600659A01 /* MyBuyTableViewCell.xib */; };
+		91D8027A233B528500659A01 /* EditGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D80279233B528500659A01 /* EditGoodsViewController.m */; };
 		91D9810E23345F91006A6A92 /* ToPayDataNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D9810D23345F91006A6A92 /* ToPayDataNetworking.m */; };
 		91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72D5230CE2FE0085312E /* MarketUserShopViewController.m */; };
 		91DA72DA230CE7F80085312E /* MarketUserShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72D8230CE7F80085312E /* MarketUserShopCollectionViewCell.m */; };
@@ -391,6 +400,8 @@
 		912F4DAD22E18DF3004CF0DF /* AppInfoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoConstant.h; sourceTree = "<group>"; };
 		912F4DAE22E18DF3004CF0DF /* ColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorConstants.h; sourceTree = "<group>"; };
 		912F4DAF22E18DF3004CF0DF /* VerdorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerdorHeader.h; sourceTree = "<group>"; };
+		912FCD2B233A0B1D00601E9C /* MyOrderTotalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderTotalViewController.h; sourceTree = "<group>"; };
+		912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderTotalViewController.m; sourceTree = "<group>"; };
 		9136B45822E8872D00875B17 /* GetVideoCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentView.h; sourceTree = "<group>"; };
 		9136B45922E8872D00875B17 /* GetVideoCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentView.m; sourceTree = "<group>"; };
 		9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentCell.h; sourceTree = "<group>"; };
@@ -451,14 +462,6 @@
 		9165E3752301657300556AB7 /* IssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueTableViewCell.xib; sourceTree = "<group>"; };
 		9166A5A9232F1B1300BA68E5 /* ReturnGoodsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnGoodsDetailViewController.h; sourceTree = "<group>"; };
 		9166A5AA232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnGoodsDetailViewController.m; sourceTree = "<group>"; };
-		9166A5AC232F3D3300BA68E5 /* OrderDetailStep3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailStep3ViewController.h; sourceTree = "<group>"; };
-		9166A5AD232F3D3300BA68E5 /* OrderDetailStep3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailStep3ViewController.m; sourceTree = "<group>"; };
-		9166A5B0232F3E8E00BA68E5 /* OrderDetailStep1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailStep1ViewController.h; sourceTree = "<group>"; };
-		9166A5B1232F3E8E00BA68E5 /* OrderDetailStep1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailStep1ViewController.m; sourceTree = "<group>"; };
-		9166A5B3232F504100BA68E5 /* OrderDetailStep2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailStep2ViewController.h; sourceTree = "<group>"; };
-		9166A5B4232F504100BA68E5 /* OrderDetailStep2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailStep2ViewController.m; sourceTree = "<group>"; };
-		9166A5B6232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailStep3NoExpressViewController.h; sourceTree = "<group>"; };
-		9166A5B7232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailStep3NoExpressViewController.m; sourceTree = "<group>"; };
 		9166A5F7232F6A4700BA68E5 /* OrderReturnSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderReturnSuccessViewController.h; sourceTree = "<group>"; };
 		9166A5F8232F6A4700BA68E5 /* OrderReturnSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderReturnSuccessViewController.m; sourceTree = "<group>"; };
 		9166A5FA232F6F6A00BA68E5 /* OrderReturnFalseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderReturnFalseViewController.h; sourceTree = "<group>"; };
@@ -556,6 +559,10 @@
 		91B2256522EEF34700FFAA84 /* SearchUsersNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUsersNetworking.m; sourceTree = "<group>"; };
 		91B2F52F22EC84CB0030B6C2 /* SearchHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryTableViewCell.h; sourceTree = "<group>"; };
 		91B2F53022EC84CB0030B6C2 /* SearchHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryTableViewCell.m; sourceTree = "<group>"; };
+		91B6C488233DF5D10090A00F /* IntroduceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroduceViewController.h; sourceTree = "<group>"; };
+		91B6C489233DF5D10090A00F /* IntroduceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroduceViewController.m; sourceTree = "<group>"; };
+		91B6C48B233E07060090A00F /* PickSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickSearchBar.h; sourceTree = "<group>"; };
+		91B6C48C233E07060090A00F /* PickSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickSearchBar.m; sourceTree = "<group>"; };
 		91BABCE2230ACC1E00047A64 /* MarketCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketCollectionViewCell.h; sourceTree = "<group>"; };
 		91BABCE3230ACC1E00047A64 /* MarketCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketCollectionViewCell.m; sourceTree = "<group>"; };
 		91BABCE4230ACC1E00047A64 /* MarketCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -569,8 +576,6 @@
 		91BC3646230AA0420052A11A /* MarkCollectionFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionFootView.m; sourceTree = "<group>"; };
 		91BD725B22EFEC2D00F517F6 /* SearchVideosNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideosNetworking.h; sourceTree = "<group>"; };
 		91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideosNetworking.m; sourceTree = "<group>"; };
-		91C1E5F523307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailStep2BuyerViewController.h; sourceTree = "<group>"; };
-		91C1E5F623307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailStep2BuyerViewController.m; sourceTree = "<group>"; };
 		91C1E5F82330A2930058FAA4 /* ToPaySuccessNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToPaySuccessNetworking.h; sourceTree = "<group>"; };
 		91C1E5F92330A2930058FAA4 /* ToPaySuccessNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToPaySuccessNetworking.m; sourceTree = "<group>"; };
 		91C1F17622F3CC2E0090AE00 /* AddGoodsInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsInfoView.h; sourceTree = "<group>"; };
@@ -591,6 +596,17 @@
 		91C3B756233344CF00BDAF46 /* OrderDetailBuyerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailBuyerViewController.m; sourceTree = "<group>"; };
 		91C3B7582333450100BDAF46 /* OrderDetailSalerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailSalerViewController.h; sourceTree = "<group>"; };
 		91C3B7592333450100BDAF46 /* OrderDetailSalerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailSalerViewController.m; sourceTree = "<group>"; };
+		91C3BB7A233C83610033E286 /* PickViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickViewController.h; sourceTree = "<group>"; };
+		91C3BB7B233C83610033E286 /* PickViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickViewController.m; sourceTree = "<group>"; };
+		91C3BB7D233C86D00033E286 /* PickSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickSegmentedControl.h; sourceTree = "<group>"; };
+		91C3BB7E233C86D00033E286 /* PickSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickSegmentedControl.m; sourceTree = "<group>"; };
+		91C3BB82233C8ECC0033E286 /* PickRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickRecommendViewController.h; sourceTree = "<group>"; };
+		91C3BB83233C8ECC0033E286 /* PickRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickRecommendViewController.m; sourceTree = "<group>"; };
+		91C3BB85233C8EFE0033E286 /* PickFollowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickFollowViewController.h; sourceTree = "<group>"; };
+		91C3BB86233C8EFE0033E286 /* PickFollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickFollowViewController.m; sourceTree = "<group>"; };
+		91C3BB8D233C94A90033E286 /* PickCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickCollectionViewCell.h; sourceTree = "<group>"; };
+		91C3BB8E233C94A90033E286 /* PickCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickCollectionViewCell.m; sourceTree = "<group>"; };
+		91C3BB8F233C94A90033E286 /* PickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickCollectionViewCell.xib; sourceTree = "<group>"; };
 		91C9C1D022E69D7E00D0A87E /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		91C9C1D122E69D7E00D0A87E /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		91C9C1D322E6A3FC00D0A87E /* MineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
@@ -752,6 +768,14 @@
 		91D2E82B22EED5290065FB0B /* TopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
 		91D2E83122EEE9C80065FB0B /* SearchUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserModel.h; sourceTree = "<group>"; };
 		91D2E83222EEE9C80065FB0B /* SearchUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserModel.m; sourceTree = "<group>"; };
+		91D8026E233B189600659A01 /* MySellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySellTableViewCell.h; sourceTree = "<group>"; };
+		91D8026F233B189600659A01 /* MySellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySellTableViewCell.m; sourceTree = "<group>"; };
+		91D80270233B189600659A01 /* MySellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellTableViewCell.xib; sourceTree = "<group>"; };
+		91D80273233B19B600659A01 /* MyBuyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBuyTableViewCell.h; sourceTree = "<group>"; };
+		91D80274233B19B600659A01 /* MyBuyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBuyTableViewCell.m; sourceTree = "<group>"; };
+		91D80275233B19B600659A01 /* MyBuyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBuyTableViewCell.xib; sourceTree = "<group>"; };
+		91D80278233B528500659A01 /* EditGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditGoodsViewController.h; sourceTree = "<group>"; };
+		91D80279233B528500659A01 /* EditGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditGoodsViewController.m; sourceTree = "<group>"; };
 		91D9810C23345F91006A6A92 /* ToPayDataNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToPayDataNetworking.h; sourceTree = "<group>"; };
 		91D9810D23345F91006A6A92 /* ToPayDataNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToPayDataNetworking.m; sourceTree = "<group>"; };
 		91DA72D4230CE2FE0085312E /* MarketUserShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketUserShopViewController.h; sourceTree = "<group>"; };
@@ -988,21 +1012,8 @@
 		79CC62D821573C6200101773 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9113E14B22EAAAFB00FFFCF0 /* SearchViewController */,
-				9116616922E1B9CA00A5F9C2 /* GKDYPageViewController.h */,
-				9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */,
-				9113E14C22EAAD1400FFFCF0 /* FollowingViewController.h */,
-				9113E14D22EAAD1400FFFCF0 /* FollowingViewController.m */,
-				79CC62CF21573BFD00101773 /* GKDYHomeViewController.h */,
-				79CC62D021573BFD00101773 /* GKDYHomeViewController.m */,
-				79CC62D521573C2C00101773 /* GKDYPlayerViewController.h */,
-				79CC62D621573C2C00101773 /* GKDYPlayerViewController.m */,
-				606A77DC215DFCB100DC2F63 /* GKDYPersonalViewController.h */,
-				606A77DB215DFCB000DC2F63 /* GKDYPersonalViewController.m */,
-				919843642304FF14001148B9 /* GKDYUserMainViewController.h */,
-				919843652304FF14001148B9 /* GKDYUserMainViewController.m */,
-				91CC2E732305987A00F153A6 /* GKDYUserVideoViewController.h */,
-				91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */,
+				91C3BB81233C8D010033E286 /* OldVC */,
+				91C3BB80233C8CF50033E286 /* NewVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1010,25 +1021,8 @@
 		79CC62D921573C6900101773 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9113E15322EAD86100FFFCF0 /* SearchView */,
-				79CC62E321573FC500101773 /* GKDYScrollView.h */,
-				79CC62E421573FC500101773 /* GKDYScrollView.m */,
-				79CC62E62157401E00101773 /* GKDYVideoView.h */,
-				79CC62E72157401E00101773 /* GKDYVideoView.m */,
-				79CC62E92157402800101773 /* GKDYVideoControlView.h */,
-				79CC62EA2157402800101773 /* GKDYVideoControlView.m */,
-				9116616322E1B4A300A5F9C2 /* HomeSegmentedControl.h */,
-				9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */,
-				9136B45822E8872D00875B17 /* GetVideoCommentView.h */,
-				9136B45922E8872D00875B17 /* GetVideoCommentView.m */,
-				9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */,
-				9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */,
-				91DD30AB22F0766E00192D7E /* FollowingCollectionViewCell.h */,
-				91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */,
-				9113E14822EA8B5B00FFFCF0 /* ShareView.h */,
-				9113E14922EA8B5B00FFFCF0 /* ShareView.m */,
-				919843672304FF81001148B9 /* UserHeadView.h */,
-				919843682304FF81001148B9 /* UserHeadView.m */,
+				91C3BB89233C94360033E286 /* OldView */,
+				91C3BB88233C942C0033E286 /* NewView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1215,6 +1209,8 @@
 				9176294F22F16234003CF389 /* BaseAddGoodsViewController.m */,
 				91ABABBB22FC029500E4593A /* NewBaseModel.h */,
 				91ABABBC22FC029500E4593A /* NewBaseModel.m */,
+				91B6C488233DF5D10090A00F /* IntroduceViewController.h */,
+				91B6C489233DF5D10090A00F /* IntroduceViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1598,12 +1594,16 @@
 				9165E36C2301530E00556AB7 /* IssueViewController.m */,
 				91DFEF812302522900DA2458 /* MyBusinessViewController.h */,
 				91DFEF822302522900DA2458 /* MyBusinessViewController.m */,
+				912FCD2B233A0B1D00601E9C /* MyOrderTotalViewController.h */,
+				912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */,
 				91C25BFE232CAED700A6B629 /* ReturnGoodsViewController.h */,
 				91C25BFF232CAED700A6B629 /* ReturnGoodsViewController.m */,
 				9166A5A9232F1B1300BA68E5 /* ReturnGoodsDetailViewController.h */,
 				9166A5AA232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m */,
 				9166A600232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.h */,
 				9166A601232F74ED00BA68E5 /* ReturnGoodsDetaiSellerViewController.m */,
+				91D80278233B528500659A01 /* EditGoodsViewController.h */,
+				91D80279233B528500659A01 /* EditGoodsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1643,6 +1643,12 @@
 				91DFEF842302559700DA2458 /* MyBusinessTableViewCell.h */,
 				91DFEF852302559700DA2458 /* MyBusinessTableViewCell.m */,
 				91DFEF862302559700DA2458 /* MyBusinessTableViewCell.xib */,
+				91D8026E233B189600659A01 /* MySellTableViewCell.h */,
+				91D8026F233B189600659A01 /* MySellTableViewCell.m */,
+				91D80270233B189600659A01 /* MySellTableViewCell.xib */,
+				91D80273233B19B600659A01 /* MyBuyTableViewCell.h */,
+				91D80274233B19B600659A01 /* MyBuyTableViewCell.m */,
+				91D80275233B19B600659A01 /* MyBuyTableViewCell.xib */,
 				91DD442E22FFE033009A4790 /* SetView */,
 			);
 			path = View;
@@ -1651,16 +1657,6 @@
 		9166A5AF232F3D4000BA68E5 /* OrderVC */ = {
 			isa = PBXGroup;
 			children = (
-				9166A5B0232F3E8E00BA68E5 /* OrderDetailStep1ViewController.h */,
-				9166A5B1232F3E8E00BA68E5 /* OrderDetailStep1ViewController.m */,
-				9166A5B3232F504100BA68E5 /* OrderDetailStep2ViewController.h */,
-				9166A5B4232F504100BA68E5 /* OrderDetailStep2ViewController.m */,
-				91C1E5F523307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.h */,
-				91C1E5F623307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m */,
-				9166A5AC232F3D3300BA68E5 /* OrderDetailStep3ViewController.h */,
-				9166A5AD232F3D3300BA68E5 /* OrderDetailStep3ViewController.m */,
-				9166A5B6232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.h */,
-				9166A5B7232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.m */,
 				9166A5F7232F6A4700BA68E5 /* OrderReturnSuccessViewController.h */,
 				9166A5F8232F6A4700BA68E5 /* OrderReturnSuccessViewController.m */,
 				9166A5FA232F6F6A00BA68E5 /* OrderReturnFalseViewController.h */,
@@ -1716,6 +1712,81 @@
 				91ABABB622FBCE1B00E4593A /* EditSignsViewController.m */,
 			);
 			path = EnditVC;
+			sourceTree = "<group>";
+		};
+		91C3BB80233C8CF50033E286 /* NewVC */ = {
+			isa = PBXGroup;
+			children = (
+				91C3BB7A233C83610033E286 /* PickViewController.h */,
+				91C3BB7B233C83610033E286 /* PickViewController.m */,
+				91C3BB82233C8ECC0033E286 /* PickRecommendViewController.h */,
+				91C3BB83233C8ECC0033E286 /* PickRecommendViewController.m */,
+				91C3BB85233C8EFE0033E286 /* PickFollowViewController.h */,
+				91C3BB86233C8EFE0033E286 /* PickFollowViewController.m */,
+			);
+			path = NewVC;
+			sourceTree = "<group>";
+		};
+		91C3BB81233C8D010033E286 /* OldVC */ = {
+			isa = PBXGroup;
+			children = (
+				9113E14B22EAAAFB00FFFCF0 /* SearchViewController */,
+				9116616922E1B9CA00A5F9C2 /* GKDYPageViewController.h */,
+				9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */,
+				9113E14C22EAAD1400FFFCF0 /* FollowingViewController.h */,
+				9113E14D22EAAD1400FFFCF0 /* FollowingViewController.m */,
+				79CC62CF21573BFD00101773 /* GKDYHomeViewController.h */,
+				79CC62D021573BFD00101773 /* GKDYHomeViewController.m */,
+				79CC62D521573C2C00101773 /* GKDYPlayerViewController.h */,
+				79CC62D621573C2C00101773 /* GKDYPlayerViewController.m */,
+				606A77DC215DFCB100DC2F63 /* GKDYPersonalViewController.h */,
+				606A77DB215DFCB000DC2F63 /* GKDYPersonalViewController.m */,
+				919843642304FF14001148B9 /* GKDYUserMainViewController.h */,
+				919843652304FF14001148B9 /* GKDYUserMainViewController.m */,
+				91CC2E732305987A00F153A6 /* GKDYUserVideoViewController.h */,
+				91CC2E742305987A00F153A6 /* GKDYUserVideoViewController.m */,
+			);
+			path = OldVC;
+			sourceTree = "<group>";
+		};
+		91C3BB88233C942C0033E286 /* NewView */ = {
+			isa = PBXGroup;
+			children = (
+				91C3BB7D233C86D00033E286 /* PickSegmentedControl.h */,
+				91C3BB7E233C86D00033E286 /* PickSegmentedControl.m */,
+				91C3BB8D233C94A90033E286 /* PickCollectionViewCell.h */,
+				91C3BB8E233C94A90033E286 /* PickCollectionViewCell.m */,
+				91C3BB8F233C94A90033E286 /* PickCollectionViewCell.xib */,
+				91B6C48B233E07060090A00F /* PickSearchBar.h */,
+				91B6C48C233E07060090A00F /* PickSearchBar.m */,
+			);
+			path = NewView;
+			sourceTree = "<group>";
+		};
+		91C3BB89233C94360033E286 /* OldView */ = {
+			isa = PBXGroup;
+			children = (
+				9113E15322EAD86100FFFCF0 /* SearchView */,
+				79CC62E321573FC500101773 /* GKDYScrollView.h */,
+				79CC62E421573FC500101773 /* GKDYScrollView.m */,
+				79CC62E62157401E00101773 /* GKDYVideoView.h */,
+				79CC62E72157401E00101773 /* GKDYVideoView.m */,
+				79CC62E92157402800101773 /* GKDYVideoControlView.h */,
+				79CC62EA2157402800101773 /* GKDYVideoControlView.m */,
+				9116616322E1B4A300A5F9C2 /* HomeSegmentedControl.h */,
+				9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */,
+				9136B45822E8872D00875B17 /* GetVideoCommentView.h */,
+				9136B45922E8872D00875B17 /* GetVideoCommentView.m */,
+				9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */,
+				9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */,
+				91DD30AB22F0766E00192D7E /* FollowingCollectionViewCell.h */,
+				91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */,
+				9113E14822EA8B5B00FFFCF0 /* ShareView.h */,
+				9113E14922EA8B5B00FFFCF0 /* ShareView.m */,
+				919843672304FF81001148B9 /* UserHeadView.h */,
+				919843682304FF81001148B9 /* UserHeadView.m */,
+			);
+			path = OldView;
 			sourceTree = "<group>";
 		};
 		91C9C1E222E6DFBF00D0A87E /* Login */ = {
@@ -2165,6 +2236,7 @@
 				91139DC52318C30200A936E8 /* 天使简约音效.m4r in Resources */,
 				91BABCE6230ACC1E00047A64 /* MarketCollectionViewCell.xib in Resources */,
 				91139DC72318C30200A936E8 /* 胜利小旋律音效.m4r in Resources */,
+				91D80272233B189600659A01 /* MySellTableViewCell.xib in Resources */,
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
 				91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */,
 				9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */,
@@ -2172,8 +2244,10 @@
 				91DFEF882302559700DA2458 /* MyBusinessTableViewCell.xib in Resources */,
 				91DD443622FFE442009A4790 /* SetTableViewCell.xib in Resources */,
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
+				91C3BB91233C94A90033E286 /* PickCollectionViewCell.xib in Resources */,
 				79CC629C2157377600101773 /* Assets.xcassets in Resources */,
 				917FCE602320F26C00786775 /* test.html in Resources */,
+				91D80277233B19B600659A01 /* MyBuyTableViewCell.xib in Resources */,
 				91D2AC6322F9172600179C88 /* MessageCommonTableViewCell.xib in Resources */,
 				91125F1423225B4600A15FFE /* AddressEditTableViewCell.xib in Resources */,
 				91139DC42318C30200A936E8 /* Greenery.m4a in Resources */,
@@ -2271,14 +2345,17 @@
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
 				91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */,
 				91D9810E23345F91006A6A92 /* ToPayDataNetworking.m in Sources */,
+				91D80271233B189600659A01 /* MySellTableViewCell.m in Sources */,
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */,
+				912FCD2D233A0B1D00601E9C /* MyOrderTotalViewController.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
 				91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */,
 				91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
 				91FD2DEA231F9E2900FC2520 /* ShareVideoView.m in Sources */,
+				91D8027A233B528500659A01 /* EditGoodsViewController.m in Sources */,
 				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
 				919843722305568B001148B9 /* UserModel.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
@@ -2292,6 +2369,7 @@
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
 				9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */,
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
+				91C3BB84233C8ECC0033E286 /* PickRecommendViewController.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
 				91FD2DED231FBC1700FC2520 /* MyGoodsNetworking.m in Sources */,
 				91BABCE5230ACC1E00047A64 /* MarketCollectionViewCell.m in Sources */,
@@ -2321,6 +2399,7 @@
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
 				914A86E62325E30300DB324E /* AddressListModel.m in Sources */,
 				91D2AC7B22F968C700179C88 /* MyFriendTableViewCell.m in Sources */,
+				91D80276233B19B600659A01 /* MyBuyTableViewCell.m in Sources */,
 				91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */,
 				917303AF232739B800E423E4 /* AddressEditNetworking.m in Sources */,
 				79CC62D421573C2300101773 /* GKDYSearchViewController.m in Sources */,
@@ -2342,8 +2421,6 @@
 				914034D522E5DECE006F1699 /* BaseModel.m in Sources */,
 				9113E15C22EAE64E00FFFCF0 /* SearchViewController.m in Sources */,
 				91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */,
-				9166A5AE232F3D3300BA68E5 /* OrderDetailStep3ViewController.m in Sources */,
-				9166A5B5232F504100BA68E5 /* OrderDetailStep2ViewController.m in Sources */,
 				9116615722E18FAA00A5F9C2 /* NSBundle+category.m in Sources */,
 				910A8DAD230E6AFE0051CDA2 /* MarketSearchGoodsNetworking.m in Sources */,
 				916B67652317A72C000E6F8A /* MusicsViewController.m in Sources */,
@@ -2359,7 +2436,6 @@
 				9189A4F822FE9B5000EA50E0 /* SexPickerView.m in Sources */,
 				91DD30B022F0818700192D7E /* VideoGuanModel.m in Sources */,
 				9176295622F16877003CF389 /* AddGoodsViewController.m in Sources */,
-				9166A5B2232F3E8E00BA68E5 /* OrderDetailStep1ViewController.m in Sources */,
 				91A05A10231CECA200322752 /* UploadViewController.m in Sources */,
 				9154CCC122F015910066ECC5 /* SearchVideoPlayViewController.m in Sources */,
 				91A05A0A231CB4B200322752 /* VideoDeleteButton.m in Sources */,
@@ -2370,6 +2446,7 @@
 				91C1F17822F3CC2E0090AE00 /* AddGoodsInfoView.m in Sources */,
 				79CC62E82157401E00101773 /* GKDYVideoView.m in Sources */,
 				910A8DA0230E42F80051CDA2 /* MarketSearchTogetherViewController.m in Sources */,
+				91C3BB7F233C86D00033E286 /* PickSegmentedControl.m in Sources */,
 				91A05A0D231CC3D500322752 /* EditViewController.m in Sources */,
 				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
 				91FD2DF0231FBC3D00FC2520 /* MyGoodsModel.m in Sources */,
@@ -2383,12 +2460,12 @@
 				919843692304FF81001148B9 /* UserHeadView.m in Sources */,
 				79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */,
 				91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */,
+				91C3BB87233C8EFE0033E286 /* PickFollowViewController.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
 				91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */,
 				91C3B74E233328A600BDAF46 /* OrderDetilNetworking.m in Sources */,
 				910A8DA6230E439D0051CDA2 /* MarketSearchPriceViewController.m in Sources */,
-				91C1E5F723307DCF0058FAA4 /* OrderDetailStep2BuyerViewController.m in Sources */,
 				91F6222C230BE94E0088730D /* MarketSearchCollectionViewCell.m in Sources */,
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				914A86F2232621F800DB324E /* AddressSelectView.m in Sources */,
@@ -2422,12 +2499,12 @@
 				91125F0F2322570600A15FFE /* AddressEditViewController.m in Sources */,
 				79CC62942157377400101773 /* AppDelegate.m in Sources */,
 				9116615A22E18FAA00A5F9C2 /* NSString+MD5.m in Sources */,
+				91C3BB90233C94A90033E286 /* PickCollectionViewCell.m in Sources */,
 				917303B8232785FC00E423E4 /* ToPayView.m in Sources */,
 				9176295022F16234003CF389 /* BaseAddGoodsViewController.m in Sources */,
 				917303B2232746C700E423E4 /* AddressDefaultNetworking.m in Sources */,
 				79CC62CB21573B4700101773 /* GKSliderView.m in Sources */,
 				91ABABAB22FBB6E700E4593A /* UpLoadAvatarNetworking.m in Sources */,
-				9166A5B8232F594B00BA68E5 /* OrderDetailStep3NoExpressViewController.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
 				91ABABBA22FC021800E4593A /* EditProfileNetworking.m in Sources */,
 				9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */,
@@ -2435,6 +2512,8 @@
 				91125F0C2321FAFD00A15FFE /* MarketOrderViewController.m in Sources */,
 				9166A5AB232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m in Sources */,
 				79CC62D121573BFD00101773 /* GKDYHomeViewController.m in Sources */,
+				91C3BB7C233C83610033E286 /* PickViewController.m in Sources */,
+				91B6C48D233E07060090A00F /* PickSearchBar.m in Sources */,
 				916B67622317A1AD000E6F8A /* MusicModel.m in Sources */,
 				79CC62FB2158F2BB00101773 /* GKDYPersonalModel.m in Sources */,
 				91C3B75A2333450100BDAF46 /* OrderDetailSalerViewController.m in Sources */,
@@ -2458,6 +2537,7 @@
 				91BC3647230AA0420052A11A /* MarkCollectionFootView.m in Sources */,
 				91ABABB422FBCDB500E4593A /* EditMFNumbViewController.m in Sources */,
 				91D2E82C22EED5290065FB0B /* TopicTableViewCell.m in Sources */,
+				91B6C48A233DF5D10090A00F /* IntroduceViewController.m in Sources */,
 				916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,

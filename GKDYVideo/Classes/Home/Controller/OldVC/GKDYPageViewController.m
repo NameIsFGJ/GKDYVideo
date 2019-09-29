@@ -28,7 +28,6 @@
     [self addChildViewController:self.playVC];
     [self addChildViewController:self.followVC];
     
-    self.selectIndex = 0;
     //  推荐与 关注
     HomeSegmentedControl *control1111 = [[HomeSegmentedControl alloc]initWithItems:@[@"推荐 ",@"关注"]];
     control1111.frame = CGRectMake(0, 0, 100, 30);

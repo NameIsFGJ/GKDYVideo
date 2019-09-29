@@ -9,8 +9,10 @@
 #import "MyBusinessViewController.h"
 #import "MyBusinessTableViewCell.h"
 #import "MyBusinessNetworking.h"
+#import "MySellTableViewCell.h"
+#import "MyBuyTableViewCell.h"
 @interface MyBusinessViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic)UITableView *tableView;
+
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 
 @end
@@ -31,6 +33,13 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"我卖出的";
+    if (self.type == sellTyle)
+    {
+        label.text = @"我卖出的";
+    }else if (self.type == buyType)
+    {
+        label.text = @"我买到的";
+    }
     label.textColor = [UIColor blackColor];
     self.navigationItem.titleView = label;
     
@@ -50,13 +59,23 @@
 - (void)makeUI
 {
     [self.view addSubview:self.tableView];
-    self.tableView.frame = self.view.bounds;
+    if (self.status == pushVC) {
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(64);
+            make.left.right.bottom.mas_equalTo(0);
+        }];
+    }else if (self.status == sonVC){
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(0);
+            make.left.right.bottom.mas_equalTo(0);
+        }];
+    }
 }
 
 - (void)networking
 {
-   // NSLog(@"self.type  =%ld",self.type);
     [MyBusinessNetworking postMyBusinessWithToken:kUser.user_token withPage:1 withType:self.type completion:^(NSMutableArray * _Nonnull array, NSError * _Nonnull error) {
+        NSLog(@"array.count34  =%ld",array.count);
         self.itemsArray = array;
         [self.tableView reloadData];
     }];
@@ -70,12 +89,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    static NSString *cellID = @"MyBusinessTableViewCellID";
+    static NSString *sellID = @"MySellTableViewCellID";
+    static NSString *buyID = @"MyBuyTableViewCellID";
     
-    MyBusinessTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //cell.accessoryType = UITableViewCellAccessoryNone;
-    return cell;
+    //我卖出的
+    if (self.type == sellTyle)
+    {
+        MySellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sellID forIndexPath:indexPath];
+        cell.model = self.itemsArray[indexPath.row];
+        return cell;
+        //我买到的
+    }else if (self.type == buyType)
+    {
+        MyBuyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:buyID forIndexPath:indexPath];
+        cell.model = self.itemsArray[indexPath.row];
+        return cell;
+    }
+    
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,7 +124,8 @@
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        [_tableView registerNib:[UINib nibWithNibName:@"MyBusinessTableViewCell" bundle:nil] forCellReuseIdentifier:@"MyBusinessTableViewCellID"];
+        [_tableView registerNib:[UINib nibWithNibName:@"MySellTableViewCell" bundle:nil] forCellReuseIdentifier:@"MySellTableViewCellID"];
+        [_tableView registerNib:[UINib nibWithNibName:@"MyBuyTableViewCell" bundle:nil] forCellReuseIdentifier:@"MyBuyTableViewCellID"];
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -107,6 +139,5 @@
     }
     return _itemsArray;
 }
-// 通知设置  收藏 我的视频
 
 @end

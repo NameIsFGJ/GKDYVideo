@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MarketShopDetailViewController : BaseViewController
 @property (assign, nonatomic) NSInteger ide;
-
+@property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSString *userToken;
 @end
 
 NS_ASSUME_NONNULL_END

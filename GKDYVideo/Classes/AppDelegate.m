@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+Vendor.h"
 #import <AlipaySDK/AlipaySDK.h>
-#import "OrderDetailStep2BuyerViewController.h"
+
 @interface AppDelegate ()
 
 @end

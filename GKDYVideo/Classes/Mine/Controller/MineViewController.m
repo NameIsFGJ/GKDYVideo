@@ -17,16 +17,10 @@
 #import "IssueViewController.h"
 //  我卖出的
 #import "MyBusinessViewController.h"
-
+//  我的订单
+#import "MyOrderTotalViewController.h"
 // 订单详情 测试用的
-#import "OrderDetailStep1ViewController.h"
-#import "OrderDetailStep2ViewController.h"
-#import "OrderDetailStep3ViewController.h"
-#import "OrderDetailStep3NoExpressViewController.h"
-#import "OrderReturnSuccessViewController.h"
-#import "OrderReturnFalseViewController.h"
-#import "OrderReturnApplyViewController.h"
-
+#import "OrderDetailBuyerViewController.h"
 
 @interface MineViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)UITableView *tableView;
@@ -126,7 +120,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.leftImageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
     cell.leftLabel.text = self.titleArray[indexPath.row];
-    if (indexPath.row == 3) {
+    if (indexPath.row == 4) {
         cell.rightLabel.hidden = NO;
         cell.rightLabel.text = @"$100.00";
     }else{
@@ -148,19 +142,20 @@
     {
         MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
         vc.type = sellTyle;
+        vc.status = pushVC;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         //   我买出的
     }else if (indexPath.row == 2)
     {
         MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
-        vc.type = sellTyle;
+        vc.type = buyType;
+        vc.status = pushVC;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 3)
-    {   
-        //OrderReturnSuccessViewController *vc = [[OrderReturnSuccessViewController alloc]init];
-        OrderReturnApplyViewController *vc = [[OrderReturnApplyViewController alloc]init];
+    {
+        MyOrderTotalViewController *vc = [[MyOrderTotalViewController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -193,8 +188,9 @@
 - (NSMutableArray *)titleArray
 {
     if (!_titleArray) {
-        _titleArray = [NSMutableArray arrayWithObjects:@"我发布的",@"我卖出的",@"我买到的",@"我的钱包",@"我的视频",@"我的收藏",@"在线客服", nil];
+        _titleArray = [NSMutableArray arrayWithObjects:@"我发布的",@"我卖出的",@"我买到的",@"我的订单",@"我的钱包",@"我的视频",@"我的收藏",@"在线客服", nil];
     }
     return _titleArray;
 }
+
 @end

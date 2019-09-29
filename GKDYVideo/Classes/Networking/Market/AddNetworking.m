@@ -27,7 +27,7 @@
                            @"order_amount":@(orderAmount),
                            @"goods_price":@(goodsPrice),
                            @"goods_num":@(goodsNum)};
-    NSLog(@"pa3434333ra  =%@",para);
+   
     [self POST:urlStr parameters:para progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {

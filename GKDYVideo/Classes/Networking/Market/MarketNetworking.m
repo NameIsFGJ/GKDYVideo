@@ -15,6 +15,7 @@
     [self POST:urlStr parameters:nil progress:^(NSProgress * _Nonnull progress) {
         
     } completionHandler:^(id  _Nullable responseObj, NSError * _Nullable error) {
+        
         if ([[responseObj objectForKey:@"code"] integerValue] == 1) {
             NSDictionary *dic = [responseObj objectForKey:@"data"];
             completionHanle([MarketModel yy_modelWithDictionary:dic],nil);

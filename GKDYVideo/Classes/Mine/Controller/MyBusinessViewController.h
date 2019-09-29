@@ -13,11 +13,18 @@ typedef enum{
     sellTyle
 }VCType;
 
+typedef enum{
+    sonVC = 1,
+    pushVC = 2
+}VCStatus;
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyBusinessViewController : BaseViewController
+@property (strong, nonatomic)UITableView *tableView;
 @property (assign, nonatomic)VCType type;
-
+@property (assign, nonatomic)VCStatus status;
 @end
 
 NS_ASSUME_NONNULL_END

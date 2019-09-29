@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray           *childVCs;
 
 @property (nonatomic, strong) GKDYSearchViewController  *searchVC;
+
 @property (nonatomic, strong) GKDYPlayerViewController  *playerVC;
 
 @end

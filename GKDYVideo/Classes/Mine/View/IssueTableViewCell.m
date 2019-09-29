@@ -8,6 +8,7 @@
 
 #import "IssueTableViewCell.h"
 #import "MyGoodsModel.h"
+#import "MyBusinessModel.h"
 @implementation IssueTableViewCell
 
 - (void)awakeFromNib {
@@ -26,9 +27,7 @@
     _model = model;
     NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kSERVICE,model.cover];
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
-    
     self.nameLabel.text = model.name;
-    NSLog(@"model.name  =%@",model.name);
     self.priceLabel.text = [NSString stringWithFormat:@"¥ %@",model.price];
     self.comNumLabel.text = [NSString stringWithFormat:@"留言: %ld",model.com_count];
     self.countLabel.text = [NSString stringWithFormat:@"库存: %ld",model.count];

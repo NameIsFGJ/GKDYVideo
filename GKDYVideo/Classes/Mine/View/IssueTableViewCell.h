@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class MyGoodsModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol IssueTableViewCellDeletgate <NSObject>
@@ -33,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (strong, nonatomic) MyGoodsModel *model;
 @property (weak, nonatomic) id <IssueTableViewCellDeletgate> delegate;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

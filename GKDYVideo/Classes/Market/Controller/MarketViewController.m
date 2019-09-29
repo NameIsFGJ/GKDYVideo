@@ -35,41 +35,41 @@
      [self makeUI];
      [self networking];
     
-    HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
-    model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-    model0.ide = 0;
-    model0.imageheight = 250;
-    model0.imagewidth = 606;
-    model0.name = @"裤子";
-    model0.price = @"33.11" ;
-    
-    HotGoodsModel *model1 = [[HotGoodsModel alloc]init];
-    model1.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-    model1.ide = 1;
-    model1.imageheight = 190;
-    model1.imagewidth = 806;
-    model1.name = @"袜子";
-    model1.price = @"999.90" ;
-    
-    HotGoodsModel *model2 = [[HotGoodsModel alloc]init];
-    model2.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-    model2.ide = 2;
-    model2.imageheight = 250;
-    model2.imagewidth = 606;
-    model2.name = @"绳阿斯顿飞子";
-    model2.price = @"2321.222" ;
-    
-    HotGoodsModel *model3 = [[HotGoodsModel alloc]init];
-    model3.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-    model3.ide = 3;
-    model3.imageheight = 190;
-    model3.imagewidth = 606;
-    model3.name = @"是淡粉色";
-    model3.price = @"9091.23" ;
-    
-    self.tempArray = [NSArray arrayWithObjects:model0,model1,model2,model3, nil];
-
-    
+//    HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
+//    model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+//    model0.ide = 0;
+//    model0.imageheight = 250;
+//    model0.imagewidth = 606;
+//    model0.name = @"裤子";
+//    model0.price = @"33.11" ;
+//
+//    HotGoodsModel *model1 = [[HotGoodsModel alloc]init];
+//    model1.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+//    model1.ide = 1;
+//    model1.imageheight = 190;
+//    model1.imagewidth = 806;
+//    model1.name = @"袜子";
+//    model1.price = @"999.90" ;
+//
+//    HotGoodsModel *model2 = [[HotGoodsModel alloc]init];
+//    model2.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+//    model2.ide = 2;
+//    model2.imageheight = 250;
+//    model2.imagewidth = 606;
+//    model2.name = @"绳阿斯顿飞子";
+//    model2.price = @"2321.222" ;
+//
+//    HotGoodsModel *model3 = [[HotGoodsModel alloc]init];
+//    model3.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+//    model3.ide = 3;
+//    model3.imageheight = 190;
+//    model3.imagewidth = 606;
+//    model3.name = @"是淡粉色";
+//    model3.price = @"9091.23" ;
+//
+//    self.tempArray = [NSArray arrayWithObjects:model0,model1,model2,model3, nil];
+//
+//
    
 }
 
@@ -97,16 +97,11 @@
 {
     if (section == 0) {
         NSArray *array0 = self.itemsArray[0];
-        NSLog(@"array0.count  =%ld",array0.count);
-    //   return array0.count;
-       // return 4;
-        return self.tempArray.count;
+        return array0.count;
     }
     if (section == 1) {
         NSArray *array1 = self.itemsArray[1];
-        NSLog(@"array1.count  =%ld",array1.count);
-       // return array1.count;
-    return 4;
+        return array1.count;
     }
     return 11;
 }
@@ -124,18 +119,27 @@
     }else{
          cell.backgroundColor = [UIColor colorWithHex:@"#DAE1FF"];
     }
-    cell.model = self.tempArray[indexPath.row];
+    NSArray *array = self.itemsArray[indexPath.section];
+    
+    cell.model = array[indexPath.row];
+    [cell.cellLabel adjustsFontSizeToFitWidth];
+    
+    cell.cellLabel.text = [NSString stringWithFormat:@"第%ld行,第%ld列",indexPath.section,indexPath.row];
     
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+//    NSArray *array = self.itemsArray[indexPath.section];
+//    HotGoodsModel *model = array[indexPath.row];
+//    NSLog(@"model.id234e  =%ld",model.ide);
    MarketShopDetailViewController *vc = [[MarketShopDetailViewController alloc]init];
     vc.ide = 1;
+    //用户id 商品id 用户 token
+//    vc
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -168,9 +172,12 @@
 #pragma mark WSLWaterFlowLayoutDelegate
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    HotGoodsModel *model = self.tempArray[indexPath.row];
-    
-    return CGSizeMake(0, model.imageheight);
+    NSArray *array = self.itemsArray[indexPath.section];
+    if (array.count >=1) {
+        HotGoodsModel *model = array[indexPath.row];
+        return CGSizeMake(0, [model.imageheight integerValue] /2.424);
+    }
+    return CGSizeMake(0, 0);
 }
 
 /** 头视图Size */

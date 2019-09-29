@@ -1,8 +1,8 @@
 //
-//  OrderDetailStep3NoExpressViewController.h
+//  PickFollowViewController.h
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/9/16.
+//  Created by 冯高杰 on 2019/9/26.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OrderDetailStep3NoExpressViewController : BaseViewController
+@interface PickFollowViewController : BaseViewController
 
 @end
 
