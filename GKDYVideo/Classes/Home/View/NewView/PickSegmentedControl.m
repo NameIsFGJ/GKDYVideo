@@ -35,7 +35,7 @@
     [self setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     
     // 竖线
-    [self setDividerImage:[UIImage imageWithColor:[UIColor blackColor] size:CGSizeMake(1, 10)] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setDividerImage:[UIImage imageWithColor:[UIColor blackColor] size:CGSizeMake(1, 1)] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     return self;
 }

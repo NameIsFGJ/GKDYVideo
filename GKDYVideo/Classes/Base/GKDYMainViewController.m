@@ -20,6 +20,8 @@
 // 新版本
 #import "PickViewController.h"
 #import "NewMineViewController.h"
+#import "RankListViewController.h"
+#import "NewMarketViewController.h"
 @interface GKDYMainViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -29,11 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
+    self.tabBar.translucent = NO;
     self.gk_statusBarHidden = NO;
     [self changeBackgroundColor];
     
     [self addChildVC:[PickViewController new] withTitle:@"种草" withImage:@"table1" withSelectImage:@"tab_1_selected"];
-    [self addChildVC:[MarketViewController new] withTitle:@"餐厅" withImage:@"table2" withSelectImage:@"tab_2_selected"];
+    [self addChildVC:[NewMarketViewController new] withTitle:@"餐厅" withImage:@"table2" withSelectImage:@"tab_2_selected"];
     [self addChildVC:[AddGoodsViewController new] withImage:@"_s-jia_icon" withSelectImage:@"_s-jia_icon"];
     [self addChildVC:[MessageViewController new] withTitle:@"饭圈" withImage:@"table3" withSelectImage:@"tab_3_selected"];
     [self addChildVC:[NewMineViewController new] withTitle:@"米仓" withImage:@"table4" withSelectImage:@"tab_4_selected"];
@@ -44,7 +47,6 @@
 {
     // 设置一个自定义 View,大小等于 tabBar 的大小
     UIView *bgView = [[UIView alloc] initWithFrame:self.tabBar.bounds];
-    // 给自定义 View 设置颜色
     bgView.backgroundColor = [UIColor whiteColor];
     // 将自定义 View 添加到 tabBar 上
     [self.tabBar insertSubview:bgView atIndex:0];
@@ -55,8 +57,8 @@
 {
     childVC.tabBarItem.title = title;
     childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0,0);
-    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0f], NSForegroundColorAttributeName: [UIColor colorWithHex:@"#000000"]} forState:UIControlStateNormal];
-    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0f], NSForegroundColorAttributeName: [UIColor colorWithHex:@"#F8537A"]} forState:UIControlStateSelected];
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:11.0f], NSForegroundColorAttributeName: [UIColor colorWithHex:@"#000000"]} forState:UIControlStateNormal];
+    [childVC.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:11.0f], NSForegroundColorAttributeName: kPickColor} forState:UIControlStateSelected];
     
     childVC.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVC.tabBarItem.selectedImage = [[UIImage imageNamed:selectImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -132,4 +134,32 @@
     return YES;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    if (isIPhoneXAll) {
+//        if (@available(iOS 11.0, *)){
+//
+//        }
+        // 修改tabBra的frame
+        CGRect frame = self.tabBarController.tabBar.frame;
+        frame.origin.y = [UIScreen mainScreen].bounds.size.height -64;
+        self.navigationController.tabBarController.tabBar.frame = frame;
+    }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    if (isIPhoneXAll) {
+        CGRect frame = self.tabBarController.tabBar.frame;
+                    frame.origin.y = [UIScreen mainScreen].bounds.size.height -64;
+                    self.navigationController.tabBarController.tabBar.frame = frame;
+//        if (@available(iOS 11.0, *)){
+//            // 修改tabBra的frame
+//            CGRect frame = self.tabBarController.tabBar.frame;
+//            frame.origin.y = [UIScreen mainScreen].bounds.size.height -64;
+//            self.navigationController.tabBarController.tabBar.frame = frame;
+//        }
+        
+    }
+    
+}
 @end

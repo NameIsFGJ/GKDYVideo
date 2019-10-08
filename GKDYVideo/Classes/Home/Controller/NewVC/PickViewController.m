@@ -56,7 +56,6 @@
     self.currentController = self.recommendVC;
     self.followVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
     
-    
 }
 
 - (void)buttonAction:(PickSegmentedControl *)control

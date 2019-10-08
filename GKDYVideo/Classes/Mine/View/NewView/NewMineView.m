@@ -19,7 +19,7 @@
     self = [super init];
     self.backgroundColor = [UIColor colorWithRed:246/255.0f green:248/255.0f blue:250/255.0f alpha:1];
     
-    NSArray *titleArray = @[@"待付款",@"待发货",@"",@""];
+    NSArray *titleArray = @[@"待付款",@"待发货",@"待评价",@"退货/售后"];
     NSArray *imageArray = @[@"fk_icon",@"fahuo_icon",@"pj_icon",@"th_icon"];
     
     
