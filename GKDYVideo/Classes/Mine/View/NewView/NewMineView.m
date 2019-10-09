@@ -127,7 +127,7 @@
     [myTopicButton setTitle:@"我的饭圈 >" forState:UIControlStateNormal];
     [myTopicButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     myTopicButton.titleLabel.font = [UIFont systemFontOfSize:13];
-    
+    [myTopicButton addTarget:self action:@selector(myTopicButtonAction) forControlEvents:UIControlEventTouchUpInside];
     UIView *view1 = [[UIView alloc]init];
     [self addSubview:view1];
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -142,7 +142,7 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0,0,0,0));
     }];
     [memberButton setImage:[UIImage imageNamed:@"memberImage"] forState:UIControlStateNormal];
-
+    [memberButton addTarget:self action:@selector(memberButtonAction) forControlEvents:UIControlEventTouchUpInside];
     UIView *view2 = [[UIView alloc]init];
     [self addSubview:view2];
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -170,6 +170,7 @@
     [orderAllButton setTitle:@"查看全部 >" forState:UIControlStateNormal];
     [orderAllButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     orderAllButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    [orderAllButton addTarget:self action:@selector(orderAllButtonAction) forControlEvents:UIControlEventTouchUpInside];
     UIView *view3 = [[UIView alloc]init];
     [self addSubview:view3];
 
@@ -183,6 +184,8 @@
     for (int i = 0; i < 4; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [view3 addSubview:btn];
+        btn.tag = 100 + i;
+        [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10+(kWindowWidth/4 * i));
             make.centerY.equalTo(view3.mas_centerY);
@@ -206,8 +209,9 @@
         label.text = titleArray[i];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:15];
+        
     }
-
+    
 
     UIView *view4 = [[UIView alloc]init];
     [self addSubview:view4];
@@ -235,7 +239,9 @@
         make.height.mas_equalTo(90);
     }];
     view5.backgroundColor = [UIColor whiteColor];
-
+    
+    
+    
     UILabel *moneyLabel = [[UILabel alloc]init];
     [view5 addSubview:moneyLabel];
     moneyLabel.textAlignment = NSTextAlignmentCenter;
@@ -274,7 +280,7 @@
     tipLabel1.font = [UIFont systemFontOfSize:14];
     tipLabel1.textColor = [UIColor blackColor];
     tipLabel1.textAlignment = NSTextAlignmentCenter;
-
+    
     UILabel *tipLabel2 = [[UILabel alloc]init];
     [view5 addSubview:tipLabel2];
     tipLabel2.text = @"优惠券";
@@ -288,9 +294,90 @@
         make.top.equalTo(moneyLabel.mas_bottom).offset(0);
     }];
     
+    for (int i = 0; i < 3; i ++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [view5 addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(i *kWindowWidth/3);
+            make.top.equalTo(view5.mas_top);
+            make.size.mas_equalTo(CGSizeMake(kWindowWidth/3, 90));
+        }];
+        btn.tag = 200 +i;
+        [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    
+    
     return self;
 }
 
+#pragma mark Action
 
+// 我的饭圈
+- (void)myTopicButtonAction
+{
+    NSLog(@"我的饭圈");
+    if ([self.delegate respondsToSelector:@selector(headViewTopicButtonClick)]) {
+        [self.delegate headViewTopicButtonClick];
+    }
+}
+
+// 升级会员
+- (void)memberButtonAction
+{
+    if ([self.delegate respondsToSelector:@selector(headViewMemberButtonClick)]) {
+        [self.delegate headViewMemberButtonClick];
+    }
+}
+
+//  查看全部订单
+- (void)orderAllButtonAction
+{
+    if ([self.delegate respondsToSelector:@selector(headViewOrderAllButtonClick)]) {
+        [self.delegate headViewOrderAllButtonClick];
+    }
+}
+
+
+- (void)buttonAction:(UIButton *)btn
+{
+    // 待付款
+    if (btn.tag == 100) {
+        
+        if ([self.delegate respondsToSelector:@selector(headViewWaitPayButtonClick)]) {
+            [self.delegate headViewWaitPayButtonClick];
+        }
+        // 待发货
+    }else if (btn.tag == 101){
+        if ([self.delegate respondsToSelector:@selector(headViewWaitSendButtonClick)]) {
+            [self.delegate headViewWaitSendButtonClick];
+        }
+        //待评价
+    }else if (btn.tag == 102){
+        if ([self.delegate respondsToSelector:@selector(headViewWaitDiscussButtonClick)]) {
+            [self.delegate headViewWaitDiscussButtonClick];
+        }
+        // 退货/售后
+    }else if (btn.tag == 103){
+        if ([self.delegate respondsToSelector:@selector(headViewServeButtonClick)]) {
+            [self.delegate headViewServeButtonClick];
+        }
+        // 余额
+    }else if (btn.tag == 200){
+        if ([self.delegate respondsToSelector:@selector(headViewMoneyButtonClick)]) {
+            [self.delegate headViewMoneyButtonClick];
+        }
+        // 红包
+    }else if (btn.tag == 201){
+        if ([self.delegate respondsToSelector:@selector(headViewRedPacketButtonClick)]) {
+            [self.delegate headViewRedPacketButtonClick];
+        }
+        // 优惠券
+    }else if (btn.tag == 202){
+        if ([self.delegate respondsToSelector:@selector(headViewDiscountButtonClick)]) {
+            [self.delegate headViewDiscountButtonClick];
+        }
+    }
+}
 
 @end

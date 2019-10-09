@@ -174,6 +174,9 @@
 		91C239F3234C5EFA00AFE879 /* RankListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C239F2234C5EFA00AFE879 /* RankListViewController.m */; };
 		91C239F7234C619E00AFE879 /* RankListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C239F5234C619E00AFE879 /* RankListTableViewCell.m */; };
 		91C239F8234C619E00AFE879 /* RankListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C239F6234C619E00AFE879 /* RankListTableViewCell.xib */; };
+		91C239FE234C844D00AFE879 /* NewFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C239FD234C844D00AFE879 /* NewFriendsViewController.m */; };
+		91C23A02234C8BAA00AFE879 /* UUMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C23A01234C8BAA00AFE879 /* UUMarqueeView.m */; };
+		91C23A05234C8BDA00AFE879 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C23A04234C8BDA00AFE879 /* MSWeakTimer.m */; };
 		91C25BFD232CACCD00A6B629 /* ReturnGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C25BFC232CACCD00A6B629 /* ReturnGoodsNetworking.m */; };
 		91C25C00232CAED700A6B629 /* ReturnGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C25BFF232CAED700A6B629 /* ReturnGoodsViewController.m */; };
 		91C3B74E233328A600BDAF46 /* OrderDetilNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C3B74D233328A600BDAF46 /* OrderDetilNetworking.m */; };
@@ -609,6 +612,12 @@
 		91C239F4234C619E00AFE879 /* RankListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankListTableViewCell.h; sourceTree = "<group>"; };
 		91C239F5234C619E00AFE879 /* RankListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankListTableViewCell.m; sourceTree = "<group>"; };
 		91C239F6234C619E00AFE879 /* RankListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankListTableViewCell.xib; sourceTree = "<group>"; };
+		91C239FC234C844D00AFE879 /* NewFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewFriendsViewController.h; sourceTree = "<group>"; };
+		91C239FD234C844D00AFE879 /* NewFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewFriendsViewController.m; sourceTree = "<group>"; };
+		91C23A00234C8BAA00AFE879 /* UUMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMarqueeView.h; sourceTree = "<group>"; };
+		91C23A01234C8BAA00AFE879 /* UUMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMarqueeView.m; sourceTree = "<group>"; };
+		91C23A03234C8BDA00AFE879 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
+		91C23A04234C8BDA00AFE879 /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
 		91C25BFB232CACCD00A6B629 /* ReturnGoodsNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnGoodsNetworking.h; sourceTree = "<group>"; };
 		91C25BFC232CACCD00A6B629 /* ReturnGoodsNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnGoodsNetworking.m; sourceTree = "<group>"; };
 		91C25BFE232CAED700A6B629 /* ReturnGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnGoodsViewController.h; sourceTree = "<group>"; };
@@ -1595,14 +1604,8 @@
 		912F4D9C22E18C94004CF0DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				916C6D4622F831B800D2538F /* MessageViewController.h */,
-				916C6D4722F831B800D2538F /* MessageViewController.m */,
-				91D2AC5C22F912A600179C88 /* GetZanViewController.h */,
-				91D2AC5D22F912A600179C88 /* GetZanViewController.m */,
-				91D2AC6F22F95C6400179C88 /* MyFansViewController.h */,
-				91D2AC7022F95C6400179C88 /* MyFansViewController.m */,
-				91D2AC7522F9675600179C88 /* MyfriendsViewController.h */,
-				91D2AC7622F9675600179C88 /* MyfriendsViewController.m */,
+				91C239FA234C83DB00AFE879 /* NewVC */,
+				91C239FB234C83E800AFE879 /* OldVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1651,6 +1654,7 @@
 		912F4DA022E18C94004CF0DF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				91C239FF234C8B9100AFE879 /* UUMarqueeView */,
 				91139DBF2318C30200A936E8 /* MFMusics */,
 				91084BAD22FD057B00021B29 /* city.json */,
 				917FCE5F2320F26C00786775 /* test.html */,
@@ -1822,6 +1826,41 @@
 				91ABABB622FBCE1B00E4593A /* EditSignsViewController.m */,
 			);
 			path = EnditVC;
+			sourceTree = "<group>";
+		};
+		91C239FA234C83DB00AFE879 /* NewVC */ = {
+			isa = PBXGroup;
+			children = (
+				91C239FC234C844D00AFE879 /* NewFriendsViewController.h */,
+				91C239FD234C844D00AFE879 /* NewFriendsViewController.m */,
+			);
+			path = NewVC;
+			sourceTree = "<group>";
+		};
+		91C239FB234C83E800AFE879 /* OldVC */ = {
+			isa = PBXGroup;
+			children = (
+				916C6D4622F831B800D2538F /* MessageViewController.h */,
+				916C6D4722F831B800D2538F /* MessageViewController.m */,
+				91D2AC5C22F912A600179C88 /* GetZanViewController.h */,
+				91D2AC5D22F912A600179C88 /* GetZanViewController.m */,
+				91D2AC6F22F95C6400179C88 /* MyFansViewController.h */,
+				91D2AC7022F95C6400179C88 /* MyFansViewController.m */,
+				91D2AC7522F9675600179C88 /* MyfriendsViewController.h */,
+				91D2AC7622F9675600179C88 /* MyfriendsViewController.m */,
+			);
+			path = OldVC;
+			sourceTree = "<group>";
+		};
+		91C239FF234C8B9100AFE879 /* UUMarqueeView */ = {
+			isa = PBXGroup;
+			children = (
+				91C23A03234C8BDA00AFE879 /* MSWeakTimer.h */,
+				91C23A04234C8BDA00AFE879 /* MSWeakTimer.m */,
+				91C23A00234C8BAA00AFE879 /* UUMarqueeView.h */,
+				91C23A01234C8BAA00AFE879 /* UUMarqueeView.m */,
+			);
+			path = UUMarqueeView;
 			sourceTree = "<group>";
 		};
 		91C3BB80233C8CF50033E286 /* NewVC */ = {
@@ -2583,6 +2622,7 @@
 				91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */,
 				91C3B74E233328A600BDAF46 /* OrderDetilNetworking.m in Sources */,
 				910A8DA6230E439D0051CDA2 /* MarketSearchPriceViewController.m in Sources */,
+				91C239FE234C844D00AFE879 /* NewFriendsViewController.m in Sources */,
 				91F6222C230BE94E0088730D /* MarketSearchCollectionViewCell.m in Sources */,
 				9113E15922EAE58000FFFCF0 /* BaseViewController.m in Sources */,
 				914A86F2232621F800DB324E /* AddressSelectView.m in Sources */,
@@ -2600,6 +2640,7 @@
 				79CC62F52158E44300101773 /* GKNetworking.m in Sources */,
 				91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */,
 				91CDD573232A2AD700483EB8 /* openssl_wrapper.m in Sources */,
+				91C23A05234C8BDA00AFE879 /* MSWeakTimer.m in Sources */,
 				91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */,
 				916C6D4822F831B800D2538F /* MessageViewController.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
@@ -2650,6 +2691,7 @@
 				91DFEF872302559700DA2458 /* MyBusinessTableViewCell.m in Sources */,
 				9198436C230553C6001148B9 /* UserNetworking.m in Sources */,
 				916B675F2317A172000E6F8A /* MusicNetworking.m in Sources */,
+				91C23A02234C8BAA00AFE879 /* UUMarqueeView.m in Sources */,
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,
 				79CC62DF21573CAE00101773 /* GKDYVideoPlayer.m in Sources */,
 				9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */,

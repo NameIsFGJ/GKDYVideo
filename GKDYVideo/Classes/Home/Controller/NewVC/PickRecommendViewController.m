@@ -85,7 +85,6 @@
 {
     HotGoodsModel *model = self.itemsArray[indexPath.row];
     return CGSizeMake(0, [model.imageheight integerValue]);
-    
 }
 
 /** 列数*/

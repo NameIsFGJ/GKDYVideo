@@ -9,7 +9,7 @@
 #import "NewMineViewController.h"
 #import "NewMineView.h"
 #import "MineTableViewCell.h"
-@interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
 @property (strong, nonatomic) NewMineView *headView;
@@ -32,6 +32,7 @@
     }];
     
     self.headView = [[NewMineView alloc]init];
+    self.headView.delegate = self;
     self.headView.frame = CGRectMake(0, 0, kWindowWidth, 460);
     self.mainView.tableHeaderView = self.headView;
     
@@ -79,6 +80,26 @@
         self.navigationItem.title = @"";
     }
 }
+
+#pragma mark MyHeadViewDelegate
+// 会员
+- (void)headViewMemberButtonClick;
+{
+    
+}
+// 我的饭圈
+- (void)headViewTopicButtonClick
+{
+    NSLog(@"我的222饭圈");
+}
+// 待付款
+- (void)headViewWaitPayButtonClick;
+{
+    
+}
+
+
+
 #pragma mark LazyLoad
 - (UITableView *)mainView
 {

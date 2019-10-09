@@ -11,19 +11,25 @@
 #import "PickSegmentedControl.h"
 #import "RankListViewController.h"
 #import "LegalCopyViewController.h"
-@interface NewMarketViewController ()<SDCycleScrollViewDelegate>
+typedef enum : NSUInteger {
+    AnimationDirectionForward,
+    AnimationDirectionReverse,
+} AnimationDirection;
+
+@interface NewMarketViewController ()<SDCycleScrollViewDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource>
 @property (strong, nonatomic) PickSearchBar *searchBar;
 @property (strong, nonatomic) SDCycleScrollView *scrollView;
 @property (strong, nonatomic) PickSegmentedControl *control;
-//@property (strong, nonatomic) RankListViewController *rankListVC;
+@property (strong, nonatomic) RankListViewController *rankListVC;
 @property (strong, nonatomic) LegalCopyViewController *legalCopyVC;
-@property (strong, nonatomic) LegalCopyViewController *rankListVC;
+//@property (strong, nonatomic) LegalCopyViewController *rankListVC;
+@property (strong, nonatomic) UIPageViewController *pageVC;
 @property (strong, nonatomic) UIViewController *currentVC;
 @property (assign, nonatomic) NSInteger selectIndex;
 @property (strong, nonatomic) UIView *contentView;
 @property (assign, nonatomic) BOOL showOrHide;
 @property (strong, nonatomic) UIView *topView;
-
+@property (strong, nonatomic) NSArray *arrayVC;
 @end
 
 @implementation NewMarketViewController
@@ -193,32 +199,59 @@
         make.bottom.mas_equalTo(0);
         make.top.equalTo(self.topView.mas_bottom).offset(10);
     }];
+    
+    
+    //-----------------------------
+    [self addChildViewController:self.pageVC];
+    [self.contentView addSubview:self.pageVC.view];
+    [self.pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+    
 }
 
 - (void)buttonAction:(PickSegmentedControl *)control
 {
-    self.selectIndex = control.selectedSegmentIndex;
+    UIViewController *vc = self.arrayVC[control.selectedSegmentIndex];
+    NSArray *array = [NSArray arrayWithObject:vc];
     
-    [self addChildViewController:self.legalCopyVC];
-    @weakify(self)
-    [self transitionFromViewController:self.currentVC toViewController:self.childViewControllers[self.selectIndex] duration:.2f options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
-        @strongify(self)
-        
-        [self.legalCopyVC didMoveToParentViewController:self];
-        self.currentVC = self.childViewControllers[self.selectIndex];
-        
-    }];
+    
+    if ([vc isEqual:self.legalCopyVC])
+    {
+        [self.pageVC setViewControllers:array
+                              direction:UIPageViewControllerNavigationDirectionReverse
+                               animated:YES
+                             completion:nil];
+    }
+    else
+    {
+        [self.pageVC setViewControllers:array
+                              direction:UIPageViewControllerNavigationDirectionForward
+                               animated:YES
+                             completion:nil];
+    }
+//    self.selectIndex = control.selectedSegmentIndex;
+//
+//    [self addChildViewController:self.legalCopyVC];
+//    @weakify(self)
+//    [self transitionFromViewController:self.currentVC toViewController:self.childViewControllers[self.selectIndex] duration:.2f options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
+//        @strongify(self)
+//
+//        [self.legalCopyVC didMoveToParentViewController:self];
+//        self.currentVC = self.childViewControllers[self.selectIndex];
+//
+//    }];
     
 }
 
 - (void)viewDidLayoutSubviews
 {
-    [self addChildViewController:self.rankListVC];
-    self.rankListVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
-    [self.contentView addSubview:self.rankListVC.view];
-    [self.rankListVC didMoveToParentViewController:self];
-    self.currentVC = self.rankListVC;
-    self.legalCopyVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
+//    [self addChildViewController:self.rankListVC];
+//    self.rankListVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
+//    [self.contentView addSubview:self.rankListVC.view];
+//    [self.rankListVC didMoveToParentViewController:self];
+//    self.currentVC = self.rankListVC;
+//    self.legalCopyVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
 }
 
 #pragma mark ScrollViewDelegate
@@ -232,6 +265,45 @@
 {
     
 }
+
+
+#pragma mark UIPageViewController
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed;
+{
+    if (!completed) {
+        return;
+    }
+    if ([previousViewControllers.firstObject isEqual:self.rankListVC]) {
+        
+    }else
+    {
+        
+    }
+}
+
+- (void)startAnimationWithDirection:(AnimationDirection)direction
+{
+    
+}
+- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController;
+{
+    if ([viewController isEqual:self.rankListVC]) {
+        return nil;
+    }else
+    {
+        return self.legalCopyVC;
+    }
+}
+- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    if ([viewController isEqual:self.legalCopyVC]) {
+        return nil;
+    }else
+    {
+        return self.rankListVC;
+    }
+}
+
 #pragma mark loazyLoad
 - (PickSearchBar *)searchBar
 {
@@ -283,44 +355,11 @@
     return _legalCopyVC;
 }
 
-- (LegalCopyViewController *)rankListVC
-{
-    @weakify(self)
-    if (!_rankListVC) {
-        _rankListVC = [[LegalCopyViewController alloc]init];
-        _rankListVC.block = ^(BOOL showOrHide) {
-            if (self.showOrHide != showOrHide) {
-                [UIView animateWithDuration:.3 animations:^{
-                    @strongify(self)
-                    if (!showOrHide) {
-                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(0);
-                            
-                        }];
-                    }else
-                    {
-                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(400 + NAVBAR_HEIGHT);
-                        }];
-                    }
-                    [self.view layoutIfNeeded];
-                } completion:^(BOOL finished) {
-                    @strongify(self)
-                    self.showOrHide = showOrHide;
-                }];
-            }
-        };
-    }
-    return _rankListVC;
-}
-
-
-
-//- (RankListViewController *)rankListVC
+//- (LegalCopyViewController *)rankListVC
 //{
 //    @weakify(self)
 //    if (!_rankListVC) {
-//        _rankListVC = [[RankListViewController alloc]init];
+//        _rankListVC = [[LegalCopyViewController alloc]init];
 //        _rankListVC.block = ^(BOOL showOrHide) {
 //            if (self.showOrHide != showOrHide) {
 //                [UIView animateWithDuration:.3 animations:^{
@@ -347,6 +386,46 @@
 //    return _rankListVC;
 //}
 
+- (UIPageViewController *)pageVC
+{
+    if (!_pageVC) {
+        _pageVC = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        [_pageVC setViewControllers:@[self.legalCopyVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    }
+    return _pageVC;
+}
+
+- (RankListViewController *)rankListVC
+{
+    @weakify(self)
+    if (!_rankListVC) {
+        _rankListVC = [[RankListViewController alloc]init];
+        _rankListVC.block = ^(BOOL showOrHide) {
+            if (self.showOrHide != showOrHide) {
+                [UIView animateWithDuration:.3 animations:^{
+                    @strongify(self)
+                    if (!showOrHide) {
+                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
+                            make.height.mas_equalTo(0);
+
+                        }];
+                    }else
+                    {
+                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
+                            make.height.mas_equalTo(400 + NAVBAR_HEIGHT);
+                        }];
+                    }
+                    [self.view layoutIfNeeded];
+                } completion:^(BOOL finished) {
+                    @strongify(self)
+                    self.showOrHide = showOrHide;
+                }];
+            }
+        };
+    }
+    return _rankListVC;
+}
+
 - (PickSegmentedControl *)control
 {
     if (!_control) {
@@ -355,4 +434,11 @@
     return _control;
 }
 
+- (NSArray *)arrayVC
+{
+    if (!_arrayVC) {
+        _arrayVC = [NSArray arrayWithObjects:self.legalCopyVC,self.rankListVC, nil];
+    }
+    return _arrayVC;
+}
 @end
