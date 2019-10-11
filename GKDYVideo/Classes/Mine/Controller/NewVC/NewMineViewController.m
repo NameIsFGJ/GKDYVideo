@@ -9,6 +9,7 @@
 #import "NewMineViewController.h"
 #import "NewMineView.h"
 #import "MineTableViewCell.h"
+#import "MemberViewController.h"
 @interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
@@ -82,20 +83,57 @@
 }
 
 #pragma mark MyHeadViewDelegate
+// 我的饭圈
+- (void)headViewTopicButtonClick;
+{
+    NSLog(@"我的饭圈");
+}
 // 会员
 - (void)headViewMemberButtonClick;
-{
-    
+{   
+    MemberViewController *vc = [[MemberViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
-// 我的饭圈
-- (void)headViewTopicButtonClick
+// 查看所有订单
+- (void)headViewOrderAllButtonClick;
 {
-    NSLog(@"我的222饭圈");
+    NSLog(@"查看全部");
 }
 // 待付款
 - (void)headViewWaitPayButtonClick;
 {
-    
+    NSLog(@"待付款");
+}
+// 待发货
+- (void)headViewWaitSendButtonClick;
+{
+    NSLog(@"待发货");
+}
+// 待评价
+- (void)headViewWaitDiscussButtonClick;
+{
+    NSLog(@"待评价");
+}
+// 售后
+- (void)headViewServeButtonClick;
+{
+    NSLog(@"退货/售后");
+}
+// 余额
+- (void)headViewMoneyButtonClick;
+{
+    NSLog(@"余额");
+}
+// 红包
+- (void)headViewRedPacketButtonClick;
+{
+    NSLog(@"红包");
+}
+// 优惠券
+- (void)headViewDiscountButtonClick;
+{
+    NSLog(@"优惠券");
 }
 
 

@@ -316,7 +316,6 @@
 // 我的饭圈
 - (void)myTopicButtonAction
 {
-    NSLog(@"我的饭圈");
     if ([self.delegate respondsToSelector:@selector(headViewTopicButtonClick)]) {
         [self.delegate headViewTopicButtonClick];
     }
