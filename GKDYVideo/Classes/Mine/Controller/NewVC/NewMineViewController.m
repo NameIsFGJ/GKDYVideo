@@ -10,6 +10,7 @@
 #import "NewMineView.h"
 #import "MineTableViewCell.h"
 #import "MemberViewController.h"
+#import "NewSetViewController.h"
 @interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
@@ -41,11 +42,18 @@
     [rightButton setTitle:@"设置" forState:UIControlStateNormal];
     [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightItem;
     
 }
 
+- (void)rightButtonAction
+{
+    NewSetViewController *vc = [[NewSetViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
