@@ -113,6 +113,11 @@
     return UIEdgeInsetsMake(0, 10, 0, 10);
 }
 
+#pragma mark EmptyDelegate
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"emptyImage"];
+}
 #pragma mark 懒加载
 - (UICollectionView *)mainView
 {
@@ -126,7 +131,8 @@
         _mainView.delegate =self;
         _mainView.dataSource = self;
         _mainView.backgroundColor = [UIColor whiteColor];
-        
+        _mainView.emptyDataSetSource = self;
+        _mainView.emptyDataSetDelegate = self;
         [_mainView registerNib:[UINib nibWithNibName:@"PickCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"PickCollectionViewCellID"];
         
     }

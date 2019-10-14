@@ -39,6 +39,9 @@
 		910A8DA6230E439D0051CDA2 /* MarketSearchPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A8DA5230E439D0051CDA2 /* MarketSearchPriceViewController.m */; };
 		910A8DAA230E45890051CDA2 /* MarketSearchGoodsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A8DA9230E45890051CDA2 /* MarketSearchGoodsMainController.m */; };
 		910A8DAD230E6AFE0051CDA2 /* MarketSearchGoodsNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A8DAC230E6AFE0051CDA2 /* MarketSearchGoodsNetworking.m */; };
+		9111847D23540FD500054217 /* NewWaitPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9111847C23540FD500054217 /* NewWaitPayDetailViewController.m */; };
+		911184812354647F00054217 /* NewLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9111847F2354647F00054217 /* NewLikeCollectionViewCell.m */; };
+		911184822354647F00054217 /* NewLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911184802354647F00054217 /* NewLikeCollectionViewCell.xib */; };
 		91125F092321EED000A15FFE /* GoodsDetailNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91125F082321EED000A15FFE /* GoodsDetailNetworking.m */; };
 		91125F0C2321FAFD00A15FFE /* MarketOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91125F0B2321FAFD00A15FFE /* MarketOrderViewController.m */; };
 		91125F0F2322570600A15FFE /* AddressEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91125F0E2322570600A15FFE /* AddressEditViewController.m */; };
@@ -172,6 +175,25 @@
 		91BB8682231521C4004FA74D /* AddVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB8681231521C4004FA74D /* AddVideoViewController.m */; };
 		91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BBB70922E7F2460060ADDD /* UIViewController+Category.m */; };
 		91BC3647230AA0420052A11A /* MarkCollectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3646230AA0420052A11A /* MarkCollectionFootView.m */; };
+		91BC3B292351641A00764D4B /* NewAllOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B282351641A00764D4B /* NewAllOrderViewController.m */; };
+		91BC3B2E2351672100764D4B /* NewAllOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B2C2351672100764D4B /* NewAllOrderTableViewCell.m */; };
+		91BC3B2F2351672100764D4B /* NewAllOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BC3B2D2351672100764D4B /* NewAllOrderTableViewCell.xib */; };
+		91BC3B3223517B9F00764D4B /* OrderMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B3123517B9F00764D4B /* OrderMainViewController.m */; };
+		91BC3B35235196B900764D4B /* NewWaitPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B34235196B900764D4B /* NewWaitPayViewController.m */; };
+		91BC3B38235196D300764D4B /* NewWaitSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B37235196D300764D4B /* NewWaitSendViewController.m */; };
+		91BC3B442351987A00764D4B /* NewWaitAppraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B432351987A00764D4B /* NewWaitAppraiseViewController.m */; };
+		91BC3B4A235198F100764D4B /* NewWaitReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B49235198F100764D4B /* NewWaitReceiveViewController.m */; };
+		91BC3B4E2351A1A100764D4B /* InterestCosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B4D2351A1A100764D4B /* InterestCosViewController.m */; };
+		91BC3B512351A1DA00764D4B /* InterestKitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B502351A1DA00764D4B /* InterestKitsViewController.m */; };
+		91BC3B572351A20D00764D4B /* InterestFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B562351A20D00764D4B /* InterestFoodViewController.m */; };
+		91BC3B5D2351A44900764D4B /* InterestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B5C2351A44900764D4B /* InterestMainViewController.m */; };
+		91BC3B632351B16600764D4B /* InterestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B612351B16600764D4B /* InterestTableViewCell.m */; };
+		91BC3B642351B16600764D4B /* InterestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BC3B622351B16600764D4B /* InterestTableViewCell.xib */; };
+		91BC3B682351BE4200764D4B /* AuthenCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B662351BE4200764D4B /* AuthenCollectionViewCell.m */; };
+		91BC3B692351BE4200764D4B /* AuthenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BC3B672351BE4200764D4B /* AuthenCollectionViewCell.xib */; };
+		91BC3B6D2351C03A00764D4B /* AuthenMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B6C2351C03A00764D4B /* AuthenMainViewController.m */; };
+		91BC3B712351CB6A00764D4B /* AuthenCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC3B6F2351CB6A00764D4B /* AuthenCollectionReusableView.m */; };
+		91BC3B722351CB6A00764D4B /* AuthenCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BC3B702351CB6A00764D4B /* AuthenCollectionReusableView.xib */; };
 		91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */; };
 		91BE83712350248E008A4236 /* MemberSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BE83702350248E008A4236 /* MemberSuccessViewController.m */; };
 		91BE837E23504E7E008A4236 /* NewSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BE837D23504E7E008A4236 /* NewSetViewController.m */; };
@@ -367,6 +389,11 @@
 		910A8DA9230E45890051CDA2 /* MarketSearchGoodsMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketSearchGoodsMainController.m; sourceTree = "<group>"; };
 		910A8DAB230E6AFE0051CDA2 /* MarketSearchGoodsNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketSearchGoodsNetworking.h; sourceTree = "<group>"; };
 		910A8DAC230E6AFE0051CDA2 /* MarketSearchGoodsNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketSearchGoodsNetworking.m; sourceTree = "<group>"; };
+		9111847B23540FD500054217 /* NewWaitPayDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWaitPayDetailViewController.h; sourceTree = "<group>"; };
+		9111847C23540FD500054217 /* NewWaitPayDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWaitPayDetailViewController.m; sourceTree = "<group>"; };
+		9111847E2354647F00054217 /* NewLikeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewLikeCollectionViewCell.h; sourceTree = "<group>"; };
+		9111847F2354647F00054217 /* NewLikeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewLikeCollectionViewCell.m; sourceTree = "<group>"; };
+		911184802354647F00054217 /* NewLikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewLikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		91125F072321EED000A15FFE /* GoodsDetailNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsDetailNetworking.h; sourceTree = "<group>"; };
 		91125F082321EED000A15FFE /* GoodsDetailNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailNetworking.m; sourceTree = "<group>"; };
 		91125F0A2321FAFD00A15FFE /* MarketOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketOrderViewController.h; sourceTree = "<group>"; };
@@ -624,6 +651,40 @@
 		91BBB70922E7F2460060ADDD /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
 		91BC3645230AA0420052A11A /* MarkCollectionFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkCollectionFootView.h; sourceTree = "<group>"; };
 		91BC3646230AA0420052A11A /* MarkCollectionFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionFootView.m; sourceTree = "<group>"; };
+		91BC3B272351641A00764D4B /* NewAllOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAllOrderViewController.h; sourceTree = "<group>"; };
+		91BC3B282351641A00764D4B /* NewAllOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAllOrderViewController.m; sourceTree = "<group>"; };
+		91BC3B2B2351672100764D4B /* NewAllOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAllOrderTableViewCell.h; sourceTree = "<group>"; };
+		91BC3B2C2351672100764D4B /* NewAllOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAllOrderTableViewCell.m; sourceTree = "<group>"; };
+		91BC3B2D2351672100764D4B /* NewAllOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAllOrderTableViewCell.xib; sourceTree = "<group>"; };
+		91BC3B3023517B9F00764D4B /* OrderMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderMainViewController.h; sourceTree = "<group>"; };
+		91BC3B3123517B9F00764D4B /* OrderMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderMainViewController.m; sourceTree = "<group>"; };
+		91BC3B33235196B900764D4B /* NewWaitPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWaitPayViewController.h; sourceTree = "<group>"; };
+		91BC3B34235196B900764D4B /* NewWaitPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWaitPayViewController.m; sourceTree = "<group>"; };
+		91BC3B36235196D300764D4B /* NewWaitSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWaitSendViewController.h; sourceTree = "<group>"; };
+		91BC3B37235196D300764D4B /* NewWaitSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWaitSendViewController.m; sourceTree = "<group>"; };
+		91BC3B422351987A00764D4B /* NewWaitAppraiseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWaitAppraiseViewController.h; sourceTree = "<group>"; };
+		91BC3B432351987A00764D4B /* NewWaitAppraiseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWaitAppraiseViewController.m; sourceTree = "<group>"; };
+		91BC3B48235198F100764D4B /* NewWaitReceiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWaitReceiveViewController.h; sourceTree = "<group>"; };
+		91BC3B49235198F100764D4B /* NewWaitReceiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWaitReceiveViewController.m; sourceTree = "<group>"; };
+		91BC3B4C2351A1A100764D4B /* InterestCosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterestCosViewController.h; sourceTree = "<group>"; };
+		91BC3B4D2351A1A100764D4B /* InterestCosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestCosViewController.m; sourceTree = "<group>"; };
+		91BC3B4F2351A1DA00764D4B /* InterestKitsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterestKitsViewController.h; sourceTree = "<group>"; };
+		91BC3B502351A1DA00764D4B /* InterestKitsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestKitsViewController.m; sourceTree = "<group>"; };
+		91BC3B552351A20D00764D4B /* InterestFoodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterestFoodViewController.h; sourceTree = "<group>"; };
+		91BC3B562351A20D00764D4B /* InterestFoodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestFoodViewController.m; sourceTree = "<group>"; };
+		91BC3B5B2351A44900764D4B /* InterestMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterestMainViewController.h; sourceTree = "<group>"; };
+		91BC3B5C2351A44900764D4B /* InterestMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestMainViewController.m; sourceTree = "<group>"; };
+		91BC3B602351B16600764D4B /* InterestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterestTableViewCell.h; sourceTree = "<group>"; };
+		91BC3B612351B16600764D4B /* InterestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestTableViewCell.m; sourceTree = "<group>"; };
+		91BC3B622351B16600764D4B /* InterestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestTableViewCell.xib; sourceTree = "<group>"; };
+		91BC3B652351BE4200764D4B /* AuthenCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenCollectionViewCell.h; sourceTree = "<group>"; };
+		91BC3B662351BE4200764D4B /* AuthenCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenCollectionViewCell.m; sourceTree = "<group>"; };
+		91BC3B672351BE4200764D4B /* AuthenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenCollectionViewCell.xib; sourceTree = "<group>"; };
+		91BC3B6B2351C03A00764D4B /* AuthenMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenMainViewController.h; sourceTree = "<group>"; };
+		91BC3B6C2351C03A00764D4B /* AuthenMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenMainViewController.m; sourceTree = "<group>"; };
+		91BC3B6E2351CB6A00764D4B /* AuthenCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenCollectionReusableView.h; sourceTree = "<group>"; };
+		91BC3B6F2351CB6A00764D4B /* AuthenCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenCollectionReusableView.m; sourceTree = "<group>"; };
+		91BC3B702351CB6A00764D4B /* AuthenCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenCollectionReusableView.xib; sourceTree = "<group>"; };
 		91BD725B22EFEC2D00F517F6 /* SearchVideosNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideosNetworking.h; sourceTree = "<group>"; };
 		91BD725C22EFEC2D00F517F6 /* SearchVideosNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideosNetworking.m; sourceTree = "<group>"; };
 		91BE836F2350248E008A4236 /* MemberSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberSuccessViewController.h; sourceTree = "<group>"; };
@@ -1362,6 +1423,7 @@
 			children = (
 				912CE5272340409C00375DDD /* NewMineViewController.h */,
 				912CE5282340409C00375DDD /* NewMineViewController.m */,
+				91BC3B262351630500764D4B /* 订单 */,
 				91BE837323504632008A4236 /* 设置 */,
 				91BE83722350461F008A4236 /* 会员 */,
 			);
@@ -1409,6 +1471,10 @@
 				91BE837F23504EB2008A4236 /* NewSetTableViewCell.h */,
 				91BE838023504EB2008A4236 /* NewSetTableViewCell.m */,
 				91BE838123504EB2008A4236 /* NewSetTableViewCell.xib */,
+				9111847E2354647F00054217 /* NewLikeCollectionViewCell.h */,
+				9111847F2354647F00054217 /* NewLikeCollectionViewCell.m */,
+				911184802354647F00054217 /* NewLikeCollectionViewCell.xib */,
+				91BC3B2A2351645900764D4B /* 订单View */,
 			);
 			path = NewView;
 			sourceTree = "<group>";
@@ -1681,20 +1747,8 @@
 		912F4D9E22E18C94004CF0DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				916C6D4C22F833B700D2538F /* MessageTableViewCell.h */,
-				916C6D4D22F833B700D2538F /* MessageTableViewCell.m */,
-				916C6D4E22F833B700D2538F /* MessageTableViewCell.xib */,
-				91D2AC5F22F9172600179C88 /* MessageCommonTableViewCell.h */,
-				91D2AC6022F9172600179C88 /* MessageCommonTableViewCell.m */,
-				91D2AC6122F9172600179C88 /* MessageCommonTableViewCell.xib */,
-				91D2AC6A22F9565000179C88 /* MyFansTableViewCell.h */,
-				91D2AC6B22F9565000179C88 /* MyFansTableViewCell.m */,
-				91D2AC6C22F9565000179C88 /* MyFansTableViewCell.xib */,
-				91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */,
-				91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */,
-				91D2AC7822F968C700179C88 /* MyFriendTableViewCell.h */,
-				91D2AC7922F968C700179C88 /* MyFriendTableViewCell.m */,
-				91D2AC7A22F968C700179C88 /* MyFriendTableViewCell.xib */,
+				91BC3B5E2351B12E00764D4B /* NewView */,
+				91BC3B5F2351B13800764D4B /* OldView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1887,6 +1941,98 @@
 			path = EnditVC;
 			sourceTree = "<group>";
 		};
+		91BC3B262351630500764D4B /* 订单 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B3023517B9F00764D4B /* OrderMainViewController.h */,
+				91BC3B3123517B9F00764D4B /* OrderMainViewController.m */,
+				91BC3B272351641A00764D4B /* NewAllOrderViewController.h */,
+				91BC3B282351641A00764D4B /* NewAllOrderViewController.m */,
+				91BC3B33235196B900764D4B /* NewWaitPayViewController.h */,
+				91BC3B34235196B900764D4B /* NewWaitPayViewController.m */,
+				91BC3B36235196D300764D4B /* NewWaitSendViewController.h */,
+				91BC3B37235196D300764D4B /* NewWaitSendViewController.m */,
+				91BC3B48235198F100764D4B /* NewWaitReceiveViewController.h */,
+				91BC3B49235198F100764D4B /* NewWaitReceiveViewController.m */,
+				91BC3B422351987A00764D4B /* NewWaitAppraiseViewController.h */,
+				91BC3B432351987A00764D4B /* NewWaitAppraiseViewController.m */,
+				9111847B23540FD500054217 /* NewWaitPayDetailViewController.h */,
+				9111847C23540FD500054217 /* NewWaitPayDetailViewController.m */,
+			);
+			path = "订单";
+			sourceTree = "<group>";
+		};
+		91BC3B2A2351645900764D4B /* 订单View */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B2B2351672100764D4B /* NewAllOrderTableViewCell.h */,
+				91BC3B2C2351672100764D4B /* NewAllOrderTableViewCell.m */,
+				91BC3B2D2351672100764D4B /* NewAllOrderTableViewCell.xib */,
+			);
+			path = "订单View";
+			sourceTree = "<group>";
+		};
+		91BC3B4B2351A08900764D4B /* 兴趣达人 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B5B2351A44900764D4B /* InterestMainViewController.h */,
+				91BC3B5C2351A44900764D4B /* InterestMainViewController.m */,
+				91BC3B4C2351A1A100764D4B /* InterestCosViewController.h */,
+				91BC3B4D2351A1A100764D4B /* InterestCosViewController.m */,
+				91BC3B4F2351A1DA00764D4B /* InterestKitsViewController.h */,
+				91BC3B502351A1DA00764D4B /* InterestKitsViewController.m */,
+				91BC3B552351A20D00764D4B /* InterestFoodViewController.h */,
+				91BC3B562351A20D00764D4B /* InterestFoodViewController.m */,
+			);
+			path = "兴趣达人";
+			sourceTree = "<group>";
+		};
+		91BC3B5E2351B12E00764D4B /* NewView */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B602351B16600764D4B /* InterestTableViewCell.h */,
+				91BC3B612351B16600764D4B /* InterestTableViewCell.m */,
+				91BC3B622351B16600764D4B /* InterestTableViewCell.xib */,
+				91BC3B652351BE4200764D4B /* AuthenCollectionViewCell.h */,
+				91BC3B662351BE4200764D4B /* AuthenCollectionViewCell.m */,
+				91BC3B672351BE4200764D4B /* AuthenCollectionViewCell.xib */,
+				91BC3B6E2351CB6A00764D4B /* AuthenCollectionReusableView.h */,
+				91BC3B6F2351CB6A00764D4B /* AuthenCollectionReusableView.m */,
+				91BC3B702351CB6A00764D4B /* AuthenCollectionReusableView.xib */,
+			);
+			path = NewView;
+			sourceTree = "<group>";
+		};
+		91BC3B5F2351B13800764D4B /* OldView */ = {
+			isa = PBXGroup;
+			children = (
+				916C6D4C22F833B700D2538F /* MessageTableViewCell.h */,
+				916C6D4D22F833B700D2538F /* MessageTableViewCell.m */,
+				916C6D4E22F833B700D2538F /* MessageTableViewCell.xib */,
+				91D2AC5F22F9172600179C88 /* MessageCommonTableViewCell.h */,
+				91D2AC6022F9172600179C88 /* MessageCommonTableViewCell.m */,
+				91D2AC6122F9172600179C88 /* MessageCommonTableViewCell.xib */,
+				91D2AC6A22F9565000179C88 /* MyFansTableViewCell.h */,
+				91D2AC6B22F9565000179C88 /* MyFansTableViewCell.m */,
+				91D2AC6C22F9565000179C88 /* MyFansTableViewCell.xib */,
+				91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */,
+				91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */,
+				91D2AC7822F968C700179C88 /* MyFriendTableViewCell.h */,
+				91D2AC7922F968C700179C88 /* MyFriendTableViewCell.m */,
+				91D2AC7A22F968C700179C88 /* MyFriendTableViewCell.xib */,
+			);
+			path = OldView;
+			sourceTree = "<group>";
+		};
+		91BC3B6A2351C01500764D4B /* 官方认证 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B6B2351C03A00764D4B /* AuthenMainViewController.h */,
+				91BC3B6C2351C03A00764D4B /* AuthenMainViewController.m */,
+			);
+			path = "官方认证";
+			sourceTree = "<group>";
+		};
 		91BE83722350461F008A4236 /* 会员 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1928,6 +2074,8 @@
 			children = (
 				91C239FC234C844D00AFE879 /* NewFriendsViewController.h */,
 				91C239FD234C844D00AFE879 /* NewFriendsViewController.m */,
+				91BC3B6A2351C01500764D4B /* 官方认证 */,
+				91BC3B4B2351A08900764D4B /* 兴趣达人 */,
 			);
 			path = NewVC;
 			sourceTree = "<group>";
@@ -2484,7 +2632,9 @@
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
 				91827411234F081600760D93 /* MemberHistoryTableViewCell.xib in Resources */,
 				91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */,
+				91BC3B722351CB6A00764D4B /* AuthenCollectionReusableView.xib in Resources */,
 				91CCB245234C1DF700E8D3AB /* LegalListTableViewCell.xib in Resources */,
+				911184822354647F00054217 /* NewLikeCollectionViewCell.xib in Resources */,
 				9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */,
 				79CC629F2157377600101773 /* LaunchScreen.storyboard in Resources */,
 				91827409234EE0E200760D93 /* VipCollectionViewCell.xib in Resources */,
@@ -2495,11 +2645,14 @@
 				91BE838323504EB2008A4236 /* NewSetTableViewCell.xib in Resources */,
 				79CC629C2157377600101773 /* Assets.xcassets in Resources */,
 				917FCE602320F26C00786775 /* test.html in Resources */,
+				91BC3B692351BE4200764D4B /* AuthenCollectionViewCell.xib in Resources */,
+				91BC3B2F2351672100764D4B /* NewAllOrderTableViewCell.xib in Resources */,
 				91D80277233B19B600659A01 /* MyBuyTableViewCell.xib in Resources */,
 				91D2AC6322F9172600179C88 /* MessageCommonTableViewCell.xib in Resources */,
 				91125F1423225B4600A15FFE /* AddressEditTableViewCell.xib in Resources */,
 				91139DC42318C30200A936E8 /* Greenery.m4a in Resources */,
 				91DA72DB230CE7F80085312E /* MarketUserShopCollectionViewCell.xib in Resources */,
+				91BC3B642351B16600764D4B /* InterestTableViewCell.xib in Resources */,
 				91C239F8234C619E00AFE879 /* RankListTableViewCell.xib in Resources */,
 				91D2AC6E22F9565000179C88 /* MyFansTableViewCell.xib in Resources */,
 				9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */,
@@ -2590,11 +2743,14 @@
 				91CC13D722ED620E00FF0C12 /* SearchMainViewController.m in Sources */,
 				914A86F5232634ED00DB324E /* AddressNewNetworking.m in Sources */,
 				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
+				91BC3B632351B16600764D4B /* InterestTableViewCell.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
 				91827404234EC0A500760D93 /* MemberViewController.m in Sources */,
+				91BC3B682351BE4200764D4B /* AuthenCollectionViewCell.m in Sources */,
 				91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */,
 				91D9810E23345F91006A6A92 /* ToPayDataNetworking.m in Sources */,
+				91BC3B4A235198F100764D4B /* NewWaitReceiveViewController.m in Sources */,
 				91D80271233B189600659A01 /* MySellTableViewCell.m in Sources */,
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */,
@@ -2610,12 +2766,14 @@
 				919843722305568B001148B9 /* UserModel.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
 				91009144231E0648000F0767 /* QiniuTokenNetworking.m in Sources */,
+				91BC3B6D2351C03A00764D4B /* AuthenMainViewController.m in Sources */,
 				91C25BFD232CACCD00A6B629 /* ReturnGoodsNetworking.m in Sources */,
 				917FCE5B2320B26000786775 /* MyBusinessModel.m in Sources */,
 				919843662304FF14001148B9 /* GKDYUserMainViewController.m in Sources */,
 				91827410234F081600760D93 /* MemberHistoryTableViewCell.m in Sources */,
 				91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */,
 				9166A5FC232F6F6A00BA68E5 /* OrderReturnFalseViewController.m in Sources */,
+				91BC3B35235196B900764D4B /* NewWaitPayViewController.m in Sources */,
 				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
 				91BE838F23507752008A4236 /* ChangeIphoneViewController.m in Sources */,
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
@@ -2626,6 +2784,7 @@
 				91FD2DED231FBC1700FC2520 /* MyGoodsNetworking.m in Sources */,
 				91BABCE5230ACC1E00047A64 /* MarketCollectionViewCell.m in Sources */,
 				91A05A13231CED2E00322752 /* PlayerView.m in Sources */,
+				91BC3B5D2351A44900764D4B /* InterestMainViewController.m in Sources */,
 				91DD442D22FFDE2B009A4790 /* MarketModel.m in Sources */,
 				91FD2DE7231F9D3600FC2520 /* SuccessVideoViewController.m in Sources */,
 				9166A605232F7A1000BA68E5 /* TestUploadNetworking.m in Sources */,
@@ -2671,6 +2830,7 @@
 				9162CFB222FA5D7B0094EB7E /* EditInfoViewController.m in Sources */,
 				91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */,
 				91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */,
+				91BC3B572351A20D00764D4B /* InterestFoodViewController.m in Sources */,
 				91DA72F3230D2C050085312E /* MarketUserShopModel.m in Sources */,
 				9113E15622EAD87700FFFCF0 /* SearchView.m in Sources */,
 				91D0BD66232889C900E0ABED /* DeleGoodsNetworking.m in Sources */,
@@ -2684,7 +2844,9 @@
 				910A8DAD230E6AFE0051CDA2 /* MarketSearchGoodsNetworking.m in Sources */,
 				916B67652317A72C000E6F8A /* MusicsViewController.m in Sources */,
 				91F62222230BBD2E0088730D /* WSLWaterFlowLayout.m in Sources */,
+				9111847D23540FD500054217 /* NewWaitPayDetailViewController.m in Sources */,
 				91E19A172306AE44000E70D5 /* UIButton+category.m in Sources */,
+				91BC3B38235196D300764D4B /* NewWaitSendViewController.m in Sources */,
 				79CC62EB2157402800101773 /* GKDYVideoControlView.m in Sources */,
 				91ABABB722FBCE1B00E4593A /* EditSignsViewController.m in Sources */,
 				91C239E7234C5E3B00AFE879 /* NewMarketViewController.m in Sources */,
@@ -2693,6 +2855,7 @@
 				91DA72F0230D2B120085312E /* MarketUserShopNetworking.m in Sources */,
 				79CC62A22157377600101773 /* main.m in Sources */,
 				91DFEF912302A41C00DA2458 /* MarketNetworking.m in Sources */,
+				91BC3B712351CB6A00764D4B /* AuthenCollectionReusableView.m in Sources */,
 				9189A4F822FE9B5000EA50E0 /* SexPickerView.m in Sources */,
 				91CCB244234C1DF700E8D3AB /* LegalListTableViewCell.m in Sources */,
 				91DD30B022F0818700192D7E /* VideoGuanModel.m in Sources */,
@@ -2712,6 +2875,7 @@
 				91A05A0D231CC3D500322752 /* EditViewController.m in Sources */,
 				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
 				91FD2DF0231FBC3D00FC2520 /* MyGoodsModel.m in Sources */,
+				91BC3B292351641A00764D4B /* NewAllOrderViewController.m in Sources */,
 				91DFEF832302522900DA2458 /* MyBusinessViewController.m in Sources */,
 				910A8DAA230E45890051CDA2 /* MarketSearchGoodsMainController.m in Sources */,
 				91ABABB122FBC8D700E4593A /* EditNickNameViewController.m in Sources */,
@@ -2723,6 +2887,7 @@
 				91BE838C2350749F008A4236 /* ForgetPassViewController.m in Sources */,
 				91BE83862350621B008A4236 /* IdearViewController.m in Sources */,
 				79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */,
+				91BC3B4E2351A1A100764D4B /* InterestCosViewController.m in Sources */,
 				91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */,
 				91C3BB87233C8EFE0033E286 /* PickFollowViewController.m in Sources */,
 				79CC62E221573F3C00101773 /* GKDYVideoModel.m in Sources */,
@@ -2775,6 +2940,7 @@
 				91ABABAB22FBB6E700E4593A /* UpLoadAvatarNetworking.m in Sources */,
 				91BE838923506CF3008A4236 /* ChangePasswordViewController.m in Sources */,
 				91C9C1E122E6D5C900D0A87E /* LoginNetworking.m in Sources */,
+				91BC3B2E2351672100764D4B /* NewAllOrderTableViewCell.m in Sources */,
 				91ABABBA22FC021800E4593A /* EditProfileNetworking.m in Sources */,
 				9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */,
 				91C239F3234C5EFA00AFE879 /* RankListViewController.m in Sources */,
@@ -2800,7 +2966,9 @@
 				91C3B757233344CF00BDAF46 /* OrderDetailBuyerViewController.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
 				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
+				91BC3B512351A1DA00764D4B /* InterestKitsViewController.m in Sources */,
 				91DFEF872302559700DA2458 /* MyBusinessTableViewCell.m in Sources */,
+				91BC3B3223517B9F00764D4B /* OrderMainViewController.m in Sources */,
 				9198436C230553C6001148B9 /* UserNetworking.m in Sources */,
 				916B675F2317A172000E6F8A /* MusicNetworking.m in Sources */,
 				91C23A02234C8BAA00AFE879 /* UUMarqueeView.m in Sources */,
@@ -2813,10 +2981,12 @@
 				91C239F0234C5EE200AFE879 /* LegalCopyViewController.m in Sources */,
 				91B6C48A233DF5D10090A00F /* IntroduceViewController.m in Sources */,
 				916C6D3C22F80EB200D2538F /* NSDictionary+log.m in Sources */,
+				911184812354647F00054217 /* NewLikeCollectionViewCell.m in Sources */,
 				914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */,
 				9113E16522EAF21E00FFFCF0 /* SearchUserViewController.m in Sources */,
 				9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */,
 				91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */,
+				91BC3B442351987A00764D4B /* NewWaitAppraiseViewController.m in Sources */,
 				9116615922E18FAA00A5F9C2 /* UIColor+Category.m in Sources */,
 				91DA72F6230D39BD0085312E /* MarkUserShopCollectionHeadView.m in Sources */,
 				91125F17232260E700A15FFE /* AddressNetworking.m in Sources */,

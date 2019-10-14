@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)headViewWaitPayButtonClick;
 // 待发货
 - (void)headViewWaitSendButtonClick;
+//待收货
+- (void)headViewWaitReceiveButtonClick;
 // 待评价
 - (void)headViewWaitDiscussButtonClick;
 // 售后

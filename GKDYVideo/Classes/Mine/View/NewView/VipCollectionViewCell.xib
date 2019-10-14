@@ -94,6 +94,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="130" height="165"/>
+            <connections>
+                <outlet property="detailButton" destination="ql0-RP-uff" id="k6J-VK-Vqs"/>
+                <outlet property="goodDesLabel" destination="AeV-tk-Yrm" id="R0l-lL-5fU"/>
+                <outlet property="goodImageView" destination="AEm-Lv-LhZ" id="qfc-nI-Q7x"/>
+                <outlet property="goodNameLabel" destination="3Rc-jp-UFQ" id="Zlc-RX-gXK"/>
+            </connections>
             <point key="canvasLocation" x="195.6521739130435" y="155.02232142857142"/>
         </collectionViewCell>
     </objects>

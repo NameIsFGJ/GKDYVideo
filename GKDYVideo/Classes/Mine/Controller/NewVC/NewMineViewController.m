@@ -11,6 +11,7 @@
 #import "MineTableViewCell.h"
 #import "MemberViewController.h"
 #import "NewSetViewController.h"
+#import "OrderMainViewController.h"
 @interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
@@ -107,21 +108,47 @@
 - (void)headViewOrderAllButtonClick;
 {
     NSLog(@"查看全部");
+    OrderMainViewController *vc = [[OrderMainViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 // 待付款
 - (void)headViewWaitPayButtonClick;
 {
     NSLog(@"待付款");
+    OrderMainViewController *vc = [[OrderMainViewController alloc]init];
+    vc.selectIndex = 1;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 // 待发货
 - (void)headViewWaitSendButtonClick;
 {
     NSLog(@"待发货");
+    OrderMainViewController *vc = [[OrderMainViewController alloc]init];
+    vc.selectIndex = 2;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+// 待收货
+- (void)headViewWaitReceiveButtonClick
+{
+    NSLog(@"待收货");
+    OrderMainViewController *vc = [[OrderMainViewController alloc]init];
+    vc.selectIndex = 3;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 // 待评价
 - (void)headViewWaitDiscussButtonClick;
 {
     NSLog(@"待评价");
+    OrderMainViewController *vc = [[OrderMainViewController alloc]init];
+    vc.selectIndex = 4;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 // 售后
 - (void)headViewServeButtonClick;
@@ -143,8 +170,6 @@
 {
     NSLog(@"优惠券");
 }
-
-
 
 #pragma mark LazyLoad
 - (UITableView *)mainView

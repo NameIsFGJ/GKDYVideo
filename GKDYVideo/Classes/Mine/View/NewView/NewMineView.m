@@ -19,8 +19,8 @@
     self = [super init];
     self.backgroundColor = [UIColor colorWithRed:246/255.0f green:248/255.0f blue:250/255.0f alpha:1];
     
-    NSArray *titleArray = @[@"待付款",@"待发货",@"待评价",@"退货/售后"];
-    NSArray *imageArray = @[@"fk_icon",@"fahuo_icon",@"pj_icon",@"th_icon"];
+    NSArray *titleArray = @[@"待付款",@"待发货",@"待收货",@"待评价",@"退货/售后"];
+    NSArray *imageArray = @[@"fk_icon",@"fahuo_icon",@"dsh_icon",@"pj_icon",@"th_icon"];
     
     
     UIView *view0 = [[UIView alloc]init];
@@ -181,15 +181,15 @@
     }];
     view3.backgroundColor = [UIColor whiteColor];
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 5; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [view3 addSubview:btn];
         btn.tag = 100 + i;
         [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(10+(kWindowWidth/4 * i));
+            make.left.mas_equalTo(10+(kWindowWidth/5 * i));
             make.centerY.equalTo(view3.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(kWindowWidth/4 -20, kWindowWidth/4 -20));
+            make.size.mas_equalTo(CGSizeMake(kWindowWidth/5 -20, kWindowWidth/5 -20));
         }];
         UIImageView *imageView = [[UIImageView alloc]init];
         [btn addSubview:imageView];
@@ -208,7 +208,7 @@
         }];
         label.text = titleArray[i];
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:15];
+        label.font = [UIFont systemFontOfSize:14];
         
     }
     
@@ -341,23 +341,34 @@
 - (void)buttonAction:(UIButton *)btn
 {
     // 待付款
-    if (btn.tag == 100) {
+    if (btn.tag == 100)
+    {
         
         if ([self.delegate respondsToSelector:@selector(headViewWaitPayButtonClick)]) {
             [self.delegate headViewWaitPayButtonClick];
         }
         // 待发货
-    }else if (btn.tag == 101){
+    }else if (btn.tag == 101)
+    {
         if ([self.delegate respondsToSelector:@selector(headViewWaitSendButtonClick)]) {
             [self.delegate headViewWaitSendButtonClick];
         }
-        //待评价
-    }else if (btn.tag == 102){
+        //待收货
+    }else if (btn.tag == 102)
+    {
+        if ([self.delegate respondsToSelector:@selector(headViewWaitReceiveButtonClick)]) {
+            [self.delegate headViewWaitReceiveButtonClick];
+        }
+        // 待评价
+    }else if (btn.tag == 103)
+    {
+       
         if ([self.delegate respondsToSelector:@selector(headViewWaitDiscussButtonClick)]) {
             [self.delegate headViewWaitDiscussButtonClick];
         }
-        // 退货/售后
-    }else if (btn.tag == 103){
+    }// 退货/售后
+    else if (btn.tag == 104)
+    {
         if ([self.delegate respondsToSelector:@selector(headViewServeButtonClick)]) {
             [self.delegate headViewServeButtonClick];
         }

@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @end
 

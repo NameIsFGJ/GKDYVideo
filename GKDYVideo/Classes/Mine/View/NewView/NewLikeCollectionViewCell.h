@@ -1,8 +1,8 @@
 //
-//  VipCollectionViewCell.h
+//  NewLikeCollectionViewCell.h
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/10/10.
+//  Created by 冯高杰 on 2019/10/14.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VipCollectionViewCell : UICollectionViewCell
+@interface NewLikeCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *goodImageView;
 @property (weak, nonatomic) IBOutlet UILabel *goodNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *goodDesLabel;
-@property (weak, nonatomic) IBOutlet UIButton *detailButton;
+@property (weak, nonatomic) IBOutlet UILabel *goodPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodLabel;
 
 @end
 

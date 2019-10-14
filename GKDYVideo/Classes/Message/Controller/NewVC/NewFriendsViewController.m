@@ -11,6 +11,8 @@
 #import "WSLWaterFlowLayout.h"
 #import "PickCollectionViewCell.h"
 #import "MarketModel.h"
+#import "InterestMainViewController.h"
+#import "AuthenMainViewController.h"
 @interface NewFriendsViewController ()<UUMarqueeViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
 @property (strong, nonatomic)UUMarqueeView *marquee;
 
@@ -94,16 +96,17 @@
     [view1 addSubview:interestButton];
     [interestButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(label0.mas_bottom);
-        //make.bottom.equalTo(view1.mas_bottom);
     }];
     [interestButton setImage:[UIImage imageNamed:@"xqdr_pc"] forState:UIControlStateNormal];
+    [interestButton addTarget:self action:@selector(interestButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *authenButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [view1 addSubview:authenButton];
     [authenButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(label0.mas_bottom);
     }];
-    // authenButton.backgroundColor = [UIColor blueColor];
+    [authenButton addTarget:self action:@selector(authenButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
     [authenButton setImage:[UIImage imageNamed:@"rzdk_pc"] forState:UIControlStateNormal];
     NSArray *array = @[interestButton,authenButton];
     [array mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
@@ -232,9 +235,23 @@
         make.bottom.equalTo(self.collectionView);
     }];
     
-
 }
 
+#pragma mark Actions
+- (void)interestButtonAction
+{
+    InterestMainViewController *vc = [[InterestMainViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+- (void)authenButtonAction
+{
+    AuthenMainViewController *vc = [[AuthenMainViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark UUMarqueeViewDelegate
 - (NSUInteger)numberOfVisibleItemsForMarqueeView:(UUMarqueeView*)marqueeView;
 {
