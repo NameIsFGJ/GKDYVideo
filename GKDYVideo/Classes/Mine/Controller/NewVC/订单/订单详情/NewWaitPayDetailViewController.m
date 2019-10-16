@@ -8,10 +8,11 @@
 
 #import "NewWaitPayDetailViewController.h"
 #import "NewLikeCollectionViewCell.h"
+#import "NewWaitPayReasonView.h"
 @interface NewWaitPayDetailViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) UIScrollView *mainView;
 @property (strong, nonatomic) UICollectionView *collectionView;
-
+@property (strong, nonatomic) NewWaitPayReasonView *reasonView;
 
 @end
 
@@ -365,11 +366,13 @@
     [button51 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button51.titleLabel.font = [UIFont systemFontOfSize:16];
     button51.titleEdgeInsets = UIEdgeInsetsMake(0,5, 0, -5);
+    [button51 addTarget:self action:@selector(button51Action) forControlEvents:UIControlEventTouchUpInside];
     [button52 setImage:[UIImage imageNamed:@"dh_icon"] forState:UIControlStateNormal];
     [button52 setTitle:@"拨打电话" forState:UIControlStateNormal];
     [button52 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button52.titleLabel.font = [UIFont systemFontOfSize:16];
     button52.titleEdgeInsets = UIEdgeInsetsMake(0,5, 0, -5);
+    [button52 addTarget:self action:@selector(button52Action) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *view6 = [[UIView alloc]init];
     [contentView addSubview:view6];
@@ -451,10 +454,15 @@
     [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button3.layer.borderWidth = .3;
     button3.layer.masksToBounds = YES;
-    [button3 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];
-    
+    [button3 addTarget:self action:@selector(buttonAction3) forControlEvents:UIControlEventTouchUpInside];
     
    
+    // 隐藏视图
+    
+    self.reasonView = [[NewWaitPayReasonView alloc]init];
+    [self.view addSubview:self.reasonView];
+    self.reasonView.frame = self.view.bounds;
+    self.reasonView.hidden = YES;
 }
 
 
@@ -475,6 +483,8 @@
 - (void)buttonAction2
 {
      NSLog(@"取消订单");
+    self.reasonView.hidden = !self.reasonView.hidden;
+    
 }
 // 修改地址
 - (void)buttonAction3
@@ -482,6 +492,17 @@
      NSLog(@"修改地址");
 }
 
+// 联系卖家
+- (void)button51Action
+{
+    NSLog(@"联系卖家");
+}
+
+// 拨打电话
+- (void)button52Action
+{
+    NSLog(@"拨打电话");
+}
 
 
 #pragma mark UICollectionViewDelegate

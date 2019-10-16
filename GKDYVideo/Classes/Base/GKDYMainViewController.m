@@ -22,6 +22,7 @@
 #import "NewMineViewController.h"
 #import "NewMarketViewController.h"
 #import "NewFriendsViewController.h"
+#import "NewLoginViewController.h"
 @interface GKDYMainViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -121,15 +122,21 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     BaseNavigationController * nav = (BaseNavigationController *)viewController;
-    if ([[nav.viewControllers lastObject] isKindOfClass:[MineViewController class]])
+    if ([[nav.viewControllers lastObject] isKindOfClass:[NewMineViewController class]])
     {
-        // 未登录
-        if (![User isLogin])
-        {
-            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[LoginViewController alloc]];
-            [self presentViewController:nav animated:YES completion:nil];
-            return NO;
-        }
+//        // 未登录
+//        if (![User isLogin])
+//        {
+//            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[LoginViewController alloc]];
+//            [self presentViewController:nav animated:YES completion:nil];
+//            return NO;
+//        }
+        
+        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[NewLoginViewController alloc]];
+        [self presentViewController:nav animated:YES completion:nil];
+        return NO;
+        
+        
     }
     return YES;
 }

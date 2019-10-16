@@ -8,6 +8,7 @@
 
 #import "NewWaitSendViewController.h"
 #import "NewAllOrderTableViewCell.h"
+#import "NewWaitSendDetailViewController.h"
 @interface NewWaitSendViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic)NSMutableArray *itemsArray;
@@ -47,6 +48,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 205;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NewWaitSendDetailViewController *vc = [[NewWaitSendDetailViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark loazLoad
