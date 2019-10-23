@@ -1,20 +1,18 @@
 //
-//  RankListTableViewCell.m
+//  NewDiscountTableViewCell.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/10/8.
+//  Created by 冯高杰 on 2019/10/17.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "RankListTableViewCell.h"
+#import "NewDiscountTableViewCell.h"
 
-@implementation RankListTableViewCell
+@implementation NewDiscountTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

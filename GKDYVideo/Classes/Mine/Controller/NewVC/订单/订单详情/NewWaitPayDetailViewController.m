@@ -520,13 +520,14 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return CGSizeMake(185, 280);
+    return CGSizeMake(170*kWindowWidth/375, 265*kWindowWidth/375);
+   // return CGSizeMake(170,265);
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
-{
-    return UIEdgeInsetsMake(0, 5, 0, -5);
-}
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+//{
+//    return UIEdgeInsetsMake(0, 5, 0, -5);
+//}
 
 #pragma mark lazyLoad
 - (UIScrollView *)mainView

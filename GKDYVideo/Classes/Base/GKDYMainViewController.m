@@ -132,9 +132,9 @@
 //            return NO;
 //        }
         
-        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[NewLoginViewController alloc]];
-        [self presentViewController:nav animated:YES completion:nil];
-        return NO;
+//        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[NewLoginViewController alloc]];
+//        [self presentViewController:nav animated:YES completion:nil];
+//        return NO;
         
         
     }

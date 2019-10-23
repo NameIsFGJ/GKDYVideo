@@ -535,12 +535,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return CGSizeMake(185, 280);
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
-{
-    return UIEdgeInsetsMake(0, 5, 0, -5);
+    return CGSizeMake(170*kWindowWidth/375, 265*kWindowWidth/375);
 }
 
 #pragma mark lazyLoad

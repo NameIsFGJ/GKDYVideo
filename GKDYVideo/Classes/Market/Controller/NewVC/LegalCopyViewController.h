@@ -8,10 +8,13 @@
 
 #import "BaseViewController.h"
 
+
+
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^LegalHeaderBlock)(BOOL);
 @interface LegalCopyViewController : BaseViewController
-@property (copy, nonatomic)LegalHeaderBlock block;
+@property (copy, nonatomic) LegalHeaderBlock block;
+
 @end
 
 NS_ASSUME_NONNULL_END

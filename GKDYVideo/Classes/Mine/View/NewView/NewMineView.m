@@ -209,6 +209,7 @@
         label.text = titleArray[i];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:14];
+        label.adjustsFontSizeToFitWidth = YES;
         
     }
     

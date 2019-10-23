@@ -11,6 +11,7 @@
 #import "PickSegmentedControl.h"
 #import "RankListViewController.h"
 #import "LegalCopyViewController.h"
+#import "NewMarketGoodDetailViewController.h"
 typedef enum : NSUInteger {
     AnimationDirectionForward,
     AnimationDirectionReverse,
@@ -22,11 +23,10 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) PickSegmentedControl *control;
 @property (strong, nonatomic) RankListViewController *rankListVC;
 @property (strong, nonatomic) LegalCopyViewController *legalCopyVC;
-//@property (strong, nonatomic) LegalCopyViewController *rankListVC;
 @property (strong, nonatomic) UIPageViewController *pageVC;
 @property (strong, nonatomic) UIViewController *currentVC;
 @property (assign, nonatomic) NSInteger selectIndex;
-@property (strong, nonatomic) UIView *contentView;
+@property (strong, nonatomic) UIView *pageView;
 @property (assign, nonatomic) BOOL showOrHide;
 @property (strong, nonatomic) UIView *topView;
 @property (strong, nonatomic) NSArray *arrayVC;
@@ -34,25 +34,38 @@ typedef enum : NSUInteger {
 
 @implementation NewMarketViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController setNavigationBarHidden:YES];
+    
     self.selectIndex = 0;
     self.showOrHide = YES;
+    
+    [self makeNav];
     [self makeUI];
 }
 
-- (void)makeUI
+- (void)makeNav
 {
-    
     self.topView = [[UIView alloc]init];
     [self.view addSubview:self.topView];
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.mas_equalTo(0);
-        make.height.mas_equalTo(400 + NAVBAR_HEIGHT);
+        make.height.mas_equalTo(NAVBAR_HEIGHT);
         
     }];
     
@@ -83,14 +96,33 @@ typedef enum : NSUInteger {
         make.top.mas_equalTo(leftButton.mas_top);
     }];
     
-    UIView *view0 = [[UIView alloc]init];
-    [self.topView addSubview:view0];
-    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(0);
-        make.top.equalTo(navView.mas_bottom);
-        make.height.mas_equalTo(50);
+}
+- (void)makeUI
+{
+    
+    UIScrollView *mainView = [[UIScrollView alloc]init];
+    [self.view addSubview:mainView];
+    [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(0);
+        make.top.equalTo(self.topView.mas_bottom);
+    }];
+    mainView.backgroundColor = [UIColor whiteColor];
+    
+    UIView *contentView = [[UIView alloc]init];
+    [mainView addSubview:contentView];
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(mainView);
+        make.width.equalTo(mainView);
     }];
     
+    UIView *view0 = [[UIView alloc]init];
+    [contentView addSubview:view0];
+    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.height.mas_equalTo(40);
+    }];
+
     UIImageView *imageView = [[UIImageView alloc]init];
     [view0 addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,7 +131,7 @@ typedef enum : NSUInteger {
         make.centerY.equalTo(view0.mas_centerY).offset(0);
     }];
     imageView.image = [UIImage imageNamed:@"legalCopy"];
-    
+
     UILabel *label = [[UILabel alloc]init];
     [view0 addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -119,17 +151,17 @@ typedef enum : NSUInteger {
     [pushLegalButton setTitle:@"查看详情 >" forState:UIControlStateNormal];
     pushLegalButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [pushLegalButton setTitleColor:kPickColor forState:UIControlStateNormal];
-    
-    [self.topView addSubview:self.scrollView];
+
+    [contentView addSubview:self.scrollView];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(12);
         make.right.mas_equalTo(-12);
         make.top.equalTo(view0.mas_bottom).offset(0);
         make.height.mas_equalTo(150);
     }];
-    
+
     UIButton *memberButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:memberButton];
+    [contentView addSubview:memberButton];
     [memberButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(12);
         make.right.mas_equalTo(-12);
@@ -137,30 +169,30 @@ typedef enum : NSUInteger {
         make.height.mas_equalTo(44);
     }];
     [memberButton setImage:[UIImage imageNamed:@"memberImage"] forState:UIControlStateNormal];
-    
+
     UIView *view2 = [[UIView alloc]init];
-    [self.view addSubview:view2];
+    [contentView addSubview:view2];
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(12);
         make.right.mas_equalTo(-12);
         make.top.equalTo(memberButton.mas_bottom).offset(12);
         make.height.mas_equalTo(70);
     }];
-    
+
     NSArray *titleArray = @[@"周边",@"原创",@"道具",@"手办",@"原创"];
     NSArray *imageArray = @[@"z_icon",@"yk",@"dj_icon",@"sb_icon",@"yc_icon"];
-    
+
     for (int i = 0; i < 5; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [view2 addSubview:btn];
-        
+
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(i * (kWindowWidth/5 -2));
             make.size.mas_equalTo(CGSizeMake(kWindowWidth/5-15, 90));
             make.top.mas_equalTo(0);
         }];
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
-        
+
         UIImageView *imageView = [[UIImageView alloc]init];
         [btn addSubview:imageView];
         imageView.image = [UIImage imageNamed:imageArray[i]];
@@ -180,30 +212,35 @@ typedef enum : NSUInteger {
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:15];
     }
-    
-    
-    [self.topView addSubview:self.control];
+
+
+    [contentView addSubview:self.control];
     [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(150, 40));
         make.top.equalTo(view2.mas_bottom).offset(20);
         make.centerX.equalTo(view2.mas_centerX).offset(0);
     }];
     [self.control addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventValueChanged];
-    
-    self.contentView = [[UIView alloc]init];
-    [self.view addSubview:self.contentView];
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+
+    self.pageView = [[UIView alloc]init];
+    [contentView addSubview:self.pageView];
+    [self.pageView mas_makeConstraints:^(MASConstraintMaker *make) {
+
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
-        make.top.equalTo(self.topView.mas_bottom).offset(10);
+        make.top.equalTo(self.control.mas_bottom);
+        make.height.mas_equalTo(191 * 12);
+        //make.bottom.mas_equalTo(0);
+       // make.top.equalTo(self.topView.mas_bottom).offset(10);
+    }];
+    self.pageView.backgroundColor = [UIColor orangeColor];
+    
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.pageView);
     }];
     
-    
-    //-----------------------------
     [self addChildViewController:self.pageVC];
-    [self.contentView addSubview:self.pageVC.view];
+    [self.pageView addSubview:self.pageVC.view];
     [self.pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
@@ -230,28 +267,6 @@ typedef enum : NSUInteger {
                                animated:YES
                              completion:nil];
     }
-//    self.selectIndex = control.selectedSegmentIndex;
-//
-//    [self addChildViewController:self.legalCopyVC];
-//    @weakify(self)
-//    [self transitionFromViewController:self.currentVC toViewController:self.childViewControllers[self.selectIndex] duration:.2f options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
-//        @strongify(self)
-//
-//        [self.legalCopyVC didMoveToParentViewController:self];
-//        self.currentVC = self.childViewControllers[self.selectIndex];
-//
-//    }];
-    
-}
-
-- (void)viewDidLayoutSubviews
-{
-//    [self addChildViewController:self.rankListVC];
-//    self.rankListVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
-//    [self.contentView addSubview:self.rankListVC.view];
-//    [self.rankListVC didMoveToParentViewController:self];
-//    self.currentVC = self.rankListVC;
-//    self.legalCopyVC.view.frame = CGRectMake(0, 0, kWindowWidth, CGRectGetHeight(self.contentView.frame));
 }
 
 #pragma mark ScrollViewDelegate
@@ -304,6 +319,17 @@ typedef enum : NSUInteger {
     }
 }
 
+#pragma makr legalCopyDelegate
+- (void)legalCopyTableViewDidSelect:(NSInteger)indexRow;
+{
+    NSLog(@"legalCopyDelegate");
+    NSLog(@"indexRow  =%ld",indexRow);
+    NewMarketGoodDetailViewController *vc = [[NewMarketGoodDetailViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 #pragma mark loazyLoad
 - (PickSearchBar *)searchBar
 {
@@ -325,66 +351,11 @@ typedef enum : NSUInteger {
 
 - (LegalCopyViewController *)legalCopyVC
 {
-    @weakify(self)
     if (!_legalCopyVC) {
         _legalCopyVC = [[LegalCopyViewController alloc]init];
-        _legalCopyVC.view.backgroundColor = [UIColor redColor];
-        _legalCopyVC.block = ^(BOOL showOrHide) {
-            if (self.showOrHide != showOrHide) {
-                [UIView animateWithDuration:.3 animations:^{
-                    @strongify(self)
-                    if (!showOrHide) {
-                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(0);
-
-                        }];
-                    }else
-                    {
-                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(400 + NAVBAR_HEIGHT);
-                        }];
-                    }
-                    [self.view layoutIfNeeded];
-                } completion:^(BOOL finished) {
-                    @strongify(self)
-                    self.showOrHide = showOrHide;
-                }];
-            }
-        };
     }
     return _legalCopyVC;
 }
-
-//- (LegalCopyViewController *)rankListVC
-//{
-//    @weakify(self)
-//    if (!_rankListVC) {
-//        _rankListVC = [[LegalCopyViewController alloc]init];
-//        _rankListVC.block = ^(BOOL showOrHide) {
-//            if (self.showOrHide != showOrHide) {
-//                [UIView animateWithDuration:.3 animations:^{
-//                    @strongify(self)
-//                    if (!showOrHide) {
-//                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-//                            make.height.mas_equalTo(0);
-//
-//                        }];
-//                    }else
-//                    {
-//                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-//                            make.height.mas_equalTo(400 + NAVBAR_HEIGHT);
-//                        }];
-//                    }
-//                    [self.view layoutIfNeeded];
-//                } completion:^(BOOL finished) {
-//                    @strongify(self)
-//                    self.showOrHide = showOrHide;
-//                }];
-//            }
-//        };
-//    }
-//    return _rankListVC;
-//}
 
 - (UIPageViewController *)pageVC
 {
@@ -397,31 +368,9 @@ typedef enum : NSUInteger {
 
 - (RankListViewController *)rankListVC
 {
-    @weakify(self)
+
     if (!_rankListVC) {
         _rankListVC = [[RankListViewController alloc]init];
-        _rankListVC.block = ^(BOOL showOrHide) {
-            if (self.showOrHide != showOrHide) {
-                [UIView animateWithDuration:.3 animations:^{
-                    @strongify(self)
-                    if (!showOrHide) {
-                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(0);
-
-                        }];
-                    }else
-                    {
-                        [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(400 + NAVBAR_HEIGHT);
-                        }];
-                    }
-                    [self.view layoutIfNeeded];
-                } completion:^(BOOL finished) {
-                    @strongify(self)
-                    self.showOrHide = showOrHide;
-                }];
-            }
-        };
     }
     return _rankListVC;
 }

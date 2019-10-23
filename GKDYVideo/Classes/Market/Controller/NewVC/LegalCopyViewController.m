@@ -8,6 +8,8 @@
 
 #import "LegalCopyViewController.h"
 #import "RankListTableViewCell.h"
+#import "NewMarketGoodDetailViewController.h"
+#import "NewMarketShopCartViewController.h"
 @interface LegalCopyViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -62,6 +64,18 @@
     return 191;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NewMarketGoodDetailViewController *vc = [[NewMarketGoodDetailViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+//    NewMarketShopCartViewController *vc = [[NewMarketShopCartViewController alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+//
+}
+
 #pragma mark LoazLoad
 - (UITableView *)tableView
 {
@@ -69,6 +83,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.scrollEnabled = NO;
         [_tableView registerNib:[UINib nibWithNibName:@"RankListTableViewCell" bundle:nil] forCellReuseIdentifier:@"RankListTableViewCellID"];
     }
     return _tableView;

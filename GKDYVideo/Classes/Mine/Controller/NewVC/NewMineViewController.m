@@ -12,6 +12,7 @@
 #import "MemberViewController.h"
 #import "NewSetViewController.h"
 #import "OrderMainViewController.h"
+#import "NewDiscountViewController.h"
 @interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
@@ -169,6 +170,9 @@
 - (void)headViewDiscountButtonClick;
 {
     NSLog(@"优惠券");
+    NewDiscountViewController *vc = [[NewDiscountViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark LazyLoad

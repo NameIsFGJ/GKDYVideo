@@ -189,7 +189,7 @@
     }];
     
     [contentView addSubview:self.collectionView];
-   
+    
     HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
     model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
     model0.ide = 0;
