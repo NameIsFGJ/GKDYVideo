@@ -322,8 +322,7 @@ typedef enum : NSUInteger {
 #pragma makr legalCopyDelegate
 - (void)legalCopyTableViewDidSelect:(NSInteger)indexRow;
 {
-    NSLog(@"legalCopyDelegate");
-    NSLog(@"indexRow  =%ld",indexRow);
+    
     NewMarketGoodDetailViewController *vc = [[NewMarketGoodDetailViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];

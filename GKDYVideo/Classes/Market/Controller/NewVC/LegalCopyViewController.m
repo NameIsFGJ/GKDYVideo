@@ -9,7 +9,7 @@
 #import "LegalCopyViewController.h"
 #import "RankListTableViewCell.h"
 #import "NewMarketGoodDetailViewController.h"
-#import "NewMarketShopCartViewController.h"
+
 @interface LegalCopyViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -70,10 +70,7 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
-//    NewMarketShopCartViewController *vc = [[NewMarketShopCartViewController alloc]init];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
-//
+
 }
 
 #pragma mark LoazLoad

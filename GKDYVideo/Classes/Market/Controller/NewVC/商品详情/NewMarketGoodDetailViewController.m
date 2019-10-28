@@ -7,9 +7,26 @@
 //
 
 #import "NewMarketGoodDetailViewController.h"
+// 宝贝
 #import "GoodDetailView0.h"
-@interface NewMarketGoodDetailViewController ()
+// 评价
+#import "GoodDetailView1.h"
+// 详情
+#import "GoodDetailView2.h"
+// 推荐
+#import "GoodDetailView3.h"
+// 底部
+#import "GoodDetailView4.h"
+// 优惠券
+#import "GoodDetailDisCountView.h"
+// 商品属性
+#import "InfoGoodView.h"
+// 购物车
+#import "NewMarketShopCartViewController.h"
+@interface NewMarketGoodDetailViewController ()<GoodDetailView0Delegate,GoodDetailView1Delegate,GoodDetailView3Delegate,GoodDetailView4Delegate>
 @property (strong, nonatomic) UIView *navView;
+@property (strong, nonatomic) GoodDetailDisCountView *discountView;
+@property (strong, nonatomic) InfoGoodView *infoView;
 @end
 
 @implementation NewMarketGoodDetailViewController
@@ -60,8 +77,9 @@
     UIScrollView *mainView = [[UIScrollView alloc]init];
     [self.view addSubview:mainView];
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.mas_equalTo(0);
+        make.left.right.mas_equalTo(0);
         make.top.mas_equalTo(KTopViewHeight);
+        make.bottom.mas_equalTo(-50);
     }];
     
     UIView *contentView = [[UIView alloc]init];
@@ -77,57 +95,129 @@
     [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.right.mas_equalTo(0);
                 make.top.mas_equalTo(0);
-                make.height.mas_equalTo(740);
+                make.height.mas_equalTo(690);
             }];
-//    UIView *view0 = [[UIView alloc]init];
-//    [contentView addSubview:view0];
-//    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.mas_equalTo(0);
-//        make.top.mas_equalTo(0);
-//        make.height.mas_equalTo(740);
-//    }];
+    view0.delegate = self;
     
-    
-    UIView *view1 = [[UIView alloc]init];
+    GoodDetailView1 *view1 = [[GoodDetailView1 alloc]init];
     [contentView addSubview:view1];
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(view0.mas_bottom);
-        make.height.mas_equalTo(440);
+        make.height.mas_equalTo(500);
     }];
+    view1.delegate = self;
     
-    view1.backgroundColor = [UIColor blueColor];
-    
-    
-    
-    
-    UIView *view2 = [[UIView alloc]init];
+    GoodDetailView2 *view2 = [[GoodDetailView2 alloc]init];
     [contentView addSubview:view2];
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(view1.mas_bottom);
-        make.height.mas_equalTo(700);
+        make.height.mas_equalTo(640);
     }];
     
-    view2.backgroundColor = [UIColor yellowColor];
-    
-    UIView *view3 = [[UIView alloc]init];
+    GoodDetailView3 *view3 = [[GoodDetailView3 alloc]init];
     [contentView addSubview:view3];
     [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(view2.mas_bottom);
-        make.height.mas_equalTo(350);
+        make.height.mas_equalTo(1200);
     }];
-    
-    view3.backgroundColor = [UIColor redColor];
-    
+    view3.delegate = self;
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(view3);
     }];
     
+    GoodDetailView4 *view4 = [[GoodDetailView4 alloc]init];
+    [self.view addSubview:view4];
+    view4.delegate = self;
+    [view4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(0);
+        make.height.mas_equalTo(50);
+    }];
+    
+    self.discountView = [[GoodDetailDisCountView alloc]init];
+    [self.view addSubview:self.discountView];
+    [self.discountView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    self.discountView.hidden = YES;
+    
+    self.infoView = [[InfoGoodView alloc]init];
+    [self.view addSubview:self.infoView];
+    [self.infoView mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.edges.equalTo(self.view);
+    }];
+    //@weakifly(self)
+    @weakify(self)
+    self.infoView.block = ^{
+        
+        @strongify(self)
+            NewMarketShopCartViewController *vc = [[NewMarketShopCartViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+
+    };
+    self.infoView.hidden = YES;
     
 }
 
+#pragma mark View0Delegate
+- (void)view0WithBannerClick:(NSInteger)index;
+{
+    NSLog(@"点击---%ld",index);
+}
+- (void)view0WithMemberClick;
+{
+    NSLog(@"会员");
+}
+- (void)view0WithDiscountClick;
+{
+    NSLog(@"优惠券");
+    self.discountView.hidden = NO;
+    [self.discountView animation];
+}
+- (void)view0WithShopClick;
+{
+    NSLog(@"进店");
+    
+}
 
+#pragma mark View1Delegate
+
+- (void)view1WithCommentView;
+{
+    NSLog(@"点评");
+}
+#pragma mark View3Delegate
+- (void)view3WithCollectionViewClick:(NSInteger)index;
+{
+    NSLog(@"delegate index = %ld",index);
+}
+
+#pragma mark View4Delegate
+
+- (void)view4WithShopClick:(NSInteger)shopID;
+{
+    NSLog(@"delegate 点击商铺");
+}
+- (void)view4WithService;
+{
+     NSLog(@"delegate 点击客服");
+}
+- (void)view4WithShopCart;
+{
+     NSLog(@"delegate 点击购物车");
+}
+- (void)view4WithAddCartClick:(NSInteger)goodID;
+{
+     NSLog(@"delegate 点击加入购物车");
+    self.infoView.hidden = NO;
+    [self.infoView animation];
+}
+- (void)view4WithBuyClick:(NSInteger)goodID;
+{
+     NSLog(@"delegate 点击立即购买");
+}
 
 @end

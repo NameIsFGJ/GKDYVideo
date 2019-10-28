@@ -32,6 +32,10 @@
 		91009147231E316E000F0767 /* UploadVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91009146231E316E000F0767 /* UploadVideoNetworking.m */; };
 		910343A42341C994000C498E /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 910343A32341C994000C498E /* ProgressView.m */; };
 		9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */; };
+		9106AA942366865A004EDC8B /* DisCountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9106AA922366865A004EDC8B /* DisCountTableViewCell.m */; };
+		9106AA952366865A004EDC8B /* DisCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9106AA932366865A004EDC8B /* DisCountTableViewCell.xib */; };
+		9106AA9923669869004EDC8B /* InfoGoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9106AA9823669869004EDC8B /* InfoGoodView.m */; };
+		9106AA9C236699AD004EDC8B /* TypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9106AA9B236699AD004EDC8B /* TypeView.m */; };
 		91084BAE22FD057B00021B29 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 91084BAD22FD057B00021B29 /* city.json */; };
 		91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91084BB322FD16B100021B29 /* ProvinceModel.m */; };
 		910A8DA0230E42F80051CDA2 /* MarketSearchTogetherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A8D9F230E42F80051CDA2 /* MarketSearchTogetherViewController.m */; };
@@ -295,6 +299,13 @@
 		91DA72F0230D2B120085312E /* MarketUserShopNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72EF230D2B120085312E /* MarketUserShopNetworking.m */; };
 		91DA72F3230D2C050085312E /* MarketUserShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72F2230D2C050085312E /* MarketUserShopModel.m */; };
 		91DA72F6230D39BD0085312E /* MarkUserShopCollectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA72F5230D39BD0085312E /* MarkUserShopCollectionHeadView.m */; };
+		91DBEA5E236141A90076AC91 /* GoodDetailView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA5D236141A90076AC91 /* GoodDetailView1.m */; };
+		91DBEA62236148310076AC91 /* NewGoodCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA60236148310076AC91 /* NewGoodCommentTableViewCell.m */; };
+		91DBEA63236148310076AC91 /* NewGoodCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DBEA61236148310076AC91 /* NewGoodCommentTableViewCell.xib */; };
+		91DBEA662361593C0076AC91 /* GoodDetailView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA652361593C0076AC91 /* GoodDetailView2.m */; };
+		91DBEA6923616AE60076AC91 /* GoodDetailView3.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA6823616AE60076AC91 /* GoodDetailView3.m */; };
+		91DBEA6C23617FF50076AC91 /* GoodDetailView4.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA6B23617FF50076AC91 /* GoodDetailView4.m */; };
+		91DBEA6F236195770076AC91 /* GoodDetailDisCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA6E236195770076AC91 /* GoodDetailDisCountView.m */; };
 		91DCB17723601FE100697A0D /* NewMarketShopOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DCB17623601FE100697A0D /* NewMarketShopOrderViewController.m */; };
 		91DCB17A2360264C00697A0D /* NewMarketShopPaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DCB1792360264C00697A0D /* NewMarketShopPaySuccessViewController.m */; };
 		91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */; };
@@ -399,6 +410,13 @@
 		910343A32341C994000C498E /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		9104F9C6230A46060033C40A /* MarkCollectionHead2View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkCollectionHead2View.h; sourceTree = "<group>"; };
 		9104F9C7230A46060033C40A /* MarkCollectionHead2View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkCollectionHead2View.m; sourceTree = "<group>"; };
+		9106AA912366865A004EDC8B /* DisCountTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisCountTableViewCell.h; sourceTree = "<group>"; };
+		9106AA922366865A004EDC8B /* DisCountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisCountTableViewCell.m; sourceTree = "<group>"; };
+		9106AA932366865A004EDC8B /* DisCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisCountTableViewCell.xib; sourceTree = "<group>"; };
+		9106AA9723669869004EDC8B /* InfoGoodView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoGoodView.h; sourceTree = "<group>"; };
+		9106AA9823669869004EDC8B /* InfoGoodView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoGoodView.m; sourceTree = "<group>"; };
+		9106AA9A236699AD004EDC8B /* TypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeView.h; sourceTree = "<group>"; };
+		9106AA9B236699AD004EDC8B /* TypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypeView.m; sourceTree = "<group>"; };
 		91084BAD22FD057B00021B29 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		91084BB222FD16B100021B29 /* ProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
 		91084BB322FD16B100021B29 /* ProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
@@ -994,6 +1012,19 @@
 		91DA72F2230D2C050085312E /* MarketUserShopModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketUserShopModel.m; sourceTree = "<group>"; };
 		91DA72F4230D39BD0085312E /* MarkUserShopCollectionHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkUserShopCollectionHeadView.h; sourceTree = "<group>"; };
 		91DA72F5230D39BD0085312E /* MarkUserShopCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkUserShopCollectionHeadView.m; sourceTree = "<group>"; };
+		91DBEA5C236141A90076AC91 /* GoodDetailView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodDetailView1.h; sourceTree = "<group>"; };
+		91DBEA5D236141A90076AC91 /* GoodDetailView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailView1.m; sourceTree = "<group>"; };
+		91DBEA5F236148310076AC91 /* NewGoodCommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGoodCommentTableViewCell.h; sourceTree = "<group>"; };
+		91DBEA60236148310076AC91 /* NewGoodCommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGoodCommentTableViewCell.m; sourceTree = "<group>"; };
+		91DBEA61236148310076AC91 /* NewGoodCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewGoodCommentTableViewCell.xib; sourceTree = "<group>"; };
+		91DBEA642361593C0076AC91 /* GoodDetailView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodDetailView2.h; sourceTree = "<group>"; };
+		91DBEA652361593C0076AC91 /* GoodDetailView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailView2.m; sourceTree = "<group>"; };
+		91DBEA6723616AE60076AC91 /* GoodDetailView3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodDetailView3.h; sourceTree = "<group>"; };
+		91DBEA6823616AE60076AC91 /* GoodDetailView3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailView3.m; sourceTree = "<group>"; };
+		91DBEA6A23617FF50076AC91 /* GoodDetailView4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodDetailView4.h; sourceTree = "<group>"; };
+		91DBEA6B23617FF50076AC91 /* GoodDetailView4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailView4.m; sourceTree = "<group>"; };
+		91DBEA6D236195770076AC91 /* GoodDetailDisCountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodDetailDisCountView.h; sourceTree = "<group>"; };
+		91DBEA6E236195770076AC91 /* GoodDetailDisCountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailDisCountView.m; sourceTree = "<group>"; };
 		91DCB17523601FE100697A0D /* NewMarketShopOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMarketShopOrderViewController.h; sourceTree = "<group>"; };
 		91DCB17623601FE100697A0D /* NewMarketShopOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMarketShopOrderViewController.m; sourceTree = "<group>"; };
 		91DCB1782360264C00697A0D /* NewMarketShopPaySuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMarketShopPaySuccessViewController.h; sourceTree = "<group>"; };
@@ -1313,6 +1344,29 @@
 				91DDF87B235D463D0009EE6D /* 商品详情View */,
 			);
 			path = NewView;
+			sourceTree = "<group>";
+		};
+		9106AA9023668624004EDC8B /* 优惠券 */ = {
+			isa = PBXGroup;
+			children = (
+				91DBEA6D236195770076AC91 /* GoodDetailDisCountView.h */,
+				91DBEA6E236195770076AC91 /* GoodDetailDisCountView.m */,
+				9106AA912366865A004EDC8B /* DisCountTableViewCell.h */,
+				9106AA922366865A004EDC8B /* DisCountTableViewCell.m */,
+				9106AA932366865A004EDC8B /* DisCountTableViewCell.xib */,
+			);
+			path = "优惠券";
+			sourceTree = "<group>";
+		};
+		9106AA9623669836004EDC8B /* 商品属性 */ = {
+			isa = PBXGroup;
+			children = (
+				9106AA9723669869004EDC8B /* InfoGoodView.h */,
+				9106AA9823669869004EDC8B /* InfoGoodView.m */,
+				9106AA9A236699AD004EDC8B /* TypeView.h */,
+				9106AA9B236699AD004EDC8B /* TypeView.m */,
+			);
+			path = "商品属性";
 			sourceTree = "<group>";
 		};
 		910A8DA7230E45460051CDA2 /* MarketSearchTogetherViewController */ = {
@@ -2665,6 +2719,19 @@
 			children = (
 				91DDF87C235D46600009EE6D /* GoodDetailView0.h */,
 				91DDF87D235D46600009EE6D /* GoodDetailView0.m */,
+				91DBEA5C236141A90076AC91 /* GoodDetailView1.h */,
+				91DBEA5D236141A90076AC91 /* GoodDetailView1.m */,
+				91DBEA642361593C0076AC91 /* GoodDetailView2.h */,
+				91DBEA652361593C0076AC91 /* GoodDetailView2.m */,
+				91DBEA6723616AE60076AC91 /* GoodDetailView3.h */,
+				91DBEA6823616AE60076AC91 /* GoodDetailView3.m */,
+				91DBEA6A23617FF50076AC91 /* GoodDetailView4.h */,
+				91DBEA6B23617FF50076AC91 /* GoodDetailView4.m */,
+				91DBEA5F236148310076AC91 /* NewGoodCommentTableViewCell.h */,
+				91DBEA60236148310076AC91 /* NewGoodCommentTableViewCell.m */,
+				91DBEA61236148310076AC91 /* NewGoodCommentTableViewCell.xib */,
+				9106AA9023668624004EDC8B /* 优惠券 */,
+				9106AA9623669836004EDC8B /* 商品属性 */,
 			);
 			path = "商品详情View";
 			sourceTree = "<group>";
@@ -2786,6 +2853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91139DC62318C30200A936E8 /* If_I_Had_a_Chicken.m4a in Resources */,
+				91DBEA63236148310076AC91 /* NewGoodCommentTableViewCell.xib in Resources */,
 				91084BAE22FD057B00021B29 /* city.json in Resources */,
 				606A77DF215E0B3000DC2F63 /* README.md in Resources */,
 				91139DC52318C30200A936E8 /* 天使简约音效.m4r in Resources */,
@@ -2808,6 +2876,7 @@
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
 				91C3BB91233C94A90033E286 /* PickCollectionViewCell.xib in Resources */,
 				91BE838323504EB2008A4236 /* NewSetTableViewCell.xib in Resources */,
+				9106AA952366865A004EDC8B /* DisCountTableViewCell.xib in Resources */,
 				91BED2FF23555DD900B2EC69 /* NewWaitPayReasonViewCell.xib in Resources */,
 				79CC629C2157377600101773 /* Assets.xcassets in Resources */,
 				917FCE602320F26C00786775 /* test.html in Resources */,
@@ -2922,6 +2991,7 @@
 				91D80271233B189600659A01 /* MySellTableViewCell.m in Sources */,
 				916C6D4522F8246300D2538F /* AddGoodsSuccessViewController.m in Sources */,
 				91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */,
+				91DBEA5E236141A90076AC91 /* GoodDetailView1.m in Sources */,
 				912FCD2D233A0B1D00601E9C /* MyOrderTotalViewController.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
@@ -2937,6 +3007,7 @@
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
 				91009144231E0648000F0767 /* QiniuTokenNetworking.m in Sources */,
 				91BC3B6D2351C03A00764D4B /* AuthenMainViewController.m in Sources */,
+				91DBEA662361593C0076AC91 /* GoodDetailView2.m in Sources */,
 				91C25BFD232CACCD00A6B629 /* ReturnGoodsNetworking.m in Sources */,
 				917FCE5B2320B26000786775 /* MyBusinessModel.m in Sources */,
 				91A64538235DDAD10023D9B4 /* NewCartTableViewHeader.m in Sources */,
@@ -3000,6 +3071,7 @@
 				91D2AC7122F95C6400179C88 /* MyFansViewController.m in Sources */,
 				9116615622E18FAA00A5F9C2 /* UIDevice+category.m in Sources */,
 				91D2AC6922F91F5A00179C88 /* GetZanNetworking.m in Sources */,
+				91DBEA6F236195770076AC91 /* GoodDetailDisCountView.m in Sources */,
 				9166A5F9232F6A4700BA68E5 /* OrderReturnSuccessViewController.m in Sources */,
 				91125F1323225B4600A15FFE /* AddressEditTableViewCell.m in Sources */,
 				91BED3022355664000B2EC69 /* NewWaitPayReasonModel.m in Sources */,
@@ -3026,6 +3098,7 @@
 				79CC62EB2157402800101773 /* GKDYVideoControlView.m in Sources */,
 				91ABABB722FBCE1B00E4593A /* EditSignsViewController.m in Sources */,
 				91C239E7234C5E3B00AFE879 /* NewMarketViewController.m in Sources */,
+				91DBEA6C23617FF50076AC91 /* GoodDetailView4.m in Sources */,
 				9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */,
 				91A05A07231CB42100322752 /* VideoProgressBar.m in Sources */,
 				91DA72F0230D2B120085312E /* MarketUserShopNetworking.m in Sources */,
@@ -3043,6 +3116,7 @@
 				915BC63022E00FE200894F64 /* UIImage+GKcategory.m in Sources */,
 				9165E36D2301530E00556AB7 /* IssueViewController.m in Sources */,
 				91C25C00232CAED700A6B629 /* ReturnGoodsViewController.m in Sources */,
+				91DBEA6923616AE60076AC91 /* GoodDetailView3.m in Sources */,
 				91DCB17723601FE100697A0D /* NewMarketShopOrderViewController.m in Sources */,
 				91BED3122355B21C00B2EC69 /* NewWaitSendBackPayViewController.m in Sources */,
 				9182740C234EFF5800760D93 /* MemberHistoryViewController.m in Sources */,
@@ -3054,10 +3128,12 @@
 				91A05A0D231CC3D500322752 /* EditViewController.m in Sources */,
 				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
 				91FD2DF0231FBC3D00FC2520 /* MyGoodsModel.m in Sources */,
+				9106AA942366865A004EDC8B /* DisCountTableViewCell.m in Sources */,
 				91BC3B292351641A00764D4B /* NewAllOrderViewController.m in Sources */,
 				91DFEF832302522900DA2458 /* MyBusinessViewController.m in Sources */,
 				910A8DAA230E45890051CDA2 /* MarketSearchGoodsMainController.m in Sources */,
 				91ABABB122FBC8D700E4593A /* EditNickNameViewController.m in Sources */,
+				9106AA9923669869004EDC8B /* InfoGoodView.m in Sources */,
 				79CC62E521573FC500101773 /* GKDYScrollView.m in Sources */,
 				91D2AC6622F91E3E00179C88 /* GetZanModel.m in Sources */,
 				91BED30F2355A91900B2EC69 /* NewWaitSendDetailViewController.m in Sources */,
@@ -3086,6 +3162,7 @@
 				91D2AC6222F9172600179C88 /* MessageCommonTableViewCell.m in Sources */,
 				91C1E5FA2330A2930058FAA4 /* ToPaySuccessNetworking.m in Sources */,
 				912CE5292340409C00375DDD /* NewMineViewController.m in Sources */,
+				9106AA9C236699AD004EDC8B /* TypeView.m in Sources */,
 				91D2E82622EEB3F80065FB0B /* UserTableViewCell.m in Sources */,
 				9165E36A2301339100556AB7 /* DealSetViewController.m in Sources */,
 				91D2AC7422F9608700179C88 /* MyFansNetworking.m in Sources */,
@@ -3147,6 +3224,7 @@
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91C3B757233344CF00BDAF46 /* OrderDetailBuyerViewController.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,
+				91DBEA62236148310076AC91 /* NewGoodCommentTableViewCell.m in Sources */,
 				91084BB422FD16B100021B29 /* ProvinceModel.m in Sources */,
 				91BC3B512351A1DA00764D4B /* InterestKitsViewController.m in Sources */,
 				91DFEF872302559700DA2458 /* MyBusinessTableViewCell.m in Sources */,

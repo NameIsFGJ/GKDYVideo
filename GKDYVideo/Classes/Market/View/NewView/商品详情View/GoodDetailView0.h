@@ -10,8 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GoodDetailView0 : UIView
+@protocol GoodDetailView0Delegate <NSObject>
+- (void)view0WithBannerClick:(NSInteger)index;
+- (void)view0WithMemberClick;
+- (void)view0WithDiscountClick;
+- (void)view0WithShopClick;
+@end
 
+
+@interface GoodDetailView0 : UIView
+@property (nonatomic, weak) id<GoodDetailView0Delegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END
