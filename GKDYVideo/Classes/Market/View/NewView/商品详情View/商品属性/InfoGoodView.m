@@ -230,7 +230,7 @@ static NSInteger viewHeight = 483;
 - (void)subButtonAction
 {
     NSInteger count = [self.countLabel.text intValue];
-    count +=1;
+    count -=1;
     self.countLabel.text = [NSString stringWithFormat:@"%ld",(long)count];
 }
 

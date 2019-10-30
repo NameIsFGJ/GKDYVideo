@@ -9,10 +9,18 @@
 #import "NewMineViewController.h"
 #import "NewMineView.h"
 #import "MineTableViewCell.h"
+// 会员中心
 #import "MemberViewController.h"
+// 设置
 #import "NewSetViewController.h"
+// 订单
 #import "OrderMainViewController.h"
+// 优惠券
 #import "NewDiscountViewController.h"
+// 余额
+#import "BalanceViewController.h"
+// 个人中心
+#import "NewCenterViewController.h"
 @interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
@@ -93,6 +101,14 @@
 }
 
 #pragma mark MyHeadViewDelegate
+// 点击头像,进入个人中心
+- (void)headViewCenterButtonClick;
+{
+    NewCenterViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewCenterViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 // 我的饭圈
 - (void)headViewTopicButtonClick;
 {
@@ -160,6 +176,9 @@
 - (void)headViewMoneyButtonClick;
 {
     NSLog(@"余额");
+    BalanceViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"BalanceViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 // 红包
 - (void)headViewRedPacketButtonClick;

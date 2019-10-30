@@ -156,6 +156,9 @@
 		919843692304FF81001148B9 /* UserHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 919843682304FF81001148B9 /* UserHeadView.m */; };
 		9198436C230553C6001148B9 /* UserNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198436B230553C6001148B9 /* UserNetworking.m */; };
 		919843722305568B001148B9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 919843712305568B001148B9 /* UserModel.m */; };
+		919A5EEA236832B6003D779C /* Storyboard5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919A5EE9236832B6003D779C /* Storyboard5.storyboard */; };
+		919A5EED23683476003D779C /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A5EEC23683476003D779C /* BalanceViewController.m */; };
+		919A5EF023683B22003D779C /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A5EEF23683B22003D779C /* RechargeViewController.m */; };
 		91A05A04231CB20D00322752 /* MusicsDowonLoadNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A05A03231CB20D00322752 /* MusicsDowonLoadNetWorking.m */; };
 		91A05A07231CB42100322752 /* VideoProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A05A06231CB42100322752 /* VideoProgressBar.m */; };
 		91A05A0A231CB4B200322752 /* VideoDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A05A09231CB4B200322752 /* VideoDeleteButton.m */; };
@@ -330,6 +333,9 @@
 		91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F6222B230BE94E0088730D /* MarketSearchCollectionViewCell.xib */; };
 		91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6222F230BF00B0088730D /* UILabel+fontHeight.m */; };
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
+		91FC1C5A23692B2000AA050F /* NewCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FC1C5923692B2000AA050F /* NewCenterViewController.m */; };
+		91FC1C5D236961E500AA050F /* NewExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FC1C5C236961E500AA050F /* NewExplainViewController.m */; };
+		91FC1C602369653700AA050F /* NewEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FC1C5F2369653700AA050F /* NewEditViewController.m */; };
 		91FD0F5E22FC513600951823 /* CityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F5D22FC513600951823 /* CityPickerView.m */; };
 		91FD0F6122FC538100951823 /* BirthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD0F6022FC538100951823 /* BirthPickerView.m */; };
 		91FD2DE7231F9D3600FC2520 /* SuccessVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FD2DE6231F9D3600FC2520 /* SuccessVideoViewController.m */; };
@@ -647,6 +653,11 @@
 		9198436B230553C6001148B9 /* UserNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserNetworking.m; sourceTree = "<group>"; };
 		919843702305568B001148B9 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		919843712305568B001148B9 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		919A5EE9236832B6003D779C /* Storyboard5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard5.storyboard; sourceTree = "<group>"; };
+		919A5EEB23683476003D779C /* BalanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceViewController.h; sourceTree = "<group>"; };
+		919A5EEC23683476003D779C /* BalanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceViewController.m; sourceTree = "<group>"; };
+		919A5EEE23683B22003D779C /* RechargeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
+		919A5EEF23683B22003D779C /* RechargeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
 		91A05A02231CB20D00322752 /* MusicsDowonLoadNetWorking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicsDowonLoadNetWorking.h; sourceTree = "<group>"; };
 		91A05A03231CB20D00322752 /* MusicsDowonLoadNetWorking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicsDowonLoadNetWorking.m; sourceTree = "<group>"; };
 		91A05A05231CB42100322752 /* VideoProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoProgressBar.h; sourceTree = "<group>"; };
@@ -1070,6 +1081,12 @@
 		91F6222F230BF00B0088730D /* UILabel+fontHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+fontHeight.m"; sourceTree = "<group>"; };
 		91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeadView.h; sourceTree = "<group>"; };
 		91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeadView.m; sourceTree = "<group>"; };
+		91FC1C5823692B2000AA050F /* NewCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewCenterViewController.h; sourceTree = "<group>"; };
+		91FC1C5923692B2000AA050F /* NewCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewCenterViewController.m; sourceTree = "<group>"; };
+		91FC1C5B236961E500AA050F /* NewExplainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewExplainViewController.h; sourceTree = "<group>"; };
+		91FC1C5C236961E500AA050F /* NewExplainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewExplainViewController.m; sourceTree = "<group>"; };
+		91FC1C5E2369653700AA050F /* NewEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEditViewController.h; sourceTree = "<group>"; };
+		91FC1C5F2369653700AA050F /* NewEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewEditViewController.m; sourceTree = "<group>"; };
 		91FD0F5C22FC513600951823 /* CityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPickerView.h; sourceTree = "<group>"; };
 		91FD0F5D22FC513600951823 /* CityPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPickerView.m; sourceTree = "<group>"; };
 		91FD0F5F22FC538100951823 /* BirthPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BirthPickerView.h; sourceTree = "<group>"; };
@@ -1204,6 +1221,7 @@
 				79CC62932157377400101773 /* AppDelegate.m */,
 				9116614922E18FAA00A5F9C2 /* AppDelegate+Vendor.h */,
 				9116615322E18FAA00A5F9C2 /* AppDelegate+Vendor.m */,
+				919A5EE823683291003D779C /* StoryBoard */,
 				9116614622E18FAA00A5F9C2 /* Categroy */,
 				912F4DA122E18C94004CF0DF /* Define */,
 				9116615C22E19BBD00A5F9C2 /* Base */,
@@ -1544,6 +1562,8 @@
 			children = (
 				912CE5272340409C00375DDD /* NewMineViewController.h */,
 				912CE5282340409C00375DDD /* NewMineViewController.m */,
+				91FC1C57236925E000AA050F /* 个人中心 */,
+				919A5EE7236810A2003D779C /* 余额 */,
 				91A43E172356E7BF00D7166B /* 优惠券 */,
 				91BC3B262351630500764D4B /* 订单 */,
 				91BE837323504632008A4236 /* 设置 */,
@@ -2056,6 +2076,25 @@
 				91FD2DE6231F9D3600FC2520 /* SuccessVideoViewController.m */,
 			);
 			path = AddVideo;
+			sourceTree = "<group>";
+		};
+		919A5EE7236810A2003D779C /* 余额 */ = {
+			isa = PBXGroup;
+			children = (
+				919A5EEB23683476003D779C /* BalanceViewController.h */,
+				919A5EEC23683476003D779C /* BalanceViewController.m */,
+				919A5EEE23683B22003D779C /* RechargeViewController.h */,
+				919A5EEF23683B22003D779C /* RechargeViewController.m */,
+			);
+			path = "余额";
+			sourceTree = "<group>";
+		};
+		919A5EE823683291003D779C /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				919A5EE9236832B6003D779C /* Storyboard5.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		91A43E162356BD5100D7166B /* 退款 */ = {
@@ -2745,6 +2784,19 @@
 			path = WSLWaterFlowLayout;
 			sourceTree = "<group>";
 		};
+		91FC1C57236925E000AA050F /* 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				91FC1C5823692B2000AA050F /* NewCenterViewController.h */,
+				91FC1C5923692B2000AA050F /* NewCenterViewController.m */,
+				91FC1C5B236961E500AA050F /* NewExplainViewController.h */,
+				91FC1C5C236961E500AA050F /* NewExplainViewController.m */,
+				91FC1C5E2369653700AA050F /* NewEditViewController.h */,
+				91FC1C5F2369653700AA050F /* NewEditViewController.m */,
+			);
+			path = "个人中心";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2861,6 +2913,7 @@
 				91BABCE6230ACC1E00047A64 /* MarketCollectionViewCell.xib in Resources */,
 				91139DC72318C30200A936E8 /* 胜利小旋律音效.m4r in Resources */,
 				91B328A72357FFA8008688F5 /* NewDiscountTableViewCell.xib in Resources */,
+				919A5EEA236832B6003D779C /* Storyboard5.storyboard in Resources */,
 				91D80272233B189600659A01 /* MySellTableViewCell.xib in Resources */,
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
 				91827411234F081600760D93 /* MemberHistoryTableViewCell.xib in Resources */,
@@ -3002,6 +3055,7 @@
 				91FD2DEA231F9E2900FC2520 /* ShareVideoView.m in Sources */,
 				91D8027A233B528500659A01 /* EditGoodsViewController.m in Sources */,
 				91A43E1D2356EF3F00D7166B /* NewLoginViewController.m in Sources */,
+				91FC1C5A23692B2000AA050F /* NewCenterViewController.m in Sources */,
 				9113E14E22EAAD1400FFFCF0 /* FollowingViewController.m in Sources */,
 				919843722305568B001148B9 /* UserModel.m in Sources */,
 				9113E14A22EA8B5B00FFFCF0 /* ShareView.m in Sources */,
@@ -3144,6 +3198,7 @@
 				91BE838C2350749F008A4236 /* ForgetPassViewController.m in Sources */,
 				91BE83862350621B008A4236 /* IdearViewController.m in Sources */,
 				79CC62EE2157405400101773 /* GKDYVideoViewModel.m in Sources */,
+				919A5EF023683B22003D779C /* RechargeViewController.m in Sources */,
 				91BC3B4E2351A1A100764D4B /* InterestCosViewController.m in Sources */,
 				91B2256622EEF34700FFAA84 /* SearchUsersNetworking.m in Sources */,
 				91C3BB87233C8EFE0033E286 /* PickFollowViewController.m in Sources */,
@@ -3181,6 +3236,7 @@
 				9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */,
 				910A8DA3230E437A0051CDA2 /* MarketSearchSaleViewController.m in Sources */,
 				915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */,
+				919A5EED23683476003D779C /* BalanceViewController.m in Sources */,
 				9176295922F168E1003CF389 /* AddGoodsChildViewController.m in Sources */,
 				91CDD506232A158B00483EB8 /* ToPayNetworking.m in Sources */,
 				91DD30B322F0835F00192D7E /* VideoGuanNetworking.m in Sources */,
@@ -3204,6 +3260,7 @@
 				9104F9C8230A46060033C40A /* MarkCollectionHead2View.m in Sources */,
 				91C239F3234C5EFA00AFE879 /* RankListViewController.m in Sources */,
 				9165E3762301657300556AB7 /* IssueTableViewCell.m in Sources */,
+				91FC1C602369653700AA050F /* NewEditViewController.m in Sources */,
 				91125F0C2321FAFD00A15FFE /* MarketOrderViewController.m in Sources */,
 				91827417234F2B2800760D93 /* MemberPayViewController.m in Sources */,
 				9166A5AB232F1B1300BA68E5 /* ReturnGoodsDetailViewController.m in Sources */,
@@ -3221,6 +3278,7 @@
 				914A86EF232601BD00DB324E /* AddressEditNewViewController.m in Sources */,
 				91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */,
 				917FCE582320AB2400786775 /* MyBusinessNetworking.m in Sources */,
+				91FC1C5D236961E500AA050F /* NewExplainViewController.m in Sources */,
 				91C9C1ED22E708CA00D0A87E /* SendRegisterCodeNetworking.m in Sources */,
 				91C3B757233344CF00BDAF46 /* OrderDetailBuyerViewController.m in Sources */,
 				91FD85D822E5B81000EBF3B2 /* BaseNavigationController.m in Sources */,

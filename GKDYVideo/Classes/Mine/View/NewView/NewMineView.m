@@ -40,7 +40,12 @@
     headImage.layer.cornerRadius = 56/2;
     headImage.layer.masksToBounds = YES;
     headImage.backgroundColor = [UIColor redColor];
-
+    
+    UITapGestureRecognizer *tap  = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushCenterVC)];
+    [headImage addGestureRecognizer:tap];
+    headImage.userInteractionEnabled = YES;
+    
+    
     UILabel *nickNameLabel = [[UILabel alloc]init];
     [view0 addSubview:nickNameLabel];
     [nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -313,6 +318,16 @@
 }
 
 #pragma mark Action
+
+// 点击头像
+- (void)pushCenterVC
+{
+    NSLog(@"点击头像");
+    if ([self.delegate respondsToSelector:@selector(headViewCenterButtonClick)])
+    {
+        [self.delegate headViewCenterButtonClick];
+    }
+}
 
 // 我的饭圈
 - (void)myTopicButtonAction

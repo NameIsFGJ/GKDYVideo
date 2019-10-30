@@ -37,6 +37,8 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol MyHeadViewDelegate <NSObject>
 
+// 点击头像,进入个人中心
+- (void)headViewCenterButtonClick;
 // 我的饭圈
 - (void)headViewTopicButtonClick;
 // 会员

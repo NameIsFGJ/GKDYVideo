@@ -41,7 +41,8 @@
 // 缩写
 #define kImageName(name)    [UIImage imageNamed:name]
 #define kFontSize(size)     [UIFont systemFontOfSize:size]
-
+// storyboard
+#define kStoryboard5         [UIStoryboard storyboardWithName:@"Storyboard5" bundle:nil]
 // user
 #define kUser               [User currentUser]
 //UDID MD5_UDID
