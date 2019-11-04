@@ -22,7 +22,7 @@
 - (instancetype)init
 {
     self = [super init];
-   // self.backgroundColor = [UIColor whiteColor];
+   
     self.isSelected = NO;
     UIView *darkView = [[UIView alloc]init];
     [self addSubview:darkView];

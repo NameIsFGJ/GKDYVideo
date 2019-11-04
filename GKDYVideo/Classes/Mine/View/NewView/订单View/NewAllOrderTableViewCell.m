@@ -38,4 +38,35 @@
     // Configure the view for the selected state
 }
 
+#pragma mark ButtonAction
+- (IBAction)button1Action:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(button1Click:)]) {
+        
+        [self.delegate button1Click:sender];
+    }
+    
+}
+
+- (IBAction)button2Action:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(button2Click:)]) {
+        
+        [self.delegate button2Click:sender];
+    }
+    
+//    if ([sender.titleLabel.text isEqualToString:@"查看物流"]) {
+//        NSLog(@"查看物流");
+//    }
+    
+}
+
+- (IBAction)button3Action:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(button3Click:)]) {
+        
+        [self.delegate button3Click:sender];
+    }
+}
+
 @end

@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol OrderCellDelegate <NSObject>
+
+- (void)button1Click:(UIButton *)sender;
+- (void)button2Click:(UIButton *)sender;
+- (void)button3Click:(UIButton *)sender;
+
+@end
+
+
 
 @interface NewAllOrderTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLabel;
@@ -21,6 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UIButton *button3;
+
+//@property (nonatomic, weak) id<GKDYVideoControlViewDelegate> delegate;
+
+@property (weak, nonatomic) id<OrderCellDelegate> delegate;
+
 
 @end
 

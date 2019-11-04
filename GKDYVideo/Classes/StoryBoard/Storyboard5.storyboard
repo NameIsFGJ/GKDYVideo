@@ -336,6 +336,9 @@
                                         <state key="normal" title="编辑资料">
                                             <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushEditButtonAction:" destination="8U9-5R-fe5" eventType="touchUpInside" id="1dL-dd-umB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -674,6 +677,381 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="843.08035714285711"/>
         </scene>
+        <!--New Appraise View Controller-->
+        <scene sceneID="SIV-gw-rXd">
+            <objects>
+                <viewController storyboardIdentifier="NewAppraiseViewController" id="Oxh-eN-Wxd" customClass="NewAppraiseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dQZ-zY-RvH"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ob-1Q-PqO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HhP-5u-iQN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZH-3d-Os0">
+                                <rect key="frame" x="0.0" y="88" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-GL-sJ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ziz-Ub-cLD">
+                                                <rect key="frame" x="18" y="8" width="70" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.48627450979999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="太平鸟羽绒服男装2019冬季新款纯色多口袋连帽短款羽绒服外套男潮" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5k8-Gs-4o8">
+                                                <rect key="frame" x="101" y="0.0" width="260" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-TU-rMd">
+                                        <rect key="frame" x="19" y="99" width="335" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" tag="400" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7H-bp-JUA">
+                                        <rect key="frame" x="38" y="113" width="53" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="好评" image="好评2">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commentButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="9I3-Z9-qNZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="402" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEt-dm-TAH">
+                                        <rect key="frame" x="267" y="114" width="54" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="差评" image="差评">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commentButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="hwE-hE-a80"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="401" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbX-Sa-dz9">
+                                        <rect key="frame" x="152" y="113" width="54" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="中评" image="差评">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commentButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="kYa-mr-nVM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqm-Ed-Vt5">
+                                <rect key="frame" x="8" y="246" width="362" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="宝贝评价" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKn-9w-Cnh">
+                                        <rect key="frame" x="18" y="8" width="258" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME4-5W-oGA">
+                                        <rect key="frame" x="18" y="87" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" image="photo"/>
+                                        <connections>
+                                            <action selector="photoButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="BlA-Pg-AcJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57k-SG-iD9">
+                                        <rect key="frame" x="76" y="87" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="sp"/>
+                                        <connections>
+                                            <action selector="videoButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="0Gh-DA-qdQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T20-K1-Ebt">
+                                <rect key="frame" x="0.0" y="416" width="370" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpQ-kS-nO6">
+                                <rect key="frame" x="0.0" y="429" width="375" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdA-HK-97u">
+                                        <rect key="frame" x="0.0" y="54" width="375" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="描述相符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz3-K5-fUw">
+                                                <rect key="frame" x="15" y="8" width="70" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="非常好" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkX-pV-49m">
+                                                <rect key="frame" x="300" y="10" width="71" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a08-og-bmN">
+                                                <rect key="frame" x="109" y="12" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button1Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="MlJ-Fe-m1f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faq-TK-nbR">
+                                                <rect key="frame" x="148" y="12" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button1Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="xbB-bF-aWM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8u-pW-Jp0">
+                                                <rect key="frame" x="186" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button1Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="64M-q3-l7N"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyY-Sn-gc1">
+                                                <rect key="frame" x="218" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button1Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="43P-M9-lAH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J31-dA-s3s">
+                                                <rect key="frame" x="255" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button1Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="gfh-tf-4px"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9l4-9G-A5d">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="物流服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13R-x9-67s">
+                                                <rect key="frame" x="17" y="8" width="70" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="非常好" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhI-x4-SCJ">
+                                                <rect key="frame" x="299" y="10" width="74" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="201" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-o6-nHW">
+                                                <rect key="frame" x="111" y="12" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button2Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="GYL-I0-HMo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="202" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Se8-Es-JPL">
+                                                <rect key="frame" x="150" y="12" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button2Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="b8M-Mg-stl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="203" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eup-WN-vh1">
+                                                <rect key="frame" x="188" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button2Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="Bct-cd-wnZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="204" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huk-bd-MzF">
+                                                <rect key="frame" x="220" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button2Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="9W4-r8-nUu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="205" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65r-dN-i8s">
+                                                <rect key="frame" x="257" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button2Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="f5Z-hf-Ica"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vyv-zN-jes">
+                                        <rect key="frame" x="0.0" y="129" width="375" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="服务态度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXD-Y6-2E3">
+                                                <rect key="frame" x="15" y="8" width="70" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="非常好" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGz-ij-1aE">
+                                                <rect key="frame" x="303" y="10" width="70" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="301" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7G-vl-jRs">
+                                                <rect key="frame" x="111" y="12" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button3Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="g68-KP-yIy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="302" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-BT-ZxS">
+                                                <rect key="frame" x="150" y="12" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button3Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="YQK-tR-31G"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="303" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DD-le-s2D">
+                                                <rect key="frame" x="188" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button3Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="Zpc-fn-NNL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="304" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSQ-Jf-Fe6">
+                                                <rect key="frame" x="220" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button3Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="pa2-2C-PtZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="305" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zb-ng-wiq">
+                                                <rect key="frame" x="257" y="11" width="17" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="starNor"/>
+                                                <connections>
+                                                    <action selector="button3Action:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="YEb-Fq-JLJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-cK-m3p">
+                                        <rect key="frame" x="0.0" y="-4" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-l4-Fbw">
+                                                <rect key="frame" x="19" y="8" width="2" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.32549019610000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="店铺评分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usK-2e-kGk">
+                                                <rect key="frame" x="41" y="12" width="62" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12B-ur-mct">
+                                <rect key="frame" x="0.0" y="617" width="414" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcl-1c-QWp">
+                                <rect key="frame" x="0.0" y="749" width="414" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-N7-ujL">
+                                        <rect key="frame" x="38" y="50" width="289" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.32549019610000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="提交评价"/>
+                                        <connections>
+                                            <action selector="submitButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="fuQ-Sa-gzx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="har-sU-vMW">
+                                        <rect key="frame" x="232" y="5" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="tickNor"/>
+                                        <connections>
+                                            <action selector="hideNameButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="xQW-HR-r4v"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="匿名评价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxG-Af-8Pg">
+                                        <rect key="frame" x="265" y="10" width="62" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="896"/>
+                    <connections>
+                        <outlet property="bestButton" destination="i7H-bp-JUA" id="S8z-sQ-AkM"/>
+                        <outlet property="commentLabel1" destination="TkX-pV-49m" id="E8w-VM-d1h"/>
+                        <outlet property="commentLabel2" destination="dhI-x4-SCJ" id="0UU-5a-R9Z"/>
+                        <outlet property="commentLabel3" destination="uGz-ij-1aE" id="ISi-1O-jXY"/>
+                        <outlet property="commentTextField" destination="PKn-9w-Cnh" id="AjM-3e-fr9"/>
+                        <outlet property="goodDesLabel" destination="5k8-Gs-4o8" id="1pQ-4f-6V2"/>
+                        <outlet property="goodsImageView" destination="Ziz-Ub-cLD" id="c7H-Xd-gDs"/>
+                        <outlet property="middleButton" destination="qbX-Sa-dz9" id="bKh-uB-aK8"/>
+                        <outlet property="submitButton" destination="z7u-N7-ujL" id="MLy-hX-M6s"/>
+                        <outlet property="worstButton" destination="FEt-dm-TAH" id="fb1-lZ-MTm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdH-8T-WV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35.507246376811594" y="1534.8214285714284"/>
+        </scene>
         <!--New Explain View Controller-->
         <scene sceneID="0Qs-Up-qhP">
             <objects>
@@ -915,36 +1293,6 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="qZy-fc-kXl"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-wi-aWQ">
-                                        <rect key="frame" x="0.0" y="313" width="414" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人简介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrM-qE-xT1">
-                                                <rect key="frame" x="12" y="16" width="61.5" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有简介哦 &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osZ-lg-Wwt">
-                                                <rect key="frame" x="294.5" y="16" width="105.5" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0Hr-Zd-xG5"/>
-                                            <constraint firstAttribute="height" constant="50" id="0KX-em-o0n"/>
-                                            <constraint firstItem="osZ-lg-Wwt" firstAttribute="centerY" secondItem="6iR-wi-aWQ" secondAttribute="centerY" id="83J-b0-emV"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="8Xu-un-07L"/>
-                                            <constraint firstItem="BrM-qE-xT1" firstAttribute="centerY" secondItem="6iR-wi-aWQ" secondAttribute="centerY" id="9tk-n0-CKc"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="DYW-2h-ILu"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="Q1a-3G-Kyc"/>
-                                            <constraint firstAttribute="trailing" secondItem="osZ-lg-Wwt" secondAttribute="trailing" constant="14" id="oBA-lm-Cef"/>
-                                            <constraint firstItem="BrM-qE-xT1" firstAttribute="leading" secondItem="6iR-wi-aWQ" secondAttribute="leading" constant="12" id="vNc-nY-VgI"/>
-                                            <constraint firstItem="BrM-qE-xT1" firstAttribute="centerY" secondItem="6iR-wi-aWQ" secondAttribute="centerY" id="zEi-GC-iv1"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSg-mG-gzB">
                                         <rect key="frame" x="0.0" y="262" width="414" height="50"/>
                                         <subviews>
@@ -973,6 +1321,36 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rod-dV-eZi"/>
                                             <constraint firstItem="p6O-qH-xpW" firstAttribute="leading" secondItem="rSg-mG-gzB" secondAttribute="leading" constant="12" id="sbB-fh-9Fc"/>
                                             <constraint firstAttribute="trailing" secondItem="RgH-a0-gmx" secondAttribute="trailing" constant="14" id="uVT-Z2-33e"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-wi-aWQ">
+                                        <rect key="frame" x="0.0" y="313" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人简介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrM-qE-xT1">
+                                                <rect key="frame" x="12" y="16" width="61.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有简介哦 &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osZ-lg-Wwt">
+                                                <rect key="frame" x="294.5" y="16" width="105.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0Hr-Zd-xG5"/>
+                                            <constraint firstAttribute="height" constant="50" id="0KX-em-o0n"/>
+                                            <constraint firstItem="osZ-lg-Wwt" firstAttribute="centerY" secondItem="6iR-wi-aWQ" secondAttribute="centerY" id="83J-b0-emV"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="8Xu-un-07L"/>
+                                            <constraint firstItem="BrM-qE-xT1" firstAttribute="centerY" secondItem="6iR-wi-aWQ" secondAttribute="centerY" id="9tk-n0-CKc"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="DYW-2h-ILu"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="Q1a-3G-Kyc"/>
+                                            <constraint firstAttribute="trailing" secondItem="osZ-lg-Wwt" secondAttribute="trailing" constant="14" id="oBA-lm-Cef"/>
+                                            <constraint firstItem="BrM-qE-xT1" firstAttribute="leading" secondItem="6iR-wi-aWQ" secondAttribute="leading" constant="12" id="vNc-nY-VgI"/>
+                                            <constraint firstItem="BrM-qE-xT1" firstAttribute="centerY" secondItem="6iR-wi-aWQ" secondAttribute="centerY" id="zEi-GC-iv1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1013,20 +1391,143 @@
                     </view>
                     <connections>
                         <outlet property="headImgeView" destination="EEM-0c-eFo" id="fnR-5d-Tv7"/>
+                        <outlet property="label1" destination="WRG-oc-DUJ" id="OsF-Ti-UvF"/>
+                        <outlet property="label2" destination="1SV-t6-hH7" id="d7z-Cm-3NL"/>
+                        <outlet property="label3" destination="Xqw-kS-4TC" id="vTT-gJ-WtJ"/>
+                        <outlet property="label4" destination="GzM-aU-Qp8" id="4mP-g7-arP"/>
+                        <outlet property="label5" destination="RgH-a0-gmx" id="eQ7-jD-BO2"/>
+                        <outlet property="label6" destination="osZ-lg-Wwt" id="9D2-ow-mlx"/>
                         <outlet property="view0" destination="c4W-oZ-Ck8" id="M4G-LK-P3N"/>
                         <outlet property="view1" destination="m0L-Gg-htV" id="pgi-vT-hIw"/>
+                        <outlet property="view2" destination="d3v-rm-qiJ" id="tRW-In-MNb"/>
+                        <outlet property="view3" destination="AnF-Wc-wlz" id="OB4-pO-VZB"/>
+                        <outlet property="view4" destination="aqe-lg-mZj" id="XVj-82-Uou"/>
+                        <outlet property="view5" destination="rSg-mG-gzB" id="Ub4-w8-cgq"/>
+                        <outlet property="view6" destination="6iR-wi-aWQ" id="VvF-il-0gH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0s-cX-Uqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1621.7391304347827" y="839.73214285714278"/>
         </scene>
+        <!--New Edit Name View Controller-->
+        <scene sceneID="eLR-PH-fiK">
+            <objects>
+                <viewController storyboardIdentifier="NewEditNameViewController" id="uWS-ja-nCb" customClass="NewEditNameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lwl-6E-79J"/>
+                        <viewControllerLayoutGuide type="bottom" id="b0P-Cq-4Z7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8pA-Pk-9lJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIM-BN-XiE">
+                                <rect key="frame" x="0.0" y="126" width="414" height="770"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请设置2-24个字符,不能包括@&lt;&gt;/等无效字符哟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2W-MM-aOZ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ore-0W-NBT">
+                                        <rect key="frame" x="0.0" y="76" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXa-5W-7hH">
+                                                <rect key="frame" x="22" y="0.0" width="345" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.9004262985" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NsW-0i-aaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349.275362318841" y="832.36607142857144"/>
+        </scene>
+        <!--New EditID View Controller-->
+        <scene sceneID="vof-xM-mnK">
+            <objects>
+                <viewController storyboardIdentifier="NewEditIDViewController" id="ueS-WJ-Z5u" customClass="NewEditIDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B9R-2Z-gQr"/>
+                        <viewControllerLayoutGuide type="bottom" id="LbT-GT-iHB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dyg-aj-zvb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kz9-Sf-SaG">
+                                <rect key="frame" x="0.0" y="136" width="414" height="760"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="漫饭号是账号的唯一凭证,只能修改一次" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-hX-Zcv">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-lH-jFg">
+                                        <rect key="frame" x="0.0" y="76" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="漫饭号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hPH-ng-Xjh">
+                                                <rect key="frame" x="22" y="0.0" width="345" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6-15个字符,仅可使用英文、数字、下划线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THc-sz-wzB">
+                                        <rect key="frame" x="0.0" y="152" width="414" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.9004262985" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14h-cQ-MoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3078" y="832"/>
+        </scene>
     </scenes>
     <resources>
         <image name="money_bg" width="375" height="178"/>
+        <image name="photo" width="50" height="50"/>
         <image name="reasonNormal" width="16" height="16.5"/>
         <image name="reasonSelected" width="16" height="16.5"/>
+        <image name="sp" width="50" height="50"/>
+        <image name="starNor" width="16.5" height="16"/>
+        <image name="tickNor" width="15" height="15"/>
         <image name="weixin" width="32" height="32"/>
         <image name="zhifubao" width="32" height="32"/>
+        <image name="好评2" width="16" height="18.5"/>
+        <image name="差评" width="17" height="17.5"/>
     </resources>
 </document>

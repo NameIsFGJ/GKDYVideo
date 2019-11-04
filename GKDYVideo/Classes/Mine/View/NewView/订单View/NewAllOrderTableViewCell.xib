@@ -57,6 +57,9 @@
                                 <state key="normal" title="修改地址">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="button1Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8Xs-Do-cH3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arb-Ym-CKR">
                                 <rect key="frame" x="165" y="10" width="90" height="30"/>
@@ -68,6 +71,9 @@
                                 <state key="normal" title="取消订单">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="button2Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QHk-Jq-H89"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXR-wf-nTx">
                                 <rect key="frame" x="275" y="10" width="90" height="30"/>
@@ -79,6 +85,9 @@
                                 <state key="normal" title="确认收货">
                                     <color key="titleColor" red="0.97254901959999995" green="0.32549019610000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="button3Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="608-X4-hgT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

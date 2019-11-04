@@ -8,7 +8,7 @@
 
 #import "NewCenterViewController.h"
 #import "NewExplainViewController.h"
-
+#import "NewEditViewController.h"
 @interface NewCenterViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -35,16 +35,46 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self makeNav];
+    
+    [self makeUI];
+}
+
+- (void)makeNav
+{
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(pushViewController) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
+}
+
+- (void)pushViewController
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)makeUI
+{
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushExplainVC)];
     [self.view2 addGestureRecognizer:tap];
     
 }
+
 
 - (void)pushExplainVC
 {
     NewExplainViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewExplainViewController"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)pushEditButtonAction:(UIButton *)sender {
+    NewEditViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewEditViewController"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

@@ -326,6 +326,11 @@
 		91DFEF912302A41C00DA2458 /* MarketNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DFEF902302A41C00DA2458 /* MarketNetworking.m */; };
 		91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A10230676A1000E70D5 /* UserVideoNetworking.m */; };
 		91E19A172306AE44000E70D5 /* UIButton+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E19A162306AE44000E70D5 /* UIButton+category.m */; };
+		91E93B29236FC1A400A20617 /* NewExpressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E93B28236FC1A400A20617 /* NewExpressViewController.m */; };
+		91E93B2D236FC28E00A20617 /* NewExpressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E93B2B236FC28E00A20617 /* NewExpressTableViewCell.m */; };
+		91E93B2E236FC28E00A20617 /* NewExpressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91E93B2C236FC28E00A20617 /* NewExpressTableViewCell.xib */; };
+		91E93B31236FD6B000A20617 /* NewExpressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E93B30236FD6B000A20617 /* NewExpressView.m */; };
+		91E93B37236FF77D00A20617 /* NewAppraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E93B36236FF77D00A20617 /* NewAppraiseViewController.m */; };
 		91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */; };
 		91F62222230BBD2E0088730D /* WSLWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */; };
 		91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62224230BD4AF0088730D /* MarketSearchViewController.m */; };
@@ -333,6 +338,9 @@
 		91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F6222B230BE94E0088730D /* MarketSearchCollectionViewCell.xib */; };
 		91F62230230BF00B0088730D /* UILabel+fontHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6222F230BF00B0088730D /* UILabel+fontHeight.m */; };
 		91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */; };
+		91F9EFBD236C22A5004FD0C7 /* NewEditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F9EFBC236C22A5004FD0C7 /* NewEditNameViewController.m */; };
+		91F9EFC0236C2F15004FD0C7 /* NewEditIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F9EFBF236C2F15004FD0C7 /* NewEditIDViewController.m */; };
+		91F9EFC3236C327D004FD0C7 /* NewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F9EFC2236C327D004FD0C7 /* NewTestViewController.m */; };
 		91FC1C5A23692B2000AA050F /* NewCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FC1C5923692B2000AA050F /* NewCenterViewController.m */; };
 		91FC1C5D236961E500AA050F /* NewExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FC1C5C236961E500AA050F /* NewExplainViewController.m */; };
 		91FC1C602369653700AA050F /* NewEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FC1C5F2369653700AA050F /* NewEditViewController.m */; };
@@ -1068,6 +1076,15 @@
 		91E19A10230676A1000E70D5 /* UserVideoNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserVideoNetworking.m; sourceTree = "<group>"; };
 		91E19A152306AE44000E70D5 /* UIButton+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+category.h"; sourceTree = "<group>"; };
 		91E19A162306AE44000E70D5 /* UIButton+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+category.m"; sourceTree = "<group>"; };
+		91E93B27236FC1A400A20617 /* NewExpressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewExpressViewController.h; sourceTree = "<group>"; };
+		91E93B28236FC1A400A20617 /* NewExpressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewExpressViewController.m; sourceTree = "<group>"; };
+		91E93B2A236FC28E00A20617 /* NewExpressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewExpressTableViewCell.h; sourceTree = "<group>"; };
+		91E93B2B236FC28E00A20617 /* NewExpressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewExpressTableViewCell.m; sourceTree = "<group>"; };
+		91E93B2C236FC28E00A20617 /* NewExpressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewExpressTableViewCell.xib; sourceTree = "<group>"; };
+		91E93B2F236FD6B000A20617 /* NewExpressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewExpressView.h; sourceTree = "<group>"; };
+		91E93B30236FD6B000A20617 /* NewExpressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewExpressView.m; sourceTree = "<group>"; };
+		91E93B35236FF77D00A20617 /* NewAppraiseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAppraiseViewController.h; sourceTree = "<group>"; };
+		91E93B36236FF77D00A20617 /* NewAppraiseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAppraiseViewController.m; sourceTree = "<group>"; };
 		91F62219230B8F1C0088730D /* MarketTestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTestCollectionViewCell.h; sourceTree = "<group>"; };
 		91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketTestCollectionViewCell.m; sourceTree = "<group>"; };
 		91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLWaterFlowLayout.m; sourceTree = "<group>"; };
@@ -1081,6 +1098,12 @@
 		91F6222F230BF00B0088730D /* UILabel+fontHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+fontHeight.m"; sourceTree = "<group>"; };
 		91F8E68B22F86E7700B5A8AB /* MessageHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHeadView.h; sourceTree = "<group>"; };
 		91F8E68C22F86E7700B5A8AB /* MessageHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeadView.m; sourceTree = "<group>"; };
+		91F9EFBB236C22A5004FD0C7 /* NewEditNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEditNameViewController.h; sourceTree = "<group>"; };
+		91F9EFBC236C22A5004FD0C7 /* NewEditNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewEditNameViewController.m; sourceTree = "<group>"; };
+		91F9EFBE236C2F15004FD0C7 /* NewEditIDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEditIDViewController.h; sourceTree = "<group>"; };
+		91F9EFBF236C2F15004FD0C7 /* NewEditIDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewEditIDViewController.m; sourceTree = "<group>"; };
+		91F9EFC1236C327D004FD0C7 /* NewTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTestViewController.h; sourceTree = "<group>"; };
+		91F9EFC2236C327D004FD0C7 /* NewTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTestViewController.m; sourceTree = "<group>"; };
 		91FC1C5823692B2000AA050F /* NewCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewCenterViewController.h; sourceTree = "<group>"; };
 		91FC1C5923692B2000AA050F /* NewCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewCenterViewController.m; sourceTree = "<group>"; };
 		91FC1C5B236961E500AA050F /* NewExplainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewExplainViewController.h; sourceTree = "<group>"; };
@@ -2137,16 +2160,11 @@
 			children = (
 				91BC3B3023517B9F00764D4B /* OrderMainViewController.h */,
 				91BC3B3123517B9F00764D4B /* OrderMainViewController.m */,
-				91BC3B272351641A00764D4B /* NewAllOrderViewController.h */,
-				91BC3B282351641A00764D4B /* NewAllOrderViewController.m */,
-				91BC3B33235196B900764D4B /* NewWaitPayViewController.h */,
-				91BC3B34235196B900764D4B /* NewWaitPayViewController.m */,
-				91BC3B36235196D300764D4B /* NewWaitSendViewController.h */,
-				91BC3B37235196D300764D4B /* NewWaitSendViewController.m */,
-				91BC3B48235198F100764D4B /* NewWaitReceiveViewController.h */,
-				91BC3B49235198F100764D4B /* NewWaitReceiveViewController.m */,
-				91BC3B422351987A00764D4B /* NewWaitAppraiseViewController.h */,
-				91BC3B432351987A00764D4B /* NewWaitAppraiseViewController.m */,
+				91E93B22236FBBD700A20617 /* 全部 */,
+				91E93B24236FBC0A00A20617 /* 待发货 */,
+				91E93B23236FBBF300A20617 /* 待付款 */,
+				91E93B25236FBC1900A20617 /* 待收货 */,
+				91E93B26236FBC3000A20617 /* 待评价 */,
 				91BED3032355A6DA00B2EC69 /* 订单详情 */,
 			);
 			path = "订单";
@@ -2163,6 +2181,11 @@
 				91BED2FB23555DD900B2EC69 /* NewWaitPayReasonViewCell.h */,
 				91BED2FC23555DD900B2EC69 /* NewWaitPayReasonViewCell.m */,
 				91BED2FD23555DD900B2EC69 /* NewWaitPayReasonViewCell.xib */,
+				91E93B2A236FC28E00A20617 /* NewExpressTableViewCell.h */,
+				91E93B2B236FC28E00A20617 /* NewExpressTableViewCell.m */,
+				91E93B2C236FC28E00A20617 /* NewExpressTableViewCell.xib */,
+				91E93B2F236FD6B000A20617 /* NewExpressView.h */,
+				91E93B30236FD6B000A20617 /* NewExpressView.m */,
 			);
 			path = "订单View";
 			sourceTree = "<group>";
@@ -2775,6 +2798,55 @@
 			path = "商品详情View";
 			sourceTree = "<group>";
 		};
+		91E93B22236FBBD700A20617 /* 全部 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B272351641A00764D4B /* NewAllOrderViewController.h */,
+				91BC3B282351641A00764D4B /* NewAllOrderViewController.m */,
+			);
+			path = "全部";
+			sourceTree = "<group>";
+		};
+		91E93B23236FBBF300A20617 /* 待付款 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B33235196B900764D4B /* NewWaitPayViewController.h */,
+				91BC3B34235196B900764D4B /* NewWaitPayViewController.m */,
+			);
+			path = "待付款";
+			sourceTree = "<group>";
+		};
+		91E93B24236FBC0A00A20617 /* 待发货 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B36235196D300764D4B /* NewWaitSendViewController.h */,
+				91BC3B37235196D300764D4B /* NewWaitSendViewController.m */,
+			);
+			path = "待发货";
+			sourceTree = "<group>";
+		};
+		91E93B25236FBC1900A20617 /* 待收货 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B48235198F100764D4B /* NewWaitReceiveViewController.h */,
+				91BC3B49235198F100764D4B /* NewWaitReceiveViewController.m */,
+				91E93B27236FC1A400A20617 /* NewExpressViewController.h */,
+				91E93B28236FC1A400A20617 /* NewExpressViewController.m */,
+			);
+			path = "待收货";
+			sourceTree = "<group>";
+		};
+		91E93B26236FBC3000A20617 /* 待评价 */ = {
+			isa = PBXGroup;
+			children = (
+				91BC3B422351987A00764D4B /* NewWaitAppraiseViewController.h */,
+				91BC3B432351987A00764D4B /* NewWaitAppraiseViewController.m */,
+				91E93B35236FF77D00A20617 /* NewAppraiseViewController.h */,
+				91E93B36236FF77D00A20617 /* NewAppraiseViewController.m */,
+			);
+			path = "待评价";
+			sourceTree = "<group>";
+		};
 		91F6221F230BBD2E0088730D /* WSLWaterFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -2793,6 +2865,12 @@
 				91FC1C5C236961E500AA050F /* NewExplainViewController.m */,
 				91FC1C5E2369653700AA050F /* NewEditViewController.h */,
 				91FC1C5F2369653700AA050F /* NewEditViewController.m */,
+				91F9EFBB236C22A5004FD0C7 /* NewEditNameViewController.h */,
+				91F9EFBC236C22A5004FD0C7 /* NewEditNameViewController.m */,
+				91F9EFBE236C2F15004FD0C7 /* NewEditIDViewController.h */,
+				91F9EFBF236C2F15004FD0C7 /* NewEditIDViewController.m */,
+				91F9EFC1236C327D004FD0C7 /* NewTestViewController.h */,
+				91F9EFC2236C327D004FD0C7 /* NewTestViewController.m */,
 			);
 			path = "个人中心";
 			sourceTree = "<group>";
@@ -2916,6 +2994,7 @@
 				919A5EEA236832B6003D779C /* Storyboard5.storyboard in Resources */,
 				91D80272233B189600659A01 /* MySellTableViewCell.xib in Resources */,
 				916C6D5022F833B700D2538F /* MessageTableViewCell.xib in Resources */,
+				91E93B2E236FC28E00A20617 /* NewExpressTableViewCell.xib in Resources */,
 				91827411234F081600760D93 /* MemberHistoryTableViewCell.xib in Resources */,
 				91F6222D230BE94E0088730D /* MarketSearchCollectionViewCell.xib in Resources */,
 				91BC3B722351CB6A00764D4B /* AuthenCollectionReusableView.xib in Resources */,
@@ -3035,9 +3114,11 @@
 				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
 				91BC3B632351B16600764D4B /* InterestTableViewCell.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
+				91F9EFBD236C22A5004FD0C7 /* NewEditNameViewController.m in Sources */,
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
 				91827404234EC0A500760D93 /* MemberViewController.m in Sources */,
 				91BC3B682351BE4200764D4B /* AuthenCollectionViewCell.m in Sources */,
+				91E93B2D236FC28E00A20617 /* NewExpressTableViewCell.m in Sources */,
 				91C3B75423332A3B00BDAF46 /* OrderDetailModel.m in Sources */,
 				91D9810E23345F91006A6A92 /* ToPayDataNetworking.m in Sources */,
 				91BC3B4A235198F100764D4B /* NewWaitReceiveViewController.m in Sources */,
@@ -3097,6 +3178,7 @@
 				9162CFB622FAB67D0094EB7E /* EditTableViewCell.m in Sources */,
 				91C239F7234C619E00AFE879 /* RankListTableViewCell.m in Sources */,
 				91BE837E23504E7E008A4236 /* NewSetViewController.m in Sources */,
+				91E93B31236FD6B000A20617 /* NewExpressView.m in Sources */,
 				91D2AC5E22F912A600179C88 /* GetZanViewController.m in Sources */,
 				9113E16822EAF23600FFFCF0 /* SearchMusicViewController.m in Sources */,
 				917FCE5E2320DA8700786775 /* MarketShopDetailViewController.m in Sources */,
@@ -3127,6 +3209,7 @@
 				91D2AC6922F91F5A00179C88 /* GetZanNetworking.m in Sources */,
 				91DBEA6F236195770076AC91 /* GoodDetailDisCountView.m in Sources */,
 				9166A5F9232F6A4700BA68E5 /* OrderReturnSuccessViewController.m in Sources */,
+				91F9EFC3236C327D004FD0C7 /* NewTestViewController.m in Sources */,
 				91125F1323225B4600A15FFE /* AddressEditTableViewCell.m in Sources */,
 				91BED3022355664000B2EC69 /* NewWaitPayReasonModel.m in Sources */,
 				9162CFB222FA5D7B0094EB7E /* EditInfoViewController.m in Sources */,
@@ -3206,6 +3289,7 @@
 				606A77DD215DFCB100DC2F63 /* GKDYPersonalViewController.m in Sources */,
 				91BB79BD23000BF10049BC41 /* IDCardViewController.m in Sources */,
 				91C3B74E233328A600BDAF46 /* OrderDetilNetworking.m in Sources */,
+				91E93B37236FF77D00A20617 /* NewAppraiseViewController.m in Sources */,
 				910A8DA6230E439D0051CDA2 /* MarketSearchPriceViewController.m in Sources */,
 				91C239FE234C844D00AFE879 /* NewFriendsViewController.m in Sources */,
 				91F6222C230BE94E0088730D /* MarketSearchCollectionViewCell.m in Sources */,
@@ -3225,6 +3309,7 @@
 				914034D822E5DF46006F1699 /* LikeVideoModel.m in Sources */,
 				79CC62F52158E44300101773 /* GKNetworking.m in Sources */,
 				91B2F53122EC84CB0030B6C2 /* SearchHistoryTableViewCell.m in Sources */,
+				91E93B29236FC1A400A20617 /* NewExpressViewController.m in Sources */,
 				91BE839223507853008A4236 /* AboutUSViewController.m in Sources */,
 				91CDD573232A2AD700483EB8 /* openssl_wrapper.m in Sources */,
 				91C23A05234C8BDA00AFE879 /* MSWeakTimer.m in Sources */,
@@ -3288,6 +3373,7 @@
 				91DFEF872302559700DA2458 /* MyBusinessTableViewCell.m in Sources */,
 				91BC3B3223517B9F00764D4B /* OrderMainViewController.m in Sources */,
 				9198436C230553C6001148B9 /* UserNetworking.m in Sources */,
+				91F9EFC0236C2F15004FD0C7 /* NewEditIDViewController.m in Sources */,
 				916B675F2317A172000E6F8A /* MusicNetworking.m in Sources */,
 				91C23A02234C8BAA00AFE879 /* UUMarqueeView.m in Sources */,
 				9113E17222EAFB2000FFFCF0 /* WMStickyPageController.m in Sources */,

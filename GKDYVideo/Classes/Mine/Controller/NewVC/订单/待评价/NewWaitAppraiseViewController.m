@@ -8,7 +8,8 @@
 
 #import "NewWaitAppraiseViewController.h"
 #import "NewAllOrderTableViewCell.h"
-@interface NewWaitAppraiseViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "NewAppraiseViewController.h"
+@interface NewWaitAppraiseViewController ()<UITableViewDelegate,UITableViewDataSource,OrderCellDelegate>
 
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @property (strong, nonatomic)UITableView *mainView;
@@ -40,6 +41,10 @@
 {
     static NSString *cellID = @"NewAllOrderTableViewCellID";
     NewAllOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.button1.hidden = YES;
+    [cell.button2 setTitle:@"查看物流" forState:UIControlStateNormal];
+    [cell.button3 setTitle:@"评价" forState:UIControlStateNormal];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -49,6 +54,24 @@
     return 205;
 }
 
+#pragma mark OrderButtonDelegate
+
+- (void)button1Click:(UIButton *)sender;
+{
+    
+}
+- (void)button2Click:(UIButton *)sender;
+{
+//    NewAppraiseViewController *vc = [[NewAppraiseViewController alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)button3Click:(UIButton *)sender;
+{
+    NewAppraiseViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewAppraiseViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark loazLoad
 
 - (UITableView *)mainView

@@ -8,7 +8,8 @@
 
 #import "NewWaitReceiveViewController.h"
 #import "NewAllOrderTableViewCell.h"
-@interface NewWaitReceiveViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "NewExpressViewController.h"
+@interface NewWaitReceiveViewController ()<UITableViewDelegate,UITableViewDataSource,OrderCellDelegate>
 
 @property (strong, nonatomic)NSMutableArray *itemsArray;
 @property (strong, nonatomic)UITableView *mainView;
@@ -19,8 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+   
     [self.view addSubview:self.mainView];
     
 }
@@ -40,6 +40,9 @@
 {
     static NSString *cellID = @"NewAllOrderTableViewCellID";
     NewAllOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.button1.hidden = YES;
+    [cell.button2 setTitle:@"查看物流" forState:UIControlStateNormal];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -48,6 +51,26 @@
 {
     return 205;
 }
+
+#pragma mark cellDelegate
+- (void)button1Click:(UIButton *)sender;
+{
+    NSLog(@"sender.titleLabel.text  =%@",sender.titleLabel.text);
+}
+- (void)button2Click:(UIButton *)sender;
+{
+    NSLog(@"sender.titleLabel.text  =%@",sender.titleLabel.text);
+    if ([sender.titleLabel.text isEqualToString:@"查看物流"]) {
+        NewExpressViewController *vc = [[NewExpressViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+- (void)button3Click:(UIButton *)sender;
+{
+    NSLog(@"sender.titleLabel.text  =%@",sender.titleLabel.text);
+}
+
 
 #pragma mark loazLoad
 
