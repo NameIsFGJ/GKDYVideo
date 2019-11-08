@@ -214,7 +214,6 @@
 - (void)registerButtonAction
 {
     NewLoginRegisterViewController *vc = [[NewLoginRegisterViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
     

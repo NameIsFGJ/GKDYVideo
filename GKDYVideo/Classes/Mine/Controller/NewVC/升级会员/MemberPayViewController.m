@@ -283,7 +283,6 @@
 - (void)submitButtonAction
 {
     MemberSuccessViewController *vc = [[MemberSuccessViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

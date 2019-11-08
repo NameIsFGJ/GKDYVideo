@@ -299,9 +299,7 @@
 - (void)returnButtonAction
 {
     NSLog(@"我要退货");
-//    ReturnGoodsViewController *vc = [[ReturnGoodsViewController alloc]init];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 - (void)confirmButtonAction

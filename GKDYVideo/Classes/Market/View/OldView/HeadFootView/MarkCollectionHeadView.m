@@ -221,7 +221,6 @@
 - (void)pushSearchVCAction
 {
     MarketSearchViewController *vc = [[MarketSearchViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [[self viewController].navigationController pushViewController:vc animated:YES];
 }
 

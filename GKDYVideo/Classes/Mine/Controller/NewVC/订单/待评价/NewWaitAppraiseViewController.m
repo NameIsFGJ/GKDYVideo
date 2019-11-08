@@ -62,14 +62,11 @@
 }
 - (void)button2Click:(UIButton *)sender;
 {
-//    NewAppraiseViewController *vc = [[NewAppraiseViewController alloc]init];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
+
 }
 - (void)button3Click:(UIButton *)sender;
 {
     NewAppraiseViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewAppraiseViewController"];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark loazLoad

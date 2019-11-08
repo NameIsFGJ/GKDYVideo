@@ -365,9 +365,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     SuccessVideoViewController *vc = [[SuccessVideoViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-   // [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - PLShortVideoUploaderDelegate 视频上传

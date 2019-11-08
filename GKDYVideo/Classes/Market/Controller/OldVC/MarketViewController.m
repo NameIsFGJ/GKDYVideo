@@ -138,7 +138,6 @@
     vc.ide = 1;
     //用户id 商品id 用户 token
 //    vc
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

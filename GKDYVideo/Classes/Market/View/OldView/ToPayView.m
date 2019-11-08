@@ -168,8 +168,6 @@
 {
     OrderDetailBuyerViewController *vc = [[OrderDetailBuyerViewController alloc]init];
     vc.orderID = self.orderSn;
-    NSLog(@"self.orderSn323  =%ld",self.orderSn);
-    vc.hidesBottomBarWhenPushed = YES;
     [self.viewContainingController.navigationController pushViewController:vc animated:YES];
 }
 

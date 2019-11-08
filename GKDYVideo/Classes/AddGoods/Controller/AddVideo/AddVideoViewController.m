@@ -128,19 +128,8 @@
 //
 - (void)musicButtonOnClick:(id)button
 {
-    
     MusicsViewController *vc = [[MusicsViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-   // [self presentViewController:vc animated:YES completion:nil];
-    //self.musicButton.selected = !self.musicButton.selected;
-    //    if (self.musicButton.selected) {
-    //        // 背景音乐
-    //        NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Greenery" ofType:@"m4a"]];
-    //        [self.shortVideoRecorder mixAudio:audioURL];
-    //    } else{
-    //        [self.shortVideoRecorder mixAudio:nil];
-    //    }
 }
 
 
@@ -416,10 +405,7 @@
     EditViewController *vc = [[EditViewController alloc] init];
     vc.settings = outputSettings;
     vc.filesURLArray = filesURLArray;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    //[self presentViewController:vc animated:YES completion:nil];
-    
 }
 
 #pragma mark - 输出路径

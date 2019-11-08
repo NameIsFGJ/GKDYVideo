@@ -77,6 +77,13 @@
 		9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116615E22E19BE500A5F9C2 /* BaseNetworking.m */; };
 		9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */; };
 		9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */; };
+		911AC56B23726F8900BF9918 /* NewAppraiseSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911AC56A23726F8900BF9918 /* NewAppraiseSuccessViewController.m */; };
+		911AC570237290C000BF9918 /* LegalCopyGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911AC56F237290C000BF9918 /* LegalCopyGoodsViewController.m */; };
+		911AC576237292ED00BF9918 /* RankListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 911AC574237292ED00BF9918 /* RankListCollectionViewCell.m */; };
+		911AC577237292ED00BF9918 /* RankListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911AC575237292ED00BF9918 /* RankListCollectionViewCell.xib */; };
+		911AC57B23729B5800BF9918 /* RankListCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911AC57923729B5800BF9918 /* RankListCollectionReusableView.m */; };
+		911AC57C23729B5800BF9918 /* RankListCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911AC57A23729B5800BF9918 /* RankListCollectionReusableView.xib */; };
+		911AC5822372CAB000BF9918 /* RankListGoodsviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911AC5812372CAB000BF9918 /* RankListGoodsviewController.m */; };
 		9128513B22E9996100AF0DE6 /* GetVideoCommentNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */; };
 		9128513E22E999BA00AF0DE6 /* GetVideoCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9128513D22E999BA00AF0DE6 /* GetVideoCommentModel.m */; };
 		912CE5292340409C00375DDD /* NewMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912CE5282340409C00375DDD /* NewMineViewController.m */; };
@@ -331,6 +338,7 @@
 		91E93B2E236FC28E00A20617 /* NewExpressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91E93B2C236FC28E00A20617 /* NewExpressTableViewCell.xib */; };
 		91E93B31236FD6B000A20617 /* NewExpressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E93B30236FD6B000A20617 /* NewExpressView.m */; };
 		91E93B37236FF77D00A20617 /* NewAppraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E93B36236FF77D00A20617 /* NewAppraiseViewController.m */; };
+		91F301BD2373AFC700B62587 /* LegalListSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F301BC2373AFC700B62587 /* LegalListSelectView.m */; };
 		91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */; };
 		91F62222230BBD2E0088730D /* WSLWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */; };
 		91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62224230BD4AF0088730D /* MarketSearchViewController.m */; };
@@ -506,6 +514,18 @@
 		9116616422E1B4A300A5F9C2 /* HomeSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSegmentedControl.m; sourceTree = "<group>"; };
 		9116616922E1B9CA00A5F9C2 /* GKDYPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYPageViewController.h; sourceTree = "<group>"; };
 		9116616A22E1B9CA00A5F9C2 /* GKDYPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDYPageViewController.m; sourceTree = "<group>"; };
+		911AC56923726F8900BF9918 /* NewAppraiseSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAppraiseSuccessViewController.h; sourceTree = "<group>"; };
+		911AC56A23726F8900BF9918 /* NewAppraiseSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAppraiseSuccessViewController.m; sourceTree = "<group>"; };
+		911AC56E237290C000BF9918 /* LegalCopyGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegalCopyGoodsViewController.h; sourceTree = "<group>"; };
+		911AC56F237290C000BF9918 /* LegalCopyGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegalCopyGoodsViewController.m; sourceTree = "<group>"; };
+		911AC573237292ED00BF9918 /* RankListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankListCollectionViewCell.h; sourceTree = "<group>"; };
+		911AC574237292ED00BF9918 /* RankListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankListCollectionViewCell.m; sourceTree = "<group>"; };
+		911AC575237292ED00BF9918 /* RankListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankListCollectionViewCell.xib; sourceTree = "<group>"; };
+		911AC57823729B5800BF9918 /* RankListCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankListCollectionReusableView.h; sourceTree = "<group>"; };
+		911AC57923729B5800BF9918 /* RankListCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankListCollectionReusableView.m; sourceTree = "<group>"; };
+		911AC57A23729B5800BF9918 /* RankListCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankListCollectionReusableView.xib; sourceTree = "<group>"; };
+		911AC5802372CAB000BF9918 /* RankListGoodsviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankListGoodsviewController.h; sourceTree = "<group>"; };
+		911AC5812372CAB000BF9918 /* RankListGoodsviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankListGoodsviewController.m; sourceTree = "<group>"; };
 		9128513922E9996100AF0DE6 /* GetVideoCommentNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentNetworking.h; sourceTree = "<group>"; };
 		9128513A22E9996100AF0DE6 /* GetVideoCommentNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentNetworking.m; sourceTree = "<group>"; };
 		9128513C22E999BA00AF0DE6 /* GetVideoCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentModel.h; sourceTree = "<group>"; };
@@ -1085,6 +1105,8 @@
 		91E93B30236FD6B000A20617 /* NewExpressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewExpressView.m; sourceTree = "<group>"; };
 		91E93B35236FF77D00A20617 /* NewAppraiseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAppraiseViewController.h; sourceTree = "<group>"; };
 		91E93B36236FF77D00A20617 /* NewAppraiseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAppraiseViewController.m; sourceTree = "<group>"; };
+		91F301BB2373AFC700B62587 /* LegalListSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegalListSelectView.h; sourceTree = "<group>"; };
+		91F301BC2373AFC700B62587 /* LegalListSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegalListSelectView.m; sourceTree = "<group>"; };
 		91F62219230B8F1C0088730D /* MarketTestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTestCollectionViewCell.h; sourceTree = "<group>"; };
 		91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketTestCollectionViewCell.m; sourceTree = "<group>"; };
 		91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLWaterFlowLayout.m; sourceTree = "<group>"; };
@@ -1375,12 +1397,8 @@
 			children = (
 				910343A22341C994000C498E /* ProgressView.h */,
 				910343A32341C994000C498E /* ProgressView.m */,
-				91CCB241234C1DF700E8D3AB /* LegalListTableViewCell.h */,
-				91CCB242234C1DF700E8D3AB /* LegalListTableViewCell.m */,
-				91CCB243234C1DF700E8D3AB /* LegalListTableViewCell.xib */,
-				91C239F4234C619E00AFE879 /* RankListTableViewCell.h */,
-				91C239F5234C619E00AFE879 /* RankListTableViewCell.m */,
-				91C239F6234C619E00AFE879 /* RankListTableViewCell.xib */,
+				911AC5722372919400BF9918 /* 漫饭正品View */,
+				911AC5712372916F00BF9918 /* 排行榜View */,
 				91CC6903235DB39F004E0088 /* 购物车View */,
 				91DDF87B235D463D0009EE6D /* 商品详情View */,
 			);
@@ -1549,6 +1567,56 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		911AC56C23728FD400BF9918 /* 漫饭正品 */ = {
+			isa = PBXGroup;
+			children = (
+				91C239EE234C5EE200AFE879 /* LegalCopyViewController.h */,
+				91C239EF234C5EE200AFE879 /* LegalCopyViewController.m */,
+				911AC56E237290C000BF9918 /* LegalCopyGoodsViewController.h */,
+				911AC56F237290C000BF9918 /* LegalCopyGoodsViewController.m */,
+			);
+			path = "漫饭正品";
+			sourceTree = "<group>";
+		};
+		911AC56D23728FF000BF9918 /* 排行榜 */ = {
+			isa = PBXGroup;
+			children = (
+				91C239F1234C5EFA00AFE879 /* RankListViewController.h */,
+				91C239F2234C5EFA00AFE879 /* RankListViewController.m */,
+				911AC5802372CAB000BF9918 /* RankListGoodsviewController.h */,
+				911AC5812372CAB000BF9918 /* RankListGoodsviewController.m */,
+			);
+			path = "排行榜";
+			sourceTree = "<group>";
+		};
+		911AC5712372916F00BF9918 /* 排行榜View */ = {
+			isa = PBXGroup;
+			children = (
+				91C239F4234C619E00AFE879 /* RankListTableViewCell.h */,
+				91C239F5234C619E00AFE879 /* RankListTableViewCell.m */,
+				91C239F6234C619E00AFE879 /* RankListTableViewCell.xib */,
+				911AC573237292ED00BF9918 /* RankListCollectionViewCell.h */,
+				911AC574237292ED00BF9918 /* RankListCollectionViewCell.m */,
+				911AC575237292ED00BF9918 /* RankListCollectionViewCell.xib */,
+				911AC57823729B5800BF9918 /* RankListCollectionReusableView.h */,
+				911AC57923729B5800BF9918 /* RankListCollectionReusableView.m */,
+				911AC57A23729B5800BF9918 /* RankListCollectionReusableView.xib */,
+			);
+			path = "排行榜View";
+			sourceTree = "<group>";
+		};
+		911AC5722372919400BF9918 /* 漫饭正品View */ = {
+			isa = PBXGroup;
+			children = (
+				91CCB241234C1DF700E8D3AB /* LegalListTableViewCell.h */,
+				91CCB242234C1DF700E8D3AB /* LegalListTableViewCell.m */,
+				91CCB243234C1DF700E8D3AB /* LegalListTableViewCell.xib */,
+				91F301BB2373AFC700B62587 /* LegalListSelectView.h */,
+				91F301BC2373AFC700B62587 /* LegalListSelectView.m */,
+			);
+			path = "漫饭正品View";
+			sourceTree = "<group>";
+		};
 		912CE5252340406300375DDD /* OldVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1652,10 +1720,8 @@
 			children = (
 				91C239E5234C5E3B00AFE879 /* NewMarketViewController.h */,
 				91C239E6234C5E3B00AFE879 /* NewMarketViewController.m */,
-				91C239EE234C5EE200AFE879 /* LegalCopyViewController.h */,
-				91C239EF234C5EE200AFE879 /* LegalCopyViewController.m */,
-				91C239F1234C5EFA00AFE879 /* RankListViewController.h */,
-				91C239F2234C5EFA00AFE879 /* RankListViewController.m */,
+				911AC56C23728FD400BF9918 /* 漫饭正品 */,
+				911AC56D23728FF000BF9918 /* 排行榜 */,
 				91DCB17B23603A5F00697A0D /* 商品详情 */,
 				91DCB17423601F7800697A0D /* 购物车VC */,
 			);
@@ -2843,6 +2909,8 @@
 				91BC3B432351987A00764D4B /* NewWaitAppraiseViewController.m */,
 				91E93B35236FF77D00A20617 /* NewAppraiseViewController.h */,
 				91E93B36236FF77D00A20617 /* NewAppraiseViewController.m */,
+				911AC56923726F8900BF9918 /* NewAppraiseSuccessViewController.h */,
+				911AC56A23726F8900BF9918 /* NewAppraiseSuccessViewController.m */,
 			);
 			path = "待评价";
 			sourceTree = "<group>";
@@ -3000,6 +3068,7 @@
 				91BC3B722351CB6A00764D4B /* AuthenCollectionReusableView.xib in Resources */,
 				91CCB245234C1DF700E8D3AB /* LegalListTableViewCell.xib in Resources */,
 				911184822354647F00054217 /* NewLikeCollectionViewCell.xib in Resources */,
+				911AC57C23729B5800BF9918 /* RankListCollectionReusableView.xib in Resources */,
 				9165E3772301657300556AB7 /* IssueTableViewCell.xib in Resources */,
 				79CC629F2157377600101773 /* LaunchScreen.storyboard in Resources */,
 				91827409234EE0E200760D93 /* VipCollectionViewCell.xib in Resources */,
@@ -3024,6 +3093,7 @@
 				91C239F8234C619E00AFE879 /* RankListTableViewCell.xib in Resources */,
 				91D2AC6E22F9565000179C88 /* MyFansTableViewCell.xib in Resources */,
 				9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */,
+				911AC577237292ED00BF9918 /* RankListCollectionViewCell.xib in Resources */,
 				916B676A2317A795000E6F8A /* MusicsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3150,6 +3220,7 @@
 				91827410234F081600760D93 /* MemberHistoryTableViewCell.m in Sources */,
 				91DA72D6230CE2FE0085312E /* MarketUserShopViewController.m in Sources */,
 				9166A5FC232F6F6A00BA68E5 /* OrderReturnFalseViewController.m in Sources */,
+				911AC56B23726F8900BF9918 /* NewAppraiseSuccessViewController.m in Sources */,
 				91BC3B35235196B900764D4B /* NewWaitPayViewController.m in Sources */,
 				91D2E82922EECA2E0065FB0B /* MusicTableViewCell.m in Sources */,
 				91BE838F23507752008A4236 /* ChangeIphoneViewController.m in Sources */,
@@ -3173,8 +3244,10 @@
 				91BE838223504EB2008A4236 /* NewSetTableViewCell.m in Sources */,
 				910343A42341C994000C498E /* ProgressView.m in Sources */,
 				91C9C1E922E6DFEF00D0A87E /* LoginViewController.m in Sources */,
+				911AC576237292ED00BF9918 /* RankListCollectionViewCell.m in Sources */,
 				91DD443C22FFEAEE009A4790 /* SetViewController.m in Sources */,
 				9166A5FF232F720100BA68E5 /* OrderReturnApplyViewController.m in Sources */,
+				911AC57B23729B5800BF9918 /* RankListCollectionReusableView.m in Sources */,
 				9162CFB622FAB67D0094EB7E /* EditTableViewCell.m in Sources */,
 				91C239F7234C619E00AFE879 /* RankListTableViewCell.m in Sources */,
 				91BE837E23504E7E008A4236 /* NewSetViewController.m in Sources */,
@@ -3202,6 +3275,7 @@
 				917303AF232739B800E423E4 /* AddressEditNetworking.m in Sources */,
 				79CC62D421573C2300101773 /* GKDYSearchViewController.m in Sources */,
 				91CC4ED122FB0DD500A1D7B1 /* EditHeadView.m in Sources */,
+				911AC570237290C000BF9918 /* LegalCopyGoodsViewController.m in Sources */,
 				91D2AC6D22F9565000179C88 /* MyFansTableViewCell.m in Sources */,
 				91BB8682231521C4004FA74D /* AddVideoViewController.m in Sources */,
 				91D2AC7122F95C6400179C88 /* MyFansViewController.m in Sources */,
@@ -3212,6 +3286,7 @@
 				91F9EFC3236C327D004FD0C7 /* NewTestViewController.m in Sources */,
 				91125F1323225B4600A15FFE /* AddressEditTableViewCell.m in Sources */,
 				91BED3022355664000B2EC69 /* NewWaitPayReasonModel.m in Sources */,
+				91F301BD2373AFC700B62587 /* LegalListSelectView.m in Sources */,
 				9162CFB222FA5D7B0094EB7E /* EditInfoViewController.m in Sources */,
 				91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */,
 				91ABABBD22FC029500E4593A /* NewBaseModel.m in Sources */,
@@ -3331,6 +3406,7 @@
 				917303BB2327A14100E423E4 /* AddNetworking.m in Sources */,
 				91125F0F2322570600A15FFE /* AddressEditViewController.m in Sources */,
 				79CC62942157377400101773 /* AppDelegate.m in Sources */,
+				911AC5822372CAB000BF9918 /* RankListGoodsviewController.m in Sources */,
 				9116615A22E18FAA00A5F9C2 /* NSString+MD5.m in Sources */,
 				91C3BB90233C94A90033E286 /* PickCollectionViewCell.m in Sources */,
 				917303B8232785FC00E423E4 /* ToPayView.m in Sources */,

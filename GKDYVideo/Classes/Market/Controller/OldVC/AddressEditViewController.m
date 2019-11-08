@@ -64,7 +64,6 @@
     NSLog(@"添加新的地址");
     AddressEditNewViewController *vc = [[AddressEditNewViewController alloc]init];
     vc.editType = newEdit;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -117,7 +116,6 @@
     NSInteger index = button.tag - 100;
     AddressListModel *model = self.itemsArray[index];
     AddressEditNewViewController *vc = [[AddressEditNewViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     vc.editType = oldEdit;
     vc.model = model;
     [self.navigationController pushViewController:vc animated:YES];

@@ -75,8 +75,10 @@
 #pragma mark  UISearchBar
 
 
-
-
+- (BOOL)setupTarbarHidden
+{
+    return NO;
+}
 
 #pragma mark 懒加载
 - (PickRecommendViewController *)recommendVC

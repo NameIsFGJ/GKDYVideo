@@ -49,19 +49,21 @@
     }];
 }
 
+
+- (BOOL)setupTarbarHidden
+{
+    return NO;
+}
 #pragma mark Action
 - (void)pushGoodsAction
 {
     AddGoodsChildViewController *vc = [[AddGoodsChildViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)pushVideoAction
 {
     UploadViewController *vc = [[UploadViewController alloc]init];
-   // AddVideoViewController *vc = [[AddVideoViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
    [self.navigationController pushViewController:vc animated:YES];
 }
 

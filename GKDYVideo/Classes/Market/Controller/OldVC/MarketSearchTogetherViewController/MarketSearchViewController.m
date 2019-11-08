@@ -183,7 +183,6 @@
     MarketSearchGoodsMainController *vc = [[MarketSearchGoodsMainController alloc]init];
     
     vc.searchStr = self.searchStr;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
     return YES;
@@ -235,7 +234,6 @@
     self.searchStr = [valueArray firstObject];
     MarketSearchGoodsMainController *vc = [[MarketSearchGoodsMainController alloc]init];
     vc.searchStr = self.searchStr;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

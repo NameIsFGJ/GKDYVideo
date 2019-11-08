@@ -8,6 +8,7 @@
 
 #import "RankListViewController.h"
 #import "LegalListTableViewCell.h"
+#import "RankListGoodsviewController.h"
 @interface RankListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -22,16 +23,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.tableView.panGestureRecognizer.rac_gestureSignal subscribeNext:^(UIPanGestureRecognizer * gesture) {
-        if (self.block) {
-            if ([gesture translationInView:self.view].y > 50) {
-                self.block(YES);
-            }
-            if ([gesture translationInView:self.view].y < -40) {
-                self.block(NO);
-            }
-        }
-    }];
 }
 
 - (void)viewDidLayoutSubviews
@@ -62,6 +53,16 @@
     return 210;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RankListGoodsviewController *vc = [[RankListGoodsviewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (BOOL)setupTarbarHidden
+{
+    return NO;
+}
 #pragma mark LoazLoad
 - (UITableView *)tableView
 {

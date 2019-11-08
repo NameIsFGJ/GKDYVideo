@@ -9,6 +9,7 @@
 #import "LegalCopyViewController.h"
 #import "RankListTableViewCell.h"
 #import "NewMarketGoodDetailViewController.h"
+#import "LegalCopyGoodsViewController.h"
 
 @interface LegalCopyViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
@@ -41,7 +42,7 @@
     [super viewDidLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
-
+    
 }
 
 #pragma mark UITableViewDelegate
@@ -66,11 +67,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewMarketGoodDetailViewController *vc = [[NewMarketGoodDetailViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
+    LegalCopyGoodsViewController *vc = [[LegalCopyGoodsViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
+}
 
+- (BOOL)setupTarbarHidden
+{
+    return NO;
 }
 
 #pragma mark LoazLoad

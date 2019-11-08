@@ -298,7 +298,6 @@
 - (void)submitButtonAction
 {
     NewWaitPaySendBackPayDetailViewController *vc = [[NewWaitPaySendBackPayDetailViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

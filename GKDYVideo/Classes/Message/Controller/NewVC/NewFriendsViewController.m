@@ -241,7 +241,6 @@
 - (void)interestButtonAction
 {
     InterestMainViewController *vc = [[InterestMainViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -249,7 +248,6 @@
 - (void)authenButtonAction
 {
     AuthenMainViewController *vc = [[AuthenMainViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark UUMarqueeViewDelegate
@@ -349,6 +347,11 @@
         [_collectionView registerNib:[UINib nibWithNibName:@"PickCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"PickCollectionViewCellID"];
     }
     return _collectionView;
+}
+
+- (BOOL)setupTarbarHidden
+{
+    return NO;
 }
 #pragma mark lazyLoad
 

@@ -235,9 +235,8 @@
     UploadViewController *vc = [[UploadViewController alloc] init];
     vc.url = url;
     vc.videoImage = self.videoImage;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    //[self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 //  displayView

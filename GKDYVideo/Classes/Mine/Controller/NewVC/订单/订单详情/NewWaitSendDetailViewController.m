@@ -490,7 +490,6 @@
 {
     NSLog(@"点击退款");
     NewWaitSendBackPayViewController *vc = [[NewWaitSendBackPayViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

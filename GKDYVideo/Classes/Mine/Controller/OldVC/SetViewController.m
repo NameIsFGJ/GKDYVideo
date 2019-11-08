@@ -93,18 +93,18 @@
     if (indexPath.row == 0)
     {
         EditInfoViewController *vc = [[EditInfoViewController alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
         
     }else if (indexPath.row == 1)
     {
         IDCardViewController *vc = [[IDCardViewController alloc]init];
-         vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 2)
     {
         DealSetViewController *vc = [[DealSetViewController alloc]init];
-         vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 3)
     {

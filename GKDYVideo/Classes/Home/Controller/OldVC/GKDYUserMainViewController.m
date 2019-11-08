@@ -267,7 +267,6 @@
     vc.userID = self.model.ide;
     vc.head_url = self.model.head_pic;
     vc.nickName = self.model.nickname;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

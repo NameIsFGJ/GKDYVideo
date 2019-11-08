@@ -61,7 +61,6 @@
 - (void)rightButtonAction
 {
     NewSetViewController *vc = [[NewSetViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark UITableViewDelegate
@@ -105,7 +104,6 @@
 - (void)headViewCenterButtonClick;
 {
     NewCenterViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewCenterViewController"];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -118,7 +116,6 @@
 - (void)headViewMemberButtonClick;
 {   
     MemberViewController *vc = [[MemberViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 // 查看所有订单
@@ -126,7 +123,6 @@
 {
     NSLog(@"查看全部");
     OrderMainViewController *vc = [[OrderMainViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -136,7 +132,6 @@
     NSLog(@"待付款");
     OrderMainViewController *vc = [[OrderMainViewController alloc]init];
     vc.selectIndex = 1;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 // 待发货
@@ -145,7 +140,6 @@
     NSLog(@"待发货");
     OrderMainViewController *vc = [[OrderMainViewController alloc]init];
     vc.selectIndex = 2;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -155,7 +149,7 @@
     NSLog(@"待收货");
     OrderMainViewController *vc = [[OrderMainViewController alloc]init];
     vc.selectIndex = 3;
-    vc.hidesBottomBarWhenPushed = YES;
+   
     [self.navigationController pushViewController:vc animated:YES];
 }
 // 待评价
@@ -164,7 +158,6 @@
     NSLog(@"待评价");
     OrderMainViewController *vc = [[OrderMainViewController alloc]init];
     vc.selectIndex = 4;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 // 售后
@@ -177,7 +170,6 @@
 {
     NSLog(@"余额");
     BalanceViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"BalanceViewController"];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 // 红包
@@ -190,10 +182,13 @@
 {
     NSLog(@"优惠券");
     NewDiscountViewController *vc = [[NewDiscountViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (BOOL)setupTarbarHidden
+{
+    return NO;
+}
 #pragma mark LazyLoad
 - (UITableView *)mainView
 {

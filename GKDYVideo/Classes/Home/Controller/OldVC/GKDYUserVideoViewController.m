@@ -75,7 +75,6 @@
     }
     
     GKDYPlayerViewController *playerVC = [[GKDYPlayerViewController alloc]initWithVideos:itemsArray index:indexPath.item];
-    playerVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:playerVC animated:YES];
 }
 

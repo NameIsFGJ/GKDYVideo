@@ -686,7 +686,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2ob-1Q-PqO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HhP-5u-iQN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZH-3d-Os0">
@@ -1001,7 +1001,7 @@
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcl-1c-QWp">
-                                <rect key="frame" x="0.0" y="749" width="414" height="116"/>
+                                <rect key="frame" x="0.0" y="643" width="375" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-N7-ujL">
@@ -1034,7 +1034,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <size key="freeformSize" width="375" height="896"/>
+                    <size key="freeformSize" width="375" height="886"/>
                     <connections>
                         <outlet property="bestButton" destination="i7H-bp-JUA" id="S8z-sQ-AkM"/>
                         <outlet property="commentLabel1" destination="TkX-pV-49m" id="E8w-VM-d1h"/>
@@ -1044,6 +1044,7 @@
                         <outlet property="goodDesLabel" destination="5k8-Gs-4o8" id="1pQ-4f-6V2"/>
                         <outlet property="goodsImageView" destination="Ziz-Ub-cLD" id="c7H-Xd-gDs"/>
                         <outlet property="middleButton" destination="qbX-Sa-dz9" id="bKh-uB-aK8"/>
+                        <outlet property="noneNameButton" destination="har-sU-vMW" id="DGJ-6o-g6r"/>
                         <outlet property="submitButton" destination="z7u-N7-ujL" id="MLy-hX-M6s"/>
                         <outlet property="worstButton" destination="FEt-dm-TAH" id="fb1-lZ-MTm"/>
                     </connections>
@@ -1051,6 +1052,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdH-8T-WV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="35.507246376811594" y="1534.8214285714284"/>
+        </scene>
+        <!--New Appraise Success View Controller-->
+        <scene sceneID="9Yb-2W-gbr">
+            <objects>
+                <viewController storyboardIdentifier="NewAppraiseSuccessViewController" id="yJc-Tp-b01" customClass="NewAppraiseSuccessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kpp-HB-BAv"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYO-of-Y1M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vCr-1G-0S0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ma-Yn-eej">
+                                <rect key="frame" x="63" y="618" width="289" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.32549019610000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="返回首页"/>
+                                <connections>
+                                    <action selector="popButtonAction:" destination="yJc-Tp-b01" eventType="touchUpInside" id="Z7y-pL-Za3"/>
+                                    <action selector="submitButtonAction:" destination="Oxh-eN-Wxd" eventType="touchUpInside" id="ZJl-vF-pvX"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pc" translatesAutoresizingMaskIntoConstraints="NO" id="Gru-Pu-2L4">
+                                <rect key="frame" x="172" y="317" width="70" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="评价成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqw-8H-8bZ">
+                                <rect key="frame" x="-4" y="415" width="398" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="坚持写真实、内容丰富的评论,粮票赚的更多哟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl4-Jj-7MF">
+                                <rect key="frame" x="0.0" y="484" width="398" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqG-VY-7sM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834.78260869565224" y="1540.8482142857142"/>
         </scene>
         <!--New Explain View Controller-->
         <scene sceneID="0Qs-Up-qhP">
@@ -1519,6 +1568,7 @@
     </scenes>
     <resources>
         <image name="money_bg" width="375" height="178"/>
+        <image name="pc" width="72.5" height="92"/>
         <image name="photo" width="50" height="50"/>
         <image name="reasonNormal" width="16" height="16.5"/>
         <image name="reasonSelected" width="16" height="16.5"/>

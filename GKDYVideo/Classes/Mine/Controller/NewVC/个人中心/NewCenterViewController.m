@@ -66,7 +66,6 @@
 - (void)pushExplainVC
 {
     NewExplainViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewExplainViewController"];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

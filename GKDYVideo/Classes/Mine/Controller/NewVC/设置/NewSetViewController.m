@@ -134,19 +134,19 @@
         //  更改密码
         if (indexPath.row == 0) {
             ChangePasswordViewController *vc = [[ChangePasswordViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
+           
             [self.navigationController pushViewController:vc animated:YES];
         }
         //  忘记密码
         if (indexPath.row == 1) {
             ForgetPassViewController *vc = [[ForgetPassViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
+            
             [self.navigationController pushViewController:vc animated:YES];
         }
         //  更改手机号
         if (indexPath.row == 2) {
             ChangeIphoneViewController *vc = [[ChangeIphoneViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
+            
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
@@ -155,7 +155,7 @@
         //  意见反馈
         if (indexPath.row == 0) {
             IdearViewController *vc = [[IdearViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
+           
             [self.navigationController pushViewController:vc animated:YES];
         }
         //  服务协议
@@ -165,7 +165,7 @@
         //  关于我们
         if (indexPath.row == 2) {
             AboutUSViewController *vc = [[AboutUSViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
+          
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

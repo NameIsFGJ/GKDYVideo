@@ -73,7 +73,6 @@
 - (void)pushSearchViewController
 {
     SearchViewController *searchVC = [[SearchViewController alloc]init];
-    searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 

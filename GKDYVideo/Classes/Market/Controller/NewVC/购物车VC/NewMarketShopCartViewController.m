@@ -77,7 +77,6 @@
 
 - (void)makeUI
 {
-    
     UIView *view0 = [[UIView alloc]init];
     [self.view addSubview:view0];
     if (IS_iPhoneX) {
@@ -85,7 +84,7 @@
             make.left.right.top.mas_equalTo(0);
             make.height.mas_equalTo(210);
         }];
-        view0.backgroundColor = [UIColor blueColor];
+        view0.backgroundColor = kPickColor;
     }else
     {
         [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -222,7 +221,6 @@
     // 结算
     bottomView.totalBlock = ^{
         NewMarketShopPaySuccessViewController *vc = [[NewMarketShopPaySuccessViewController alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     };
     

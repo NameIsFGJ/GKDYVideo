@@ -93,7 +93,7 @@
     //vc.model = self.model;
     SetViewController *vc = [[SetViewController alloc]init];
     vc.imageUrl = self.model.head_pic;
-     vc.hidesBottomBarWhenPushed = YES;
+    
     [self.navigationController pushViewController:vc animated:YES];
     
     /*
@@ -135,7 +135,7 @@
     if (indexPath.row == 0)
     {
         IssueViewController *vc = [[IssueViewController alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
         //  我买入的
     }else if (indexPath.row == 1)
@@ -143,7 +143,7 @@
         MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
         vc.type = sellTyle;
         vc.status = pushVC;
-        vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
         //   我买出的
     }else if (indexPath.row == 2)
@@ -151,12 +151,12 @@
         MyBusinessViewController *vc =[[MyBusinessViewController alloc]init];
         vc.type = buyType;
         vc.status = pushVC;
-        vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 3)
     {
         MyOrderTotalViewController *vc = [[MyOrderTotalViewController alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
+        
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

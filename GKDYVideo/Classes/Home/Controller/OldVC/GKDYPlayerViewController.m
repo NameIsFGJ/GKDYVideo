@@ -153,8 +153,6 @@
 
    
    GKDYUserMainViewController *vc = [[GKDYUserMainViewController alloc]init];
-   // GKDYUserVideoViewController *vc = [[GKDYUserVideoViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     vc.userID = videoModel.user_id;
     
     [self.navigationController pushViewController:vc animated:YES];

@@ -154,7 +154,6 @@
         
         @strongify(self)
             NewMarketShopCartViewController *vc = [[NewMarketShopCartViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
 
     };

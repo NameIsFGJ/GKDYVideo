@@ -203,7 +203,6 @@
 {
     NSLog(@"点击购买");
     MarketOrderViewController *vc = [[MarketOrderViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     vc.nickName = self.nickName;
     vc.head_pic = self.head_pic;
     vc.image_list = self.image_list;

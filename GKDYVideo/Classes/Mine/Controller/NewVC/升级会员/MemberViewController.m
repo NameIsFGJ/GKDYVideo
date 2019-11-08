@@ -200,7 +200,6 @@
 - (void)pushHistoryViewController
 {
     MemberHistoryViewController *vc = [[MemberHistoryViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -208,7 +207,6 @@
 {
     NSLog(@"立即开通");
     MemberBredgeViewController *vc = [[MemberBredgeViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

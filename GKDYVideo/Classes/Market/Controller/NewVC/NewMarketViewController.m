@@ -34,18 +34,6 @@ typedef enum : NSUInteger {
 
 @implementation NewMarketViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -324,9 +312,12 @@ typedef enum : NSUInteger {
 {
     
     NewMarketGoodDetailViewController *vc = [[NewMarketGoodDetailViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
+}
+- (BOOL)setupTarbarHidden
+{
+    return NO;
 }
 
 #pragma mark loazyLoad

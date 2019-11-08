@@ -19,4 +19,8 @@
     // Do any additional setup after loading the view.
 }
 
+- (BOOL)setupTarbarHidden
+{
+    return NO;
+}
 @end

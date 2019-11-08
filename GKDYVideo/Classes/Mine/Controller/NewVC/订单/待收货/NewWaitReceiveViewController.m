@@ -62,7 +62,6 @@
     NSLog(@"sender.titleLabel.text  =%@",sender.titleLabel.text);
     if ([sender.titleLabel.text isEqualToString:@"查看物流"]) {
         NewExpressViewController *vc = [[NewExpressViewController alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

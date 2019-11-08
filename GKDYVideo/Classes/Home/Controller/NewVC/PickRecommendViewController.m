@@ -118,6 +118,10 @@
 {
     return [UIImage imageNamed:@"emptyImage"];
 }
+- (BOOL)setupTarbarHidden
+{
+    return NO;
+}
 #pragma mark 懒加载
 - (UICollectionView *)mainView
 {
