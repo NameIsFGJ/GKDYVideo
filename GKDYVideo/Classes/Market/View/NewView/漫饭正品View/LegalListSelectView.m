@@ -7,6 +7,7 @@
 //
 
 #import "LegalListSelectView.h"
+#import "LegalListSonSelectView.h"
 
 @interface LegalListSelectView ()
 
@@ -17,6 +18,7 @@
 @property (assign, nonatomic) NSInteger buttonTag;
 @property (assign, nonatomic) NSInteger buttonIndex;
 
+// 综合需要用的属性
 @property (strong, nonatomic) UIView *buttonView;
 @property (strong, nonatomic) UIView *bgView01;
 @property (strong, nonatomic) UIView *view0;
@@ -24,8 +26,8 @@
 @property (assign, nonatomic) NSInteger buttonTag2;
 @property (assign, nonatomic) NSInteger buttonIndex2;
 
-//@property (strong, nonatomic)  UILabel *label01;
 @property (strong, nonatomic) NSArray *titleArray;
+
 
 @end
 
@@ -61,17 +63,17 @@
         }];
         
         self.button1.titleLabel.font = kFontSize(14);
-        [self.button1 setTitle:@"价格sss升序" forState:UIControlStateNormal];
+        [self.button1 setTitle:@"综合" forState:UIControlStateNormal];
         [self.button1 setTitleColor:kStringColor forState:UIControlStateNormal];
         [self.button1 setTitleColor:kPickColor forState:UIControlStateSelected];
         [self.button1 setBackgroundColor:[UIColor blueColor]];
         [self.button1 setImage:[UIImage imageNamed:@"downSJX"] forState:UIControlStateNormal];
-          [self.button1 setImage:[UIImage imageNamed:@"upSJX"] forState:UIControlStateSelected];
+        [self.button1 setImage:[UIImage imageNamed:@"upSJX"] forState:UIControlStateSelected];
         [self.button1 layoutButtonWithEdgeInsetsStyle:CLButtonEdgeInsetsStyleTitleLeft imageTitleSpace:0];
-       // self.button1.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.button1 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         self.button1.tag = 101;
         self.button1.selected = YES;
+        
         self.button2 = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.buttonView addSubview:self.button2];
         self.button2.titleLabel.font = kFontSize(14);
@@ -118,7 +120,7 @@
         [self.button4 layoutButtonWithEdgeInsetsStyle:CLButtonEdgeInsetsStyleTitleLeft imageTitleSpace:3];
         [self.button4 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         
-    
+        
         [self.button4 setTitleColor:kStringColor forState:UIControlStateNormal];
         [self.button4 setTitleColor:kPickColor forState:UIControlStateSelected];
         [self.button4 setImage:[UIImage imageNamed:@"upSJX"] forState:UIControlStateSelected];
@@ -145,7 +147,7 @@
         button01.tag = 201;
         [button01 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(0);
-
+            
            make.size.mas_equalTo(CGSizeMake(kWindowWidth, 44));
         }];
         [button01 addTarget:self action:@selector(buttonTypeAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -195,7 +197,7 @@
         label02.textColor = kStringColor;
         label02.font = kFontSize(14);
         label02.tag = 302;
-
+        
         UIView *lineView02 = [[UIView alloc]init];
         [self.view0 addSubview:lineView02];
         [lineView02 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -278,44 +280,87 @@
             make.left.right.bottom.mas_equalTo(0);
             make.top.equalTo(self.view0.mas_bottom);
         }];
-
+        
         self.bgView01.backgroundColor = [UIColor colorWithHex:@"#000000" alpha:.5];
         self.bgView01.hidden = YES;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+        [self.bgView01 addGestureRecognizer:tap];
+        
+     //---------------------------------------------------------
+
         
     }
     return self;
 }
 
+- (void)showView
+{
+    
+    if ([self.delegate respondsToSelector:@selector(showSonSelectView)])
+    {
+        [self.delegate showSonSelectView];
+    }
+}
+
+// 背景图层点击事件
+- (void)tapAction
+{
+     [self button1AcionHiddenYes:YES];
+}
+// buttonView 的点击事件
 - (void)buttonAction:(UIButton *)sender
 {
+   
     if (self.buttonTag != sender.tag)
     {
-       
         UIButton *btn = [self viewWithTag:self.buttonTag];
         btn.selected = NO;
-    }
-    else
-    {
-        self.button1.selected = YES;
-    }
-
-    if (sender.tag == 101)
-    {
-        [self button1AcionHiddenYes:NO];
-       
-    }
-        if (sender.selected == NO)
+        
+        if ((sender.selected == NO)|| (sender.tag == 101))
         {
             self.buttonIndex = sender.tag - 100;
             sender.selected = YES;
-
             self.buttonTag = sender.tag;
-
+            
         }else
         {
             self.buttonIndex = -1;
             sender.selected = NO;
         }
+        
+    }
+    else
+    {
+        sender.selected = YES;
+        
+        //        if (sender.tag == 104) {
+        //            sender.selected = YES;
+        //        }else
+        //        {
+        //             self.button1.selected = YES;
+        //        }
+        
+    }
+    
+    
+    
+    
+   
+    if (sender.tag == 101)
+    {
+        [self button1AcionHiddenYes:NO];
+    }else
+    {
+        [self button1AcionHiddenYes:YES];
+    }
+    
+    if (sender.tag == 104) {
+        
+        NSLog(@"show View");
+         [self showView];
+    }
+    
 }
 
 //  综合按钮  显示隐藏
@@ -332,9 +377,9 @@
 // 综合 选择
 - (void)buttonTypeAction:(UIButton *)sender
 {
+    
     if ((self.buttonTag2 != -200) && (self.buttonTag2 != sender.tag))
     {
-        
         UIButton *btn = [self viewWithTag:self.buttonTag2];
         btn.selected = NO;
         
@@ -346,6 +391,7 @@
     }
     
     if (sender.selected == NO) {
+        
         self.buttonIndex2 = sender.tag - 200;
         self.buttonTag2 = sender.tag;
         sender.selected = YES;
@@ -359,21 +405,17 @@
         self.button1.titleLabel.text = string;
         
         [self.button1 setTitle:string forState:UIControlStateNormal];
+        [self.button1 setImage:[UIImage imageNamed:@"upSJX"] forState:UIControlStateSelected];
+        [self.button1 layoutButtonWithEdgeInsetsStyle:CLButtonEdgeInsetsStyleTitleLeft imageTitleSpace:0];
     }
     else
     {
         self.buttonIndex2 = -1;
-       sender.selected = NO;
-//        NSInteger tag  = sender.tag - 200;
-//        UILabel *label = [self viewWithTag:300+ tag];
-//        label.textColor = kStringColor;
-//
-       
+        sender.selected = NO;
+        
     }
     
     [self button1AcionHiddenYes:YES];
 }
-
-
 
 @end

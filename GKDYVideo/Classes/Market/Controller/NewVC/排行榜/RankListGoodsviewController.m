@@ -9,13 +9,17 @@
 #import "RankListGoodsviewController.h"
 #import "PickSearchBar.h"
 #import "LegalListSelectView.h"
+#import "LegalListSonSelectView.h"
 
-@interface RankListGoodsviewController ()<UINavigationControllerDelegate>
+@interface RankListGoodsviewController ()<UINavigationControllerDelegate,LegalListSelectViewDelegate>
 @property (strong, nonatomic) PickSearchBar *searchBar;
 @property (strong, nonatomic) LegalListSelectView *selectView;
+@property (strong, nonatomic) LegalListSonSelectView *sonView;
+
 @end
 
 @implementation RankListGoodsviewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +29,6 @@
     self.navigationController.delegate = self;
     
     [self makeUI];
-   
     
 }
 
@@ -63,6 +66,17 @@
         make.bottom.mas_equalTo(0);
     }];
     
+    self.sonView = [[LegalListSonSelectView alloc]init];
+    [self.view addSubview:self.sonView];
+    self.sonView.frame = CGRectMake(kWindowWidth, 0, kWindowWidth, kWindowHeight);
+    
+    @weakify(self)
+    self.sonView.block = ^{
+        @strongify(self)
+        [UIView animateWithDuration:.5 animations:^{
+            self.sonView.frame = CGRectMake(kWindowWidth, 0, kWindowWidth, kWindowHeight);
+        }];
+    };
 }
 
 - (void)popViewController
@@ -71,8 +85,10 @@
 }
 - (void)buttonAction
 {
-    NSLog(@"阿萨德发生的");
+    NSLog(@"阿萨德发阿斯顿发生的");
 }
+
+#pragma mark UINavigationDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated;
 {
@@ -80,6 +96,15 @@
     [self.navigationController setNavigationBarHidden:isShowBar animated:YES];
 }
 
+#pragma mark sonViewDelegate
+
+- (void)showSonSelectView;
+{
+    NSLog(@"delegate");
+    [UIView animateWithDuration:.5 animations:^{
+         self.sonView.frame = CGRectMake(0, 0, kWindowWidth, kWindowHeight);
+    }];
+}
 
 #pragma mark lazyLoad
 
@@ -87,6 +112,7 @@
 {
     if (!_selectView) {
         _selectView = [[LegalListSelectView alloc]init];
+        _selectView.delegate = self;
     }
     return _selectView;
 }
@@ -95,9 +121,10 @@
 {
     if (!_searchBar) {
         _searchBar = [[PickSearchBar alloc]init];
-        //_searchBar.backgroundColor = kWhiteColor;
-        // _searchBa = kWhiteColor;
     }
     return _searchBar;
 }
+
+
+
 @end

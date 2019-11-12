@@ -7,6 +7,11 @@
 //
 
 #import "BaseNavigationController.h"
+#import "PickViewController.h"
+#import "NewMarketViewController.h"
+#import "AddGoodsViewController.h"
+#import "NewFriendsViewController.h"
+#import "NewMineViewController.h"
 
 @interface BaseNavigationController ()<UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
@@ -32,13 +37,24 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    if (![viewController isKindOfClass:[PickViewController class]] &&
+        ![viewController isKindOfClass:[NewMarketViewController class]] &&
+        ![viewController isKindOfClass:[AddGoodsViewController class]] &&
+        ![viewController isKindOfClass:[NewFriendsViewController class]] &&
+        ![viewController isKindOfClass:[NewMineViewController class]]){
+        
+        viewController.hidesBottomBarWhenPushed = YES;
+      }
+    
     [UIView setAnimationsEnabled:YES];
+    
     if ( animated && [self respondsToSelector:@selector(interactivePopGestureRecognizer)] )
     {
         self.interactivePopGestureRecognizer.enabled = NO;
     }
     
     [super pushViewController:viewController animated:animated];
+    
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
@@ -101,6 +117,5 @@
         self.interactivePopGestureRecognizer.enabled = YES;
     }
 }
-
 
 @end

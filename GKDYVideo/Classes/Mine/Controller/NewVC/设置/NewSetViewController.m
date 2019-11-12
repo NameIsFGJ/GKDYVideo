@@ -52,6 +52,11 @@
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 
+- (void)pushViewController
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)makeUI
 {
     [self.view addSubview:self.mainView];
@@ -80,11 +85,6 @@
         make.top.equalTo(loginOutButton.mas_bottom);
     }];
     view0.backgroundColor = [UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1];
-}
-
-- (void)pushViewController
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;

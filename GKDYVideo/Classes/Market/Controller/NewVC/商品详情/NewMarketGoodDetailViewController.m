@@ -23,6 +23,10 @@
 #import "InfoGoodView.h"
 // 购物车
 #import "NewMarketShopCartViewController.h"
+// 商铺
+#import "NewMarketShopViewController.h"
+// 立即购买/ 订单
+#import "NewMarketOrderViewController.h"
 @interface NewMarketGoodDetailViewController ()<GoodDetailView0Delegate,GoodDetailView1Delegate,GoodDetailView3Delegate,GoodDetailView4Delegate>
 @property (strong, nonatomic) UIView *navView;
 @property (strong, nonatomic) GoodDetailDisCountView *discountView;
@@ -34,13 +38,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self.navigationController setNavigationBarHidden:YES];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationController.delegate = self;
 }
 
 - (void)viewDidLoad {
@@ -54,17 +54,23 @@
 
 - (void)makeNav
 {
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"";
-    label.textColor = [UIColor blackColor];
-    self.navigationItem.titleView = label;
     
+    UIView *navView = [[UIView alloc]init];
+    [self.view addSubview:navView];
+    [navView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(0);
+        make.height.mas_equalTo(KTopViewHeight);
+    }];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [navView addSubview:leftButton];
+    [leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.centerY.equalTo(navView.mas_centerY);
+        make.size.mas_equalTo(CGSizeMake(20, 20));
+    }];
     [leftButton setImage:[UIImage imageNamed:@"blackBack"] forState:UIControlStateNormal];
     [leftButton addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-    self.navigationItem.leftBarButtonItem = leftItem;
+    
 }
 
 - (void)popViewController
@@ -199,24 +205,38 @@
 - (void)view4WithShopClick:(NSInteger)shopID;
 {
     NSLog(@"delegate 点击商铺");
+   // NewMarketShopTestViewController *vc = [[NewMarketShopTestViewController alloc]init];
+  //  TestViewController *vc = [[TestViewController alloc]init];
+   // RankListGoodsviewController *vc = [[RankListGoodsviewController alloc]init];
+    NewMarketShopViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewMarketShopViewController"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
+
 - (void)view4WithService;
 {
      NSLog(@"delegate 点击客服");
 }
+
 - (void)view4WithShopCart;
 {
      NSLog(@"delegate 点击购物车");
 }
+
 - (void)view4WithAddCartClick:(NSInteger)goodID;
 {
      NSLog(@"delegate 点击加入购物车");
     self.infoView.hidden = NO;
     [self.infoView animation];
-}
+}   
+
 - (void)view4WithBuyClick:(NSInteger)goodID;
 {
      NSLog(@"delegate 点击立即购买");
+    NewMarketOrderViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewMarketOrderViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

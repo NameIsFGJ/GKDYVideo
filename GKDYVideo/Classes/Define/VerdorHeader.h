@@ -38,4 +38,6 @@
 #import "NSDictionary+log.h"
 #import "NSArray+log.h"
 #import "UIButton+category.h"
+#import "UIViewController+Hidden.h"
+
 #endif /* VerdorHeader_h */

@@ -124,7 +124,6 @@
     NSLog(@"查看全部");
     OrderMainViewController *vc = [[OrderMainViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-    
 }
 // 待付款
 - (void)headViewWaitPayButtonClick;

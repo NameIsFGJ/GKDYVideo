@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol LegalListSelectViewDelegate <NSObject>
+
+- (void)showSonSelectView;
+
+@end
+
+
 @interface LegalListSelectView : UIView
+
+@property (weak, nonatomic) id<LegalListSelectViewDelegate>delegate;
+
+
+- (instancetype)initWithHeight:(float)navHeight;
 
 @end
 

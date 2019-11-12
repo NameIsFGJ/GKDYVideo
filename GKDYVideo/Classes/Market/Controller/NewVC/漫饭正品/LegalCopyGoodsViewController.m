@@ -11,6 +11,7 @@
 #import "RankListCollectionReusableView.h"
 #import "NewMarketShopCartViewController.h"
 #import "PickSearchBar.h"
+#import "NewMarketGoodDetailViewController.h"
 
 @interface LegalCopyGoodsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate>
 
@@ -23,18 +24,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.delegate = self;
     
     [self makeUI];
-    
-    
+
 }
 
 - (void)makeUI
 {
-    
     UIView *view0 = [[UIView alloc]init];
     [self.view addSubview:view0];
     [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -66,7 +65,6 @@
         make.top.mas_equalTo(KTopViewHeight);
     }];
     
-    
 }
 
 - (void)popViewController
@@ -81,7 +79,6 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated;
 {
     BOOL isShowBar = [viewController isKindOfClass:[self class]];
-  //  NSLog(@"%@",isShowBar ? @"1":@"0");
     
     [self.navigationController setNavigationBarHidden:isShowBar animated:YES];
 }
@@ -128,9 +125,17 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    NewMarketShopCartViewController *vc = [[NewMarketShopCartViewController alloc]init];
+    NewMarketGoodDetailViewController *vc = [[NewMarketGoodDetailViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    //NewMarketShopCartViewController *vc = [[NewMarketShopCartViewController alloc]init];
+   // [self.navigationController pushViewController:vc animated:YES];
 }
+
+//- (BOOL)setupTarbarHidden
+//{
+//    return YES;
+//}
+
 #pragma mark loazLoad
 - (UICollectionView *)mainView
 {
