@@ -1,24 +1,27 @@
 //
-//  NewMarketOrderViewController.m
+//  NewMarketOrderSuccessViewController.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/11/12.
+//  Created by 冯高杰 on 2019/11/13.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "NewMarketOrderViewController.h"
 #import "NewMarketOrderSuccessViewController.h"
-@interface NewMarketOrderViewController ()
+
+@interface NewMarketOrderSuccessViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *button1;
+@property (weak, nonatomic) IBOutlet UIButton *button2;
 
 @end
 
-@implementation NewMarketOrderViewController
+@implementation NewMarketOrderSuccessViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = kWhiteColor;
     [self makeNav];
+    [self makeUI];
 }
 
 - (void)makeNav
@@ -41,9 +44,28 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)submitButtonAction:(UIButton *)sender {
-    NewMarketOrderSuccessViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewMarketOrderSuccessViewController"];
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
+- (void)makeUI
+{
+    self.button1.layer.borderWidth = .5;
+    self.button1.layer.borderColor = [UIColor blackColor].CGColor;
+    self.button1.layer.masksToBounds = YES;
+    
+    self.button2.layer.borderWidth = .5;
+    self.button2.layer.borderColor = [UIColor blackColor].CGColor;
+    self.button2.layer.masksToBounds = YES;
+}
+- (IBAction)button1Action:(UIButton *)sender
+{
+    NSLog(@"查看订单");
+}
+
+- (IBAction)button2Action:(UIButton *)sender
+{
+    NSLog(@"返回订单");
+    NSLog(@"self.navigationController  =%@",self.navigationController);
+    [self dismissViewControllerAnimated:YES completion:nil];
+   // [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 @end

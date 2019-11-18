@@ -12,6 +12,8 @@
 #import "ShopShareView.h"
 #import "NewMarketShopTypeViewController.h"
 #import "NewMarketShopHotViewController.h"
+#import "NewGoodsSearchViewController.h"
+#import "MarketSearchViewController.h"
 
 @interface NewMarketShopViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navHeightConstraint;
@@ -54,6 +56,7 @@
         make.height.mas_equalTo(kWindowHeight);
     }];
 }
+
 #pragma mark Actions
 
 // 返回
@@ -76,12 +79,16 @@
 }
 - (IBAction)searchButtonAction:(UIButton *)sender
 {
+    NSLog(@"搜索页面");
+    NewGoodsSearchViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewGoodsSearchViewController"];
+   // MarketSearchViewController *vc = [[MarketSearchViewController alloc]init];
     
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)bottomButtonAction:(UIButton *)sender {
     
-    NSLog(@"sender.titleLabel.text  =%@",sender.titleLabel.text);
+   // NSLog(@"sender.titleLabel.text  =%@",sender.titleLabel.text);
     
     if (sender.tag == 102)
     {

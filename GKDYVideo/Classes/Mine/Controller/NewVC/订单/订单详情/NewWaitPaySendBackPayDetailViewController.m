@@ -129,19 +129,7 @@
     label11.text = @"退款详情";
     label11.font = [UIFont systemFontOfSize:13];
     label11.textColor = [UIColor colorWithHex:@"#888888"];
-    
-//    UILabel *label12 = [[UILabel alloc]init];
-//    [view1 addSubview:label12];
-//    [label12 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.mas_equalTo(-10);
-//        make.centerY.equalTo(view1);
-//        // make.size
-//    }];
-//    label12.text = @">";
-//    label12.font = [UIFont systemFontOfSize:15];
-//    label12.textColor = [UIColor blackColor];
-//    label12.textAlignment = NSTextAlignmentRight;
-//
+
     //----------------------------view2-------------------------
     UIView *view2 = [[UIView alloc]init];
     [contentView addSubview:view2];

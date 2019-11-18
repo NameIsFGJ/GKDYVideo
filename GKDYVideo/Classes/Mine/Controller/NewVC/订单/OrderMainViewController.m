@@ -17,6 +17,8 @@
 #import "NewWaitReceiveViewController.h"
 // 待评价
 #import "NewWaitAppraiseViewController.h"
+
+#import "NewServceViewController.h"
 @interface OrderMainViewController ()
 @property (strong, nonatomic) NSArray *titleArray;
 @end
@@ -106,19 +108,23 @@
         NewAllOrderViewController *vc = [[NewAllOrderViewController alloc]init];
         return vc;
 
-    }else if (index == 1)
+    }
+    else if (index == 1)
     {
         NewWaitPayViewController *vc = [[NewWaitPayViewController alloc]init];
         return vc;
-    }else if (index == 2)
+    }
+    else if (index == 2)
     {
         NewWaitSendViewController *vc = [[NewWaitSendViewController alloc]init];
         return vc;
-    }else if (index == 3)
+    }
+    else if (index == 3)
     {
         NewWaitReceiveViewController *vc = [[NewWaitReceiveViewController alloc]init];
         return vc;
-    }else if (index == 4)
+    }
+    else if (index == 4)
     {
         NewWaitAppraiseViewController *vc = [[NewWaitAppraiseViewController alloc]init];
         return vc;

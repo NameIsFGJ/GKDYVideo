@@ -21,6 +21,10 @@
 #import "BalanceViewController.h"
 // 个人中心
 #import "NewCenterViewController.h"
+// 退货/售后
+#import "NewServceViewController.h"
+
+
 @interface NewMineViewController ()<UITableViewDelegate,UITableViewDataSource,MyHeadViewDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
@@ -60,7 +64,8 @@
 
 - (void)rightButtonAction
 {
-    NewSetViewController *vc = [[NewSetViewController alloc]init];
+   // NewSetViewController *vc = [[NewSetViewController alloc]init];
+    NewSetViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewSetViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark UITableViewDelegate
@@ -107,11 +112,13 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
 // 我的饭圈
 - (void)headViewTopicButtonClick;
 {
     NSLog(@"我的饭圈");
 }
+
 // 会员
 - (void)headViewMemberButtonClick;
 {   
@@ -151,6 +158,7 @@
    
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 // 待评价
 - (void)headViewWaitDiscussButtonClick;
 {
@@ -159,10 +167,13 @@
     vc.selectIndex = 4;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 // 售后
 - (void)headViewServeButtonClick;
 {
     NSLog(@"退货/售后");
+    NewServceViewController *vc = [[NewServceViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 // 余额
 - (void)headViewMoneyButtonClick;

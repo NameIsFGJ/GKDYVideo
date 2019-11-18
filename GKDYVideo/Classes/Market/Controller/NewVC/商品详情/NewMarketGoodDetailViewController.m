@@ -205,9 +205,6 @@
 - (void)view4WithShopClick:(NSInteger)shopID;
 {
     NSLog(@"delegate 点击商铺");
-   // NewMarketShopTestViewController *vc = [[NewMarketShopTestViewController alloc]init];
-  //  TestViewController *vc = [[TestViewController alloc]init];
-   // RankListGoodsviewController *vc = [[RankListGoodsviewController alloc]init];
     NewMarketShopViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewMarketShopViewController"];
     
     [self.navigationController pushViewController:vc animated:YES];
