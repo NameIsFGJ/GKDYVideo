@@ -51,6 +51,15 @@
 
 - (void)makeUI
 {
+        UIView *lineView1 = [[UIView alloc]init];
+        [self.view addSubview:lineView1];
+        [lineView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(0);
+            make.top.mas_equalTo(KTopViewHeight);
+            make.height.mas_equalTo(.3);
+        }];
+        lineView1.backgroundColor = [UIColor lightGrayColor];
+    
     UIView *view0 = [[UIView alloc]init];
     [self.view addSubview:view0];
     [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -104,15 +113,11 @@
         make.bottom.mas_equalTo(-12);
         make.top.equalTo(label0.mas_bottom).offset(12);
     }];
-    //    view11.layer.shadowColor = [UIColor blackColor].CGColor;
-    //    view11.layer.shadowOffset = CGSizeMake(0, 0);
-    //    view11.layer.shadowOpacity = 1;
-    //    view11.layer.shadowRadius = 4;
+    
     view11.layer.masksToBounds = YES;
     view11.layer.borderWidth = .5;
     view11.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    //    view11.clipsToBounds = NO;
-    //
+    
     NSArray *imageArray = @[@"member_image1",@"member_image2",@"member_image3",@"member_image4"];
     NSArray *titleArray = @[@"八折",@"礼包",@"返利",@"正品抢购"];
     for (int i = 0; i < 4; i ++) {

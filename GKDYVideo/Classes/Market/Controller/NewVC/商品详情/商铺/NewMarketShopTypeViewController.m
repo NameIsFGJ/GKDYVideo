@@ -19,6 +19,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self makeNav];
+    [self makeUI];
 }
 
 - (void)makeNav
@@ -41,4 +42,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)makeUI
+{
+    UIView *lineView1 = [[UIView alloc]init];
+    [self.view addSubview:lineView1];
+    [lineView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(KTopViewHeight);
+        make.height.mas_equalTo(.3);
+    }];
+    lineView1.backgroundColor = [UIColor lightGrayColor];
+}
 @end

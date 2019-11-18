@@ -75,7 +75,6 @@
 {
     static NSString *cellID = @"NewGoodsSearchViewCellID";
     NewGoodsSearchViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    NSLog(@"itemsArray  =%@",self.itemsArray[indexPath.row]);
     cell.titleLabel.text = self.itemsArray[indexPath.row];
     return cell;
 }

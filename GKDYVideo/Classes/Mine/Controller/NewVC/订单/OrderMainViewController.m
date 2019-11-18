@@ -76,8 +76,6 @@
         make.height.mas_equalTo(.3);
     }];
     lineView1.backgroundColor = [UIColor lightGrayColor];
-    
-    
 }
 
 #pragma mark UIPageViewControllerDelegate

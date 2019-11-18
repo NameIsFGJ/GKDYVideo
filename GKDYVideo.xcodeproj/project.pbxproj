@@ -53,6 +53,11 @@
 		91125F1423225B4600A15FFE /* AddressEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91125F1223225B4600A15FFE /* AddressEditTableViewCell.xib */; };
 		91125F17232260E700A15FFE /* AddressNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91125F16232260E700A15FFE /* AddressNetworking.m */; };
 		9112CEA822EFDE4B00D2A71E /* SearchVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9112CEA722EFDE4B00D2A71E /* SearchVideoModel.m */; };
+		91133C1123824AC500C04C06 /* NewServceBackPayDetailViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 91133C1023824AC500C04C06 /* NewServceBackPayDetailViewController1.m */; };
+		91133C142382653100C04C06 /* NewServceBackPayDetailViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 91133C132382653100C04C06 /* NewServceBackPayDetailViewController2.m */; };
+		91133C17238279A800C04C06 /* BalanceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91133C16238279A800C04C06 /* BalanceDetailViewController.m */; };
+		91133C1B23827B4E00C04C06 /* BalanceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91133C1923827B4E00C04C06 /* BalanceTableViewCell.m */; };
+		91133C1C23827B4E00C04C06 /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91133C1A23827B4E00C04C06 /* BalanceTableViewCell.xib */; };
 		91139DC42318C30200A936E8 /* Greenery.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 91139DC02318C30200A936E8 /* Greenery.m4a */; };
 		91139DC52318C30200A936E8 /* 天使简约音效.m4r in Resources */ = {isa = PBXBuildFile; fileRef = 91139DC12318C30200A936E8 /* 天使简约音效.m4r */; };
 		91139DC62318C30200A936E8 /* If_I_Had_a_Chicken.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 91139DC22318C30200A936E8 /* If_I_Had_a_Chicken.m4a */; };
@@ -494,6 +499,15 @@
 		91125F16232260E700A15FFE /* AddressNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressNetworking.m; sourceTree = "<group>"; };
 		9112CEA622EFDE4B00D2A71E /* SearchVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideoModel.h; sourceTree = "<group>"; };
 		9112CEA722EFDE4B00D2A71E /* SearchVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideoModel.m; sourceTree = "<group>"; };
+		91133C0F23824AC500C04C06 /* NewServceBackPayDetailViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewServceBackPayDetailViewController1.h; sourceTree = "<group>"; };
+		91133C1023824AC500C04C06 /* NewServceBackPayDetailViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewServceBackPayDetailViewController1.m; sourceTree = "<group>"; };
+		91133C122382653100C04C06 /* NewServceBackPayDetailViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewServceBackPayDetailViewController2.h; sourceTree = "<group>"; };
+		91133C132382653100C04C06 /* NewServceBackPayDetailViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewServceBackPayDetailViewController2.m; sourceTree = "<group>"; };
+		91133C15238279A800C04C06 /* BalanceDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceDetailViewController.h; sourceTree = "<group>"; };
+		91133C16238279A800C04C06 /* BalanceDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailViewController.m; sourceTree = "<group>"; };
+		91133C1823827B4E00C04C06 /* BalanceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceTableViewCell.h; sourceTree = "<group>"; };
+		91133C1923827B4E00C04C06 /* BalanceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceTableViewCell.m; sourceTree = "<group>"; };
+		91133C1A23827B4E00C04C06 /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
 		91139DC02318C30200A936E8 /* Greenery.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Greenery.m4a; sourceTree = "<group>"; };
 		91139DC12318C30200A936E8 /* 天使简约音效.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = "天使简约音效.m4r"; sourceTree = "<group>"; };
 		91139DC22318C30200A936E8 /* If_I_Had_a_Chicken.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = If_I_Had_a_Chicken.m4a; sourceTree = "<group>"; };
@@ -1782,6 +1796,9 @@
 				91B328A32357FFA8008688F5 /* NewDiscountTableViewCell.h */,
 				91B328A42357FFA8008688F5 /* NewDiscountTableViewCell.m */,
 				91B328A52357FFA8008688F5 /* NewDiscountTableViewCell.xib */,
+				91133C1823827B4E00C04C06 /* BalanceTableViewCell.h */,
+				91133C1923827B4E00C04C06 /* BalanceTableViewCell.m */,
+				91133C1A23827B4E00C04C06 /* BalanceTableViewCell.xib */,
 				91BC3B2A2351645900764D4B /* 订单View */,
 				91D2DD69237D0331005E5EA6 /* AddressTableViewCell.h */,
 				91D2DD6A237D0331005E5EA6 /* AddressTableViewCell.m */,
@@ -2265,6 +2282,8 @@
 			children = (
 				919A5EEB23683476003D779C /* BalanceViewController.h */,
 				919A5EEC23683476003D779C /* BalanceViewController.m */,
+				91133C15238279A800C04C06 /* BalanceDetailViewController.h */,
+				91133C16238279A800C04C06 /* BalanceDetailViewController.m */,
 				919A5EEE23683B22003D779C /* RechargeViewController.h */,
 				919A5EEF23683B22003D779C /* RechargeViewController.m */,
 			);
@@ -2282,6 +2301,10 @@
 		91A43E162356BD5100D7166B /* 退款详情 */ = {
 			isa = PBXGroup;
 			children = (
+				91133C0F23824AC500C04C06 /* NewServceBackPayDetailViewController1.h */,
+				91133C1023824AC500C04C06 /* NewServceBackPayDetailViewController1.m */,
+				91133C122382653100C04C06 /* NewServceBackPayDetailViewController2.h */,
+				91133C132382653100C04C06 /* NewServceBackPayDetailViewController2.m */,
 			);
 			path = "退款详情";
 			sourceTree = "<group>";
@@ -2450,10 +2473,6 @@
 		91BED3032355A6DA00B2EC69 /* 订单详情 */ = {
 			isa = PBXGroup;
 			children = (
-				9111847B23540FD500054217 /* NewWaitPayDetailViewController.h */,
-				9111847C23540FD500054217 /* NewWaitPayDetailViewController.m */,
-				91BED30D2355A91900B2EC69 /* NewWaitSendDetailViewController.h */,
-				91BED30E2355A91900B2EC69 /* NewWaitSendDetailViewController.m */,
 				91BED3102355B21C00B2EC69 /* NewWaitSendBackPayViewController.h */,
 				91BED3112355B21C00B2EC69 /* NewWaitSendBackPayViewController.m */,
 				91A43E132356BD4900D7166B /* NewWaitPaySendBackPayDetailViewController.h */,
@@ -3000,6 +3019,8 @@
 			children = (
 				91BC3B33235196B900764D4B /* NewWaitPayViewController.h */,
 				91BC3B34235196B900764D4B /* NewWaitPayViewController.m */,
+				9111847B23540FD500054217 /* NewWaitPayDetailViewController.h */,
+				9111847C23540FD500054217 /* NewWaitPayDetailViewController.m */,
 			);
 			path = "待付款";
 			sourceTree = "<group>";
@@ -3009,6 +3030,8 @@
 			children = (
 				91BC3B36235196D300764D4B /* NewWaitSendViewController.h */,
 				91BC3B37235196D300764D4B /* NewWaitSendViewController.m */,
+				91BED30D2355A91900B2EC69 /* NewWaitSendDetailViewController.h */,
+				91BED30E2355A91900B2EC69 /* NewWaitSendDetailViewController.m */,
 			);
 			path = "待发货";
 			sourceTree = "<group>";
@@ -3240,6 +3263,7 @@
 				91D2DD6D237D0331005E5EA6 /* AddressTableViewCell.xib in Resources */,
 				91BC3B2F2351672100764D4B /* NewAllOrderTableViewCell.xib in Resources */,
 				91D80277233B19B600659A01 /* MyBuyTableViewCell.xib in Resources */,
+				91133C1C23827B4E00C04C06 /* BalanceTableViewCell.xib in Resources */,
 				91D2AC6322F9172600179C88 /* MessageCommonTableViewCell.xib in Resources */,
 				91125F1423225B4600A15FFE /* AddressEditTableViewCell.xib in Resources */,
 				91139DC42318C30200A936E8 /* Greenery.m4a in Resources */,
@@ -3340,6 +3364,7 @@
 				9113E17122EAFB2000FFFCF0 /* WMMagicScrollView.m in Sources */,
 				91BC3B632351B16600764D4B /* InterestTableViewCell.m in Sources */,
 				79CC62D721573C2C00101773 /* GKDYPlayerViewController.m in Sources */,
+				91133C17238279A800C04C06 /* BalanceDetailViewController.m in Sources */,
 				91F9EFBD236C22A5004FD0C7 /* NewEditNameViewController.m in Sources */,
 				916C6D3922F80E6A00D2538F /* NSArray+log.m in Sources */,
 				91827404234EC0A500760D93 /* MemberViewController.m in Sources */,
@@ -3503,6 +3528,7 @@
 				79CC62E82157401E00101773 /* GKDYVideoView.m in Sources */,
 				910A8DA0230E42F80051CDA2 /* MarketSearchTogetherViewController.m in Sources */,
 				91C3BB7F233C86D00033E286 /* PickSegmentedControl.m in Sources */,
+				91133C142382653100C04C06 /* NewServceBackPayDetailViewController2.m in Sources */,
 				91A05A0D231CC3D500322752 /* EditViewController.m in Sources */,
 				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
 				91FD2DF0231FBC3D00FC2520 /* MyGoodsModel.m in Sources */,
@@ -3516,6 +3542,7 @@
 				91D2AC6622F91E3E00179C88 /* GetZanModel.m in Sources */,
 				91BED30F2355A91900B2EC69 /* NewWaitSendDetailViewController.m in Sources */,
 				91C1F17B22F42B020090AE00 /* AddGoodsNetworking.m in Sources */,
+				91133C1123824AC500C04C06 /* NewServceBackPayDetailViewController1.m in Sources */,
 				91611DC722E8316000642E47 /* UIView+Acategory.m in Sources */,
 				919843692304FF81001148B9 /* UserHeadView.m in Sources */,
 				91CC6907235DB3CF004E0088 /* NewCartTableViewCell.m in Sources */,
@@ -3560,6 +3587,7 @@
 				91A43E1A2356E81D00D7166B /* NewDiscountViewController.m in Sources */,
 				91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */,
 				916C6D4822F831B800D2538F /* MessageViewController.m in Sources */,
+				91133C1B23827B4E00C04C06 /* BalanceTableViewCell.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
 				91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */,
 				9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */,

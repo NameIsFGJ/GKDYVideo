@@ -11,8 +11,10 @@
 #import "AddAddressViewController.h"
 #import "NewServceTableViewCell.h"
 #import "NewServceAppraiseViewController.h"
+#import "NewServceBackPayDetailViewController1.h"
+#import "NewServceBackPayDetailViewController2.h"
 
-@interface NewServceViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NewServceViewController ()<UITableViewDelegate,UITableViewDataSource,ServceTableViewCellDelegate>
 
 @property (strong, nonatomic) UITableView *mainView;
 @property (strong, nonatomic) NSMutableArray *itemsArray;
@@ -86,8 +88,12 @@
     NewServceAppraiseViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewServceAppraiseViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 - (void)buttonClickForBackPay;
 {
+   // NewServceBackPayDetailViewController1 *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewServceBackPayDetailViewController1"];
+    NewServceBackPayDetailViewController2 *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewServceBackPayDetailViewController2"];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 #pragma mark lazyLoad
