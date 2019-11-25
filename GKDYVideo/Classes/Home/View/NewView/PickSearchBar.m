@@ -7,17 +7,7 @@
 //
 
 #import "PickSearchBar.h"
-/*
- self.searchBar.placeholder = @"搜索你要找的内容";
- //self.searchBar.backgroundImage = [UIImage imageNamed:@"bg"];
- self.searchBar.textFieldSearchBar.backgroundColor = [UIColor clearColor];
- // self.searchBar.backgroundColor = [UIColor blueColor];
- self.searchBar.barTintColor = [UIColor whiteColor];
- self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
- self.searchBar.showsScopeBar = YES;
- self.searchBar.delegate = self;
- 
- */
+
 @implementation PickSearchBar
 
 - (instancetype)init

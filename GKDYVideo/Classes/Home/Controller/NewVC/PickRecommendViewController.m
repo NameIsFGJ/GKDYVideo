@@ -10,7 +10,8 @@
 #import "WSLWaterFlowLayout.h"
 #import "PickCollectionViewCell.h"
 #import "MarketModel.h"
-@interface PickRecommendViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate>
+#import "PickRecommendDetailViewController.h"
+@interface PickRecommendViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property (strong, nonatomic) UICollectionView *mainView;
 @property (strong, nonatomic) WSLWaterFlowLayout *flowLayout;
 @property (strong, nonatomic) NSArray *itemsArray;
@@ -79,6 +80,12 @@
     
     return cell;
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"点击推荐页面");
+    PickRecommendDetailViewController *vc = [[PickRecommendDetailViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark WSLWaterFlowLayoutDelegate
 - (CGSize)waterFlowLayout:(WSLWaterFlowLayout *)waterFlowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -122,6 +129,7 @@
 {
     return NO;
 }
+
 #pragma mark 懒加载
 - (UICollectionView *)mainView
 {

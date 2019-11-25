@@ -34,7 +34,8 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     //1317436635
-// 15    //短视频APP平台应具备哪些资质证明？都有网络文化经营许可证(文网文)、信息网络传播视听节目许可证、广播电视节目制作经营许可证，
+// 15
+   // tingting895855 //短视频APP平台应具备哪些资质证明？都有网络文化经营许可证(文网文)、信息网络传播视听节目许可证、广播电视节目制作经营许可证，
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

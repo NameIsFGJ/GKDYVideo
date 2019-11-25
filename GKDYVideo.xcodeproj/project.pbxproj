@@ -94,6 +94,11 @@
 		912CE5292340409C00375DDD /* NewMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912CE5282340409C00375DDD /* NewMineViewController.m */; };
 		912CE5312340433800375DDD /* NewMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912CE5302340433800375DDD /* NewMineView.m */; };
 		912FCD2D233A0B1D00601E9C /* MyOrderTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */; };
+		9135719D238B644900AB16A7 /* PickRecommendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135719C238B644900AB16A7 /* PickRecommendDetailViewController.m */; };
+		913571A1238BB50D00AB16A7 /* PickRecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9135719F238BB50D00AB16A7 /* PickRecommendDetailCell.m */; };
+		913571A2238BB50D00AB16A7 /* PickRecommendDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913571A0238BB50D00AB16A7 /* PickRecommendDetailCell.xib */; };
+		913571A6238BC6AA00AB16A7 /* PickRecommendDetailTbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 913571A4238BC6AA00AB16A7 /* PickRecommendDetailTbCell.m */; };
+		913571A7238BC6AA00AB16A7 /* PickRecommendDetailTbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913571A5238BC6AA00AB16A7 /* PickRecommendDetailTbCell.xib */; };
 		9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45922E8872D00875B17 /* GetVideoCommentView.m */; };
 		9136B45D22E88A3000875B17 /* GetVideoCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9136B45C22E88A3000875B17 /* GetVideoCommentCell.m */; };
 		914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034D122E5DDF5006F1699 /* LikeVideoNewtworking.m */; };
@@ -578,6 +583,14 @@
 		912F4DAF22E18DF3004CF0DF /* VerdorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerdorHeader.h; sourceTree = "<group>"; };
 		912FCD2B233A0B1D00601E9C /* MyOrderTotalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderTotalViewController.h; sourceTree = "<group>"; };
 		912FCD2C233A0B1D00601E9C /* MyOrderTotalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderTotalViewController.m; sourceTree = "<group>"; };
+		9135719B238B644900AB16A7 /* PickRecommendDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickRecommendDetailViewController.h; sourceTree = "<group>"; };
+		9135719C238B644900AB16A7 /* PickRecommendDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickRecommendDetailViewController.m; sourceTree = "<group>"; };
+		9135719E238BB50D00AB16A7 /* PickRecommendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickRecommendDetailCell.h; sourceTree = "<group>"; };
+		9135719F238BB50D00AB16A7 /* PickRecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickRecommendDetailCell.m; sourceTree = "<group>"; };
+		913571A0238BB50D00AB16A7 /* PickRecommendDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickRecommendDetailCell.xib; sourceTree = "<group>"; };
+		913571A3238BC6AA00AB16A7 /* PickRecommendDetailTbCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickRecommendDetailTbCell.h; sourceTree = "<group>"; };
+		913571A4238BC6AA00AB16A7 /* PickRecommendDetailTbCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickRecommendDetailTbCell.m; sourceTree = "<group>"; };
+		913571A5238BC6AA00AB16A7 /* PickRecommendDetailTbCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickRecommendDetailTbCell.xib; sourceTree = "<group>"; };
 		9136B45822E8872D00875B17 /* GetVideoCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentView.h; sourceTree = "<group>"; };
 		9136B45922E8872D00875B17 /* GetVideoCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVideoCommentView.m; sourceTree = "<group>"; };
 		9136B45B22E88A3000875B17 /* GetVideoCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVideoCommentCell.h; sourceTree = "<group>"; };
@@ -2217,6 +2230,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		913571A8238BD0AD00AB16A7 /* 推荐详情 */ = {
+			isa = PBXGroup;
+			children = (
+				9135719E238BB50D00AB16A7 /* PickRecommendDetailCell.h */,
+				9135719F238BB50D00AB16A7 /* PickRecommendDetailCell.m */,
+				913571A0238BB50D00AB16A7 /* PickRecommendDetailCell.xib */,
+				913571A3238BC6AA00AB16A7 /* PickRecommendDetailTbCell.h */,
+				913571A4238BC6AA00AB16A7 /* PickRecommendDetailTbCell.m */,
+				913571A5238BC6AA00AB16A7 /* PickRecommendDetailTbCell.xib */,
+			);
+			path = "推荐详情";
+			sourceTree = "<group>";
+		};
+		913571A9238BD0E100AB16A7 /* 关注详情 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "关注详情";
+			sourceTree = "<group>";
+		};
 		9166A5AF232F3D4000BA68E5 /* OrderVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2525,6 +2558,8 @@
 				91C3BB7B233C83610033E286 /* PickViewController.m */,
 				91C3BB82233C8ECC0033E286 /* PickRecommendViewController.h */,
 				91C3BB83233C8ECC0033E286 /* PickRecommendViewController.m */,
+				9135719B238B644900AB16A7 /* PickRecommendDetailViewController.h */,
+				9135719C238B644900AB16A7 /* PickRecommendDetailViewController.m */,
 				91C3BB85233C8EFE0033E286 /* PickFollowViewController.h */,
 				91C3BB86233C8EFE0033E286 /* PickFollowViewController.m */,
 			);
@@ -2563,6 +2598,8 @@
 				91C3BB8F233C94A90033E286 /* PickCollectionViewCell.xib */,
 				91B6C48B233E07060090A00F /* PickSearchBar.h */,
 				91B6C48C233E07060090A00F /* PickSearchBar.m */,
+				913571A9238BD0E100AB16A7 /* 关注详情 */,
+				913571A8238BD0AD00AB16A7 /* 推荐详情 */,
 			);
 			path = NewView;
 			sourceTree = "<group>";
@@ -3249,6 +3286,7 @@
 				79CC629F2157377600101773 /* LaunchScreen.storyboard in Resources */,
 				91827409234EE0E200760D93 /* VipCollectionViewCell.xib in Resources */,
 				91DFEF882302559700DA2458 /* MyBusinessTableViewCell.xib in Resources */,
+				913571A7238BC6AA00AB16A7 /* PickRecommendDetailTbCell.xib in Resources */,
 				91DD443622FFE442009A4790 /* SetTableViewCell.xib in Resources */,
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
 				91C3BB91233C94A90033E286 /* PickCollectionViewCell.xib in Resources */,
@@ -3274,6 +3312,7 @@
 				91D2AC6E22F9565000179C88 /* MyFansTableViewCell.xib in Resources */,
 				9162CFB722FAB67D0094EB7E /* EditTableViewCell.xib in Resources */,
 				911AC577237292ED00BF9918 /* RankListCollectionViewCell.xib in Resources */,
+				913571A2238BB50D00AB16A7 /* PickRecommendDetailCell.xib in Resources */,
 				916B676A2317A795000E6F8A /* MusicsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3528,6 +3567,7 @@
 				79CC62E82157401E00101773 /* GKDYVideoView.m in Sources */,
 				910A8DA0230E42F80051CDA2 /* MarketSearchTogetherViewController.m in Sources */,
 				91C3BB7F233C86D00033E286 /* PickSegmentedControl.m in Sources */,
+				913571A6238BC6AA00AB16A7 /* PickRecommendDetailTbCell.m in Sources */,
 				91133C142382653100C04C06 /* NewServceBackPayDetailViewController2.m in Sources */,
 				91A05A0D231CC3D500322752 /* EditViewController.m in Sources */,
 				91C1F17E22F42BC20090AE00 /* AddGoodsModel.m in Sources */,
@@ -3590,6 +3630,7 @@
 				91133C1B23827B4E00C04C06 /* BalanceTableViewCell.m in Sources */,
 				915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */,
 				91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */,
+				913571A1238BB50D00AB16A7 /* PickRecommendDetailCell.m in Sources */,
 				9116615F22E19BE500A5F9C2 /* BaseNetworking.m in Sources */,
 				910A8DA3230E437A0051CDA2 /* MarketSearchSaleViewController.m in Sources */,
 				915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */,
@@ -3635,6 +3676,7 @@
 				91009147231E316E000F0767 /* UploadVideoNetworking.m in Sources */,
 				9116616522E1B4A300A5F9C2 /* HomeSegmentedControl.m in Sources */,
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
+				9135719D238B644900AB16A7 /* PickRecommendDetailViewController.m in Sources */,
 				91827408234EE0E200760D93 /* VipCollectionViewCell.m in Sources */,
 				91CDD574232A2AD700483EB8 /* APRSASigner.m in Sources */,
 				914A86EF232601BD00DB324E /* AddressEditNewViewController.m in Sources */,

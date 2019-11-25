@@ -85,9 +85,9 @@ typedef enum : NSUInteger {
     }];
     
 }
+
 - (void)makeUI
 {
-    
     UIScrollView *mainView = [[UIScrollView alloc]init];
     [self.view addSubview:mainView];
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
