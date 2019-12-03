@@ -25,8 +25,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   // self.tabBarController.tabBar.hidden = [self setupTarbarHidden];
+ 
+    self.tabBarController.tabBar.hidden = [self setupTarbarHidden];
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+}
+
 - (void)setBackGroundColor
 {
      self.view.backgroundColor = kMainColor
@@ -46,6 +53,11 @@
             self.navigationItem.leftBarButtonItems = @[[self backButtonItem]];
         }
     }
+}
+
+- (BOOL)setupTarbarHidden
+{
+    return YES;
 }
 
 - (UIBarButtonItem *)backButtonItem

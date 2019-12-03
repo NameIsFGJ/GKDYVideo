@@ -1,20 +1,20 @@
 //
-//  NewDiscountViewController.m
+//  NewGoldListViewController.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/10/16.
+//  Created by 冯高杰 on 2019/11/28.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "NewDiscountViewController.h"
-#import "NewDiscountTableViewCell.h"
-@interface NewDiscountViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "NewGoldListViewController.h"
+#import "GoldListTableViewCell.h"
+@interface NewGoldListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *mainView;
 @property (strong, nonatomic) NSMutableArray *itemsArray;
 
 @end
 
-@implementation NewDiscountViewController
+@implementation NewGoldListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,7 +23,6 @@
     [self makeNav];
     [self makeUI];
 }
-
 - (void)makeNav
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
@@ -51,16 +50,16 @@
         make.left.right.bottom.mas_equalTo(0);
         make.top.mas_equalTo(KTopViewHeight);
     }];
- 
-        UIView *lineView1 = [[UIView alloc]init];
-        [self.view addSubview:lineView1];
-        [lineView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.mas_equalTo(0);
-            make.top.mas_equalTo(KTopViewHeight);
-            make.height.mas_equalTo(.3);
-        }];
-        lineView1.backgroundColor = [UIColor lightGrayColor];
-
+    
+    UIView *lineView1 = [[UIView alloc]init];
+    [self.view addSubview:lineView1];
+    [lineView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(KTopViewHeight);
+        make.height.mas_equalTo(.3);
+    }];
+    lineView1.backgroundColor = [UIColor lightGrayColor];
+    
 }
 #pragma mark UITableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
@@ -69,52 +68,27 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"NewDiscountTableViewCellID";
-    NewDiscountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    static NSString *cellID = @"GoldListTableViewCellID";
+    GoldListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     return cell;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
-{
-    return 2;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 122;
-}
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
-{
-    if (section == 1) {
-        UILabel *label = [[UILabel alloc]init];
-        label.text = @"历史优惠券";
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:13];
-        label.textColor = [UIColor colorWithHex:@"#6D6D6D"];
-        return label;
-    }
-    return nil;
+    return 65;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
-{
-    if (section == 1) {
-        return 50;
-    }
-    return .1;
-}
 #pragma mark lazyload
 - (UITableView *)mainView
 {
     if (!_mainView) {
-        _mainView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _mainView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _mainView.delegate = self;
         _mainView.dataSource =self;
-        [_mainView registerNib:[UINib nibWithNibName:@"NewDiscountTableViewCell" bundle:nil] forCellReuseIdentifier:@"NewDiscountTableViewCellID"];
+        [_mainView registerNib:[UINib nibWithNibName:@"GoldListTableViewCell" bundle:nil] forCellReuseIdentifier:@"GoldListTableViewCellID"];
     }
     return _mainView;
 }
-
 
 @end

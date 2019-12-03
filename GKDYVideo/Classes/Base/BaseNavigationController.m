@@ -33,10 +33,13 @@
     
     // 透明横线
     [self.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
+    
+    self.view.backgroundColor = kWhiteColor;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    [super pushViewController:viewController animated:animated];
     if (![viewController isKindOfClass:[PickViewController class]] &&
         ![viewController isKindOfClass:[NewMarketViewController class]] &&
         ![viewController isKindOfClass:[AddGoodsViewController class]] &&
@@ -45,16 +48,10 @@
         
         viewController.hidesBottomBarWhenPushed = YES;
       }
-    
-    [UIView setAnimationsEnabled:YES];
-    
-    if ( animated && [self respondsToSelector:@selector(interactivePopGestureRecognizer)] )
-    {
-        self.interactivePopGestureRecognizer.enabled = NO;
-    }
-    
-    [super pushViewController:viewController animated:animated];
-    
+    // 修改tabBra的frame
+    CGRect frame = self.tabBarController.tabBar.frame;
+    frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+    self.tabBarController.tabBar.frame = frame;
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
@@ -118,4 +115,8 @@
     }
 }
 
+//- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+//{
+//
+//}
 @end

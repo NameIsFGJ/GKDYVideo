@@ -1,24 +1,25 @@
 //
-//  PickRecommendViewController.m
+//  NewHistoryArticleViewController.m
 //  GKDYVideo
 //
-//  Created by 冯高杰 on 2019/9/26.
+//  Created by 冯高杰 on 2019/11/26.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "PickRecommendViewController.h"
+#import "NewHistoryArticleViewController.h"
 #import "WSLWaterFlowLayout.h"
 #import "PickCollectionViewCell.h"
 #import "MarketModel.h"
 #import "PickRecommendDetailViewController.h"
-@interface PickRecommendViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+
+@interface NewHistoryArticleViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property (strong, nonatomic) UICollectionView *mainView;
 @property (strong, nonatomic) WSLWaterFlowLayout *flowLayout;
 @property (strong, nonatomic) NSArray *itemsArray;
 
 @end
 
-@implementation PickRecommendViewController
+@implementation NewHistoryArticleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,32 +27,32 @@
     [self.view addSubview:self.mainView];
     
     HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
-        model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-        model0.ide = 0;
-        model0.imageheight = @"260";
-        model0.name = @"裤子";
-        model0.price = @"33.11" ;
+    model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model0.ide = 0;
+    model0.imageheight = @"260";
+    model0.name = @"裤子";
+    model0.price = @"33.11" ;
     
-        HotGoodsModel *model1 = [[HotGoodsModel alloc]init];
-        model1.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-        model1.ide = 1;
-        model1.imageheight = @"300";
-        model1.name = @"袜子";
-        model1.price = @"999.90" ;
+    HotGoodsModel *model1 = [[HotGoodsModel alloc]init];
+    model1.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model1.ide = 1;
+    model1.imageheight = @"300";
+    model1.name = @"袜子";
+    model1.price = @"999.90" ;
     
-        HotGoodsModel *model2 = [[HotGoodsModel alloc]init];
-        model2.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-        model2.ide = 2;
-        model2.imageheight = @"300";
-        model2.name = @"绳阿斯顿飞子";
-        model2.price = @"2321.222" ;
+    HotGoodsModel *model2 = [[HotGoodsModel alloc]init];
+    model2.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model2.ide = 2;
+    model2.imageheight = @"300";
+    model2.name = @"绳阿斯顿飞子";
+    model2.price = @"2321.222" ;
     
-        HotGoodsModel *model3 = [[HotGoodsModel alloc]init];
-        model3.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
-        model3.ide = 3;
-        model3.imageheight = @"260";
-        model3.name = @"是淡粉色";
-        model3.price = @"9091.23" ;
+    HotGoodsModel *model3 = [[HotGoodsModel alloc]init];
+    model3.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
+    model3.ide = 3;
+    model3.imageheight = @"260";
+    model3.name = @"是淡粉色";
+    model3.price = @"9091.23" ;
     
     self.itemsArray = [NSArray arrayWithObjects:model0,model1,model2,model3,model0,model1,model2,model3, nil];
     
@@ -61,8 +62,8 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-   
-     self.mainView.frame = self.view.bounds;
+    
+    self.mainView.frame = self.view.bounds;
 }
 
 #pragma mark UIColletionViewDelegate
@@ -125,11 +126,6 @@
     return [UIImage imageNamed:@"emptyImage"];
 }
 
-- (BOOL)setupTarbarHidden
-{
-    return NO;
-}
-
 #pragma mark 懒加载
 - (UICollectionView *)mainView
 {
@@ -150,5 +146,6 @@
     }
     return _mainView;
 }
+
 
 @end

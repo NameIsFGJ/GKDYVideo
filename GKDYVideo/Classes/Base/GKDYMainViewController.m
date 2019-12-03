@@ -42,23 +42,7 @@
     [self addChildVC:[NewFriendsViewController new] withTitle:@"饭圈" withImage:@"table3" withSelectImage:@"tab_3_selected"];
     [self addChildVC:[NewMineViewController new] withTitle:@"米仓" withImage:@"table4" withSelectImage:@"tab_4_selected"];
     
-  //  [self.tabBar addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
 }
-//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-//
-//    NSLog(@"KVO---%@----%@",change[@"old"],change[@"new"]);
-//
-//    CGRect oldFrame = [change[@"old"] CGRectValue];
-//    CGRect newFrame = [change[@"new"] CGRectValue];
-//
-//    if (oldFrame.size.height!= newFrame.size.height) {
-//        if (oldFrame.size.height>newFrame.size.height) {
-//            self.tabBar.frame=oldFrame;
-//        }else{
-//            self.tabBar.frame=newFrame;
-//        }
-//    }
-//}
 
 - (void)changeBackgroundColor
 {
@@ -140,48 +124,9 @@
     BaseNavigationController * nav = (BaseNavigationController *)viewController;
     if ([[nav.viewControllers lastObject] isKindOfClass:[NewMineViewController class]])
     {
-//        // 未登录
-//        if (![User isLogin])
-//        {
-//            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[LoginViewController alloc]];
-//            [self presentViewController:nav animated:YES completion:nil];
-//            return NO;
-//        }
-        
-//        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:[NewLoginViewController alloc]];
-//        [self presentViewController:nav animated:YES completion:nil];
-//        return NO;
-        
         
     }
     return YES;
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    if (isIPhoneXAll) {
-//        if (@available(iOS 11.0, *)){
-//
-//        }
-        // 修改tabBra的frame
-//        CGRect frame = self.tabBarController.tabBar.frame;
-//        frame.origin.y = [UIScreen mainScreen].bounds.size.height -64;
-//        self.navigationController.tabBarController.tabBar.frame = frame;
-    }
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    if (isIPhoneXAll) {
-//        CGRect frame = self.tabBarController.tabBar.frame;
-//                    frame.origin.y = [UIScreen mainScreen].bounds.size.height -64;
-//                    self.navigationController.tabBarController.tabBar.frame = frame;
-        
-    }
-    
-}
-
-- (void)dealloc
-{
-    // [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 @end

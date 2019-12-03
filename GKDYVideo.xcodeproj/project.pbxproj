@@ -107,11 +107,20 @@
 		914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034DA22E5EF6D006F1699 /* UnlikeVideoNetworking.m */; };
 		914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034DD22E5EFE2006F1699 /* FlollowingNetworking.m */; };
 		914034E122E5F385006F1699 /* UnflollowingNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914034E022E5F385006F1699 /* UnflollowingNetworking.m */; };
+		914165A7238CB88100924FF2 /* NewMarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914165A6238CB88100924FF2 /* NewMarkViewController.m */; };
+		914165AA238CC62900924FF2 /* NewGiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914165A9238CC62900924FF2 /* NewGiveViewController.m */; };
+		914165AE238D0FBE00924FF2 /* NewHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914165AD238D0FBE00924FF2 /* NewHistoryViewController.m */; };
+		914165B1238D103100924FF2 /* NewHistoryArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914165B0238D103100924FF2 /* NewHistoryArticleViewController.m */; };
+		914165B4238D12F700924FF2 /* NewHistoryGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914165B3238D12F700924FF2 /* NewHistoryGoodsViewController.m */; };
 		9149DD8522DEF4770027417D /* IndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9149DD8422DEF4770027417D /* IndexModel.m */; };
 		914A86E62325E30300DB324E /* AddressListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 914A86E52325E30300DB324E /* AddressListModel.m */; };
 		914A86EF232601BD00DB324E /* AddressEditNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914A86EE232601BD00DB324E /* AddressEditNewViewController.m */; };
 		914A86F2232621F800DB324E /* AddressSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 914A86F1232621F800DB324E /* AddressSelectView.m */; };
 		914A86F5232634ED00DB324E /* AddressNewNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 914A86F4232634ED00DB324E /* AddressNewNetworking.m */; };
+		914F935B238FABED00319D24 /* NewGoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F935A238FABED00319D24 /* NewGoldViewController.m */; };
+		914F935E238FB90100319D24 /* NewGoldListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F935D238FB90100319D24 /* NewGoldListViewController.m */; };
+		914F9362238FBDE400319D24 /* GoldListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F9360238FBDE400319D24 /* GoldListTableViewCell.m */; };
+		914F9363238FBDE400319D24 /* GoldListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914F9361238FBDE400319D24 /* GoldListTableViewCell.xib */; };
 		9154CCC122F015910066ECC5 /* SearchVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9154CCC022F015910066ECC5 /* SearchVideoPlayViewController.m */; };
 		915BC62A22E00DBF00894F64 /* GKDYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62922E00DBF00894F64 /* GKDYMainViewController.m */; };
 		915BC62D22E00E8E00894F64 /* GKDYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915BC62C22E00E8E00894F64 /* GKDYNavigationController.m */; };
@@ -607,6 +616,16 @@
 		914034DD22E5EFE2006F1699 /* FlollowingNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlollowingNetworking.m; sourceTree = "<group>"; };
 		914034DF22E5F385006F1699 /* UnflollowingNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnflollowingNetworking.h; sourceTree = "<group>"; };
 		914034E022E5F385006F1699 /* UnflollowingNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnflollowingNetworking.m; sourceTree = "<group>"; };
+		914165A5238CB88100924FF2 /* NewMarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMarkViewController.h; sourceTree = "<group>"; };
+		914165A6238CB88100924FF2 /* NewMarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMarkViewController.m; sourceTree = "<group>"; };
+		914165A8238CC62900924FF2 /* NewGiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGiveViewController.h; sourceTree = "<group>"; };
+		914165A9238CC62900924FF2 /* NewGiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGiveViewController.m; sourceTree = "<group>"; };
+		914165AC238D0FBE00924FF2 /* NewHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHistoryViewController.h; sourceTree = "<group>"; };
+		914165AD238D0FBE00924FF2 /* NewHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHistoryViewController.m; sourceTree = "<group>"; };
+		914165AF238D103100924FF2 /* NewHistoryArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHistoryArticleViewController.h; sourceTree = "<group>"; };
+		914165B0238D103100924FF2 /* NewHistoryArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHistoryArticleViewController.m; sourceTree = "<group>"; };
+		914165B2238D12F700924FF2 /* NewHistoryGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHistoryGoodsViewController.h; sourceTree = "<group>"; };
+		914165B3238D12F700924FF2 /* NewHistoryGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHistoryGoodsViewController.m; sourceTree = "<group>"; };
 		9149DD8322DEF4770027417D /* IndexModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndexModel.h; sourceTree = "<group>"; };
 		9149DD8422DEF4770027417D /* IndexModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndexModel.m; sourceTree = "<group>"; };
 		914A86E42325E30300DB324E /* AddressListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressListModel.h; sourceTree = "<group>"; };
@@ -617,6 +636,13 @@
 		914A86F1232621F800DB324E /* AddressSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressSelectView.m; sourceTree = "<group>"; };
 		914A86F3232634ED00DB324E /* AddressNewNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressNewNetworking.h; sourceTree = "<group>"; };
 		914A86F4232634ED00DB324E /* AddressNewNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressNewNetworking.m; sourceTree = "<group>"; };
+		914F9359238FABED00319D24 /* NewGoldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGoldViewController.h; sourceTree = "<group>"; };
+		914F935A238FABED00319D24 /* NewGoldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGoldViewController.m; sourceTree = "<group>"; };
+		914F935C238FB90100319D24 /* NewGoldListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGoldListViewController.h; sourceTree = "<group>"; };
+		914F935D238FB90100319D24 /* NewGoldListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGoldListViewController.m; sourceTree = "<group>"; };
+		914F935F238FBDE400319D24 /* GoldListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoldListTableViewCell.h; sourceTree = "<group>"; };
+		914F9360238FBDE400319D24 /* GoldListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoldListTableViewCell.m; sourceTree = "<group>"; };
+		914F9361238FBDE400319D24 /* GoldListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoldListTableViewCell.xib; sourceTree = "<group>"; };
 		9154CCBF22F015910066ECC5 /* SearchVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVideoPlayViewController.h; sourceTree = "<group>"; };
 		9154CCC022F015910066ECC5 /* SearchVideoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVideoPlayViewController.m; sourceTree = "<group>"; };
 		915BC62822E00DBF00894F64 /* GKDYMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDYMainViewController.h; sourceTree = "<group>"; };
@@ -1752,6 +1778,10 @@
 			children = (
 				912CE5272340409C00375DDD /* NewMineViewController.h */,
 				912CE5282340409C00375DDD /* NewMineViewController.m */,
+				914F9358238FAB9800319D24 /* 金币 */,
+				914165A4238CB7A600924FF2 /* 我的收藏 */,
+				914165A3238CB79800924FF2 /* 我的打赏 */,
+				914165AB238D0F9B00924FF2 /* 历史记录 */,
 				91FC1C57236925E000AA050F /* 个人中心 */,
 				919A5EE7236810A2003D779C /* 余额 */,
 				91A43E172356E7BF00D7166B /* 优惠券 */,
@@ -1812,6 +1842,9 @@
 				91133C1823827B4E00C04C06 /* BalanceTableViewCell.h */,
 				91133C1923827B4E00C04C06 /* BalanceTableViewCell.m */,
 				91133C1A23827B4E00C04C06 /* BalanceTableViewCell.xib */,
+				914F935F238FBDE400319D24 /* GoldListTableViewCell.h */,
+				914F9360238FBDE400319D24 /* GoldListTableViewCell.m */,
+				914F9361238FBDE400319D24 /* GoldListTableViewCell.xib */,
 				91BC3B2A2351645900764D4B /* 订单View */,
 				91D2DD69237D0331005E5EA6 /* AddressTableViewCell.h */,
 				91D2DD6A237D0331005E5EA6 /* AddressTableViewCell.m */,
@@ -2248,6 +2281,48 @@
 			children = (
 			);
 			path = "关注详情";
+			sourceTree = "<group>";
+		};
+		914165A3238CB79800924FF2 /* 我的打赏 */ = {
+			isa = PBXGroup;
+			children = (
+				914165A8238CC62900924FF2 /* NewGiveViewController.h */,
+				914165A9238CC62900924FF2 /* NewGiveViewController.m */,
+			);
+			path = "我的打赏";
+			sourceTree = "<group>";
+		};
+		914165A4238CB7A600924FF2 /* 我的收藏 */ = {
+			isa = PBXGroup;
+			children = (
+				914165A5238CB88100924FF2 /* NewMarkViewController.h */,
+				914165A6238CB88100924FF2 /* NewMarkViewController.m */,
+			);
+			path = "我的收藏";
+			sourceTree = "<group>";
+		};
+		914165AB238D0F9B00924FF2 /* 历史记录 */ = {
+			isa = PBXGroup;
+			children = (
+				914165AC238D0FBE00924FF2 /* NewHistoryViewController.h */,
+				914165AD238D0FBE00924FF2 /* NewHistoryViewController.m */,
+				914165AF238D103100924FF2 /* NewHistoryArticleViewController.h */,
+				914165B0238D103100924FF2 /* NewHistoryArticleViewController.m */,
+				914165B2238D12F700924FF2 /* NewHistoryGoodsViewController.h */,
+				914165B3238D12F700924FF2 /* NewHistoryGoodsViewController.m */,
+			);
+			path = "历史记录";
+			sourceTree = "<group>";
+		};
+		914F9358238FAB9800319D24 /* 金币 */ = {
+			isa = PBXGroup;
+			children = (
+				914F9359238FABED00319D24 /* NewGoldViewController.h */,
+				914F935A238FABED00319D24 /* NewGoldViewController.m */,
+				914F935C238FB90100319D24 /* NewGoldListViewController.h */,
+				914F935D238FB90100319D24 /* NewGoldListViewController.m */,
+			);
+			path = "金币";
 			sourceTree = "<group>";
 		};
 		9166A5AF232F3D4000BA68E5 /* OrderVC */ = {
@@ -3289,6 +3364,7 @@
 				913571A7238BC6AA00AB16A7 /* PickRecommendDetailTbCell.xib in Resources */,
 				91DD443622FFE442009A4790 /* SetTableViewCell.xib in Resources */,
 				91D2AC7C22F968C700179C88 /* MyFriendTableViewCell.xib in Resources */,
+				914F9363238FBDE400319D24 /* GoldListTableViewCell.xib in Resources */,
 				91C3BB91233C94A90033E286 /* PickCollectionViewCell.xib in Resources */,
 				91BE838323504EB2008A4236 /* NewSetTableViewCell.xib in Resources */,
 				9106AA952366865A004EDC8B /* DisCountTableViewCell.xib in Resources */,
@@ -3394,6 +3470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91DDF87E235D46600009EE6D /* GoodDetailView0.m in Sources */,
+				914F935B238FABED00319D24 /* NewGoldViewController.m in Sources */,
 				9113E16222EAF20000FFFCF0 /* SearchTogetherViewController.m in Sources */,
 				9113E16B22EAF26100FFFCF0 /* SearchTopicViewController.m in Sources */,
 				79CC62CE21573BD700101773 /* GKDYBaseViewController.m in Sources */,
@@ -3419,6 +3496,7 @@
 				91DBEA5E236141A90076AC91 /* GoodDetailView1.m in Sources */,
 				912FCD2D233A0B1D00601E9C /* MyOrderTotalViewController.m in Sources */,
 				91D2E83322EEE9C80065FB0B /* SearchUserModel.m in Sources */,
+				914F9362238FBDE400319D24 /* GoldListTableViewCell.m in Sources */,
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
 				91A6453E235EA3980023D9B4 /* NewCartBottomView.m in Sources */,
 				91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */,
@@ -3451,6 +3529,7 @@
 				914034D222E5DDF5006F1699 /* LikeVideoNewtworking.m in Sources */,
 				9165C22A22FEA89E0015ED06 /* MarketViewController.m in Sources */,
 				914034DB22E5EF6D006F1699 /* UnlikeVideoNetworking.m in Sources */,
+				914165A7238CB88100924FF2 /* NewMarkViewController.m in Sources */,
 				91C3BB84233C8ECC0033E286 /* PickRecommendViewController.m in Sources */,
 				914034DE22E5EFE2006F1699 /* FlollowingNetworking.m in Sources */,
 				91B328A62357FFA8008688F5 /* NewDiscountTableViewCell.m in Sources */,
@@ -3462,6 +3541,7 @@
 				91FD2DE7231F9D3600FC2520 /* SuccessVideoViewController.m in Sources */,
 				9166A605232F7A1000BA68E5 /* TestUploadNetworking.m in Sources */,
 				9116615B22E18FAA00A5F9C2 /* AppDelegate+Vendor.m in Sources */,
+				914165B4238D12F700924FF2 /* NewHistoryGoodsViewController.m in Sources */,
 				91D2E82322EE92E70065FB0B /* VideoCollectionViewCell.m in Sources */,
 				91A43E152356BD4900D7166B /* NewWaitPaySendBackPayDetailViewController.m in Sources */,
 				9165E367230102B600556AB7 /* IdCardUploadNetworking.m in Sources */,
@@ -3495,6 +3575,7 @@
 				9116616B22E1B9CA00A5F9C2 /* GKDYPageViewController.m in Sources */,
 				914A86E62325E30300DB324E /* AddressListModel.m in Sources */,
 				91D2AC7B22F968C700179C88 /* MyFriendTableViewCell.m in Sources */,
+				914F935E238FB90100319D24 /* NewGoldListViewController.m in Sources */,
 				91D80276233B19B600659A01 /* MyBuyTableViewCell.m in Sources */,
 				91BBB70A22E7F2460060ADDD /* UIViewController+Category.m in Sources */,
 				917303AF232739B800E423E4 /* AddressEditNetworking.m in Sources */,
@@ -3639,10 +3720,12 @@
 				9176295922F168E1003CF389 /* AddGoodsChildViewController.m in Sources */,
 				91CDD506232A158B00483EB8 /* ToPayNetworking.m in Sources */,
 				91DD30B322F0835F00192D7E /* VideoGuanNetworking.m in Sources */,
+				914165B1238D103100924FF2 /* NewHistoryArticleViewController.m in Sources */,
 				91DFEF8B230288D500DA2458 /* MarkCollectionHeadView.m in Sources */,
 				91DA72DA230CE7F80085312E /* MarketUserShopCollectionViewCell.m in Sources */,
 				917303B52327488E00E423E4 /* AddressDeleteNetworking.m in Sources */,
 				917303BB2327A14100E423E4 /* AddNetworking.m in Sources */,
+				914165AE238D0FBE00924FF2 /* NewHistoryViewController.m in Sources */,
 				91125F0F2322570600A15FFE /* AddressEditViewController.m in Sources */,
 				79CC62942157377400101773 /* AppDelegate.m in Sources */,
 				911AC5822372CAB000BF9918 /* RankListGoodsviewController.m in Sources */,
@@ -3678,6 +3761,7 @@
 				9136B45A22E8872D00875B17 /* GetVideoCommentView.m in Sources */,
 				9135719D238B644900AB16A7 /* PickRecommendDetailViewController.m in Sources */,
 				91827408234EE0E200760D93 /* VipCollectionViewCell.m in Sources */,
+				914165AA238CC62900924FF2 /* NewGiveViewController.m in Sources */,
 				91CDD574232A2AD700483EB8 /* APRSASigner.m in Sources */,
 				914A86EF232601BD00DB324E /* AddressEditNewViewController.m in Sources */,
 				91E19A11230676A1000E70D5 /* UserVideoNetworking.m in Sources */,
