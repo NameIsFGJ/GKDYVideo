@@ -13,7 +13,6 @@
 #import "SearchVideoModel.h"
 @interface GKDYUserVideoViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-
 @end
 
 @implementation GKDYUserVideoViewController
@@ -119,4 +118,5 @@
     }
     return _mainView;
 }
+
 @end

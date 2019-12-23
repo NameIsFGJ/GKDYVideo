@@ -29,7 +29,7 @@
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"设置";
+    label.text = @"漫饭会员";
     label.textColor = [UIColor blackColor];
     self.navigationItem.titleView = label;
     

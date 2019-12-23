@@ -11,6 +11,8 @@
 #import "PickCollectionViewCell.h"
 #import "MarketModel.h"
 #import "PickRecommendDetailViewController.h"
+//
+#import "GKDYPlayerViewController.h"
 @interface PickRecommendViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,WSLWaterFlowLayoutDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property (strong, nonatomic) UICollectionView *mainView;
 @property (strong, nonatomic) WSLWaterFlowLayout *flowLayout;
@@ -25,20 +27,20 @@
     
     [self.view addSubview:self.mainView];
     
-    HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
+        HotGoodsModel *model0 = [[HotGoodsModel alloc]init];
         model0.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
         model0.ide = 0;
         model0.imageheight = @"260";
         model0.name = @"裤子";
         model0.price = @"33.11" ;
-    
+        
         HotGoodsModel *model1 = [[HotGoodsModel alloc]init];
         model1.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
         model1.ide = 1;
         model1.imageheight = @"300";
         model1.name = @"袜子";
         model1.price = @"999.90" ;
-    
+        
         HotGoodsModel *model2 = [[HotGoodsModel alloc]init];
         model2.cover = @"/uploads/20190731/e4f9aef2431f100b260aab30cfd59849.png";
         model2.ide = 2;

@@ -32,6 +32,7 @@
     [self.view addSubview:self.collectionView];
     self.collectionView.frame = self.view.bounds;
 }
+
 - (void)networking
 {
     [VideoGuanNetworking postVideoGuanWithUserID:kUser.user_token withPage:1 completion:^(NSArray * _Nonnull array, NSError * _Nonnull error) {

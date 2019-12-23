@@ -74,7 +74,6 @@
 
 #pragma mark  UISearchBar
 
-
 - (BOOL)setupTarbarHidden
 {
     return NO;

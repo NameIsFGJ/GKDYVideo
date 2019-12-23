@@ -61,6 +61,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)headViewRedPacketButtonClick;
 // 优惠券
 - (void)headViewDiscountButtonClick;
+// 粮票
+- (void)headViewLiangTicketButtonClick;
 @end
 @interface NewMineView : UIView
 @property (weak, nonatomic) id<MyHeadViewDelegate>delegate;

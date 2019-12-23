@@ -19,6 +19,8 @@
 #import "NewDiscountViewController.h"
 // 金币
 #import "NewGoldViewController.h"
+// 粮票
+#import "NewLiangTicketViewController.h"
 // 余额
 #import "BalanceViewController.h"
 // 个人中心
@@ -218,19 +220,26 @@
     BalanceViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"BalanceViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
-// 红包
+// 粮票
+- (void)headViewLiangTicketButtonClick;
+{
+    NSLog(@"粮票");
+    NewLiangTicketViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewLiangTicketViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+// 优惠券
 - (void)headViewRedPacketButtonClick;
 {
-    NSLog(@"红包");
-    NewDiscountViewController *vc = [[NewDiscountViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    NSLog(@"金币");
+      NewGoldViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewGoldViewController"];
+      [self.navigationController pushViewController:vc animated:YES];
 }
 // 金币
 - (void)headViewDiscountButtonClick;
 {
-    NSLog(@"金币");
-    NewGoldViewController *vc = [kStoryboard5 instantiateViewControllerWithIdentifier:@"NewGoldViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
+  NSLog(@"优惠券");
+     NewDiscountViewController *vc = [[NewDiscountViewController alloc]init];
+     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (BOOL)setupTarbarHidden

@@ -351,6 +351,7 @@
 		91DBEA6923616AE60076AC91 /* GoodDetailView3.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA6823616AE60076AC91 /* GoodDetailView3.m */; };
 		91DBEA6C23617FF50076AC91 /* GoodDetailView4.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA6B23617FF50076AC91 /* GoodDetailView4.m */; };
 		91DBEA6F236195770076AC91 /* GoodDetailDisCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DBEA6E236195770076AC91 /* GoodDetailDisCountView.m */; };
+		91DC9DE72397447B00E708B9 /* NewLiangListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DC9DE62397447B00E708B9 /* NewLiangListViewController.m */; };
 		91DCB17723601FE100697A0D /* NewMarketShopOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DCB17623601FE100697A0D /* NewMarketShopOrderViewController.m */; };
 		91DCB17A2360264C00697A0D /* NewMarketShopPaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DCB1792360264C00697A0D /* NewMarketShopPaySuccessViewController.m */; };
 		91DD30AD22F0766E00192D7E /* FollowingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DD30AC22F0766E00192D7E /* FollowingCollectionViewCell.m */; };
@@ -382,6 +383,7 @@
 		91F37317237A873A003DBC11 /* NewMarketShopHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F37316237A873A003DBC11 /* NewMarketShopHotViewController.m */; };
 		91F3731A237A8C63003DBC11 /* ShopTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F37319237A8C63003DBC11 /* ShopTypeView.m */; };
 		91F3731F237AB213003DBC11 /* NewMarketOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F3731E237AB213003DBC11 /* NewMarketOrderViewController.m */; };
+		91F47EA123966700002587DD /* NewLiangTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F47EA023966700002587DD /* NewLiangTicketViewController.m */; };
 		91F6221B230B8F1C0088730D /* MarketTestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */; };
 		91F62222230BBD2E0088730D /* WSLWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */; };
 		91F62225230BD4AF0088730D /* MarketSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F62224230BD4AF0088730D /* MarketSearchViewController.m */; };
@@ -1170,6 +1172,8 @@
 		91DBEA6B23617FF50076AC91 /* GoodDetailView4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailView4.m; sourceTree = "<group>"; };
 		91DBEA6D236195770076AC91 /* GoodDetailDisCountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodDetailDisCountView.h; sourceTree = "<group>"; };
 		91DBEA6E236195770076AC91 /* GoodDetailDisCountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodDetailDisCountView.m; sourceTree = "<group>"; };
+		91DC9DE52397447B00E708B9 /* NewLiangListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewLiangListViewController.h; sourceTree = "<group>"; };
+		91DC9DE62397447B00E708B9 /* NewLiangListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewLiangListViewController.m; sourceTree = "<group>"; };
 		91DCB17523601FE100697A0D /* NewMarketShopOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMarketShopOrderViewController.h; sourceTree = "<group>"; };
 		91DCB17623601FE100697A0D /* NewMarketShopOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMarketShopOrderViewController.m; sourceTree = "<group>"; };
 		91DCB1782360264C00697A0D /* NewMarketShopPaySuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMarketShopPaySuccessViewController.h; sourceTree = "<group>"; };
@@ -1228,6 +1232,8 @@
 		91F37319237A8C63003DBC11 /* ShopTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTypeView.m; sourceTree = "<group>"; };
 		91F3731D237AB213003DBC11 /* NewMarketOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMarketOrderViewController.h; sourceTree = "<group>"; };
 		91F3731E237AB213003DBC11 /* NewMarketOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMarketOrderViewController.m; sourceTree = "<group>"; };
+		91F47E9F23966700002587DD /* NewLiangTicketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewLiangTicketViewController.h; sourceTree = "<group>"; };
+		91F47EA023966700002587DD /* NewLiangTicketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewLiangTicketViewController.m; sourceTree = "<group>"; };
 		91F62219230B8F1C0088730D /* MarketTestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTestCollectionViewCell.h; sourceTree = "<group>"; };
 		91F6221A230B8F1C0088730D /* MarketTestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketTestCollectionViewCell.m; sourceTree = "<group>"; };
 		91F62220230BBD2E0088730D /* WSLWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLWaterFlowLayout.m; sourceTree = "<group>"; };
@@ -1778,6 +1784,7 @@
 			children = (
 				912CE5272340409C00375DDD /* NewMineViewController.h */,
 				912CE5282340409C00375DDD /* NewMineViewController.m */,
+				91F47E9E2396653B002587DD /* 粮票 */,
 				914F9358238FAB9800319D24 /* 金币 */,
 				914165A4238CB7A600924FF2 /* 我的收藏 */,
 				914165A3238CB79800924FF2 /* 我的打赏 */,
@@ -3202,6 +3209,17 @@
 			path = "确认订单";
 			sourceTree = "<group>";
 		};
+		91F47E9E2396653B002587DD /* 粮票 */ = {
+			isa = PBXGroup;
+			children = (
+				91F47E9F23966700002587DD /* NewLiangTicketViewController.h */,
+				91F47EA023966700002587DD /* NewLiangTicketViewController.m */,
+				91DC9DE52397447B00E708B9 /* NewLiangListViewController.h */,
+				91DC9DE62397447B00E708B9 /* NewLiangListViewController.m */,
+			);
+			path = "粮票";
+			sourceTree = "<group>";
+		};
 		91F6221F230BBD2E0088730D /* WSLWaterFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -3500,6 +3518,7 @@
 				91BD725D22EFEC2D00F517F6 /* SearchVideosNetworking.m in Sources */,
 				91A6453E235EA3980023D9B4 /* NewCartBottomView.m in Sources */,
 				91DD443522FFE442009A4790 /* SetTableViewCell.m in Sources */,
+				91F47EA123966700002587DD /* NewLiangTicketViewController.m in Sources */,
 				91ABABAE22FBB85C00E4593A /* UploadAvatarModel.m in Sources */,
 				9116615822E18FAA00A5F9C2 /* NSObject+HUD.m in Sources */,
 				91FD2DEA231F9E2900FC2520 /* ShareVideoView.m in Sources */,
@@ -3567,6 +3586,7 @@
 				91C9C1D822E6BC5200D0A87E /* MyIndexNetworking.m in Sources */,
 				91C9C1D222E69D7E00D0A87E /* User.m in Sources */,
 				916C6D2322F7D26700D2538F /* AddGoodsInfoModel.m in Sources */,
+				91DC9DE72397447B00E708B9 /* NewLiangListViewController.m in Sources */,
 				91F8E68D22F86E7700B5A8AB /* MessageHeadView.m in Sources */,
 				9149DD8522DEF4770027417D /* IndexModel.m in Sources */,
 				91C9C1D522E6A3FC00D0A87E /* MineTableViewCell.m in Sources */,

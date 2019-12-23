@@ -253,20 +253,26 @@
     moneyLabel.textAlignment = NSTextAlignmentCenter;
     moneyLabel.textColor = [UIColor colorWithHex:@"#F76C8D"];
     moneyLabel.text = @"30.00";
-
-    UILabel *redPacketLabel = [[UILabel alloc]init];
-    [view5 addSubview:redPacketLabel];
-    redPacketLabel.textAlignment = NSTextAlignmentCenter;
-    redPacketLabel.textColor = [UIColor colorWithHex:@"#F76C8D"];
-    redPacketLabel.text = @"5";
-
+    
+    UILabel *liangTickettLabel = [[UILabel alloc]init];
+    [view5 addSubview:liangTickettLabel];
+    liangTickettLabel.textAlignment = NSTextAlignmentCenter;
+    liangTickettLabel.textColor = [UIColor colorWithHex:@"#F76C8D"];
+    liangTickettLabel.text = @"5";
+    
     UILabel *disCountLabel = [[UILabel alloc]init];
     [view5 addSubview:disCountLabel];
     disCountLabel.textAlignment = NSTextAlignmentCenter;
     disCountLabel.textColor = [UIColor colorWithHex:@"#F76C8D"];
     disCountLabel.text = @"1";
-
-    NSArray *array2 = [NSArray arrayWithObjects:moneyLabel,redPacketLabel,disCountLabel, nil];
+    
+    UILabel *glodCountLabel = [[UILabel alloc]init];
+    [view5 addSubview:glodCountLabel];
+    glodCountLabel.textAlignment = NSTextAlignmentCenter;
+    glodCountLabel.textColor = [UIColor colorWithHex:@"#F76C8D"];
+    glodCountLabel.text = @"3";
+    
+    NSArray *array2 = [NSArray arrayWithObjects:moneyLabel,liangTickettLabel,disCountLabel,glodCountLabel, nil];
     [array2 mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
     [array2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(view5.mas_centerY).offset(-10);
@@ -282,7 +288,7 @@
 
     UILabel *tipLabel1 = [[UILabel alloc]init];
     [view5 addSubview:tipLabel1];
-    tipLabel1.text = @"红包";
+    tipLabel1.text = @"粮票";
     tipLabel1.font = [UIFont systemFontOfSize:14];
     tipLabel1.textColor = [UIColor blackColor];
     tipLabel1.textAlignment = NSTextAlignmentCenter;
@@ -294,19 +300,27 @@
     tipLabel2.font = [UIFont systemFontOfSize:14];
     tipLabel2.textColor = [UIColor blackColor];
     
-    NSArray *array3 = [NSArray arrayWithObjects:tipLabel0,tipLabel1,tipLabel2, nil];
+    UILabel *tipLabel3 = [[UILabel alloc]init];
+      [view5 addSubview:tipLabel3];
+      tipLabel3.text = @"金币";
+      tipLabel3.textAlignment = NSTextAlignmentCenter;
+      tipLabel3.font = [UIFont systemFontOfSize:14];
+      tipLabel3.textColor = [UIColor blackColor];
+      
+
+    NSArray *array3 = [NSArray arrayWithObjects:tipLabel0,tipLabel1,tipLabel2,tipLabel3, nil];
     [array3 mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
     [array3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(moneyLabel.mas_bottom).offset(0);
     }];
     
-    for (int i = 0; i < 3; i ++) {
+    for (int i = 0; i < 4; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [view5 addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(i *kWindowWidth/3);
+            make.left.mas_equalTo(i *kWindowWidth/4);
             make.top.equalTo(view5.mas_top);
-            make.size.mas_equalTo(CGSizeMake(kWindowWidth/3, 90));
+            make.size.mas_equalTo(CGSizeMake(kWindowWidth/4, 90));
         }];
         btn.tag = 200 +i;
         [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -378,7 +392,6 @@
         // 待评价
     }else if (btn.tag == 103)
     {
-       
         if ([self.delegate respondsToSelector:@selector(headViewWaitDiscussButtonClick)]) {
             [self.delegate headViewWaitDiscussButtonClick];
         }
@@ -393,16 +406,21 @@
         if ([self.delegate respondsToSelector:@selector(headViewMoneyButtonClick)]) {
             [self.delegate headViewMoneyButtonClick];
         }
-        // 红包
+        // 粮票
     }else if (btn.tag == 201){
-        if ([self.delegate respondsToSelector:@selector(headViewRedPacketButtonClick)]) {
-            [self.delegate headViewRedPacketButtonClick];
-        }
+        if ([self.delegate respondsToSelector:@selector(headViewLiangTicketButtonClick)]) {
+                   [self.delegate headViewLiangTicketButtonClick];
+               }
         // 优惠券
     }else if (btn.tag == 202){
         if ([self.delegate respondsToSelector:@selector(headViewDiscountButtonClick)]) {
             [self.delegate headViewDiscountButtonClick];
         }
+        // 金币
+    }else if (btn.tag == 203){
+               if ([self.delegate respondsToSelector:@selector(headViewRedPacketButtonClick)]) {
+                   [self.delegate headViewRedPacketButtonClick];
+               }
     }
 }
 

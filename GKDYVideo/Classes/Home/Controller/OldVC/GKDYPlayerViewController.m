@@ -150,8 +150,6 @@
 #pragma mark Delegate
 - (void)videoView:(GKDYVideoView *)videoView didClickIcon:(IndexModel *)videoModel;
 {
-
-   
    GKDYUserMainViewController *vc = [[GKDYUserMainViewController alloc]init];
     vc.userID = videoModel.user_id;
     

@@ -12,6 +12,7 @@
 #import "RankListViewController.h"
 #import "LegalCopyViewController.h"
 #import "NewMarketGoodDetailViewController.h"
+#import "MemberViewController.h"
 typedef enum : NSUInteger {
     AnimationDirectionForward,
     AnimationDirectionReverse,
@@ -157,7 +158,7 @@ typedef enum : NSUInteger {
         make.height.mas_equalTo(44);
     }];
     [memberButton setImage:[UIImage imageNamed:@"memberImage"] forState:UIControlStateNormal];
-
+    [memberButton addTarget:self action:@selector(memberButtonAction) forControlEvents:UIControlEventTouchUpInside];
     UIView *view2 = [[UIView alloc]init];
     [contentView addSubview:view2];
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -255,6 +256,12 @@ typedef enum : NSUInteger {
                                animated:YES
                              completion:nil];
     }
+}
+
+- (void)memberButtonAction
+{
+    MemberViewController *vc = [[MemberViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark ScrollViewDelegate
